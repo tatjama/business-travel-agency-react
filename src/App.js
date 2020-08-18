@@ -1,16 +1,12 @@
 import React from 'react';
 
-function App(props) {
- const subject = props.subject;
-    
-  return (
-    <div className="App">   
-    
-      <header className="App-header"><p>Hello, {subject}</p>        
-      </header>
+ function App(props){
+  return(
+    <div>
+      Hello App! {props.name}
     </div>
-     
-  );
+  )
+   
 }
 
-export default App;
+export default App
