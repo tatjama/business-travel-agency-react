@@ -17,6 +17,16 @@ html {
                padding: Spx;
                text-align: center;
            } 
+           .success-message{
+               color: white;
+               position: relative;
+               top: -50px;
+           }
+           .error-message{
+               color: white;
+               font-size: small;
+               text-transform: initial;
+           }
            a {
                color: white;
                text-decoration: none;
@@ -53,7 +63,8 @@ html {
            }
            button {
                padding: 5px;
-               width: 90px;
+               width: 100px;
+               margin: px;
                background-color: transparent;
                font-weight: bold;
                color: white;

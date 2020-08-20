@@ -1,11 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export default function SignIn() {
-        //onClivk
+
+    const [values, setValues] = useState({
+        eMail: '',
+        password: ''
+    });
+    const handleEMailInputChange = (e)=>{
+        e.persist();
+        setValues((values)=>({
+            ...values,
+            eMail: e.target.value,
+        }));
+    };
+    const handlePasswordInputChange = (e)=>{
+        e.persist();
+        setValues((values)=>({
+            ...values,
+            password: e.target.value,
+        }));
+    };
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        if(values.eMail && values.password){
+            setValid(true);
+        }
+        setSubmitted(true);
+        alert('Submit');
+    }
+
+    const [ valid, setValid] = useState(false);
+ //onClick
     function signIn() {
         alert('Clicked signIn');
       }
-    //onFocus
+ //onFocus
    function clearonFocus(){
     console.log('Focus function');
   }
@@ -18,21 +50,50 @@ export default function SignIn() {
     console.log('Blur password');
   }
     return(
-        <form className="sign-form" id="sign-in-form">
-        <fieldset>
+    <div>
+        
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}>
+        {submitted? <div className="success-message">Thank you for Sign In</div>: null}
+          <fieldset>
             <legend>Sign in</legend>
-            <br/>E-mail:<br/>
+              
+            { submitted && !values.eMail ? <span className="error-message" id="email-error" >* Please, fill email</span> : null }
+              <br/>
             <span className="error-sign-in"  title="Error. E-mail format something@something.com"></span>
-            <input type="email"  id="sign-in-e-mail" onBlur={validEMail('sign-in-e-mail', 0, 'error-sign-in')} onFocus={clearonFocus('error-sign-in', 0)} required/>
-            <br/> Password:<br/>
-            <span className="error-sign-in"  title="Error. Password format only letters and numbers"></span>
-            <input type="password" id="sign-in-password"  onBlur={validPassword('sign-in-password', 1, 'error-sign-in')} onFocus={clearonFocus('error-sign-in', 1)} required/>
+            <input 
+                type="email"  
+                id="sign-in-e-mail" 
+                onBlur={validEMail('sign-in-e-mail', 0, 'error-sign-in')} 
+                onFocus={clearonFocus('error-sign-in', 0)} 
+                required = {true}
+                value = {values.eMail}
+                onChange = {handleEMailInputChange}
+                placeholder = " E-MAIL "
+            /><br/>
+             
+            
+        
+            {submitted && !values.password ? <span className = "error-message">* Please, fill password</span> : null }
             <br/>
+            <span className="error-sign-in"  title="Error. Password format only recive letters and numbers"></span>
+            <input 
+                type="password" 
+                id="sign-in-password"  
+                onBlur={validPassword('sign-in-password', 1, 'error-sign-in')} 
+                onFocus={clearonFocus('error-sign-in', 1)} 
+                required = {true}
+                value = {values.password}
+                onChange = {handlePasswordInputChange}
+                placeholder = " PASSWORD "
+            />
             <br/>
-            <button type="button" onClick={signIn}>Sign in </button>
+            <br/>            
+            <button type="submit" onClick={signIn}>Sign in </button>
             <button type="reset" >Clear</button>
         </fieldset>
-    </form>
-
+      </form>
+      
+      
+    </div>
     )
 }
