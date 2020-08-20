@@ -9,11 +9,8 @@ export default function Intro(){
     return(
         <div>
         <IntroHeader/>
-      {/*<!--SIGN IN-->*/}
-        <div>
-          <SignIn/>
-        </div>
-
+        <SignIn/>
+        
           {/*<!--SIGN UP POP-UP FORM-->*/}
 
           <div >
