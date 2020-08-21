@@ -22,17 +22,18 @@ export default function SignIn() {
     };
 
     const [submitted, setSubmitted] = useState(false);
+    const [ valid, setValid] = useState(false);
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        if(values.eMail && values.password){
+       if(values.eMail && values.password){
             setValid(true);
         }
         setSubmitted(true);
         alert('Submit');
     }
 
-    const [ valid, setValid] = useState(false);
+    
  //onClick
     function signIn() {
         alert('Clicked signIn');
@@ -52,8 +53,8 @@ export default function SignIn() {
     return(
     <div>
         
-        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}>
-        {submitted? <div className="success-message">Thank you for Sign In</div>: null}
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit} noValidate>
+        {submitted && valid ? <div className="success-message">Thank you for Sign In</div>: null}
           <fieldset>
             <legend>Sign in</legend>
               
