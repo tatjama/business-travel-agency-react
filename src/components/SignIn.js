@@ -53,7 +53,7 @@ export default function SignIn() {
     return(
     <div>
         
-        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit} noValidate>
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit} style={{display: "none"}} noValidate>
         {submitted && valid ? <div className="success-message">Thank you for Sign In</div>: null}
           <fieldset>
             <legend>Sign in</legend>
