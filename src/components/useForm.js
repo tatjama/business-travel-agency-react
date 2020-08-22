@@ -1,6 +1,7 @@
 import {useState} from 'react';
+import validateSignUp from './validateSignUp';
 
-const useForm = (callback)=> {
+export default function useForm (callback, validateSignUp) {
     const [values, setValues] = useState({
         firstName: "",
         lastName: "",
@@ -12,6 +13,20 @@ const useForm = (callback)=> {
         phone: "",
         phoneAlternative: ""
       })
+    const [errors, setErrors] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        passwordRepeat: "",
+        address: "",
+        addressAlternative: "",
+        phone: "",
+        phoneAlternative: ""
+      })
+      //set errors
+      //handling errors
+      // callback function errors to form
     
       const handleChange = (e)=>{
         const {name, value} = e.target;
@@ -25,6 +40,7 @@ const useForm = (callback)=> {
     
       const handleSubmit = (e)=>{
         e.preventDefault();
+        setErrors(validateSignUp(values));
         //signUp();
         callback();
       }
@@ -32,8 +48,8 @@ const useForm = (callback)=> {
    return{
     values,
     handleChange,
-    handleSubmit
+    handleSubmit,
+    errors
 } 
 }
 
-export default useForm;

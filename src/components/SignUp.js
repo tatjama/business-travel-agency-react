@@ -1,14 +1,16 @@
 import React from 'react';
 import useForm from './useForm';
+import validateSignUp from './validateSignUp';
 
 
 export default function SignUp(){
-  const { values, handleChange, handleSubmit } = useForm(signUp);
+  const { values, handleChange, handleSubmit, errors } = useForm(submitted, validateSignUp);
   
     //onClick
   
-   function signUp() {
+   function submitted() {
     alert('Clicked signUp');
+    console.log(values);
   }
   function hideSignUpForm(){
     console.log('Click Sign Up Form');
@@ -75,6 +77,8 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
+                                
+                                {errors.email && <p>{errors.email}</p>}
                                 <br/> 
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
@@ -88,7 +92,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
-                                
+                                {errors.password && <p>{errors.password}</p>}
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
                                   type="password" 
