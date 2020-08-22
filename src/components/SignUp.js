@@ -1,34 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
+import useForm from './useForm';
+
 
 export default function SignUp(){
-
-  const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    passwordRepeat: "",
-    address: "",
-    addressAlternative: "",
-    phone: "",
-    phoneAlternative: ""
-  })
-
-  const handleChange = (e)=>{
-    const {name, value} = e.target;
-    console.log(name);
-    console.log(value);
-    setValues({
-      ...values,
-      [name]: value
-    })    
-  }
-
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    signUp();
-  }
-
+  const { values, handleChange, handleSubmit } = useForm(signUp);
+  
     //onClick
   
    function signUp() {
@@ -77,7 +53,7 @@ export default function SignUp(){
                                 <span className="error-sign-up" title="Error. Valid surname contain only letters"></span>
                                 <input 
                                   type="text" 
-                                  name="surname" 
+                                  name="lastName" 
                                   placeholder=" Last name - (required)" 
                                   id="sign-up-surname" 
                                   onBlur={validName('sign-up-surname', 1, 'error-sign-up')} 
