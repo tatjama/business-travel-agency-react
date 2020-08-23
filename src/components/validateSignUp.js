@@ -20,6 +20,9 @@ export default function validateSignUp(values) {
     }else if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(values.password)){
         errors.password = "Password is invalid!";
     }
+    if(values.password !== values.passwordRepeat){
+        errors.passwordRepeat = "Password not match!"
+    }
     if(!values.address){
         errors.address = "Address is required!";        
     }else if(!/[A-Z][a-zA-Z][^#&<>"~;$^%{}?]{1,20}$/.test(values.address)){
