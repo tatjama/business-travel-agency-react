@@ -27,6 +27,9 @@ html {
                font-size: small;
                text-transform: initial;
            }
+           .inputError{
+               color: red;
+           }
            a {
                color: white;
                text-decoration: none;

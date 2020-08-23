@@ -12,17 +12,7 @@ import {useState, useEffect} from 'react';
         phone: "",
         phoneAlternative: ""
       })
-    const [errors, setErrors] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        passwordRepeat: "",
-        address: "",
-        addressAlternative: "",
-        phone: "",
-        phoneAlternative: ""
-      })
+    const [errors, setErrors] = useState({})
       //set errors
       //handling errors
       // callback function errors to form

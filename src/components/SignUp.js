@@ -43,6 +43,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="text" 
                                   name="firstName" 
+                                  className = {`${errors.firstName && "inputError"}`}
                                   placeholder=" First name - (required)" 
                                   id="sign-up-name" 
                                   onBlur={validName('sign-up-name', 0, 'error-sign-up')} 
@@ -56,6 +57,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="text" 
                                   name="lastName" 
+                                  className = {`${errors.lastName && "inputError"}`}
                                   placeholder=" Last name - (required)" 
                                   id="sign-up-surname" 
                                   onBlur={validName('sign-up-surname', 1, 'error-sign-up')} 
@@ -69,6 +71,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="email" 
                                   name="email" 
+                                  className = {`${errors.email && "inputError"}`}
                                   placeholder=" E-mail - (required)" 
                                   id="sign-up-e-mail" 
                                   onBlur={validEMail('sign-up-e-mail', 2, 'error-sign-up')} 
@@ -84,6 +87,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="password" 
                                   name="password" 
+                                  className = {`${errors.password && "inputError"}`}
                                   placeholder=" Password - (required)" 
                                   id="sign-up-password" 
                                   onBlur={validPassword('sign-up-password', 3, 'error-sign-up')} 
@@ -97,6 +101,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="password" 
                                   name="passwordRepeat" 
+                                  className = {`${errors.passwordRepeat && "inputError"}`}
                                   placeholder=" Repeat password - (required)" 
                                   id="sign-up-password-r" 
                                   onBlur={validPassword('sign-up-password-r', 4, 'error-sign-up')} 
@@ -115,6 +120,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="text" 
                                   name="address" 
+                                  className = {`${errors.address && "inputError"}`}
                                   placeholder=" Address 1 - (required)" 
                                   id="address1" 
                                   onBlur={validPassword('address1', 5, 'error-sign-up')} 
@@ -128,6 +134,7 @@ const SignUp = ()=>{
                                 <input 
                                   type="text" 
                                   name="addressAlternative" 
+                                  className = {`${errors.addressAlternative && "inputError"}`}
                                   placeholder=" Address 2" 
                                   id="address2" 
                                   onBlur={validPassword('address2', 6, 'error-sign-up')} 
@@ -142,6 +149,7 @@ const SignUp = ()=>{
                                   name="phone" 
                                   minLength="11" 
                                   maxLength="15" 
+                                  className = {`${errors.phone && "inputError"}`}
                                   placeholder=" Phone 1 - (required)" 
                                   id="phone1" 
                                   onBlur={validPhone('phone1', 7, 'error-sign-up')} 
@@ -157,6 +165,7 @@ const SignUp = ()=>{
                                   name="phoneAlternative" 
                                   minLength="11" 
                                   maxLength="15" 
+                                  className = {`${errors.phoneAlternative && "inputError"}`}
                                   placeholder=" Phone 2" 
                                   id="phone2" 
                                   onBlur={validPhone('phone2', 8, 'error-sign-up')} 
