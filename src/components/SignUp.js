@@ -51,7 +51,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
-                                <br/>
+                                {errors.firstName && <p className="error-message">{errors.firstName}</p>}
                                 <span className="error-sign-up" title="Error. Valid surname contain only letters"></span>
                                 <input 
                                   type="text" 
@@ -64,7 +64,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
-                                <br/> 
+                                {errors.lastName && <p className="error-message">{errors.lastName}</p>}
                                 <span className="error-sign-up" title="Error. E-mail format something@something.com"></span>
                                 <input 
                                   type="email" 
@@ -78,8 +78,8 @@ export default function SignUp(){
                                   required
                                 />
                                 
-                                {errors.email && <p>{errors.email}</p>}
-                                <br/> 
+                                {errors.email && <p className="error-message">{errors.email}</p>}
+                                
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
                                   type="password" 
@@ -92,7 +92,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
-                                {errors.password && <p>{errors.password}</p>}
+                                {errors.password && <p className="error-message">{errors.password}</p>}
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
                                   type="password" 
@@ -105,6 +105,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
+                                {errors.password && <p className="error-message">{errors.password}</p>}
                             </div>
 
                             <div id="formRight" >
@@ -121,7 +122,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
-                                <br/> 
+                              {errors.address && <p className="error-message">{errors.address}</p>}
                                 <span className="error-sign-up" title="Error. Address contain only letters and numbers"></span>
                                 <input 
                                   type="text" 
@@ -148,7 +149,7 @@ export default function SignUp(){
                                   onChange = {handleChange}
                                   required
                                 />
-                                <br/>
+                                 { errors.phone && <p className="error-message">{errors.phone}</p>}
                                 <span className="error-sign-up" title="Error. Phone contain only numbers"></span>
                                 <input 
                                   type="number" 
