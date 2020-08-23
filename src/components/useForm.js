@@ -1,24 +1,27 @@
 import {useState, useEffect} from 'react';
 
+const initValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    passwordRepeat: "",
+    address: "",
+    addressAlternative: "",
+    phone: "",
+    phoneAlternative: ""
+  };
+
  const useForm = (callback, validateSignUp) => {
-    const [values, setValues] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        passwordRepeat: "",
-        address: "",
-        addressAlternative: "",
-        phone: "",
-        phoneAlternative: ""
-      })
+    const [values, setValues] = useState(initValues);
     const [errors, setErrors] = useState({})
       //set errors
       //handling errors
       // callback function errors to form
     const [isSent, setIsSent] = useState(false);  
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);     
 
+    
       const handleChange = (e)=>{
         const {name, value} = e.target;
         setIsSubmitting(false);
@@ -29,14 +32,16 @@ import {useState, useEffect} from 'react';
     
       const handleSubmit = (e)=>{
         e.preventDefault();
-        setErrors(validateSignUp(values));
+        setErrors(validateSignUp(values));        
         setIsSubmitting(true);
-        setIsSent(true);
+        setIsSent(true);          
        }
 
       useEffect(()=>{
           if(Object.keys(errors).length === 0 && isSubmitting && isSent){
-              callback();
+              callback(
+                setValues(initValues)
+              );
           }
       }, [errors])
     
