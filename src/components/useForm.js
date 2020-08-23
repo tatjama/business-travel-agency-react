@@ -35,7 +35,7 @@ const initValues = {
         setErrors(validateSignUp(values));        
         setIsSubmitting(true);
         setIsSent(true);          
-       }
+       }   
 
       useEffect(()=>{
           if(Object.keys(errors).length === 0 && isSubmitting && isSent){
@@ -45,10 +45,14 @@ const initValues = {
           }
       }, [errors])
     
+      const handleReset = (e)=>{
+        setValues(initValues);
+      }
    return{
     values,
     handleChange,
     handleSubmit,
+    handleReset,
     errors
 } 
 }
