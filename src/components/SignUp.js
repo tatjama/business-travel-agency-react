@@ -8,31 +8,13 @@ const SignUp = ()=>{
   
     //onClick
   
-   function submitted() {
+   function submitted(initValues) {
     alert('Submitted succesfully');
     console.log(values);
   }
   function hideSignUpForm(){
     console.log('Click Sign Up Form');
   }
-  //onFocus
-  function clearonFocus(){
-    console.log('Focus function');
-  }
-  //onBlur
-  function validName() {
-    console.log('Blur name');
-  }
-  function validEMail() {
-    console.log('Blur email');
-  }
-  function validPassword() {
-    console.log('Blur password');
-  }
-  function validPhone() {
-    console.log('Blur phone');
-  }
-
     return(
         <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate /*style={{display: "none"}}*/ >
                    <fieldset className="sign-up-fieldset">                
@@ -45,9 +27,7 @@ const SignUp = ()=>{
                                   name="firstName" 
                                   className = {`${errors.firstName && "inputError"}`}
                                   placeholder=" First name - (required)" 
-                                  id="sign-up-name" 
-                                  onBlur={validName('sign-up-name', 0, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 0)} 
+                                  id="sign-up-name"   
                                   value = {values.firstName}
                                   onChange = {handleChange}
                                   required
@@ -59,9 +39,7 @@ const SignUp = ()=>{
                                   name="lastName" 
                                   className = {`${errors.lastName && "inputError"}`}
                                   placeholder=" Last name - (required)" 
-                                  id="sign-up-surname" 
-                                  onBlur={validName('sign-up-surname', 1, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 1)} 
+                                  id="sign-up-surname"  
                                   value={values.lastName}
                                   onChange = {handleChange}
                                   required
@@ -74,8 +52,6 @@ const SignUp = ()=>{
                                   className = {`${errors.email && "inputError"}`}
                                   placeholder=" E-mail - (required)" 
                                   id="sign-up-e-mail" 
-                                  onBlur={validEMail('sign-up-e-mail', 2, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 2)}
                                   value = {values.email} 
                                   onChange = {handleChange}
                                   required
@@ -90,8 +66,6 @@ const SignUp = ()=>{
                                   className = {`${errors.password && "inputError"}`}
                                   placeholder=" Password - (required)" 
                                   id="sign-up-password" 
-                                  onBlur={validPassword('sign-up-password', 3, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 3)}
                                   value = {values.password} 
                                   onChange = {handleChange}
                                   required
@@ -104,8 +78,6 @@ const SignUp = ()=>{
                                   className = {`${errors.passwordRepeat && "inputError"}`}
                                   placeholder=" Repeat password - (required)" 
                                   id="sign-up-password-r" 
-                                  onBlur={validPassword('sign-up-password-r', 4, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 4)}
                                   value = {values.passwordRepeat} 
                                   onChange = {handleChange}
                                   required
@@ -122,9 +94,7 @@ const SignUp = ()=>{
                                   name="address" 
                                   className = {`${errors.address && "inputError"}`}
                                   placeholder=" Address 1 - (required)" 
-                                  id="address1" 
-                                  onBlur={validPassword('address1', 5, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 5)}
+                                  id="address1"   
                                   value = {values.address} 
                                   onChange = {handleChange}
                                   required
@@ -136,9 +106,7 @@ const SignUp = ()=>{
                                   name="addressAlternative" 
                                   className = {`${errors.addressAlternative && "inputError"}`}
                                   placeholder=" Address 2" 
-                                  id="address2" 
-                                  onBlur={validPassword('address2', 6, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 6)}
+                                  id="address2"  
                                   value = {values.addressAlternative}
                                   onChange = {handleChange}
                                 />
@@ -151,9 +119,7 @@ const SignUp = ()=>{
                                   maxLength="15" 
                                   className = {`${errors.phone && "inputError"}`}
                                   placeholder=" Phone 1 - (required)" 
-                                  id="phone1" 
-                                  onBlur={validPhone('phone1', 7, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 7)} 
+                                  id="phone1"   
                                   value = {values.phone}
                                   onChange = {handleChange}
                                   required
@@ -167,9 +133,7 @@ const SignUp = ()=>{
                                   maxLength="15" 
                                   className = {`${errors.phoneAlternative && "inputError"}`}
                                   placeholder=" Phone 2" 
-                                  id="phone2" 
-                                  onBlur={validPhone('phone2', 8, 'error-sign-up')} 
-                                  onFocus={clearonFocus('error-sign-up', 8)}
+                                  id="phone2"   
                                   value = {values.phoneAlternative}
                                   onChange = {handleChange}
                                 />
