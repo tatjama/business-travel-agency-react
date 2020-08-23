@@ -4,7 +4,7 @@ import validateSignUp from './validateSignUp';
 
 
 const SignUp = ()=>{
-  const { values, handleChange, handleSubmit, errors } = useForm(submitted, validateSignUp);
+  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignUp);
   
     //onClick
   
@@ -146,7 +146,7 @@ const SignUp = ()=>{
                         </div>
                         <div className="buttons">
                             <button type="submit">Sign Up</button>
-                            <button type="reset" >Clear</button>
+                            <button type="reset" onClick = {handleReset} >Clear</button>
                             <br/><br/>
                             <input type="button" onClick={hideSignUpForm} value="Close"/>
                         </div>
