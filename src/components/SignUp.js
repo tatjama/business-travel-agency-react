@@ -3,13 +3,13 @@ import useForm from './useForm';
 import validateSignUp from './validateSignUp';
 
 
-export default function SignUp(){
+const SignUp = ()=>{
   const { values, handleChange, handleSubmit, errors } = useForm(submitted, validateSignUp);
   
     //onClick
   
    function submitted() {
-    alert('Clicked signUp');
+    alert('Submitted succesfully');
     console.log(values);
   }
   function hideSignUpForm(){
@@ -106,6 +106,7 @@ export default function SignUp(){
                                   required
                                 />
                                 {errors.password && <p className="error-message">{errors.password}</p>}
+                                {errors.passwordRepeat && <p className="error-message">{errors.passwordRepeat}</p>}
                             </div>
 
                             <div id="formRight" >
@@ -181,3 +182,4 @@ export default function SignUp(){
 
     )
 }
+export default SignUp;

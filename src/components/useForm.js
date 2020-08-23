@@ -1,7 +1,6 @@
-import {useState} from 'react';
-import validateSignUp from './validateSignUp';
+import {useState, useEffect} from 'react';
 
-export default function useForm (callback, validateSignUp) {
+ const useForm = (callback, validateSignUp) => {
     const [values, setValues] = useState({
         firstName: "",
         lastName: "",
@@ -27,23 +26,29 @@ export default function useForm (callback, validateSignUp) {
       //set errors
       //handling errors
       // callback function errors to form
-    
+    const [isSent, setIsSent] = useState(false);  
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
       const handleChange = (e)=>{
         const {name, value} = e.target;
-        console.log(name);
-        console.log(value);
-        setValues({
-          ...values,
-          [name]: value
-        })    
-      }
+        setIsSubmitting(false);
+        const newValues = {...values, [name]: value};       
+        isSent && setErrors(validateSignUp(newValues));
+        setValues(values =>(newValues));
+      };     
     
       const handleSubmit = (e)=>{
         e.preventDefault();
         setErrors(validateSignUp(values));
-        //signUp();
-        callback();
-      }
+        setIsSubmitting(true);
+        setIsSent(true);
+       }
+
+      useEffect(()=>{
+          if(Object.keys(errors).length === 0 && isSubmitting && isSent){
+              callback();
+          }
+      }, [errors])
     
    return{
     values,
@@ -53,3 +58,4 @@ export default function useForm (callback, validateSignUp) {
 } 
 }
 
+export default useForm;
