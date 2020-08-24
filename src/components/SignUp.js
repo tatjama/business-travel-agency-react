@@ -22,12 +22,13 @@ const SignUp = ()=>{
     alert('Submitted successfully');
     setIsSuccess(true);
     console.log(values);
-  }
-  function hideSignUpForm(){
-    console.log('Click Sign Up Form');
+    document.getElementById('sign-in-form').style.display = "block";
+    document.getElementById('sign-up-form').style.display = "none";
+    document.getElementById('go-sign-in-form').style.display = "none";
+    document.getElementById('go-sign-up-form').style.display = "block";
   }
     return(
-        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate  >
+        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate style={{display: "none"}}  >
           {isSuccess && <div className="success-message">Thank you for register</div>}
                    <fieldset className="sign-up-fieldset">     
                    <legend>SIGN UP</legend>           
@@ -161,7 +162,7 @@ const SignUp = ()=>{
                             <button type="submit">Sign Up</button>
                             <button type="reset" onClick = {handleReset} >Clear</button>
                             <br/><br/>
-                            <input type="button" onClick={hideSignUpForm} value="Close"/>
+                            {/*<input type="button" onClick={hideSignUpForm} value="Close"/>*/}
                         </div>
                    </fieldset>
                 </form>
