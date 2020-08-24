@@ -19,7 +19,7 @@ const SignIn = () => {
     
     return(
     <div>        
-        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate style={{display: "none"}}>
         {isSuccess && <div className="success-message">Thank you for Sign In</div>}
           <fieldset>
             <legend>Sign in</legend>
