@@ -15,11 +15,14 @@ const SignIn = () => {
     alert('Submitted successfully');
     setIsSuccess(true);
     console.log(values);
+    document.getElementById('sign-in-form').style.display = "none";
+    document.getElementById('go-sign-up-form').style.display = "none";
+    document.getElementById('start').style.display = "block";
   } 
     
     return(
     <div>        
-        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate style={{display: "none"}}>
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
         {isSuccess && <div className="success-message">Thank you for Sign In</div>}
           <fieldset>
             <legend>Sign in</legend>
