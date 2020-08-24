@@ -2,13 +2,22 @@ import React from 'react';
 import useForm from './useForm';
 import validateSignUp from './validateSignUp';
 
+const initValuesForSignUp = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  passwordRepeat: "",
+  address: "",
+  addressAlternative: "",
+  phone: "",
+  phoneAlternative: ""
+};
 
 const SignUp = ()=>{
-  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignUp);
+  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignUp, initValuesForSignUp);
   
-    //onClick
-  
-   function submitted(initValues) {
+  function submitted() {
     alert('Submitted succesfully');
     console.log(values);
   }
@@ -16,7 +25,7 @@ const SignUp = ()=>{
     console.log('Click Sign Up Form');
   }
     return(
-        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate /*style={{display: "none"}}*/ >
+        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate  >
                    <fieldset className="sign-up-fieldset">                
                         <div id="formMain">
                            <div id="formLeft" >
