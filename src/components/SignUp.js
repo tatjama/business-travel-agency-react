@@ -7,7 +7,7 @@ const initValuesForSignUp = {
   lastName: "",
   email: "",
   password: "",
-  passwordRepeat: "",
+  passwordConfirm: "",
   address: "",
   addressAlternative: "",
   phone: "",
@@ -27,7 +27,7 @@ const SignUp = ()=>{
     console.log('Click Sign Up Form');
   }
     return(
-        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate style={{display: "none"}} >
+        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate  >
           {isSuccess && <div className="success-message">Thank you for register</div>}
                    <fieldset className="sign-up-fieldset">     
                    <legend>SIGN UP</legend>           
@@ -87,16 +87,16 @@ const SignUp = ()=>{
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
                                   type="password" 
-                                  name="passwordRepeat" 
-                                  className = {`${errors.passwordRepeat && "inputError"}`}
-                                  placeholder=" Repeat password - (required)" 
+                                  name="passwordConfirm" 
+                                  className = {`${errors.passwordConfirm && "inputError"}`}
+                                  placeholder=" Confirm password - (required)" 
                                   id="sign-up-password-r" 
-                                  value = {values.passwordRepeat} 
+                                  value = {values.passwordConfirm} 
                                   onChange = {handleChange}
                                   required
                                 />
                                 {errors.password && <p className="error-message">{errors.password}</p>}
-                                {errors.passwordRepeat && <p className="error-message">{errors.passwordRepeat}</p>}
+                                {errors.passwordConfirm && <p className="error-message">{errors.passwordConfirm}</p>}
                             </div>
 
                             <div id="formRight" >

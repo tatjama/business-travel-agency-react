@@ -24,7 +24,7 @@ html {
            }
            .error-message{
                color: white;
-               font-size: small;
+               font-size: 12px;
                text-transform: initial;
            }
            .inputError{
