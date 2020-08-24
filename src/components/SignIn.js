@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useForm from './useForm';
 import validateSignIn from './validateSignIn';
 
@@ -9,16 +9,18 @@ const initValuesForSignIn = {
 
 const SignIn = () => {
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn);
-  
+  const [isSuccess, setIsSuccess] = useState(false)
+
   function submitted() {
-    alert('Submitted succesfully');
+    alert('Submitted successfully');
+    setIsSuccess(true);
     console.log(values);
   } 
     
     return(
     <div>        
-        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate style={{display: "none"}}>
-        {/*submitted && valid ? <div className="success-message">Thank you for Sign In</div>: null*/}
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
+        {isSuccess && <div className="success-message">Thank you for Sign In</div>}
           <fieldset>
             <legend>Sign in</legend>
             <br/>

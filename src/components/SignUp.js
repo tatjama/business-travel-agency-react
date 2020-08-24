@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useForm from './useForm';
 import validateSignUp from './validateSignUp';
 
@@ -16,17 +16,21 @@ const initValuesForSignUp = {
 
 const SignUp = ()=>{
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignUp, initValuesForSignUp);
+  const [isSuccess, setIsSuccess] = useState(false);
   
   function submitted() {
-    alert('Submitted succesfully');
+    alert('Submitted successfully');
+    setIsSuccess(true);
     console.log(values);
   }
   function hideSignUpForm(){
     console.log('Click Sign Up Form');
   }
     return(
-        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate  >
-                   <fieldset className="sign-up-fieldset">                
+        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate style={{display: "none"}} >
+          {isSuccess && <div className="success-message">Thank you for register</div>}
+                   <fieldset className="sign-up-fieldset">     
+                   <legend>SIGN UP</legend>           
                         <div id="formMain">
                            <div id="formLeft" >
                                 
