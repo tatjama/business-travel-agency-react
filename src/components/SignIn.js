@@ -1,100 +1,60 @@
-import React, {useState} from 'react';
+import React from 'react';
+import useForm from './useForm';
+import validateSignIn from './validateSignIn';
 
-export default function SignIn() {
+const initValuesForSignIn = {
+  email: '',
+  password: ''
+};
 
-    const [values, setValues] = useState({
-        eMail: '',
-        password: ''
-    });
-    const handleEMailInputChange = (e)=>{
-        e.persist();
-        setValues((values)=>({
-            ...values,
-            eMail: e.target.value,
-        }));
-    };
-    const handlePasswordInputChange = (e)=>{
-        e.persist();
-        setValues((values)=>({
-            ...values,
-            password: e.target.value,
-        }));
-    };
-
-    const [submitted, setSubmitted] = useState(false);
-    const [ valid, setValid] = useState(false);
-
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-       if(values.eMail && values.password){
-            setValid(true);
-        }
-        setSubmitted(true);
-        alert('Submit');
-    }
-
-    
- //onClick
-    function signIn() {
-        alert('Clicked signIn');
-      }
- //onFocus
-   function clearonFocus(){
-    console.log('Focus function');
-  }
-  //onBlur
+const SignIn = () => {
+  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn);
   
-  function validEMail() {
-    console.log('Blur email');
-  }
-  function validPassword() {
-    console.log('Blur password');
-  }
+  function submitted() {
+    alert('Submitted succesfully');
+    console.log(values);
+  } 
+    
     return(
-    <div>
-        
-        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit} style={{display: "none"}} noValidate>
-        {submitted && valid ? <div className="success-message">Thank you for Sign In</div>: null}
+    <div>        
+        <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate style={{display: "none"}}>
+        {/*submitted && valid ? <div className="success-message">Thank you for Sign In</div>: null*/}
           <fieldset>
             <legend>Sign in</legend>
-              
-            { submitted && !values.eMail ? <span className="error-message" id="email-error" >* Please, fill email</span> : null }
-              <br/>
+            <br/>
             <span className="error-sign-in"  title="Error. E-mail format something@something.com"></span>
             <input 
-                type="email"  
+                type="email"                 
+                name = "email"
+                className={`${errors.email && "inputError"}`}
+                placeholder = " E-mail "
                 id="sign-in-e-mail" 
-                onBlur={validEMail('sign-in-e-mail', 0, 'error-sign-in')} 
-                onFocus={clearonFocus('error-sign-in', 0)} 
-                required = {true}
-                value = {values.eMail}
-                onChange = {handleEMailInputChange}
-                placeholder = " E-MAIL "
-            /><br/>
-             
-            
-        
-            {submitted && !values.password ? <span className = "error-message">* Please, fill password</span> : null }
-            <br/>
-            <span className="error-sign-in"  title="Error. Password format only recive letters and numbers"></span>
-            <input 
-                type="password" 
-                id="sign-in-password"  
-                onBlur={validPassword('sign-in-password', 1, 'error-sign-in')} 
-                onFocus={clearonFocus('error-sign-in', 1)} 
-                required = {true}
-                value = {values.password}
-                onChange = {handlePasswordInputChange}
-                placeholder = " PASSWORD "
+                value = {values.email}
+                onChange = {handleChange}
+                required = {true}                
             />
             <br/>
+             {errors.email && <p className="error-message">{errors.email}</p>}
+            <span className="error-sign-in"  title="Error. Password format only recive letters and numbers"></span>
+            <input 
+                type="password"                 
+                name="password"
+                className={`${errors.password && "inputError"}` }
+                placeholder = " Password "
+                id="sign-in-password"
+                value = {values.password}
+                onChange = {handleChange} 
+                required = {true}                
+            />
+            {errors.password && <p className = "error-message">{errors.password}</p>}
+            <br/>
             <br/>            
-            <button type="submit" onClick={signIn}>Sign in </button>
-            <button type="reset" >Clear</button>
+            <button type="submit" >Sign in </button>
+            <button type="reset" onClick = {handleReset}>Clear</button>
         </fieldset>
-      </form>
-      
-      
+      </form>      
     </div>
     )
 }
+
+export default  SignIn;
