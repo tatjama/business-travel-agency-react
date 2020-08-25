@@ -14,16 +14,21 @@ export default function IntroHeader() {
         document.getElementById('sign-in-form').style.display = "block";
         document.getElementById('sign-up-form').style.display = "none";
       }
+      function showStartPage() {
+        document.getElementById('start').style.display = 'none';
+        document.getElementById('start-page').style.display = "block";
+        document.getElementById('intro-page').style.display = "none";
+      }
    
 
     return(
         <header className="container">
 
       {/*<!--NAVIGATION-->*/}
-          <div className="topnav">
-            <a id="start" className="active" href="./view/start.html" style={{display: "none"}}>Start</a>           
-            <a id="go-sign-up-form" href="#sign-up-form" onClick={showSignUpForm}>Sign Up</a>
-            <a id="go-sign-in-form" href="#sign-in-form" onClick={showSignInForm} style={{display:"none"}}>Sign In</a>            
+          <div className="sign-nav">
+            <button id="start"  onClick={showStartPage} style={{display: "none"}}>Start</button>           
+            <button id="go-sign-up-form"  onClick={showSignUpForm}>Sign Up</button>
+            <button id="go-sign-in-form" onClick={showSignInForm} style={{display:"none"}}>Sign In</button>            
           </div>
         </header>
 

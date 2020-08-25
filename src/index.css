@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 body,
 html {
                height: 100vh;
@@ -30,11 +35,11 @@ html {
            .inputError{
                color: red;
            }
-           a {
+           /*a {
                color: white;
                text-decoration: none;
                padding: 20px;
-           }            
+           }*/            
 
            /*SIGN IN*/
            .sign-form{
@@ -50,7 +55,7 @@ html {
                left: 40%;
                top: 30%;
            }            
-           fieldset {
+           .sign-form fieldset {
                border: 0px solid gray;
                border-radius: 10px;
                color: white;                
@@ -58,26 +63,27 @@ html {
                text-transform: uppercase;
                transform: scale(1.2);
            }
-           legend{
+           .sign-form legend{
                text-transform: uppercase;
                font-size: 16px;
            }
-           input {
+           .sign-form input {
                width: 90%;
                height: 30px;
                margin: 7px;
                padding: 0px;
            }
-           button {
+           .sign-form button,
+           .sign-nav button {
                padding: 5px;
                width: 100px;
-               margin: px;
+               margin: 3px;
                background-color: transparent;
                font-weight: bold;
                color: white;
                text-transform: uppercase;
            }                
-           button:hover {
+           .sign-form button:hover {
                background-color: rgb(151, 170, 206);
                color: black;
                font-weight: bold;
@@ -108,12 +114,12 @@ html {
            
            /* NAVIGATION */
            
-           .topnav {
+           .sign-nav {
                overflow: hidden;
                background-color: transparent;
                transition: transform .2s;
            }            
-           .topnav a {
+           /*.topnav a {
                float: left;
                display: block;
                color: white;
@@ -125,7 +131,107 @@ html {
            .topnav a:hover {
               font-weight: bold;
                transform: scale(1.2);
-           } 
+           } */
+
+           /**PAGES**/
+           /******---NAVIGATION----*****/
+
+           .top-nav {
+            overflow: hidden;
+            background-color: black;
+            transition: transform .2s;
+        }    
+        .top-nav li {
+            color: white;
+            float: left;
+            display: block;       
+            text-align: center;
+            padding: 13px;
+            text-transform: uppercase;            
+        }    
+        .top-nav li:hover {
+            text-shadow: black 2px 2px 2px;
+            transform: scale(1.1);
+        }    
+        .active {
+            background-color: slategray;
+            color: wheat;
+        }    
+        .top-nav .icon {
+            display: none;
+            text-align: center;
+        }
+              
+           /*-----------HEADER-----*/
+.header {
+    background-repeat: no-repeat;
+    background-size: cover;   
+    padding: Spx;
+    text-align: center;
+    height: 250px;
+}  
+#message {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    right: 0%;
+    padding: 10px;
+}
+
+           /*-------HOME-----*/
+
+/*HEADER*/
+
+#header-home {
+    background-image: url("./images/metropolis.webp");
+    background-position: center;   
+    height: 100vh;
+    padding: 50px 0px;
+}
+/***SELECT***/
+   /*SELECT*/
+
+   input, select {
+    padding: 10px;
+    width: 200px;
+    margin: 5px;
+}
+input{
+    width: 100%;
+}
+button {
+    padding: 10px;
+    margin: 10px 10px 10px 0px;
+    background-color: rgb(23, 88, 88);
+    color: white;
+    font-weight: bold;
+    width: 130px;
+}
+
+button:hover {
+    background-color: slategray;
+}
+
+.choose-destination {
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:transparent;
+    color: white;
+    width: 300px;
+    text-align: center;            
+    padding: 10px 50px;
+}   
+.choose-destination button {
+    margin: 4px;
+    width: 100%;
+} 
+.choose-city button {
+    width: 200px;
+    margin: 5px;
+}
+
           
            /*RESPONSIVE*/           
            
@@ -138,9 +244,13 @@ html {
                    height: 700px;
                    padding: 100px 10px;
                }
-               input{
+               .sign-form input{
                    width: 200px;
-               }                
+               }   
+               .top-nav li{
+                padding: 10px;
+                font-size: small;
+            }             
            }
            
            @media screen and (max-width: 630px) {
@@ -160,6 +270,27 @@ html {
                    width: 140px;
                    margin: 5px;
                } 
+               .top-nav li:not(:first-child) {
+                display: none;
+            }
+            .top-nav li.icon {
+                float: right;
+                display: block;
+            }
+            .top-nav.responsive {
+                position: relative;
+            }
+            .top-nav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .top-nav.responsive li {
+                float: none;
+                display: block;
+                text-align: center;
+            }
+           
            }    
            /*FOOTER*/
            
@@ -171,3 +302,7 @@ html {
                text-align: center;
                padding: 1% 3%;
            }  
+           .footer-credits {
+                color: gray;
+                font-size: 10px;
+           }
