@@ -1,22 +1,23 @@
 import React from 'react';
 //import '../index.css';
-import Footer from '../components/Footer';
-//import IntroHeader from '../components/IntroHeader';
+//import Footer from '../components/Footer';
+import IntroHeader from '../components/IntroHeader';
 import SignIn from '../components/SignIn';
 import SignUp from '../components/SignUp';
 
 
 export default function Intro(){
     return(
-        <div >
-        <SignIn/>
-        
-          {/*<!--SIGN UP POP-UP FORM-->*/}
-
-          <div >
-              <SignUp/>
+        <div id = "intro-page">
+          <div id = "intro-page-gradient">
+            <IntroHeader/>  
+            <div >
+              <SignIn/>
+              <div >
+                <SignUp/>
+              </div>            
+            </div>
           </div>
-            <Footer/>
-    </div>
+      </div>        
     )
 }

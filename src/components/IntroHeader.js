@@ -3,6 +3,7 @@ import React from 'react';
 export default function IntroHeader() {
     //onClick
     function showSignUpForm(){
+      alert('press Sign Up');
         document.getElementById('go-sign-in-form').style.display = "block";
         document.getElementById('go-sign-up-form').style.display = "none";
         document.getElementById('sign-in-form').style.display = "none";
