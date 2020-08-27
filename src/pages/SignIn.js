@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import useForm from '../components/useForm';
 import validateSignIn from '../components/validateSignIn';
+import {useAppContext} from '../libs/contextLib';
 
 const initValuesForSignIn = {
   email: '',
@@ -10,9 +11,11 @@ const initValuesForSignIn = {
 const SignIn = () => {
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn);
   const [isSuccess, setIsSuccess] = useState(false)
+  const { setUserHasAuthenticated} = useAppContext();
 
   function submitted() {
     alert('Submitted successfully');
+    setUserHasAuthenticated(true);
     setIsSuccess(true);
     console.log(values);
     document.getElementById('sign-in-form').style.display = "none";
