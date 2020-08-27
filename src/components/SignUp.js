@@ -28,7 +28,9 @@ const SignUp = ()=>{
     document.getElementById('go-sign-up-form').style.display = "block";
   }
     return(
-        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate style={{display: "none"}}  >
+      <div className = "intro-page">        
+      <div className="intro-page-gradient"> 
+        <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate   >
           {isSuccess && <div className="success-message">Thank you for register</div>}
                    <fieldset className="sign-up-fieldset">     
                    <legend>SIGN UP</legend>           
@@ -166,7 +168,8 @@ const SignUp = ()=>{
                         </div>
                    </fieldset>
                 </form>
-
+                </div>
+      </div>
     )
 }
 export default SignUp;

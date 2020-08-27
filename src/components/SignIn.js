@@ -21,7 +21,9 @@ const SignIn = () => {
   } 
     
     return(
-    <div>        
+    <div className = "intro-page">        
+      <div className="intro-page-gradient">                          
+           
         <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
         {isSuccess && <div className="success-message">Thank you for Sign In</div>}
           <fieldset>
@@ -58,6 +60,7 @@ const SignIn = () => {
             <button type="reset" onClick = {handleReset}>Clear</button>
         </fieldset>
       </form>      
+    </div>
     </div>
     )
 }

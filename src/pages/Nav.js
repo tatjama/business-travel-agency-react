@@ -28,8 +28,11 @@ const Nav = () => {
                 <Link to="/">
                  <li className="active">Home</li>
                 </Link>
-                <Link to="/intro">
-                    <li>Intro</li>
+                <Link to="/signin">
+                    <li>Sign in</li>
+                </Link>
+                <Link to="/signup">
+                    <li>Sign Up</li>
                 </Link>
 
                 <Link to="/life">
