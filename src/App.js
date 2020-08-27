@@ -1,21 +1,39 @@
 import React from 'react';
+import Footer from './components/Footer';
+//import SelectForm from './components/SelectForm';
+import {BrowserRouter as Router, Switch, Route} from  'react-router-dom';
+import Nav from './pages/Nav';
 import Intro from './pages/Intro';
-import Start from './pages/Start';
-import IntroHeader from './components/IntroHeader';
+import Home from './pages/Home';
+import Life from './pages/Life';
+import Accommodation from './pages/Accommodation';
+import Enjoy from './pages/Enjoy';
+import Feedback from './pages/Feedbacks';
+import Providers from './pages/Providers';
 
- function App(props){   
-  return(
-    <div>
-      <div id = "intro-page">
-        <IntroHeader/>  
-        <Intro />
-      </div>
-      <div id = "start-page" style = {{display: "none"}}>
-        <Start  />
-      </div>
-    </div>
-  )
-   
+
+
+const App = ()=>{
+    return(
+        <div id = "start-page">
+          <Intro/>
+            <Router>
+             <Nav/>
+             <Switch>
+             <Route path = "/" exact component = {Home}/>
+               <Route path = "/intro" component = {Intro}/>               
+               <Route path = "/life" component = {Life} />
+               <Route path = "/accommodation" component = {Accommodation}/>
+               <Route path = "/enjoy" component = {Enjoy}/>
+               <Route path = "/feedbacks" component = {Feedback} />
+               <Route path = "/providers" component = {Providers} />
+             </Switch>
+            </Router>
+            
+        <Footer/>
+        </div>
+    )
 }
 
-export default App
+
+export default App;
