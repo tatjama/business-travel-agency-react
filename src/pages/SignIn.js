@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import useForm from './useForm';
-import validateSignIn from './validateSignIn';
+import useForm from '../components/useForm';
+import validateSignIn from '../components/validateSignIn';
 
 const initValuesForSignIn = {
   email: '',
@@ -38,6 +38,7 @@ const SignIn = () => {
                 id="sign-in-e-mail" 
                 value = {values.email}
                 onChange = {handleChange}
+                autoFocus
                 required = {true}                
             />
             <br/>
