@@ -17,7 +17,8 @@ export default function IntroHeader() {
       }
       function showStartPage() {
         document.getElementById('start').style.display = 'none';
-        document.getElementById('start-page').style.display = "block";
+       // document.getElementById('start-page').style.display = "block";
+        document.getElementById('home-page').style.display = "block";
         document.getElementById('intro-page').style.display = "none";
       }
    
