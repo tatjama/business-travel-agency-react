@@ -15,8 +15,12 @@ import Providers from './pages/Providers';
 
 const App = ()=>{
     return(
-        <div id = "start-page">
+        <div >
+          <div id="intro-page">
           <Intro/>
+          </div>
+          
+          <div id = "start-page" >
             <Router>
              <Nav/>
              <Switch>
@@ -29,6 +33,12 @@ const App = ()=>{
                <Route path = "/providers" component = {Providers} />
              </Switch>
             </Router>
+            
+            </div>
+            <div id="home-page">
+              <Home/>
+            </div>
+
             
         <Footer/>
         </div>

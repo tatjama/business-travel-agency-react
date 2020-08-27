@@ -1,6 +1,12 @@
 import React from 'react';
 
 const SelectForm = () =>{
+    function chooseDestination(e) {
+        e.preventDefault();
+        document.getElementById('start-page').style.display = "block";        
+        document.getElementById('home-page').style.display = "none";
+
+    }
     return(
         <form className="choose-destination">                 
                 <select className="nameCountry" >       
@@ -17,7 +23,7 @@ const SelectForm = () =>{
                             <option value="4">Moscow</option>
                         </select>
                 <br/>
-                <button className="choose-destination-button">Select</button>
+                <button type="submit" className="choose-destination-button" onClick={chooseDestination} >Select</button>
             </form>
     )
 }

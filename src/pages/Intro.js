@@ -8,16 +8,14 @@ import SignUp from '../components/SignUp';
 
 export default function Intro(){
     return(
-        <div id = "intro-page">
-          <div id = "intro-page-gradient">
-            <IntroHeader/>  
-            <div >
-              <SignIn/>
-              <div >
-                <SignUp/>
-              </div>            
-            </div>
-          </div>
-      </div>        
+      <div id = "intro-page-gradient">
+      <IntroHeader/>  
+      <div >
+        <SignIn/>
+        <div >
+          <SignUp/>
+        </div>            
+      </div>
+    </div>        
     )
 }
