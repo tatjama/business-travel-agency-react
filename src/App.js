@@ -10,6 +10,7 @@ import Accommodation from './pages/Accommodation';
 import Enjoy from './pages/Enjoy';
 import Feedback from './pages/Feedbacks';
 import Providers from './pages/Providers';
+import NotFound from './pages/NotFound';
 
 
 
@@ -31,6 +32,7 @@ const App = ()=>{
                <Route path = "/enjoy" component = {Enjoy}/>
                <Route path = "/feedbacks" component = {Feedback} />
                <Route path = "/providers" component = {Providers} />
+               <Route  component = {NotFound} />
              </Switch>
             </Router>           
         <Footer/>
