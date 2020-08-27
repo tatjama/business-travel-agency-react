@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import useForm from './useForm';
-import validateSignUp from './validateSignUp';
+import useForm from '../components/useForm';
+import validateSignUp from '../components/validateSignUp';
 
 const initValuesForSignUp = {
   firstName: "",
@@ -46,6 +46,7 @@ const SignUp = ()=>{
                                   id="sign-up-name"   
                                   value = {values.firstName}
                                   onChange = {handleChange}
+                                  autoFocus
                                   required
                                 />
                                 {errors.firstName && <p className="error-message">{errors.firstName}</p>}

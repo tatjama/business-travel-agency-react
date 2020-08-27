@@ -9,7 +9,7 @@ const SelectForm = () =>{
     }
     return(
         <form className="choose-destination">                 
-                <select className="nameCountry" >       
+                <select className="nameCountry" autoFocus >       
                         <option value="1">Serbia</option>
                         <option value="2">Greece</option>
                         <option value="3">Russia</option>
