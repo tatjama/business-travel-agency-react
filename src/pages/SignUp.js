@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import useForm from '../components/useForm';
 import validateSignUp from '../components/validateSignUp';
 
@@ -17,15 +18,13 @@ const initValuesForSignUp = {
 const SignUp = ()=>{
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignUp, initValuesForSignUp);
   const [isSuccess, setIsSuccess] = useState(false);
+  const history = useHistory();
   
   function submitted() {
     alert('Submitted successfully');
     setIsSuccess(true);
+    history.push('/signin');
     console.log(values);
-    //document.getElementById('sign-in-form').style.display = "block";
-    document.getElementById('sign-up-form').style.display = "none";
-   // document.getElementById('go-sign-in-form').style.display = "none";
-   // document.getElementById('go-sign-up-form').style.display = "block";
   }
     return(
       <div className = "intro-page">        

@@ -5,7 +5,6 @@ const Feedbacks = ()=>{
         <div className="pages">
             <h1>Feedbacks</h1>
         </div>
-
     )
 }
 
