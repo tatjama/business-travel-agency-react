@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Footer from './components/Footer';
-import {BrowserRouter as Router, Switch, Route, Link} from  'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, useHistory} from  'react-router-dom';
 //import Nav from './pages/Nav';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -17,28 +17,57 @@ import {AppContext} from './libs/contextLib';
 
 
 const App = ()=>{
- const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
- //const history = useHistory();
- function openNavHamburger() {
-    const myTopNav = document.getElementById("my-top-nav");
-    if(myTopNav.className === "top-nav"){
-        myTopNav.className += " responsive";
-    } else {
-        myTopNav.className = "top-nav";
+    const history = useHistory();
+    const [isAuthenticating, setIsAuthenticating ] = useState(true);
+    const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
+    
+ 
+    function handleSignOut() {
+        //await Auth.SignOut() - to complete signOut from session
+        setUserHasAuthenticated(false);
+        //history.push("./life");
+        
+        //setIsAuthenticating(true);
+        alert('Sign Out');
     }
-}
-function handleSignOut() {
-    setUserHasAuthenticated(false);
-    alert('Sign Out');
-}
+
+    useEffect(() => {
+        onLoad();
+        
+    }, [])
+
+    function onLoad() {
+        try {
+            //await Auth.currentSession(); 
+            //load current session - if it load, updates the 
+            //isAuthenticating state variable once the process is complete. 
+            //It does so by calling setIsAuthenticating(false).
+            setUserHasAuthenticated(true)
+        } catch (error) {
+            if(error !== 'No current user'){
+                alert(error)
+            }
+        }
+        setIsAuthenticating(false);
+    }
+
+    function openNavHamburger() {
+        const myTopNav = document.getElementById("my-top-nav");
+        if(myTopNav.className === "top-nav"){
+            myTopNav.className += " responsive";
+        } else {
+            myTopNav.className = "top-nav";
+        }
+    }
 
   
     return(
+        !isAuthenticating &&
         <div >        
             <Router>
             <div className="top-nav" id="my-top-nav">
             <ul>
-                <Link to="/"><li className="active">Home</li></Link>
+                
                 { isUserAuthenticated?
                     <li onClick = {handleSignOut}>Sign Out</li>
                     : <>
@@ -46,6 +75,7 @@ function handleSignOut() {
                     <Link to="/signup"><li>Sign Up</li></Link>
                     </>
                 }
+                <Link to="/"><li className="active">Home</li></Link>
                 <Link to="/life"><li>Life ...</li></Link>
                 <Link to="/accommodation"> <li>Accommodation</li></Link>
                 <Link to="/enjoy"><li >Enjoy ...</li></Link>
@@ -60,10 +90,10 @@ function handleSignOut() {
     </div>
 
              <Switch>   
-                 <AppContext.Provider value = {{ isUserAuthenticated, setUserHasAuthenticated}} >              
-                    <Route path = "/" exact  component = {Home}/>
+                 <AppContext.Provider value = {{ isUserAuthenticated, setUserHasAuthenticated}} >                     
                     <Route path = "/signIn"  component = {SignIn}/>  
-                    <Route path = "/signup" component = {SignUp} />             
+                    <Route path = "/signup" component = {SignUp} />    
+                    <Route path = "/" exact  component = {Home}/>         
                     <Route path = "/life" component = {Life} />
                     <Route path = "/accommodation" component = {Accommodation}/>
                     <Route path = "/enjoy" component = {Enjoy}/>

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import useForm from '../components/useForm';
 import validateSignIn from '../components/validateSignIn';
 import {useAppContext} from '../libs/contextLib';
@@ -9,15 +10,21 @@ const initValuesForSignIn = {
 };
 
 const SignIn = () => {
+  const history = useHistory();
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn);
   const [isSuccess, setIsSuccess] = useState(false)
   const { setUserHasAuthenticated} = useAppContext();
 
-  function submitted() {
-    alert('Submitted successfully');
-    setUserHasAuthenticated(true);
+  function submitted() {    
     setIsSuccess(true);
     console.log(values);
+    if(values.email === "user@user.com" && values.password === "UserUser1"){
+      alert('Submitted successfully');
+      setUserHasAuthenticated(true);
+      history.push('/');
+    }else{
+      alert( 'Invalid credentials!');
+    }
     //document.getElementById('sign-in-form').style.display = "none";
    // document.getElementById('go-sign-up-form').style.display = "none";
    // document.getElementById('start').style.display = "block";
