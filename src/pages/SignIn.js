@@ -18,9 +18,9 @@ const SignIn = () => {
     setUserHasAuthenticated(true);
     setIsSuccess(true);
     console.log(values);
-    document.getElementById('sign-in-form').style.display = "none";
-    document.getElementById('go-sign-up-form').style.display = "none";
-    document.getElementById('start').style.display = "block";
+    //document.getElementById('sign-in-form').style.display = "none";
+   // document.getElementById('go-sign-up-form').style.display = "none";
+   // document.getElementById('start').style.display = "block";
   } 
     
     return(
