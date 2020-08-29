@@ -133,24 +133,8 @@ html {
                transition: transform .2s;
               /* z-index:5;*/
            }    
-           #go-sign-up-form{
-              /* z-index: 10;*/
-           }        
-           /*.topnav a {
-               float: left;
-               display: block;
-               color: white;
-               text-align: center;
-               padding: 30px;
-               text-decoration: none;
-               text-transform: uppercase;
-           }            
-           .topnav a:hover {
-              font-weight: bold;
-               transform: scale(1.2);
-           } */
-
            /**PAGES**/
+           
            /******---NAVIGATION----*****/
 
            .top-nav {
