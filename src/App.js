@@ -7,17 +7,17 @@ import Routes from './pages/Routes';
 const App = ()=>{
     const history = useHistory();
     const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
-    const [isAuthenticating, setIsAuthenticating ] = useState(true);
+   //const [isAuthenticating, setIsAuthenticating ] = useState(true);
 
    function handleSignOut() {
     //await Auth.SignOut() - to complete signOut from session    
-    history.push("/signin");
+    history.replace("/signin");
     setUserHasAuthenticated(false);
     //setIsAuthenticating(true);
     alert('Sign Out');
 }
 
-useEffect(() => {
+/*useEffect(() => {
     onLoad();    
 }, [])
 
@@ -34,7 +34,7 @@ function onLoad() {
         }
     }
     setIsAuthenticating(false);
-}   
+}   */
     function openNavHamburger() {
         const myTopNav = document.getElementById("my-top-nav");
         if(myTopNav.className === "top-nav"){
@@ -45,18 +45,14 @@ function onLoad() {
     }
   
     return(
-        !isAuthenticating &&
+       // !isAuthenticating &&
         <div className = "App-container" >            
             <div className="top-nav" id="my-top-nav">
                 <ul>                
                     {   isUserAuthenticated
-                        ? <li onClick = {handleSignOut}>Sign Out</li>
-                        : <>
-                        <Link to="/signin"><li>Sign in</li></Link>
-                        <Link to="/signup"><li>Sign Up</li></Link>
-                        </>
-                    }
-                    <Link to="/"><li className="active">Home</li></Link>
+                        ? <>
+                        <li onClick = {handleSignOut}>Sign Out</li>
+                        <Link to="/"><li className="active">Home</li></Link>
                     <Link to="/life"><li>Life ...</li></Link>
                     <Link to="/accommodation"> <li>Accommodation</li></Link>
                     <Link to="/enjoy"><li >Enjoy ...</li></Link>
@@ -65,11 +61,19 @@ function onLoad() {
                 
                     <li className="icon" onClick={openNavHamburger}>
                         <i className="fa fa-bars"></i>
-                    </li>                
+                    </li>
+                        </>
+                        : <>
+                        <Link to="/signin"><li>Sign in</li></Link>
+                        <Link to="/signup"><li>Sign Up</li></Link>
+                        
+                        </>
+                    }
+                                    
                 </ul>
             </div>
             <AppContext.Provider value = {{ isUserAuthenticated, setUserHasAuthenticated}} >  
-              <Routes/> 
+              <Routes authenticating = {isUserAuthenticated}/> 
               </AppContext.Provider>       
         <Footer/>
         </div>

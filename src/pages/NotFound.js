@@ -7,7 +7,7 @@ function NotFound() {
         padding: "40vh 0vh"
     }
     return(
-        <div style = {notFound}>
+        <div className = "not-found" style = {notFound}>
             <h3>Sorry, page is not found!</h3>
         </div>
     )
