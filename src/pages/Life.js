@@ -8,6 +8,7 @@ import airSerbiaLogo from '../images/logoavio1.webp';
 import avatar from '../images/traveler.webp';
 import SelectForm from "../components/SelectForm";
 import Figure from '../components/Figure';
+import RangeDiv from '../components//RangeDiv';
 
 
 const Life = ()=>{
@@ -112,84 +113,47 @@ const Life = ()=>{
                     <div  id="transport" >
                         <h1>Local Transport</h1>
                         General Information about Local transport:
-                <ul>
-                    <li>Train</li>
-                    <li>Rent a car</li>
-                    <li>BUS</li>
-                    <li>Taxi</li>
-                </ul>
-                <button id="showAdd" onClick = {showAddComment}>Add comment</button>
+                        <ul>
+                            <li>Train</li>
+                            <li>Rent a car</li>
+                            <li>BUS</li>
+                            <li>Taxi</li>
+                        </ul>
+                        <button id="showAdd" onClick = {showAddComment}>Add comment</button>
         
-                <div id="user-comment" >
-                    <h1>Add feedback about Local transport</h1>
-                    <p>or Add feedback about hotels, restaurants, cities...</p>
-                    <div className="middle-wrapper">
-                        <div className="user-comment">
-                            <form>
-                                <div className = "provider">
-                                    <img className = "provider-logo" src = {airSerbiaLogo} alt = "Air Serbia Logo"/>
-                                    <h2>Add feedback about AirSerbia</h2>
-                                    <div>
-                                        <span className="heading">User Rating</span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star "></span>
-                                        <p>4.1 average based on 254 reviews.</p>    
-                                    </div>
-                                </div>
-                                Header:
-                                <br/>
-                                <textarea  rows="1" id="comment-header" placeholder="Try to describe your range"></textarea> 
-                                <br/> Comment:
-                                <br/>
-                                <textarea  rows="10" placeholder="Place for your comment..."></textarea>
-                                <br/>
-                                <p className = "message-range">Click for range</p>
-                                <div className = "range">
-                                    5 star 
-                                    <input type="radio" name="starRange" value="5"/>
-                                    <span className="fa fa-star checked" checked></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                        
-                                </div>
-                                <div className="range">
-                                    <label>4 star </label>
-                                    <input type="radio" name="starRange" value="4"/>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                        
-                                </div>
-                                <div className="range">
-                                    <span>3 star </span>
-                                    <input type="radio" name="starRange" value="3"/>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                            
-                                </div>
-                                <div className = "range">
-                                    2 star 
-                                    <input type="radio" name="starRange" value="2"/>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                     
-                                </div>
-                                <div className = "range">
-                                    1 star 
-                                    <input type="radio" name="starRange" value="1"/>
-                                    <span className="fa fa-star checked"></span>    
-                                </div>
-                                <br/>
-                                <button type="submit">Add feedback</button>
-                                <button id="close" onClick ={closeAddComment}>Close</button>    
-                            </form>
+                        <div id="user-comment" >
+                            <h1>Add feedback about Local transport</h1>
+                            <p>or Add feedback about hotels, restaurants, cities...</p>
+                            <div className="middle-wrapper">
+                                <div className="user-comment">
+                                    <form>
+                                        <div className = "provider">
+                                            <img className = "provider-logo" src = {airSerbiaLogo} alt = "Air Serbia Logo"/>
+                                            <h2>Add feedback about AirSerbia</h2>
+                                            <div>
+                                                <span className="heading">User Rating</span>
+                                                <span className="fa fa-star checked"></span>
+                                                <span className="fa fa-star checked"></span>
+                                                <span className="fa fa-star checked"></span>
+                                                <span className="fa fa-star checked"></span>
+                                                <span className="fa fa-star "></span>
+                                                <p>4.1 average based on 254 reviews.</p>    
+                                            </div>
+                                        </div>
+                                        Header:
+                                        <br/>
+                                        <textarea  rows="1" id="comment-header" placeholder="Try to describe your range"></textarea> 
+                                        <br/> 
+                                        Comment:
+                                        <br/>
+                                        <textarea  rows="10" placeholder="Place for your comment..."></textarea>
+                                        <br/>
+                                        <p className = "message-range">Click for range</p>
+                                        <RangeDiv/>
+                                        <br/>
+                                        <button type="submit">Add feedback</button>
+                                        <button id="close" onClick ={closeAddComment}>Close</button>    
+                                    </form>
                         </div>
                     </div>
                 </div>
