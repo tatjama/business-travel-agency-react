@@ -47,20 +47,12 @@ html {
            }
            .inputError{
                color: red;
-           }
-           /*a {
-               color: white;
-               text-decoration: none;
-               padding: 20px;
-           }*/            
+           }            
 
            /*SIGN IN*/
            .sign-form{
                text-align: center;
                position: fixed;
-              /* background-color: hsla(0, 0%, 0%, 30%);
-               z-index: 9;
-               padding: 30px 10px 0px 10px;*/
            }
            #sign-in-form {              
                width: 250px;
@@ -190,6 +182,15 @@ html {
     height: 100vh;
     padding: 50px 0px;
 }
+/***********************************/
+/*----------LIFE--------------------*/
+ /*HEADER*/
+        
+ #header-life {
+    background-image: url("./images/city_lights.webp");
+    background-position-y:75%;    
+}
+
 /***SELECT***/
    /*SELECT*/
 
@@ -233,6 +234,164 @@ button:hover {
     margin: 5px;
 }
 
+
+    /*WRAPPER*/      
+    .wrapper {
+        padding: 20px;
+    }
+    h2 {
+        color: black;
+        padding: 4%;
+        font-size: medium;
+    }
+
+
+    /*SECTION-FIRST*/    
+    .section-first {
+        text-align: center;        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    
+    figcaption{
+         color: slategray;
+    }
+    figcaption:hover{
+        color: darkcyan;
+    }
+    .section-first figure {
+        width: 150px;
+        padding: 10px;
+        margin: auto;
+        font-weight: bold;       
+    }
+    .section-first figure:hover {
+        transform: scale(1.2);
+    }    
+    .section-first figure img {
+        width: 130px;
+        height: 130px;
+        border: solid 1px white;
+        margin: 10px;
+        box-shadow: gray 0px 0px 10px;
+        transition: transform .2s;
+    } 
+   /* #user-comment,
+    #transport,
+    #safety,
+    #culture, 
+    #airport,
+    #food{
+        display: none;
+    }*/
+    /***SECTION-SECOND**/
+.section-second{
+    padding-top: 50px;
+}
+ /*ADD COMMENT--ACCOMMODATION*/
+/*SHOW TRANSPORTATION -- ENJOY*/
+/*SHOW TRANSPORTATION -- LIFE*/
+/*SHOW TRANSPORTATION -- PROVIDERS*/
+
+#showTransportation,
+#user-comment {
+border: darkcyan solid 1px;
+border-radius: 10px;
+margin: 10px;
+padding: 10px;
+}
+
+.middle-wrapper {
+border-radius: 10px;
+margin: 10px;
+padding: 10px;
+}
+
+.provider-div,
+.user-comment {
+border: darkcyan dashed 4px;
+padding: 40px;
+margin: 40px;
+}
+textarea{
+    width: 100%;
+}
+.provider,
+.provider-detail {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+flex-wrap: wrap;
+padding: 10px;
+}
+
+.fa {
+font-size: 25px;
+}
+
+.checked {
+color: darkcyan;
+}
+
+.provider-logo {
+height: 80px;
+width: 240px;
+}
+
+.left,
+.right {
+width: 50%;
+padding: 5px;
+}
+
+
+/*COMMENT-ACCOMMODATION*/
+/*COMMENT --ENJOY*/
+/*COMMENT -- LIFE*/
+
+.comment {
+    border: double 1px grey;
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.user{
+    padding: 10px;
+    width: 130px;
+}
+.text-comment {
+    width: 50%;
+    padding: 10px;
+}
+.text-comment h2 {
+    padding: 0px 0px 15px 0px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    width: 15px;
+}
+.range{
+    padding: 5px;
+}
+
+.fa {
+    font-size: 20px;
+}
+.checked {
+    color: darkcyan;
+}
+
+
           
            /*RESPONSIVE*/           
            
@@ -249,9 +408,40 @@ button:hover {
                    width: 200px;
                }   
                .top-nav li{
-                padding: 10px;
+                padding: 10px;               
                 font-size: small;
-            }             
+            }    
+            /*PAGES*/   
+            .provider-logo {
+                width: 150px;
+                height: 50px;
+            }
+            .provider-div,
+           .user-comment {
+                border: darkcyan dashed 2px;
+                padding: 15px;
+                margin: 15px;
+            }
+            .comment{
+                flex-direction: column;
+                align-content: center;
+                padding: 10px;
+            }
+            .text-comment{
+                width: 100%;
+            }
+            p{
+                font-size: 10px;
+            }
+            h1{
+                font-size: medium;
+            }
+            h2{
+                font-size: small;
+            }
+            .heading{
+                font-size: x-small;
+            }      
            }
            
            @media screen and (max-width: 630px) {
@@ -291,8 +481,34 @@ button:hover {
                 display: block;
                 text-align: center;
             }
+            /*PAGES*/
+            #showTransportation,
+    #user-comment {
+        border: darkcyan solid 1px;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 5px;
+    }
+   .middle-wrapper {
+        border-radius: 10px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .provider-detail{
+        flex-direction: column;
+    }
+    .left,
+    .right {
+        width: 100%;
+        padding: 5px;
+}
            
-           }    
+           }  
+           @media screen and (max-width: 500px){   
+            button {
+                width: 100%;
+            }
+        }  
            /*FOOTER*/
            
            footer {

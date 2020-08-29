@@ -1,4 +1,13 @@
 import React from "react";
+import astronaut from '../images/astronaut.webp';
+import breakfast from '../images/breakfast.webp';
+import friends from '../images/friends.webp';
+import world from '../images/world.webp';
+import airplane from '../images/airplane.webp';
+import airSerbiaLogo from '../images/logoavio1.webp';
+import avatar from '../images/traveler.webp';
+import SelectForm from "../components/SelectForm";
+
 
 const Life = ()=>{
 
@@ -52,66 +61,44 @@ const Life = ()=>{
         }
 
     return(
-        <div className="pages">
+        <div className="page-life">
              <header className="header" id="header-life" >
-        <div id="message"></div>
-        <form className="choose-city">
-            <select className="nameCountry" >       
-                <option value="1">Serbia</option>
-                <option value="2">Greece</option>
-                <option value="3">Russia</option>
-                <option value="4">USA</option>
-            </select>
-                    <br/> 
-                    <br/>
-            <select className="nameCity" >
-                <option value="1">Belgrade</option>
-                <option value="2">Thesaloniki</option>
-                <option value="3">Chicago</option>
-                <option value="4">Moscow</option>
-            </select>
-                    <br/>
-            <button className="choose-destination-button">Select</button>
-        </form>          
-    </header>
+                <div id="message"></div>        
+                 <SelectForm/>          
+            </header>
 
     
     <div className="wrapper">
           <h3>Life in different countries....(Country-City)</h3>
         <section className="section-first">
-            <figure>
-                <a href="#transport" onClick = {showLocalTransport}>
-                  <img src="../images/astronaut.webp"  alt="space"/>
-                  <figcaption>Local transport</figcaption>
-                </a>
-            </figure>
+            
             <figure>
                 <a href="#food" onClick = {showFood}>
-                  <img src="../images/breakfast.webp"  alt="food"/>
+                  <img src = {breakfast} alt = "breakfast"/>
                   <figcaption>Food & Entertainment</figcaption>
                 </a>
             </figure>
             <figure>
                 <a href="#safety" onClick = {showSafety}>
-                  <img src="../images/friends.webp"  alt="hands"/>
+                  <img src = {friends}  alt="friends hands"/>
                   <figcaption>Safety</figcaption>
                 </a>
             </figure>
             <figure>
                 <a href="#culture" onClick = {showLocalCulture}>
-                  <img src="../images/world.webp"  alt="earth"/>
+                  <img src = {world}  alt = "world"/>
                   <figcaption>Local culture</figcaption>
                 </a>
             </figure>
             <figure>
                 <a href="#airport" onClick = {showAirport}>
-                  <img src="../images/airplane.webp"  alt="airplane"/>
+                  <img src = {airplane}  alt = "airplane"/>
                   <figcaption>Airport</figcaption>
                 </a>
             </figure>
         </section>
         <section className="section-second">
-            <div style={{display: "none"}} id="transport" >
+            <div  id="transport" >
                 <h1>Local Transport</h1>
                 General Information about Local transport:
                 <ul>
@@ -122,14 +109,14 @@ const Life = ()=>{
                 </ul>
                 <button id="showAdd" onClick = {showAddComment}>Add comment</button>
         
-                <div id="user-comment" style={{display: "none"}}>
+                <div id="user-comment" >
                     <h1>Add feedback about Local transport</h1>
                     <p>or Add feedback about hotels, restaurants, cities...</p>
                     <div className="middle-wrapper">
                         <div className="user-comment">
                             <form>
-                                <div className="provider">
-                                    <img className="provider-logo" src="../images/logoavio1.webp" alt = "logo plane"/>
+                                <div className = "provider">
+                                    <img className = "provider-logo" src = {airSerbiaLogo} alt = "Air Serbia Logo"/>
                                     <h2>Add feedback about AirSerbia</h2>
                                     <div>
                                         <span className="heading">User Rating</span>
@@ -201,7 +188,7 @@ const Life = ()=>{
                         <h2>Show Comments:</h2>
                         <div className="comment" id="comment1">
                             <div className="user">
-                                <img className="avatar" src="../images/traveler.webp" alt="user"/>
+                                <img className="avatar" src = {avatar} alt=" Pera Peric"/>
                                 <p>Author: Pera Peric</p>
                                 <p>Date:01.01.2013</p>
                             </div>
@@ -228,7 +215,7 @@ const Life = ()=>{
                         </div>
                         <div className="comment" id="comment2">
                             <div className="user">
-                                <img className = "avatar" src="../images/traveler.webp" alt="user"/>
+                                <img className = "avatar" src = {avatar} alt="Dusko Dugousko"/>
                                 <p>Author:<br/> Dusko Dugousko</p>
                                 <p>Date:02.02.2019</p>
                             </div>
@@ -237,6 +224,7 @@ const Life = ()=>{
                                 <p>Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat
                                     viverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante .
                                 </p>
+
                             </div>
                             <div className = "range">
                                 <div>
@@ -254,7 +242,7 @@ const Life = ()=>{
                         </div>
                         <div className="comment" id="comment3">
                             <div className="user">
-                                <img className = "avatar" src="../images/traveler.webp" alt="user"/>
+                                <img className = "avatar" src = {avatar} alt = "Marko Markovic"/>
                                 <p>Author: Marko Markovic</p>
                                 <p>Date:03.03.2003</p>
                             </div>
@@ -282,7 +270,7 @@ const Life = ()=>{
                     </form>
                 </div>
             </div>
-            <div style={{display:"none"}} id="food">
+            <div  id="food">
                 <h1>Food & Entertainment</h1>
                 General Information about Local Food & Entertainment:
                 <ul>
@@ -292,7 +280,7 @@ const Life = ()=>{
                     <li>Clubs</li>
                 </ul>
             </div>
-            <div style={{display:"none"}} id="safety">
+            <div id="safety">
                 <h1>Safety</h1>
                 General Information about Local Safety:
                 <ul>
@@ -302,7 +290,7 @@ const Life = ()=>{
                     <li>Hospitality</li>
                 </ul>
             </div>
-            <div style={{display:"none"}} id="culture">
+            <div  id="culture">
                 <h1>Local Culture</h1>
                 General Information about Local Culture:
                 <ul>
@@ -312,7 +300,7 @@ const Life = ()=>{
                     <li>Dance</li>
                 </ul>
             </div>
-            <div style={{display:"none"}} id="airport">
+            <div  id="airport">
                 <h1>Airport</h1>
                 General Information about Airport:
                 <ul>

@@ -47,8 +47,10 @@ function onLoad() {
        // !isAuthenticating &&
         <div className = "App-container" >            
             <div className="top-nav" id="my-top-nav">
-                <ul>                
-                    {   isUserAuthenticated
+                <ul>   
+                    {console.log(isUserAuthenticated)}             
+                    {  
+                    isUserAuthenticated
                         ? <>
                         <li onClick = {handleSignOut}>Sign Out</li>
                         <Link to="/"><li className="active">Home</li></Link>
