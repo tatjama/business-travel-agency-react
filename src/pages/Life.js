@@ -7,6 +7,7 @@ import airplane from '../images/airplane.webp';
 import airSerbiaLogo from '../images/logoavio1.webp';
 import avatar from '../images/traveler.webp';
 import SelectForm from "../components/SelectForm";
+import Figure from '../components/Figure';
 
 
 const Life = ()=>{
@@ -68,39 +69,49 @@ const Life = ()=>{
             </header>
 
     
-    <div className="wrapper">
-          <h3>Life in different countries....(Country-City)</h3>
-        <section className="section-first">
-            
-            <figure>
-                <a href="#food" onClick = {showFood}>
-                  <img src = {breakfast} alt = "breakfast"/>
-                  <figcaption>Food & Entertainment</figcaption>
-                </a>
-            </figure>
-            <figure>
-                <a href="#safety" onClick = {showSafety}>
-                  <img src = {friends}  alt="friends hands"/>
-                  <figcaption>Safety</figcaption>
-                </a>
-            </figure>
-            <figure>
-                <a href="#culture" onClick = {showLocalCulture}>
-                  <img src = {world}  alt = "world"/>
-                  <figcaption>Local culture</figcaption>
-                </a>
-            </figure>
-            <figure>
-                <a href="#airport" onClick = {showAirport}>
-                  <img src = {airplane}  alt = "airplane"/>
-                  <figcaption>Airport</figcaption>
-                </a>
-            </figure>
-        </section>
-        <section className="section-second">
-            <div  id="transport" >
-                <h1>Local Transport</h1>
-                General Information about Local transport:
+            <div className="wrapper">
+                <h3>Life in different countries....(Country-City)</h3>
+                <section className="section-first">
+                    <Figure 
+                        name = "Local transport" 
+                        source = {astronaut} 
+                        handleOnClick = {showLocalTransport} 
+                        alt = "space astronaut" 
+                        go  = "#transport"
+                    />
+                    <Figure 
+                        name = "Food & Entertainment" 
+                        source = {breakfast} 
+                        handleOnClick = {showFood}
+                        alt = "breakfast" 
+                        go  = "#food"
+                    />
+                    <Figure 
+                        name = "Safety" 
+                        source = {friends} 
+                        handleOnClick = {showSafety}
+                        alt = "friends hands" 
+                        go  = "#safety"
+                    />
+                    <Figure 
+                        name = "Local culture" 
+                        source = {world} 
+                        handleOnClick = {showLocalCulture}
+                        alt = "world" 
+                        go  = "#culture"
+                    />
+                    <Figure 
+                        name = "Airport" 
+                        source = {airplane} 
+                        handleOnClick = {showAirport}
+                        alt = "airplane" 
+                        go  = "#airport"
+                    />
+                </section>
+                <section className="section-second">
+                    <div  id="transport" >
+                        <h1>Local Transport</h1>
+                        General Information about Local transport:
                 <ul>
                     <li>Train</li>
                     <li>Rent a car</li>
