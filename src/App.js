@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Footer from './components/Footer';
 import { Link, useHistory} from  'react-router-dom';
 import {AppContext} from './libs/contextLib';
@@ -13,7 +13,6 @@ const App = ()=>{
     //await Auth.SignOut() - to complete signOut from session    
     history.replace("/signin");
     setUserHasAuthenticated(false);
-    //setIsAuthenticating(true);
     alert('Sign Out');
 }
 
@@ -73,7 +72,7 @@ function onLoad() {
                 </ul>
             </div>
             <AppContext.Provider value = {{ isUserAuthenticated, setUserHasAuthenticated}} >  
-              <Routes authenticating = {isUserAuthenticated}/> 
+              <Routes/> 
               </AppContext.Provider>       
         <Footer/>
         </div>
