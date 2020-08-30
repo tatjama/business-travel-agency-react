@@ -53,12 +53,14 @@ html {
            .sign-form{
                text-align: center;
                position: fixed;
+              
            }
            #sign-in-form {              
                width: 250px;
                height: 260px;
                left: 40%;
                top: 30%;
+              
            }            
            .sign-form fieldset {
                border: 0px solid gray;
@@ -100,7 +102,7 @@ html {
                width: 550px;
                height: 520px;               
                left: 30%;
-               top: 10%;               
+               top: 30%;               
            }
            .sign-up-fieldset{
                display: flex;
