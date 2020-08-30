@@ -9,6 +9,7 @@ import avatar from '../images/traveler.webp';
 import SelectForm from "../components/SelectForm";
 import Figure from '../components/Figure';
 import RangeDiv from '../components//RangeDiv';
+import Comment from '../components/Comment';
 
 
 const Life = ()=>{
@@ -161,87 +162,32 @@ const Life = ()=>{
                 <div>
                     <form>
                         <h2>Show Comments:</h2>
-                        <div className="comment" id="comment1">
-                            <div className="user">
-                                <img className="avatar" src = {avatar} alt=" Pera Peric"/>
-                                <p>Author: Pera Peric</p>
-                                <p>Date:01.01.2013</p>
-                            </div>
-                            <div className="text-comment">
-                                <h2> I like this city</h2>
-                                <p>Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat
-                                    viverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucibus
-                                    maximus. Proin non nulla lectus.
-                                </p>
-                            </div>
-                            <div className="range">
-                                <div>
-                                    <span className="heading">User Rating</span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star"></span>
-                                </div>
-                                <br/><br/>
-                                <input type="checkbox"/> 
-                                <span>Choose comment</span>
-                            </div>
-                        </div>
-                        <div className="comment" id="comment2">
-                            <div className="user">
-                                <img className = "avatar" src = {avatar} alt="Dusko Dugousko"/>
-                                <p>Author:<br/> Dusko Dugousko</p>
-                                <p>Date:02.02.2019</p>
-                            </div>
-                            <div className="text-comment">
-                                <h2>Airplane is quite old...</h2>
-                                <p>Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat
-                                    viverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante .
-                                </p>
-
-                            </div>
-                            <div className = "range">
-                                <div>
-                                    <span className="heading">User Rating</span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star "></span>
-                                    <span className="fa fa-star "></span>
-                                    <span className="fa fa-star"></span>
-                                    <span className="fa fa-star"></span>
-                                </div>
-                                <br/><br/>
-                                <input type="checkbox"/>
-                                <span>Choose comment</span>
-                            </div>
-                        </div>
-                        <div className="comment" id="comment3">
-                            <div className="user">
-                                <img className = "avatar" src = {avatar} alt = "Marko Markovic"/>
-                                <p>Author: Marko Markovic</p>
-                                <p>Date:03.03.2003</p>
-                            </div>
-                            <div className="text-comment">
-                                <h2>About a place</h2>
-                                <p>Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat
-                                    viverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames a
-                                </p>
-                            </div>
-                            <div className="range">
-                                <div>
-                                    <span className="heading">User Rating</span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star checked"></span>
-                                    <span className="fa fa-star"></span>
-                                    <span className="fa fa-star"></span>
-                                </div>
-                                <br/><br/>
-                                <input type="checkbox"/>
-                                <span>Choose comment</span>
-                            </div>
-                        </div>
-                        <button>Delete comment</button>
+                       <Comment 
+                            id = "comment1" 
+                            source = {avatar} 
+                            userName = " Pera Peric"
+                            date = "01.01.2013"
+                            commentTitle = "I like this city"
+                            commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                        />
+                       <Comment 
+                            id = "comment2" 
+                            source = {avatar} 
+                            userName = " Dusko Dugousko"
+                            date = "02.02.2019"
+                            commentTitle = "Airplane is quite old..."
+                            commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                        />
+                       <Comment 
+                            id = "comment3" 
+                            source = {avatar} 
+                            userName = " Marko Markovic"
+                            date = "03.03.2003"
+                            commentTitle = "About a place"
+                            commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                        />
+                        
+                        <button  >Delete comment</button>
                     </form>
                 </div>
             </div>
