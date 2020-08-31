@@ -1,12 +1,12 @@
 import React from "react";
-import airSerbiaLogo from '../images/logoavio1.webp';
+
 
 import SelectForm from "../components/SelectForm";
 //import Figure from '../components/Figure';
 //import RangeDiv from '../components//RangeDiv';
 //import Comment from '../components/Comment';
 import GeneralInformation from "../components/GeneralInformation";
-import UserComment from "../components/UserComment";
+//import UserComment from "../components/UserComment";
 import SectionFirst from "../components/SectionFirst";
 import CommentsForm from "../components/CommentsForm";
 import avatar from '../images/traveler.webp';
@@ -45,9 +45,6 @@ const  comments = [
 function showAddComment() {
     document.getElementById('user-comment').style.display = "block";
 }
-function closeAddComment() {
-    document.getElementById('user-comment').style.display = "none";
-} 
 
 
 
@@ -73,21 +70,9 @@ const Life = ()=>{
                             li4 = "Taxi"
                             buttonId = "show-add-comment-transport"
                             handleOnClick = {showAddComment}   
-                >                                
-                                          
-                    </GeneralInformation>
+                />   
 
-                    <div className="user-comment" >
-                            <h1>Add feedback about Local transport</h1>
-                            <p>or Add feedback about hotels, restaurants, cities...</p>
-                            <div className="middle-wrapper">
-                                <UserComment
-                                    source = {airSerbiaLogo}
-                                    nameProvider = "Air Serbia"
-                                    handleOnClick = {closeAddComment}
-                                />                                
-                            </div>
-                        </div>  
+                      
                         <CommentsForm arrayComments = {comments}/>
                     
                     <GeneralInformation 
