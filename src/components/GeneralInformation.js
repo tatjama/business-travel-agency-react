@@ -1,20 +1,25 @@
 import React from 'react';
 
-const GeneralInformation = (props) => {
-    return(
-        <div className = "general-informations"  id= {props.id}>
-                        <h1>{props.informationTitle}</h1>
-                        {props.informationSubtitle}
-                        <ul>
-                            <li>{props.li1}</li>
-                            <li>{props.li2}</li>
-                            <li>{props.li3}</li>
-                            <li>{props.li4}</li>
-                        </ul>
-                        <button id={props.buttonId} onClick = {props.handleOnClick}>Add comment</button>
-                    </div>
+class GeneralInformation extends React.Component {
+    
+    render(){
+        return(
+            <div className = "general-information"  id= {this.props.id}>
+                            <h1>{this.props.informationTitle}</h1>
+                            {this.props.informationSubtitle}
+                            <ul>
+                                <li>{this.props.li1}</li>
+                                <li>{this.props.li2}</li>
+                                <li>{this.props.li3}</li>
+                                <li>{this.props.li4}</li>
+                            </ul>
+                            <button id={this.props.buttonId} onClick = {this.props.handleOnClick}>Add comment</button>
+                        </div>
+    
+        )
+    
 
-    )
-}
+    }
+    }
 
 export default GeneralInformation;
