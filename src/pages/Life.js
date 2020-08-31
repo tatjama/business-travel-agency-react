@@ -8,8 +8,10 @@ import airSerbiaLogo from '../images/logoavio1.webp';
 import avatar from '../images/traveler.webp';
 import SelectForm from "../components/SelectForm";
 import Figure from '../components/Figure';
-import RangeDiv from '../components//RangeDiv';
+//import RangeDiv from '../components//RangeDiv';
 import Comment from '../components/Comment';
+import GeneralInformation from "../components/GeneralInformation";
+import UserComment from "../components/UserComment";
 
 
 const Life = ()=>{
@@ -111,125 +113,110 @@ const Life = ()=>{
                     />
                 </section>
                 <section className="section-second">
-                    <div  id="transport" >
-                        <h1>Local Transport</h1>
-                        General Information about Local transport:
-                        <ul>
-                            <li>Train</li>
-                            <li>Rent a car</li>
-                            <li>BUS</li>
-                            <li>Taxi</li>
-                        </ul>
-                        <button id="showAdd" onClick = {showAddComment}>Add comment</button>
-        
+                <GeneralInformation
+                            id = "transport"
+                            informationTitle = "Local Transport"
+                            informationSubtitle = "General Information about Local Transport:"
+                            li1 = "Train"
+                            li2 = "Rent a car"
+                            li3 = "BUS"
+                            li4 = "Taxi"
+                            buttonId = "show-add-comment-transport"
+                            handleOnClick = {showAddComment}                            
+                />                  
+                    
                         <div id="user-comment" >
                             <h1>Add feedback about Local transport</h1>
                             <p>or Add feedback about hotels, restaurants, cities...</p>
                             <div className="middle-wrapper">
-                                <div className="user-comment">
-                                    <form>
-                                        <div className = "provider">
-                                            <img className = "provider-logo" src = {airSerbiaLogo} alt = "Air Serbia Logo"/>
-                                            <h2>Add feedback about AirSerbia</h2>
-                                            <div>
-                                                <span className="heading">User Rating</span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star "></span>
-                                                <p>4.1 average based on 254 reviews.</p>    
-                                            </div>
-                                        </div>
-                                        Header:
-                                        <br/>
-                                        <textarea  rows="1" id="comment-header" placeholder="Try to describe your range"></textarea> 
-                                        <br/> 
-                                        Comment:
-                                        <br/>
-                                        <textarea  rows="10" placeholder="Place for your comment..."></textarea>
-                                        <br/>
-                                        <p className = "message-range">Click for range</p>
-                                        <RangeDiv/>
-                                        <br/>
-                                        <button type="submit">Add feedback</button>
-                                        <button id="close" onClick ={closeAddComment}>Close</button>    
-                                    </form>
+                                <UserComment
+                                    source = {airSerbiaLogo}
+                                    nameProvider = "Air Serbia"
+                                    handleOnClick = {closeAddComment}
+                                />                                
+                            </div>
+                        </div>  
+                        <div>
+                            <form>
+                                <h2>Show Comments:</h2>
+                                <React.Fragment>
+                                <Comment 
+                                        id = "comment1" 
+                                        source = {avatar} 
+                                        userName = " Pera Peric"
+                                        date = "01.01.2013"
+                                        commentTitle = "I like this city"
+                                        commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                                    />
+                                <Comment 
+                                        id = "comment2" 
+                                        source = {avatar} 
+                                        userName = " Dusko Dugousko"
+                                        date = "02.02.2019"
+                                        commentTitle = "Airplane is quite old..."
+                                        commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                                    />
+                                <Comment 
+                                        id = "comment3" 
+                                        source = {avatar} 
+                                        userName = " Marko Markovic"
+                                        date = "03.03.2003"
+                                        commentTitle = "About a place"
+                                        commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                                    />
+                                </React.Fragment>    
+                                <button  >Delete comment</button>
+                            </form>
                         </div>
-                    </div>
-                </div>
-
-                <div>
-                    <form>
-                        <h2>Show Comments:</h2>
-                       <Comment 
-                            id = "comment1" 
-                            source = {avatar} 
-                            userName = " Pera Peric"
-                            date = "01.01.2013"
-                            commentTitle = "I like this city"
-                            commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
-                        />
-                       <Comment 
-                            id = "comment2" 
-                            source = {avatar} 
-                            userName = " Dusko Dugousko"
-                            date = "02.02.2019"
-                            commentTitle = "Airplane is quite old..."
-                            commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
-                        />
-                       <Comment 
-                            id = "comment3" 
-                            source = {avatar} 
-                            userName = " Marko Markovic"
-                            date = "03.03.2003"
-                            commentTitle = "About a place"
-                            commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
-                        />
-                        
-                        <button  >Delete comment</button>
-                    </form>
-                </div>
-            </div>
-            <div  id="food">
-                <h1>Food & Entertainment</h1>
-                General Information about Local Food & Entertainment:
-                <ul>
-                    <li>Restaurants</li>
-                    <li>Fast food</li>
-                    <li>Cafe</li>
-                    <li>Clubs</li>
-                </ul>
-            </div>
-            <div id="safety">
-                <h1>Safety</h1>
-                General Information about Local Safety:
-                <ul>
-                    <li>Regulations</li>
-                    <li>Police</li>
-                    <li>Hospitals</li>
-                    <li>Hospitality</li>
-                </ul>
-            </div>
-            <div  id="culture">
-                <h1>Local Culture</h1>
-                General Information about Local Culture:
-                <ul>
-                    <li>Museums</li>
-                    <li>Opera</li>
-                    <li>Music</li>
-                    <li>Dance</li>
-                </ul>
-            </div>
-            <div  id="airport">
-                <h1>Airport</h1>
-                General Information about Airport:
-                <ul>
-                    <li>Airport1</li>
-                    <li>Airport2</li>
-                    <li>Transport from /to airport</li>
-                </ul>
-            </div>
+                    
+                    
+                    <GeneralInformation 
+                            id = "food" 
+                            informationTitle = "Food & Entertainment"
+                            informationSubtitle = "General Information about Local Food & Entertainment:"
+                            li1 = "Restaurants"
+                            li2 = "Fast food"
+                            li3 = "Cafe"
+                            li4 = "Clubs"
+                            buttonId = "show-add-comment-food"
+                            handleOnClick = {showAddComment}
+                    />
+                    
+                    <GeneralInformation 
+                            id = "safety" 
+                            informationTitle = "Local safety"
+                            informationSubtitle = "General Information about Local Safety:"
+                            li1 = "Regulations"
+                            li2 = "Police"
+                            li3 = "Hospitals"
+                            li4 = "Hospitality"
+                            buttonId = "show-add-comment-safety"
+                            handleOnClick = {showAddComment}
+                    />
+                    
+                    <GeneralInformation 
+                            id = "culture" 
+                            informationTitle = "Local Culture"
+                            informationSubtitle = "General Information about Local Culture:"
+                            li1 = "Museums"
+                            li2 = "Opera"
+                            li3 = "Music"
+                            li4 = "Dance"
+                            buttonId = "show-add-comment-culture"
+                            handleOnClick = {showAddComment}
+                    />
+                     
+                    <GeneralInformation
+                            id = "airport"
+                            informationTitle = "Airport"
+                            informationSubtitle = "General Information about Airport:"
+                            li1 = "Airport1"
+                            li2 = "Airport2"
+                            li3 = "Transport from /to airport"
+                            buttonId = "show-add-comment-airport"
+                            handleOnClick = {showAddComment}
+                            
+                    />
         </section>
     </div>
 
