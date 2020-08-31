@@ -9,23 +9,56 @@ import GeneralInformation from "../components/GeneralInformation";
 import UserComment from "../components/UserComment";
 import SectionFirst from "../components/SectionFirst";
 import CommentsForm from "../components/CommentsForm";
+import avatar from '../images/traveler.webp';
+import avatarMarko from '../images/avatar-marko.webp';
+import avatarJelena from '../images/avatar-jelena.webp';
+
+const  comments = [
+    {
+        id: "comment1" ,
+        source: avatarJelena, 
+        userName: " Pera Peric",
+        date: "01.01.2013",
+        commentTitle: "I like this city",
+        commentText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+    
+    },
+    {
+        id: "comment2" ,
+        source: avatar, 
+        userName: " Dusko Dugousko",
+        date: "02.02.2019",
+        commentTitle: "Airplane is quite old...",
+        commentText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+              
+    },
+    {
+        id: "comment3" ,
+        source: avatarMarko,
+        userName: " Marko Markovic",
+        date: "03.03.2003",
+        commentTitle: "About a place",
+        commentText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+               
+    }
+]    
+function showAddComment() {
+    document.getElementById('user-comment').style.display = "block";
+}
+function closeAddComment() {
+    document.getElementById('user-comment').style.display = "none";
+} 
 
 
-const Life = ()=>{       
-        function showAddComment() {
-            document.getElementById('user-comment').style.display = "block";
-        }
-        function closeAddComment() {
-            document.getElementById('user-comment').style.display = "none";
-        }
+
+const Life = ()=>{              
         
     return(
         <div className="page-life">
              <header className="header" id="header-life" >
                 <div id="message"></div>        
                  <SelectForm/>          
-            </header>            
-    
+            </header>    
             <div className="wrapper">
                 <h3>Life in different countries....(Country-City)</h3>
                 <SectionFirst/>
@@ -55,7 +88,7 @@ const Life = ()=>{
                                 />                                
                             </div>
                         </div>  
-                        <CommentsForm/>
+                        <CommentsForm arrayComments = {comments}/>
                     
                     <GeneralInformation 
                             id = "food" 
