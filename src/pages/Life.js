@@ -8,7 +8,7 @@ import SelectForm from "../components/SelectForm";
 import GeneralInformation from "../components/GeneralInformation";
 //import UserComment from "../components/UserComment";
 import SectionFirst from "../components/SectionFirst";
-import CommentsForm from "../components/CommentsForm";
+//import CommentsForm from "../components/CommentsForm";
 import avatar from '../images/traveler.webp';
 import avatarMarko from '../images/avatar-marko.webp';
 import avatarJelena from '../images/avatar-jelena.webp';
@@ -69,11 +69,12 @@ const Life = ()=>{
                             li3 = "BUS"
                             li4 = "Taxi"
                             buttonId = "show-add-comment-transport"
-                            handleOnClick = {showAddComment}   
+                            handleOnClick = {showAddComment}  
+                            arrayComments = {comments} 
                 />   
 
                       
-                        <CommentsForm arrayComments = {comments}/>
+                       
                     
                     <GeneralInformation 
                             id = "food" 
@@ -85,6 +86,7 @@ const Life = ()=>{
                             li4 = "Clubs"
                             buttonId = "show-add-comment-food"
                             handleOnClick = {showAddComment}
+                            arrayComments = {comments} 
                     />
                     
                     <GeneralInformation 
@@ -97,6 +99,7 @@ const Life = ()=>{
                             li4 = "Hospitality"
                             buttonId = "show-add-comment-safety"
                             handleOnClick = {showAddComment}
+                            arrayComments = {comments} 
                     />
                     
                     <GeneralInformation 
@@ -109,6 +112,7 @@ const Life = ()=>{
                             li4 = "Dance"
                             buttonId = "show-add-comment-culture"
                             handleOnClick = {showAddComment}
+                            arrayComments = {comments} 
                     />
                      
                     <GeneralInformation
@@ -120,6 +124,7 @@ const Life = ()=>{
                             li3 = "Transport from /to airport"
                             buttonId = "show-add-comment-airport"
                             handleOnClick = {showAddComment}
+                            arrayComments = {comments} 
                             
                     />
         </section>

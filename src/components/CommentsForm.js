@@ -2,7 +2,9 @@ import React from 'react';
 import Comment from './Comment';
 
 const CommentsForm = (props) => {  
+    console.log(props)
     const comments = props.arrayComments;
+    console.log(comments)
          return(
             <div className = "comments-form">
             <form>
