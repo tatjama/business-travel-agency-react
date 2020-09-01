@@ -19,6 +19,112 @@ import avatarSanja from '../images/avatar-sanja.jpg';
 import avatarIvana from '../images/avatar-ivana.jpg';
 import avatarDragan from '../images/avatar-dragan.webp';
 
+function showAddComment() {
+    document.getElementById('user-comment').style.display = "block";
+}
+
+const Life = ()=>{              
+        
+    return(
+        <div className="page-life">
+             <header className="header" id="header-life" >
+                <div id="message"></div>        
+                 <SelectForm/>          
+            </header>    
+            <div className="wrapper">
+                <h3>Life in different countries....(Country-City)</h3>
+                <SectionFirst/>
+                <section className="section-second">
+                <GeneralInformation
+                            information = {information[0]}
+                            handleOnClick = {showAddComment}  
+                            arrayComments = {comments1} 
+                />             
+                    
+                    <GeneralInformation 
+                            information = {information[1]}
+                            handleOnClick = {showAddComment}
+                            arrayComments = {comments2} 
+                    />
+                    
+                    <GeneralInformation 
+                            information = {information[2]}
+                            handleOnClick = {showAddComment}
+                            arrayComments = {comments3} 
+                    />
+                    
+                    <GeneralInformation 
+                            information = {information[3]}
+                            handleOnClick = {showAddComment}
+                            arrayComments = {comments} 
+                    />
+                     
+                    <GeneralInformation
+                            information = {information[4]}
+                            handleOnClick = {showAddComment}
+                            arrayComments = {comments} 
+                            
+                    />
+        </section>
+    </div>
+
+        </div>
+    )
+}
+
+export default Life;
+
+const information = [
+    {
+        id: "transport",
+        informationTitle: "Local Transport",
+        informationSubtitle: "General Information about Local Transport:",
+        li1: "Train",
+        li2: "Rent a car",
+        li3: "BUS",
+        li4: "Taxi",
+        buttonId: "show-add-comment-transport"
+    },
+    {
+        id: "food", 
+        informationTitle: "Food & Entertainment",
+        informationSubtitle: "General Information about Local Food & Entertainment:",
+        li1: "Restaurants",
+        li2: "Fast food",
+        li3: "Cafe",
+        li4: "Clubs",
+        buttonId: "show-add-comment-food"
+    },
+    {
+        id: "safety", 
+        informationTitle: "Local safety",
+        informationSubtitle: "General Information about Local Safety:",
+        li1: "Regulations",
+        li2: "Police",
+        li3: "Hospitals",
+        li4: "Hospitality",
+        buttonId: "show-add-comment-safety"
+    },
+    {
+        id: "culture", 
+        informationTitle: "Local Culture",
+        informationSubtitle: "General Information about Local Culture:",
+        li1: "Museums",
+        li2: "Opera",
+        li3: "Music",
+        li4: "Dance",
+        buttonId: "show-add-comment-culture"
+    },
+    {
+        id: "airport",
+        informationTitle: "Airport",
+        informationSubtitle: "General Information about Airport:",
+        li1: "Airport1",
+        li2: "Airport2",
+        li3: "Transport from /to airport",
+        buttonId: "show-add-comment-airport"
+    }
+]
 const  comments1 = [
     {
         id: "comment-1-1" ,
@@ -135,93 +241,3 @@ const  comments = [
                
     }
 ]    
-function showAddComment() {
-    document.getElementById('user-comment').style.display = "block";
-}
-
-
-
-const Life = ()=>{              
-        
-    return(
-        <div className="page-life">
-             <header className="header" id="header-life" >
-                <div id="message"></div>        
-                 <SelectForm/>          
-            </header>    
-            <div className="wrapper">
-                <h3>Life in different countries....(Country-City)</h3>
-                <SectionFirst/>
-                <section className="section-second">
-                <GeneralInformation
-                            id = "transport"
-                            informationTitle = "Local Transport"
-                            informationSubtitle = "General Information about Local Transport:"
-                            li1 = "Train"
-                            li2 = "Rent a car"
-                            li3 = "BUS"
-                            li4 = "Taxi"
-                            buttonId = "show-add-comment-transport"
-                            handleOnClick = {showAddComment}  
-                            arrayComments = {comments1} 
-                />             
-                    
-                    <GeneralInformation 
-                            id = "food" 
-                            informationTitle = "Food & Entertainment"
-                            informationSubtitle = "General Information about Local Food & Entertainment:"
-                            li1 = "Restaurants"
-                            li2 = "Fast food"
-                            li3 = "Cafe"
-                            li4 = "Clubs"
-                            buttonId = "show-add-comment-food"
-                            handleOnClick = {showAddComment}
-                            arrayComments = {comments2} 
-                    />
-                    
-                    <GeneralInformation 
-                            id = "safety" 
-                            informationTitle = "Local safety"
-                            informationSubtitle = "General Information about Local Safety:"
-                            li1 = "Regulations"
-                            li2 = "Police"
-                            li3 = "Hospitals"
-                            li4 = "Hospitality"
-                            buttonId = "show-add-comment-safety"
-                            handleOnClick = {showAddComment}
-                            arrayComments = {comments3} 
-                    />
-                    
-                    <GeneralInformation 
-                            id = "culture" 
-                            informationTitle = "Local Culture"
-                            informationSubtitle = "General Information about Local Culture:"
-                            li1 = "Museums"
-                            li2 = "Opera"
-                            li3 = "Music"
-                            li4 = "Dance"
-                            buttonId = "show-add-comment-culture"
-                            handleOnClick = {showAddComment}
-                            arrayComments = {comments} 
-                    />
-                     
-                    <GeneralInformation
-                            id = "airport"
-                            informationTitle = "Airport"
-                            informationSubtitle = "General Information about Airport:"
-                            li1 = "Airport1"
-                            li2 = "Airport2"
-                            li3 = "Transport from /to airport"
-                            buttonId = "show-add-comment-airport"
-                            handleOnClick = {showAddComment}
-                            arrayComments = {comments} 
-                            
-                    />
-        </section>
-    </div>
-
-        </div>
-    )
-}
-
-export default Life;
