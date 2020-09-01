@@ -1,0 +1,31 @@
+{
+    "comments1" : [
+        {
+            "id": "comment-1-1" ,
+            "source": "avatarPetar", 
+            "userName": " Pera Peric",
+            "date": "01.01.2013",
+            "commentTitle": "I like this city",
+            "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+        
+        },
+        {
+            "id": "comment-1-2" ,
+            "source": "avatarJelena", 
+            "userName": " Dusko Dugousko",
+            "date": "02.02.2019",
+            "commentTitle": "Airplane is quite old...",
+            "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                  
+        },
+        {
+            "id": "comment-1-3" ,
+            "source": "avatarMarko",
+            "userName": " Marko Markovic",
+            "date": "03.03.2003",
+            "commentTitle": "About a place",
+            "commentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+                   
+        }
+    ]    
+}

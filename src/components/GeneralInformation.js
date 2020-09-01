@@ -8,17 +8,17 @@ class GeneralInformation extends React.Component {
     
     render(){
         return(
-            <div className = "general-information"  id= {this.props.id}>
+            <div className = "general-information"  id= {this.props.information.id}>
                 <div className = "general-information-list">
-                    <h1>{this.props.informationTitle}</h1>
-                           <h2> {this.props.informationSubtitle}</h2>
+                    <h1>{this.props.information.informationTitle}</h1>
+                           <h2> {this.props.information.informationSubtitle}</h2>
                             <ul>
-                                <li>{this.props.li1}</li>
-                                <li>{this.props.li2}</li>
-                                <li>{this.props.li3}</li>
-                                <li>{this.props.li4}</li>
+                                <li>{this.props.information.li1}</li>
+                                <li>{this.props.information.li2}</li>
+                                <li>{this.props.information.li3}</li>
+                                <li>{this.props.information.li4}</li>
                             </ul>
-                            <button id={this.props.buttonId} onClick = {this.props.handleOnClick}>Add comment</button>
+                            <button id={this.props.information.buttonId} onClick = {this.props.handleOnClick}>Add comment</button>
                  </div>
                 <div className="user-comment" >
                     <h1>Add feedback about Local transport</h1>
