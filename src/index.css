@@ -192,7 +192,11 @@ html {
     background-image: url("./images/city_lights.webp");
     background-position-y:75%;    
 }
-
+/*-------ACCOMMODATION-----*/
+#header-accommodation {
+    background-image: url("./images/accomodation.webp");
+    background-position-y: 80%;    
+}
 /***SELECT***/
    /*SELECT*/
 

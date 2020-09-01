@@ -1,6 +1,5 @@
 import React from 'react';
 import UserComment from './UserComment';
-import airSerbiaLogo from '../images/logoavio1.webp';
 import CommentsForm from './CommentsForm';
 
 class GeneralInformation extends React.Component {
@@ -25,7 +24,7 @@ class GeneralInformation extends React.Component {
                     <p>or Add feedback about hotels, restaurants, cities...</p>
                     <div className="middle-wrapper">
                         <UserComment
-                                    source = {airSerbiaLogo}
+                                    source = {this.props.source}
                                     nameProvider = "Air Serbia"
                                     handleOnClick = {() =>{document.getElementById('user-comment').style.display = "none";}}
                         />                                
