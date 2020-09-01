@@ -11,6 +11,7 @@ import avatarPetar from '../images/avatar-petar.webp';
 import avatarSanja from '../images/avatar-sanja.jpg';
 import avatarIvana from '../images/avatar-ivana.jpg';
 import avatarDragan from '../images/avatar-dragan.webp';
+import airSerbiaLogo from '../images/logoavio1.webp';
 
 function showAddComment() {
     document.getElementById('user-comment').style.display = "block";
@@ -33,26 +34,31 @@ const Life = ()=>{
                             information = {information[0]}
                             handleOnClick = {showAddComment}  
                             arrayComments = {comments[0]} 
+                            source = {airSerbiaLogo}
                     />                    
                     <GeneralInformation 
                             information = {information[1]}
                             handleOnClick = {showAddComment}
                             arrayComments = {comments[1]} 
+                            source = {airSerbiaLogo}
                     />                    
                     <GeneralInformation 
                             information = {information[2]}
                             handleOnClick = {showAddComment}
                             arrayComments = {comments[2]} 
+                            source = {airSerbiaLogo}
                     />                    
                     <GeneralInformation 
                             information = {information[3]}
                             handleOnClick = {showAddComment}
                             arrayComments = {comments[3]} 
+                            source = {airSerbiaLogo}
                     />                     
                     <GeneralInformation
                             information = {information[4]}
                             handleOnClick = {showAddComment}
-                            arrayComments = {comments[3]}                             
+                            arrayComments = {comments[3]}
+                            source = {airSerbiaLogo}                             
                     />
                 </section>
             </div>
