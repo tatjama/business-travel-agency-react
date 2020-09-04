@@ -197,6 +197,14 @@ html {
     background-image: url("./images/accomodation.webp");
     background-position-y: 80%;    
 }
+/*********************************/
+/*-------------FEEDBACK-------------*/
+#header-feedback {
+    background-image: url("./images/feedback.webp");
+    background-position: center;  
+    }   
+    
+
 /***SELECT***/
    /*SELECT*/
 
