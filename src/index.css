@@ -350,7 +350,7 @@ margin: 40px;
 textarea{
     width: 100%;
 }
-.provider,
+.provider-heading,
 .provider-detail {
 display: flex;
 flex-direction: row;
