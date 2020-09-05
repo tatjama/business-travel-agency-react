@@ -197,6 +197,12 @@ html {
     background-image: url("./images/accomodation.webp");
     background-position-y: 80%;    
 }
+/*--------ENJOY-------*/
+
+#header-enjoy {
+    background-image: url("./images/enjoy.webp");
+    background-position-y: 30%;   
+}
 /*********************************/
 /*-------------FEEDBACK-------------*/
 #header-feedback {
@@ -423,7 +429,34 @@ input[type="radio"] {
 .checked {
     color: darkcyan;
 }
+/*FORM TRANSPORTATION*/
 
+#nCity {
+    color: white;
+    font-weight: bold;
+}
+
+#transportationFromTo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+#transportationFromTo div {
+    padding: 5px;
+}
+
+
+/*ADD FEEDBACK ABOUT TRANSPORTATION*/
+
+.message-range {
+    background-color: darkcyan;
+    color: white;
+    padding: 5px;
+}
+
+    
 
           
            /*RESPONSIVE*/           
