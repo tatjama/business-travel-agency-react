@@ -351,7 +351,8 @@ textarea{
     width: 100%;
 }
 .provider-heading,
-.provider-detail {
+.provider-detail,
+.provider-detail-form {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
@@ -533,7 +534,8 @@ input[type="radio"] {
         margin: 5px;
         padding: 5px;
     }
-    .provider-detail{
+    .provider-detail,
+    .provider-detail-form{
         flex-direction: column;
     }
     .left,
