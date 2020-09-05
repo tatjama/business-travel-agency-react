@@ -25,11 +25,9 @@ const Providers = ()=>{
                             </div>
                         <form className="show-provider-edit " id="showEditProvider" >
                             <hr style={{"border":"3px solid #f1f1f1 "}}/>
-                            <ProviderDetailForm/>
-                            
+                            <ProviderDetailForm/>                            
                         </form>
-
-                </div>
+                        </div>
                     </div>
                 </div>
             </div>
