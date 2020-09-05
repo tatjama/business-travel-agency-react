@@ -1,6 +1,7 @@
 import React from 'react';
 import SelectForm from '../components/SelectForm';
-import logoAirplane from '../images/logoavio1.webp';
+
+import ProviderHeading from '../components/ProviderHeading';
 
 const Providers = ()=>{
     function closeProviderEdit() {
@@ -9,12 +10,7 @@ const Providers = ()=>{
     function closeProviderDetail(){
         alert("Close provider detail")
     }
-    function showProviderDetail(){
-        alert("Show provider detail")
-    }
-    function showProviderEdit(){
-        alert ("Show provider Edit")
-    }
+   
     return(
         <div className="page-providers">
             <header className="header" id="header-providers" >
@@ -27,27 +23,7 @@ const Providers = ()=>{
                     <h1>Provider list:</h1>
                     <div className="middle-wrapper ">
                         <div className="provider-div ">
-                            <div className="provider ">
-                                <div className="left">
-                                    <img className="provider-logo " src={logoAirplane}/>
-                                    <h2>Provider name: AirSerbia
-                                    <br/>
-                                    Type: Airplane
-                                    </h2>
-                                </div>
-                                <div className="right">
-                                    <span className="heading ">User Rating</span>
-                                        <span className="fa fa-star checked "></span>
-                                        <span className="fa fa-star checked "></span>
-                                        <span className="fa fa-star checked "></span>
-                                        <span className="fa fa-star "></span>
-                                        <span className="fa fa-star "></span>
-                                        <p>4.1 average based on 254 reviews.</p>
-                                    <button onClick={showProviderDetail}> Details</button>
-                                    <button onClick={showProviderEdit} >Edit</button>
-                                </div>
-
-                            </div>
+                            <ProviderHeading/>
                             <div className="show-provider-detail " id="showProviderDetail ">
                                 <hr style={{"border":"3px solid #f1f1f1 "}}/>
                                 <div className="provider-detail " id="providerDetail">
