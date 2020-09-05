@@ -29,7 +29,7 @@ const UserComment = (props) =>{
                 <p className = "message-range">Click for range</p>
                 <RangeDiv/>
                 <br/>
-                <button type="submit">Add feedback</button>
+                <button type="submit">Submit</button>
                 <button id="close" onClick ={props.handleOnClick}>Close</button>    
             </form>
         </div>

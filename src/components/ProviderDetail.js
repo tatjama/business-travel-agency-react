@@ -5,6 +5,9 @@ const ProviderDetail = () =>{
     function closeProviderDetail(){
         alert("Close provider detail")
     }
+    function addFeedback() {
+        alert('Add feedback')
+    }
     return(
     <div className="provider-detail " id="providerDetail">
         <div className="left ">
@@ -21,6 +24,9 @@ const ProviderDetail = () =>{
                viverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet
                faucibus maximus. Proin non nulla lectus.
             </p>
+            <button onClick = {addFeedback}>
+                Add Feedback
+            </button>
             <button onClick={closeProviderDetail}>
                 Close Details
             </button>
