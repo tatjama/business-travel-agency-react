@@ -11,6 +11,7 @@ import avatarJelena from '../images/avatar-jelena.webp';
 import avatarIvana from '../images/avatar-ivana.jpg';
 import UserComment from '../components/UserComment';
 import Yellow from '../components/Yellow';
+import CommentsForm from '../components/CommentsForm';
 
 const Enjoy = () =>{
     
@@ -55,39 +56,8 @@ const Enjoy = () =>{
                             </div>                           
                             <Yellow/>
                             <div id="showComments">
-                                <form>
-                                    <h2>Show Comments:</h2>                                  
-                                    <Comment
-                                        id = "comment-5-1"
-                                        source = {avatarDragan}
-                                        userName = "Dragan Petrovic"
-                                        date = "05.06.2020"
-                                        commentTitle = "You have little time to arrive from one flight to another"
-                                        commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
-        
-                                    />
-                                    <Comment
-                                        id = "comment-5-2"
-                                        source = {avatarJelena}
-                                        userName = "Jelena"
-                                        date = "08.08.2020"
-                                        commentTitle = "Fastest way to arrive in ..."
-                                        commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
-        
-                                    />
-                                    <Comment
-                                         id = "comment-5-3"
-                                         source = {avatarIvana}
-                                         userName = "Ivana"
-                                         date = "08.10.2020"
-                                         commentTitle = "Flight was late"
-                                         commentText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
-         
-                                    />
-                                   
-                                   
-                                    <button>Delete comment</button>
-                                </form>
+                                <CommentsForm arrayComments = {comments}/>
+                                
                             </div>
                         </div>
                     </div>
@@ -110,6 +80,32 @@ const Enjoy = () =>{
     )
 }
 
+const comments = [
+    {
+        id : "comment-5-1",
+                                        source : avatarDragan,
+                                        userName : "Dragan Petrovic",
+                                        date : "05.06.2020",
+                                        commentTitle : "You have little time to arrive from one flight to another",
+                                        commentText : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iver"
+              },{
+                        id : "comment-5-2",
+                                        source : avatarJelena,
+                                        userName : "Jelena",
+                                        date : "08.08.2020",
+                                        commentTitle : "Fastest way to arrive in ...",
+                                        commentText : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+              },{ 
+                            
+                                         id: "comment-5-3",
+                                         source : avatarIvana,
+                                         userName : "Ivana",
+                                         date : "08.10.2020",
+                                         commentTitle : "Flight was late",
+                                         commentText : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat iverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet faucib maximus. Proin non nulla lectus."
+         
+    }
+]
 /*const comments = 
 [
     [
