@@ -15,16 +15,6 @@ import CommentsForm from '../components/CommentsForm';
 
 const Enjoy = () =>{
     
-   
-    /*function showProviderDetail(params) {
-        alert("show providers detail")
-    }
-    function showAddComment(params) {
-        alert("show add comment")
-    }
-    function providerFeedback(params) {
-        alert("provider feedback")
-    }*/
     return(
         <div className="page-enjoy">
             <header className="header" id="header-enjoy" >
