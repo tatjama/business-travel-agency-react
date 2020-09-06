@@ -55,11 +55,9 @@ const SelectForm = () =>{
     ] 
    
        const [country, setCountry] = useState(countries[0]);
-       const [cities, setCities] = useState(country.cities)
-       const handleOnChangeSelect = (e) =>{
-        /*selectedValue = e.target.value
-         console.log(selectedValue)
-         console.log(props.countries[selectedValue])*/
+       const [cities, setCities] = useState(country.cities);
+       const [city, setCity] = useState(country.cities[0]);
+       const handleOnChangeSelect = (e) =>{        
          setCountry(countries[e.target.value]);
     }
     useEffect(() => {
@@ -67,7 +65,12 @@ const SelectForm = () =>{
        setCities(country.cities);
        console.log(cities)
     },[country, cities])
-
+    const handleSelectCity = (e) =>{
+        setCity(cities[e.target.value]);
+    }
+    useEffect(() => {
+        console.log(city)
+    })
       
      
     function chooseDestination(e) {
@@ -75,14 +78,17 @@ const SelectForm = () =>{
         document.getElementById('start-page').style.display = "block";        
         document.getElementById('home-page').style.display = "none";
     }
+    
     return(
         <form className="choose-destination">    
         <label htmlFor="countries"> Choose a country</label>             
-                <Select handleChange = {handleOnChangeSelect}
+                <Select 
+                   handleChange = {handleOnChangeSelect}
                    countries = {countries}
                 />
                         <br/>
                 <SelectCities
+                    handleChange = {handleSelectCity}
                     cities = {cities}
                 />
                 <br/>
