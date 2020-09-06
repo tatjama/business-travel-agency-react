@@ -7,14 +7,14 @@ const TransportationFrom = () =>{
         <br/>
         Country: 
         <input 
-            list="countryFrom" 
+            list="countriesFrom" 
             name="countryFrom" 
             id="fromCountry" 
             placeholder="Choose Country FROM" 
             autoFocus 
             required
         />
-        <datalist id="countryFrom">       
+        <datalist id="countriesFrom">       
             <option value="Serbia"/>
             <option value="Greece"/>
             <option value="Russia"/>
@@ -23,11 +23,11 @@ const TransportationFrom = () =>{
         <br/> <br/> 
         City :
         <input 
-            list="cityFrom" 
+            list="citiesFrom" 
             name="cityFrom" 
             placeholder="City from"/>
                 <br/>
-        <datalist id="cityFrom">
+        <datalist id="citiesFrom">
             <option value="Belgrade"/>
             <option value="Thessaloniki"/>
             <option value="Chicago"/>

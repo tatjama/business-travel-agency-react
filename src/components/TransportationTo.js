@@ -7,13 +7,13 @@ const TransportationTo = () =>{
                             <br/> 
                             Country:
                             <input 
-                                list="countryTo"
+                                list="countriesTo"
                                 name="countryTo" 
                                 id="toCountry" 
                                 placeholder="Choose Country TO" 
                                 required
                             />
-                            <datalist id="countryTo">       
+                            <datalist id="countriesTo">       
                                         <option value="Serbia"/>
                                         <option value="Greece"/>
                                         <option value="Russia"/>
@@ -21,9 +21,9 @@ const TransportationTo = () =>{
                             </datalist>
                             <br/> <br/> 
                             City :
-                            <input list="cityTo" name="cityTo" placeholder="City to"/>
+                            <input list="citiesTo" name="cityTo" placeholder="City to"/>
                             <br/>
-                            <datalist id="cityTo">
+                            <datalist id="citiesTo">
                                         <option value="Belgrade"/>
                                         <option value="Thessaloniki"/>
                                         <option value="Chicago"/>
