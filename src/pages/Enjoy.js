@@ -5,7 +5,7 @@ import RangeDiv from '../components/RangeDiv';
 import TransportationForm from '../components/TransportationForm';
 import ProviderHeading from '../components/ProviderHeading';
 import ProviderDetail from '../components/ProviderDetail';
-import Comment from '../components/Comment';
+//import Comment from '../components/Comment';
 import avatarDragan from '../images/avatar-dragan.webp';
 import avatarJelena from '../images/avatar-jelena.webp';
 import avatarIvana from '../images/avatar-ivana.jpg';
