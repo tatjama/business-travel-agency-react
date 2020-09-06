@@ -1,18 +1,18 @@
 import React from 'react';
 
 const Select = (props) =>{
-   // const countries = props.countries;
-   //let selectedValue = 2;
-   console.log(props)
-   
-
-   
+   //console.log(props)   
     return(
-        <select className="nameCountry" name = "countries" id="countries" onChange={props.handleChange} autoFocus >       
-                        <option value={props.countries[0].value}>{props.countries[0].name}</option>
-                        <option value={props.countries[1].value}>{props.countries[1].name}</option>
-                        <option value={props.countries[2].value}>{props.countries[2].name}</option>
-                        <option value={props.countries[3].value}>{props.countries[3].name}</option>
+        <select 
+            name = {props.name} 
+            id = {props.name} 
+            onChange={props.handleChange} 
+            autoFocus = {props.autoFocus} 
+        >       
+                        <option value={props.optionArray[0].value}>{props.optionArray[0].name}</option>
+                        <option value={props.optionArray[1].value}>{props.optionArray[1].name}</option>
+                        <option value={props.optionArray[2].value}>{props.optionArray[2].name}</option>
+                        <option value={props.optionArray[3].value}>{props.optionArray[3].name}</option>
                         
         </select>
     )
