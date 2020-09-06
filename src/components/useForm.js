@@ -27,7 +27,7 @@ import {useState, useEffect} from 'react';
                 setValues(initValues)
               );
           }
-      }, [errors])    
+      }, [errors, isSent, isSubmitting, initValues, callback])    
       const handleReset = (e)=>{
         setValues(initValues);
       }
