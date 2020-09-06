@@ -1,6 +1,25 @@
 import React from 'react';
+import Select from './Select';
 
 const SelectForm = () =>{
+    const countries = [
+        {
+            value: 1,
+            name: "Greece"
+        },        
+        {
+            value: 2,
+            name: "Russia"
+        },
+        {
+            value: 3,
+            name: "Serbia"            
+        },
+        {
+            value: 4,
+            name: "USA"
+        }
+    ]
     function chooseDestination(e) {
         e.preventDefault();
         document.getElementById('start-page').style.display = "block";        
@@ -9,12 +28,12 @@ const SelectForm = () =>{
     }
     return(
         <form className="choose-destination">                 
-                <select className="nameCountry" autoFocus >       
-                        <option value="1">Serbia</option>
-                        <option value="2">Greece</option>
-                        <option value="3">Russia</option>
-                        <option value="4">USA</option>
-                        </select>
+                <Select
+                    country1 = {countries[0]}
+                    country2 = {countries[1]}
+                    country3 = {countries[2]}
+                    country4 = {countries[3]}
+                />
                         <br/>
                 <select className="nameCity" >
                             <option value="1">Belgrade</option>
