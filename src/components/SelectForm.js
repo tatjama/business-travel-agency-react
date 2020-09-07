@@ -84,8 +84,8 @@ const countries = [
             {value: 1, id: "country2-city1", name: "Nis"},
             {value: 2, id: "country2-city2", name: "Kraljevo"}, 
             {value: 3, id: "country2-city3",  name: "Novi Sad"}, 
-            {value: 4, id: "country2-city3",  name: "Valjevo"}, 
-            {value: 5, id: "country2-city4",  name: "Cacak"}
+            {value: 4, id: "country2-city4",  name: "Valjevo"}, 
+            {value: 5, id: "country2-city5",  name: "Cacak"}
         ]         
     },
     {
