@@ -2,18 +2,18 @@ import React from 'react';
 import Select from './Select';
 import useSelect from './useSelect';
 
-const TransportationFrom = () =>{
-   const{countries, cities, handleSelectCity, handleSelectCountry} = useSelect();
+const TransportationDestination = (props) =>{
+    const{countries, cities, handleSelectCity, handleSelectCountry} = useSelect();
     return(
-        <div className = "destination" id="from">
-        FROM:
+        <div className = "destination">
+        {props.point/*FROM: - TO*/}:
         <br/>
         Country: 
         <Select
              handleChange = {handleSelectCountry}
              optionArray = {countries}
-             autoFocus = {true}
-             name = "fromCountries"
+             autoFocus = {props.handleAutofocus/*true */}
+             name = {props.pointCountries/*"fromCountries"*/}
         />
         <br/> <br/> 
         City :
@@ -21,13 +21,12 @@ const TransportationFrom = () =>{
                  handleChange = {handleSelectCity}
                  optionArray = {cities}
                  autoFocus = {false}
-                 name = "fromCities"
+                 name ={props.pointCities} /*"fromCities"*/
             />
             
     </div>
     )
+
 }
 
-export default TransportationFrom;
-
-
+export default TransportationDestination;
