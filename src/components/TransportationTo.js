@@ -21,7 +21,7 @@ const TransportationTo = () =>{
     },[cityTo])
  
     return(
-        <div id="to">
+        <div className = "destination" id="to">
              TO:
         <br/> 
           Country:

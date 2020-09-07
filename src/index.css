@@ -433,6 +433,9 @@ input[type="radio"] {
     color: darkcyan;
 }
 /*FORM TRANSPORTATION*/
+.destination{
+    text-align: right;
+}
 
 #nCity {
     color: white;
@@ -448,7 +451,12 @@ input[type="radio"] {
 }
 #transportationFromTo div {
     padding: 5px;
+    margin-bottom: 10px;
 }
+#transportationFromTo div input{
+    margin: 10px;
+     }      
+
 
 
 /*ADD FEEDBACK ABOUT TRANSPORTATION*/
@@ -458,6 +466,7 @@ input[type="radio"] {
     color: white;
     padding: 5px;
 }
+
 
     
 
@@ -579,12 +588,24 @@ input[type="radio"] {
         width: 100%;
         padding: 5px;
 }
-           
+#transportationFromTo div{
+    width: 100%;
+     }      
+#transportationFromTo div select{
+    width: 80%;
+     }      
+#transportationFromTo div input{
+    margin: 10px;
+     }      
            }  
            @media screen and (max-width: 500px){   
             button {
                 width: 100%;
             }
+            #transportationFromTo div select{
+                width: 70%;
+                 }
+
         }  
            /*FOOTER*/
            
