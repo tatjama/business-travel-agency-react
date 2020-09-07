@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Select = (props) =>{
-   console.log(props)   
+   //console.log(props)   
    
     return(
         <select 
