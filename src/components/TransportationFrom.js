@@ -2,23 +2,24 @@ import React, {useState, useEffect} from 'react';
 import Select from './Select';
 
 const TransportationFrom = () =>{
-    const [countryFrom, setCountryFrom] = useState(countries[0]);
-    const [citiesFrom, setCitiesFrom] = useState(countryFrom.cities);
-    const [cityFrom, setCityFrom] = useState(countryFrom.cities[0]);
+    const [country, setCountry] = useState(countries[0]);
+    const [cities, setCities] = useState(country.cities);
+    const [city, setCity] = useState(country.cities[0]);
 
-    const handleSelectCountry = (e) =>{        
-         setCountryFrom(countries[e.target.value]);
-    }
-    useEffect(() => {
-            setCitiesFrom(countryFrom.cities);
-        },[countryFrom, citiesFrom])
+ const handleSelectCountry = (e) =>{        
+      setCountry(countries[e.target.value]);
+ }
+ useEffect(() => {
+         setCities(country.cities);
+     },[country, cities])
 
-    const handleSelectCity = (e) =>{
-        setCityFrom(citiesFrom[e.target.value]);
-    }
-    useEffect(() => {
-        console.log(cityFrom)
-    },[cityFrom])
+ const handleSelectCity = (e) =>{
+     setCity(cities[e.target.value]);
+ }
+ useEffect(() => {
+     console.log(city)
+ },[city])      
+  
     return(
         <div className = "destination" id="from">
         FROM:
@@ -34,7 +35,7 @@ const TransportationFrom = () =>{
         City :
             <Select
                  handleChange = {handleSelectCity}
-                 optionArray = {citiesFrom}
+                 optionArray = {cities}
                  autoFocus = {false}
                  name = "fromCities"
             />
