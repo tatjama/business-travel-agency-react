@@ -1,7 +1,6 @@
 import React from 'react';
-import TransportationFrom from './TransportationFrom';
-import TransportationTo from './TransportationTo';
 import TransportationType from './TransportationType';
+import TransportationDestination from './TransportationDestination';
 
 const TransportationForm = () =>{
     function showTransportation(){
@@ -12,8 +11,18 @@ const TransportationForm = () =>{
             <fieldset>
                 <legend>Transportation</legend>
                     <div id="transportationFromTo">
-                        <TransportationFrom/>
-                        <TransportationTo/>
+                        <TransportationDestination
+                        point = "from"
+                        handleAutofocus = {true}
+                        pointCountries = "fromCountries"
+                        pointCities = "fromCities"
+                        />
+                        <TransportationDestination
+                        point = "to"
+                        handleAutofocus = {false}
+                        pointCountries = "toCountries"
+                        pointCities = "toCities"
+                        />
                         <TransportationType/>
                         <div>
                             <br/><br/>
