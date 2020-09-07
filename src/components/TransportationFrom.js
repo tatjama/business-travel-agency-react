@@ -20,7 +20,7 @@ const TransportationFrom = () =>{
         console.log(cityFrom)
     },[cityFrom])
     return(
-        <div id="from">
+        <div className = "destination" id="from">
         FROM:
         <br/>
         Country: 
