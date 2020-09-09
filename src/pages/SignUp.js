@@ -12,7 +12,8 @@ const initValuesForSignUp = {
   address: "",
   addressAlternative: "",
   phone: "",
-  phoneAlternative: ""
+  phoneAlternative: "",
+  status: 0
 };
 
 const SignUp = ()=>{
@@ -155,7 +156,14 @@ const SignUp = ()=>{
                                 />
                                 <br/>
                                 <div style={{display:"none"}}> Status:
-                                <input type="number" name="status" placeholder="administrator" id="status" readOnly value="1"/>
+                                <input 
+                                  type="number" 
+                                  name="status" 
+                                  placeholder="user" 
+                                  id="status" 
+                                  readOnly 
+                                  value="1"
+                                />
                                 <br/>
                             </div>
                          </div>

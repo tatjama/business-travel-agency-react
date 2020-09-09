@@ -9,6 +9,7 @@ const SelectForm = () =>{
      
     function chooseDestination(e) {
         e.preventDefault();
+        //sent select city id to back , that thay sent information about that
         document.getElementById('start-page').style.display = "block";        
         document.getElementById('home-page').style.display = "none";
     }
