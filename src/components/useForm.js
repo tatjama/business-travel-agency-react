@@ -1,10 +1,13 @@
 import {useState, useEffect} from 'react';
+//import users from './data/users.json';
 
  const useForm = (callback, validate, initValues) => {
     const [values, setValues] = useState(initValues);
     const [errors, setErrors] = useState({});
     const [isSent, setIsSent] = useState(false);  
     const [isSubmitting, setIsSubmitting] = useState(false);  
+
+   
     
       const handleChange = (e)=>{
         const {name, value} = e.target;
@@ -23,11 +26,15 @@ import {useState, useEffect} from 'react';
 
       useEffect(()=>{
           if(Object.keys(errors).length === 0 && isSubmitting && isSent){
-              callback(                  
+           
+              callback(                      
                 setValues(initValues)
               );
           }
       }, [errors, isSent, isSubmitting, initValues, callback])    
+
+     
+
       const handleReset = (e)=>{
         setValues(initValues);
       }

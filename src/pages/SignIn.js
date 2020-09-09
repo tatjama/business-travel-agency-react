@@ -3,10 +3,12 @@ import {useHistory} from 'react-router-dom';
 import useForm from '../components/useForm';
 import validateSignIn from '../components/validateSignIn';
 import {useAppContext} from '../libs/contextLib';
+import users from '../components/data/users.json';
 
 const initValuesForSignIn = {
   email: '',
-  password: ''
+  password: '',
+  status: 0
 };
 
 const SignIn = () => {
@@ -14,18 +16,20 @@ const SignIn = () => {
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn);
   const [isSuccess, setIsSuccess] = useState(false)
   const { setUserHasAuthenticated} = useAppContext();
-
+  
   function submitted() {    
     setIsSuccess(true);
     console.log(values);
-    if(values.email === "user@user.com" && values.password === "UserUser1"){
-      alert('Submitted successfully');
-      setUserHasAuthenticated(true);
-      history.push('/');
-    }else{
-      alert( 'Invalid credentials!');
+   if(values.email === "user@user.com" && values.password === "UserUser1"){
+        alert('Submitted successfully');
+        setUserHasAuthenticated(true);
+        history.push('/');
+      }else{
+        alert( 'Invalid credentials!');
+      }
     }
-  } 
+    
+  
     
     return(
     <div className = "intro-page">        

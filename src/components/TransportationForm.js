@@ -3,9 +3,12 @@ import TransportationType from './TransportationType';
 import TransportationDestination from './TransportationDestination';
 
 const TransportationForm = () =>{
+
     function showTransportation(){
+        //sent selected city from and to
         alert('show transportation')
     }
+
     return(
         <form id="formTransportation">
             <fieldset>
