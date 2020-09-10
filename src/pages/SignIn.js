@@ -3,7 +3,9 @@ import {useHistory} from 'react-router-dom';
 import useForm from '../components/useForm';
 import validateSignIn from '../components/validateSignIn';
 import {useAppContext} from '../libs/contextLib';
-import users from '../components/data/users.json';
+//import users from '../components/data/users.json';
+import {Auth} from '../components/utils/Auth';
+import login from "../components/utils/login";
 
 const initValuesForSignIn = {
   email: '',
@@ -13,20 +15,25 @@ const initValuesForSignIn = {
 
 const SignIn = () => {
   const history = useHistory();
-  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn);
+  const { values, handleChange, handleSubmit, handleReset, errors, user } = useForm(submitted, validateSignIn, initValuesForSignIn, login);
   const [isSuccess, setIsSuccess] = useState(false)
   const { setUserHasAuthenticated} = useAppContext();
+  //const [user, setUser] = useState({})
   
   function submitted() {    
     setIsSuccess(true);
     console.log(values);
-   if(values.email === "user@user.com" && values.password === "UserUser1"){
+    console.log(user);
+    alert('Submitted successfully');
+    setUserHasAuthenticated(true);
+    history.push('/');
+   /*if(values.email === "user@user.com" && values.password === "UserUser1"){
         alert('Submitted successfully');
         setUserHasAuthenticated(true);
         history.push('/');
       }else{
         alert( 'Invalid credentials!');
-      }
+      }*/
     }
     
   

@@ -1,12 +1,15 @@
 import {useState, useEffect} from 'react';
+import  login  from '../components/utils/login';
+//import { Auth } from './utils/Auth';
 //import users from './data/users.json';
 
  const useForm = (callback, validate, initValues) => {
     const [values, setValues] = useState(initValues);
     const [errors, setErrors] = useState({});
+    
     const [isSent, setIsSent] = useState(false);  
     const [isSubmitting, setIsSubmitting] = useState(false);  
-
+    const [user, setUser] = useState({})
    
     
       const handleChange = (e)=>{
@@ -19,14 +22,18 @@ import {useState, useEffect} from 'react';
     
       const handleSubmit = (e)=>{
         e.preventDefault();
-        setErrors(validate(values));        
+        setErrors(validate(values));    
+        //setUser(login(values));  
+        setUser(login(values));
         setIsSubmitting(true);
         setIsSent(true);          
        }   
 
       useEffect(()=>{
-          if(Object.keys(errors).length === 0 && isSubmitting && isSent){
-           
+        
+
+          if(Object.keys(errors).length === 0 && isSubmitting && isSent && Object.keys(user).length !==0){
+            console.log(user)
               callback(                      
                 setValues(initValues)
               );
@@ -44,7 +51,8 @@ import {useState, useEffect} from 'react';
     handleChange,
     handleSubmit,
     handleReset,
-    errors
+    errors,
+    user
 } 
 }
 
