@@ -35,10 +35,10 @@ import  login  from '../components/utils/login';
           if(Object.keys(errors).length === 0 && isSubmitting && isSent && Object.keys(user).length !==0){
             console.log(user)
               callback(                      
-                setValues(initValues)
-              );
+                //setValues(initValues)
+              )
           }
-      }, [errors, isSent, isSubmitting, initValues, callback])    
+      }, [errors, isSent, isSubmitting, initValues, callback, user])    
 
      
 
