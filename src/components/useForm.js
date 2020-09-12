@@ -14,9 +14,11 @@ import  login  from '../components/utils/login';
     
       const handleChange = (e)=>{
         const {name, value} = e.target;
-        setIsSubmitting(false);
+
+        //setIsSubmitting(false);
         const newValues = {...values, [name]: value};       
         isSent && setErrors(validate(newValues));
+        console.log("newValues = " + value );
         setValues(values =>(newValues));
       };     
     
@@ -29,16 +31,24 @@ import  login  from '../components/utils/login';
         setIsSent(true);          
        }   
 
-      useEffect(()=>{
-        
-
+      useEffect(()=>{ 
+        console.log(errors); 
+        console.log(isSent);       
+        console.log(isSubmitting);
+        console.log(initValues);
+        console.log(callback);
+        console.log(user);
           if(Object.keys(errors).length === 0 && isSubmitting && isSent && Object.keys(user).length !==0){
             console.log(user)
               callback(                      
                 //setValues(initValues)
               )
+          }else{
+            setValues(initValues);
+            alert('Nema usera')
+
           }
-      }, [errors, isSent, isSubmitting, initValues, callback, user])    
+      }, [errors, isSent, isSubmitting, initValues])    
 
      
 
