@@ -1,39 +1,52 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Footer from './components/Footer';
 import { Link, useHistory} from  'react-router-dom';
 import {AppContext} from './libs/contextLib';
 import Routes from './pages/Routes';
+import useStateWithSessionStorage from './components/utils/useStateWithSessionStorage';
 
 const App = ()=>{
     const history = useHistory();
     const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
-   //const [isAuthenticating, setIsAuthenticating ] = useState(true);
+   const [isAuthenticating, setIsAuthenticating ] = useState(true);
+   const [value, setValue] = useStateWithSessionStorage('logInUser')
 
    function handleSignOut() {
     //await Auth.SignOut() - to complete signOut from session    
+    sessionStorage.clear();
     history.replace("/signin");
     setUserHasAuthenticated(false);
     alert('Sign Out');
 }
 
-/*useEffect(() => {
+useEffect(() => {
     onLoad();    
 }, [])
 
-function onLoad() {
+async function onLoad() {
     try {
+        alert('ima li usera');
+        console.log(value);
+        if(value === ""){
+            alert('nista usera')
+        }else{
+            console.log(value);
+            history.replace('/');
+            await setUserHasAuthenticated(true)
+        }
         //await Auth.currentSession(); 
         //load current session - if it load, updates the 
         //isAuthenticating state variable once the process is complete. 
         //It does so by calling setIsAuthenticating(false).
-        setUserHasAuthenticated(true)
+        //await setIsAuthenticating(false)
+       
     } catch (error) {
         if(error !== 'No current user'){
             alert(error)
         }
     }
     setIsAuthenticating(false);
-}   */
+}   
     function openNavHamburger() {
         const myTopNav = document.getElementById("my-top-nav");
         if(myTopNav.className === "top-nav"){

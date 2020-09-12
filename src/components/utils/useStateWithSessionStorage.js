@@ -1,7 +1,7 @@
-import {usestate, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 const useStateWithSessionStorage = (sessionStorageKey)=>{
-    const [value, setValue] = useState(sessionStorage.getItems(sessionStorageKey) || "");
+    const [value, setValue] = useState(sessionStorage.getItem(sessionStorageKey) || "");
 
     useEffect(() =>{
         sessionStorage.setItem(sessionStorageKey, value)

@@ -6,6 +6,7 @@ import {useAppContext} from '../libs/contextLib';
 //import users from '../components/data/users.json';
 import {Auth} from '../components/utils/Auth';
 import login from "../components/utils/login";
+import useStateWithSessionStorage from '../components/utils/useStateWithSessionStorage';
 
 const initValuesForSignIn = {
   email: '',
@@ -19,11 +20,18 @@ const SignIn = () => {
   const [isSuccess, setIsSuccess] = useState(false)
   const { setUserHasAuthenticated} = useAppContext();
   //const [user, setUser] = useState({})
+ // const [value, setValue] = useStateWithSessionStorage('logInUser');
   
   function submitted() {    
     setIsSuccess(true);
     console.log(values);
     console.log(user);
+    const stringUser = JSON.stringify(user);
+    console.log(stringUser) 
+    //setValue(stringUser);
+    sessionStorage.setItem('logInUser', stringUser)
+   // setUserInCurrentSession('logInUser', stringUser);
+    
     alert('Submitted successfully');
     setUserHasAuthenticated(true);
     history.push('/');
