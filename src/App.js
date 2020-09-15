@@ -8,13 +8,12 @@ import useStateWithSessionStorage from './components/utils/useStateWithSessionSt
 const App = ()=>{
     const history = useHistory();
     const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
-   const [isAuthenticating, setIsAuthenticating ] = useState(true);
-   const [value, setValue] = useStateWithSessionStorage('logInUser')
+    const [isAuthenticating, setIsAuthenticating ] = useState(true);
+    const [value, setValue] = useStateWithSessionStorage('logInUser')
 
    function handleSignOut() {
     // complete signOut from session    
-    //sessionStorage.clear();
-    setValue("");
+    sessionStorage.clear();    
     history.replace("/signin");
     setUserHasAuthenticated(false);
     alert('Sign Out');
