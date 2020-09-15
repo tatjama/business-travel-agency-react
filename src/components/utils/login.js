@@ -1,14 +1,14 @@
-const defaultUser = {
-    id: 5,
-    status: 0,
-    email: "primer@primer.com",
-    password: "PrimerPrimer1"
-}
+import {users} from '../data/users.json';
+
 export default function login (values) {
-if(values.email === defaultUser.email && values.password === defaultUser.password){
-    console.log(defaultUser)
-    return defaultUser
-}else{
-    return {}
-}
+    let user = {};
+    console.log(values)
+    for(let i = 0; i < users.length; i++){       
+        if(users[i].email === values.email && users[i].password === values.password){
+            user = users[i]; 
+            return user
+        }        
+    }
+    return user
+
 }

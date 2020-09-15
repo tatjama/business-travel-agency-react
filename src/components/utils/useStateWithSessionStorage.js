@@ -5,7 +5,7 @@ const useStateWithSessionStorage = (sessionStorageKey)=>{
 
     useEffect(() =>{
         sessionStorage.setItem(sessionStorageKey, value)
-    }, [value])
+    }, [value, sessionStorageKey])
 
 return [value, setValue];
 }

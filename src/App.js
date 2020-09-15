@@ -12,8 +12,9 @@ const App = ()=>{
    const [value, setValue] = useStateWithSessionStorage('logInUser')
 
    function handleSignOut() {
-    //await Auth.SignOut() - to complete signOut from session    
-    sessionStorage.clear();
+    // complete signOut from session    
+    //sessionStorage.clear();
+    setValue("");
     history.replace("/signin");
     setUserHasAuthenticated(false);
     alert('Sign Out');
@@ -25,10 +26,12 @@ useEffect(() => {
 
 async function onLoad() {
     try {
+        await 
         alert('ima li usera');
         console.log(value);
         if(value === ""){
             alert('nista usera')
+            history.replace('/signin');
         }else{
             console.log(value);
             history.replace('/');

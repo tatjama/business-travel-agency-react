@@ -12,13 +12,15 @@ import avatarSanja from '../images/avatar-sanja.jpg';
 import avatarIvana from '../images/avatar-ivana.jpg';
 import avatarDragan from '../images/avatar-dragan.webp';
 import airSerbiaLogo from '../images/logoavio1.webp';
+import {useAppContext} from '../libs/contextLib';
 
 function showAddComment() {
     document.getElementById('user-comment').style.display = "block";
 }
 
-const Life = ()=>{              
-        
+const Life = ()=>{        
+    const { isUserAuthenticated} = useAppContext();      
+     console.log( isUserAuthenticated)   
     return(
         <div className="page-life">
              <header className="header" id="header-life" >
