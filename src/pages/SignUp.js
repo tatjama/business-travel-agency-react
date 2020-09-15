@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import useForm from '../components/useForm';
 import validateSignUp from '../components/validateSignUp';
+//import useStateWithLocalStorage from '../components/utils/useStateWithLocalStorage';
 
 const initValuesForSignUp = {
   firstName: "",
@@ -17,17 +18,23 @@ const initValuesForSignUp = {
 };
 
 const SignUp = ()=>{
-  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignUp, initValuesForSignUp);
-  const [isSuccess, setIsSuccess] = useState(false);
   const history = useHistory();
+  const { values, handleChange, handleSubmit, handleReset, errors } 
+  = useForm(submitted, validateSignUp, initValuesForSignUp);
+
+  const [isSuccess, setIsSuccess] = useState(false);  
+  
   
   function submitted() {
     alert('Submitted successfully');
     setIsSuccess(true);
+    console.log(isSuccess)
+
     history.push('/signin');
     console.log(values);
+    localStorage.setItem('usersInLocalStorage',JSON.stringify(values))
   }
-    return(
+   return(
       <div className = "intro-page">        
       <div className="intro-page-gradient"> 
         <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate   >
