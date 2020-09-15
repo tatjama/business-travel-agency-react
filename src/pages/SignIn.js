@@ -15,9 +15,9 @@ const initValuesForSignIn = {
 const SignIn = () => {
   const history = useHistory();
   const { setUserHasAuthenticated} = useAppContext();
-  const { values, handleChange, handleSubmit, handleReset, errors, user } = useForm(submitted, validateSignIn, initValuesForSignIn, login);
+  const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn, login);
   
-  const [isSuccess, setIsSuccess] = useState(false)  
+  //const [isSuccess, setIsSuccess] = useState(false)  
  
 
  
@@ -45,22 +45,6 @@ async  function submitted() {
     }catch{
       console.log(errors);
     }
-    //const stringUser = JSON.stringify(user);
-    //console.log(stringUser) 
-    //setValue(stringUser);
-   // sessionStorage.setItem('logInUser', stringUser)
-   // setUserInCurrentSession('logInUser', stringUser);
-    
-    /*alert('Submitted successfully');
-    setUserHasAuthenticated(true);
-    history.push('/');*/
-   /*if(values.email === "user@user.com" && values.password === "UserUser1"){
-        alert('Submitted successfully');
-        setUserHasAuthenticated(true);
-        history.push('/');
-      }else{
-        alert( 'Invalid credentials!');
-      }*/
     }
     
   
@@ -70,7 +54,7 @@ async  function submitted() {
       <div className="intro-page-gradient">                          
            
         <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
-        {isSuccess && <div className="success-message">Thank you for Sign In</div>}
+        {/*isSuccess && <div className="success-message">Thank you for Sign In</div>*/}
           <fieldset>
             <legend>Sign in</legend>
             <br/>
