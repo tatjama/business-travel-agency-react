@@ -3,8 +3,6 @@ import {useHistory} from 'react-router-dom';
 import useForm from '../components/useForm';
 import validateSignIn from '../components/validateSignIn';
 import {useAppContext} from '../libs/contextLib';
-//import users from '../components/data/users.json';
-
 import login from "../components/utils/login";
 import useStateWithSessionStorage from '../components/utils/useStateWithSessionStorage';
 
@@ -16,25 +14,46 @@ const initValuesForSignIn = {
 
 const SignIn = () => {
   const history = useHistory();
-  const { values, handleChange, handleSubmit, handleReset, errors, user } = useForm(submitted, validateSignIn, initValuesForSignIn, login);
-  const [isSuccess, setIsSuccess] = useState(false)
   const { setUserHasAuthenticated} = useAppContext();
-  //const [user, setUser] = useState({})
- // const [value, setValue] = useStateWithSessionStorage('logInUser');
+  const { values, handleChange, handleSubmit, handleReset, errors, user } = useForm(submitted, validateSignIn, initValuesForSignIn, login);
   
-  function submitted() {    
-    setIsSuccess(true);
+  const [isSuccess, setIsSuccess] = useState(false)  
+ 
+
+ 
+async  function submitted() {    
+    //setIsSuccess(true);
     console.log(values);
-    console.log(user);
-    const stringUser = JSON.stringify(user);
-    console.log(stringUser) 
+    try{
+     const user = await   login(values);
+     console.log(user);
+     if(Object.keys(user).length !==0){
+      alert('Submitted successfully');
+      
+      sessionStorage.setItem('logInUser', JSON.stringify(user)) ;
+      console.log('subm. succ')
+      setUserHasAuthenticated({
+              isAuthenticated:true,
+              logInUser: user
+            });
+        
+      history.push("/");
+     }else{
+       alert('invalid user')
+     }
+     
+    }catch{
+      console.log(errors);
+    }
+    //const stringUser = JSON.stringify(user);
+    //console.log(stringUser) 
     //setValue(stringUser);
-    sessionStorage.setItem('logInUser', stringUser)
+   // sessionStorage.setItem('logInUser', stringUser)
    // setUserInCurrentSession('logInUser', stringUser);
     
-    alert('Submitted successfully');
+    /*alert('Submitted successfully');
     setUserHasAuthenticated(true);
-    history.push('/');
+    history.push('/');*/
    /*if(values.email === "user@user.com" && values.password === "UserUser1"){
         alert('Submitted successfully');
         setUserHasAuthenticated(true);
