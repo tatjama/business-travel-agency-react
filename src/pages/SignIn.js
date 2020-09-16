@@ -31,7 +31,7 @@ async  function submitted() {
       alert('Submitted successfully');
       
       sessionStorage.setItem('logInUser', JSON.stringify(user)) ;
-      console.log('subm. succ')
+      console.log('submitted ')
       setUserHasAuthenticated({
               isAuthenticated:true,
               logInUser: user

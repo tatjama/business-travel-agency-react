@@ -28,12 +28,11 @@ async function onLoad() {
         await 
         console.log('Is user in session?');
        // console.log(value);
-        let user = JSON.parse(value);
-        //console.log(user);
-        if(user === ""){
+        if(value === ""){
             console.log('No user in Session!')
             history.replace('/signin');
         }else{
+            let user = JSON.parse(value);
             alert("user " + user.email + " is on session!")
             history.replace('/');
             await setUserHasAuthenticated({
@@ -41,12 +40,6 @@ async function onLoad() {
                 logInUser: user
               })
         }
-        //await Auth.currentSession(); 
-        //load current session - if it load, updates the 
-        //isAuthenticating state variable once the process is complete. 
-        //It does so by calling setIsAuthenticating(false).
-        //await setIsAuthenticating(false)
-       
     } catch (error) {
         if(error !== 'No current user'){
             alert(error)
