@@ -3,8 +3,11 @@ import SelectForm from '../components/SelectForm';
 import ProviderHeading from '../components/ProviderHeading';
 import ProviderDetail from '../components/ProviderDetail';
 import ProviderDetailForm from '../components/ProviderDetailForm';
+import {useAppContext} from '../libs/contextLib';
 
 const Providers = ()=>{
+    const { isUserAuthenticated} = useAppContext();      
+    console.log( isUserAuthenticated)
      
     return(
         <div className="page-providers">

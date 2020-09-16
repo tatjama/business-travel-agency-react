@@ -12,8 +12,11 @@ import avatarIvana from '../images/avatar-ivana.jpg';
 import UserComment from '../components/UserComment';
 import Yellow from '../components/Yellow';
 import CommentsForm from '../components/CommentsForm';
+import {useAppContext} from '../libs/contextLib';
 
 const Enjoy = () =>{
+    const { isUserAuthenticated} = useAppContext();      
+    console.log( isUserAuthenticated)
     
     return(
         <div className="page-enjoy">

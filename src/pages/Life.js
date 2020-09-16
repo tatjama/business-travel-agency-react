@@ -20,7 +20,8 @@ function showAddComment() {
 
 const Life = ()=>{        
     const { isUserAuthenticated} = useAppContext();      
-     console.log( isUserAuthenticated)   
+    console.log( isUserAuthenticated)   
+
     return(
         <div className="page-life">
              <header className="header" id="header-life" >
