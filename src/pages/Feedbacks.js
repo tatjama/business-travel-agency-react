@@ -1,8 +1,12 @@
 import React from 'react';
 import SelectForm from '../components/SelectForm';
 import SectionFirstFeedback from '../components/SectionFirstFeedback';
+import {useAppContext} from '../libs/contextLib';
 
 const Feedbacks = ()=>{
+    const { isUserAuthenticated} = useAppContext();      
+    console.log( isUserAuthenticated)
+    
     return(
         <div className="page-feedback">
             <header className="header" id="header-feedback">

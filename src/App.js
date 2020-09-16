@@ -26,12 +26,12 @@ useEffect(() => {
 async function onLoad() {
     try {
         await 
-        alert('Is user in session?');
+        console.log('Is user in session?');
        // console.log(value);
         let user = JSON.parse(value);
         //console.log(user);
         if(user === ""){
-            alert('No user in Session!')
+            console.log('No user in Session!')
             history.replace('/signin');
         }else{
             alert("user " + user.email + " is on session!")

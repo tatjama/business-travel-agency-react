@@ -12,6 +12,7 @@ import avatarSanja from '../images/avatar-sanja.jpg';
 import avatarIvana from '../images/avatar-ivana.jpg';
 import avatarDragan from '../images/avatar-dragan.webp';
 import accommodationLogo from '../images/accomodation_logo.webp';
+import {useAppContext} from '../libs/contextLib';
 
 function showAddComment() {
     document.getElementById('user-comment').style.display = "block";
@@ -19,6 +20,8 @@ function showAddComment() {
 
 
 const Accommodation = () =>{
+    const { isUserAuthenticated} = useAppContext();      
+    console.log( isUserAuthenticated)
     
     return(
         <div className="page-accommodation">
