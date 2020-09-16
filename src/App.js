@@ -26,15 +26,20 @@ useEffect(() => {
 async function onLoad() {
     try {
         await 
-        alert('ima li usera');
-        console.log(value);
-        if(value === ""){
-            alert('nista usera')
+        alert('Is user in session?');
+       // console.log(value);
+        let user = JSON.parse(value);
+        //console.log(user);
+        if(user === ""){
+            alert('No user in Session!')
             history.replace('/signin');
         }else{
-            console.log(value);
+            alert("user " + user.email + " is on session!")
             history.replace('/');
-            await setUserHasAuthenticated(true)
+            await setUserHasAuthenticated({
+                isAuthenticated:true,
+                logInUser: user
+              })
         }
         //await Auth.currentSession(); 
         //load current session - if it load, updates the 
