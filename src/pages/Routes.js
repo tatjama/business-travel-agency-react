@@ -9,6 +9,8 @@ import Enjoy from './Enjoy';
 import Feedbacks from './Feedbacks'; 
 import Providers from './Providers';
 //import NotFound from './NotFound';
+import Shop from './Shop';
+import City from './City';
 
 export default function Routes() {
 
@@ -21,7 +23,9 @@ export default function Routes() {
             <Route path = "/accommodation" component = {Accommodation}/>
             <Route path = "/enjoy" component = {Enjoy}/>
             <Route path = "/feedbacks" component = {Feedbacks} />
-            <Route path = "/providers" component = {Providers} />                 
+            <Route path = "/providers" component = {Providers} />   
+            <Route path = "/shop" exact component = {Shop}/>  
+            <Route path = "/shop/:id" component = {City}/>          
             <Route  component = {SignIn} />   
         </Switch>
     );
