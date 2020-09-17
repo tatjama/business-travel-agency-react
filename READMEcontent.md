@@ -56,4 +56,6 @@ App. starts with signIn page. For the first time , you have to registered on sig
     - delete users comment
     - edit provider
 
-    ******   if you go to some page, and are not signIn, redirect to SignInPage, after authenticate redirect on desire page
+    /*TODO LIST*****  
+    * if you go to some page, and are not signIn, redirect to SignInPage, after authenticate redirect on desire page
+    * 
