@@ -9,7 +9,7 @@ const Shop = () =>{
 // CITIES: population> 100.000
     
     const fetchItems = async() =>{
-        const data  = await fetch("https://countries-cities.p.rapidapi.com/location/country/BA/city/list?page=1&per_page=20&format=json&population=100001", {
+        const data  = await fetch("https://countries-cities.p.rapidapi.com/location/country/RS/city/list?page=1&per_page=20&format=json&population=100001", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "countries-cities.p.rapidapi.com",
@@ -19,6 +19,7 @@ const Shop = () =>{
         const cities = await data.json();
         console.log(cities)
         setCities(cities.cities)
+        console.log(cities)
     }
     
 
