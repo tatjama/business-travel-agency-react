@@ -5,7 +5,9 @@ const City =({}) =>{
     const [info, setInfo] = useState([])  
     const [header, setHeader] = useState([])  
     const [items, setItems] = useState([])
+    const [id, setId] = useState(null);
     const [isFetch, setIsFetch] = useState(false);
+    const [restaurants, setRestaurants] = useState([])
 
     const fetchCityInformation = async() =>{
         const data = await 
@@ -24,20 +26,41 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
       console.log(info)
       setHeader(info.data[0].result_object)
       console.log(header)
+      setId(header.location_id);
       setItems(info.data[0].result_object.category_counts)
+
         
 
     }
+    const fetchRestaurantInformation = async() =>{
+        const data = await
+        fetch("https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=293919", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+		"x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+	}
+})
+    const restaurants = await data.json();
+    setIsFetch(true)
+    setRestaurants(restaurants.data)
+    console.log(restaurants)
+    
+
+      }
+      
     return(
         <div>
               <button onClick = {fetchCityInformation}>Info</button>
+              
               {console.log(header.category_counts)}
               {console.log(items.restaurants)}
               {isFetch && <div>
+                <button onClick = {fetchRestaurantInformation}>Restaurants</button>
              <h1>City: {header.name}</h1> 
              <h2>LONGITUDE: {header.longitude}</h2>
              <h2>LATITUDE: {header.latitude}</h2>
-
+             <h2>ID: {header.location_id}</h2>   
              <h2>DESCRIPTION: {header.geo_description}</h2>
              </div>}
             {/**
@@ -55,13 +78,20 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
                 <li>Nightlife: {header.category_counts.attractions.nightlife}</li>
     </ul></p>
              */} 
-    
+             {console.log(restaurants)}
+             {console.log(id)}
+                {restaurants.map((restaurant) =>{
+                    return(
+                        <div>
+                           <h1>Restaurant name: {restaurant.name}</h1>
+                        </div>
+                    )
+                })}
+                {console.log(info)}
               {info.map((item) => {
-                  return(
-                      
+                  return(                      
                       <div>
-                          {info[0].result_object.name}
-                          
+                          {/*info[0].result_object.name*/}                          
                           <h1>Name: {item.result_object.name}</h1>
                           <span>Type: {item.result_type}</span>                        
                       </div>
