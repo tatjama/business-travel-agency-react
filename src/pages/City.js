@@ -34,7 +34,7 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
     }
     const fetchRestaurantInformation = async() =>{
         const data = await
-        fetch("https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=293919", {
+        fetch(`https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${header.location_id}`, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
@@ -79,7 +79,7 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
     </ul></p>
              */} 
              {console.log(restaurants)}
-             {console.log(id)}
+             {console.log(header.location_id)}
                 {restaurants.map((restaurant) =>{
                     return(
                         <div>
