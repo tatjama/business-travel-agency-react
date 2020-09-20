@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Airports from './Airports';
 
 const City =({}) =>{
-   // console.log(match)
+   // console.log(match), match is params sent from previous page
 
     const [info, setInfo] = useState([])  
     const [header, setHeader] = useState([])  
@@ -19,7 +20,7 @@ const City =({}) =>{
 
     const fetchCityInformation = async() =>{
         const data = await 
-     
+     //props is name of the city sent from previous page
 fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=belgrade", {
 	"method": "GET",
 	"headers": {
@@ -62,8 +63,12 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
 		"x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
 	}
 })
-    const restaurants = await data.json();
-    setIsRestaurantsFetch(true)
+    const restaurants = await data.json();    
+    setIsAirportsFetch(false);
+    setIsAttractionsFetch(false);
+    setIsHotelsFetch(false);
+    setIsRestaurantsFetch(true);
+
     setRestaurants(restaurants.data.filter(restaurant =>{
         return(
             restaurant.location_id !== "294472"
@@ -74,11 +79,19 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
 
       }
       const fetchHotelsInformation = () =>{
-        setIsHotelsFetch(true) 
+        
+        setIsAirportsFetch(false);
+        setIsAttractionsFetch(false);
+        setIsHotelsFetch(true);
+        setIsRestaurantsFetch(false);
       }
 
       const fetchAttractionsInformation = () =>{
-          setIsAttractionsFetch(true)
+          
+        setIsAirportsFetch(false);
+        setIsAttractionsFetch(true);
+        setIsHotelsFetch(false);
+        setIsRestaurantsFetch(false);
       }
       const fetchAirportsInformation = async() =>{
           const data =
@@ -90,7 +103,11 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
             }
         })
        const airports = await data.json();
-       setIsAirportsFetch(true)
+        setIsAirportsFetch(true);       
+        setIsAttractionsFetch(false);
+        setIsHotelsFetch(false);
+        setIsRestaurantsFetch(false);
+
        setAirports(airports)
        
       }
@@ -128,7 +145,7 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
     </ul></p>
              */} 
              {//RESTAURANTS INFO
-             isRestaurantsFetch &&
+             isRestaurantsFetch &&            
              <div>
                  <h3>Food and Entertainment</h3>
                  {console.log(restaurants)}
@@ -208,6 +225,7 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
             
                 isAirportsFetch &&
                 <div >
+                     <Airports/>
                     {console.log(airports)}
                     {airports.map((airport) => {
                         return(
