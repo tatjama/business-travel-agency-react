@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Button from '../components/Button';
 
 const Restaurants = (props) => {
-    return(
+    const [comments, setComments] = useState([])
+
+    const fetchRestaurantComments = async () => {
+        const data = await
+        fetch("https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=en_US&location_id=17514467", {
+	        "method": "GET",
+	        "headers": {
+		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+		        "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+	    }
+    })
+    const comments = await data.json();
+    setComments(comments.data);
+    console.log(comments)
+ } 
+
+ return(
         <div>
                  <h3>Food and Entertainment</h3>
                  {console.log(props.restaurants)}
@@ -22,7 +39,21 @@ const Restaurants = (props) => {
                            <p>Description: {restaurant.description}</p>
                            
                            <p>ID: {restaurant.location_id}</p>
-                           
+                           <Button
+                                name = "See Comments"
+                                handleOnClick = {fetchRestaurantComments} 
+                           />
+                           <div >
+                               {/*console.log(comments)*/}
+                               {comments.map((comment) => {
+                                   return(
+                                       <div key = {comment.id} >
+                                           <h1>Title: {comment.title}</h1>
+                                           <h2>ID: {comment.id}</h2>
+                                       </div>
+                                   )
+                               })}
+                           </div>
                         </div>
                     )
                 })}
