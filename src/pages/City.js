@@ -9,6 +9,10 @@ const City =({}) =>{
     const [isFetch, setIsFetch] = useState(false);
     const [isRestaurantsFetch, setIsRestaurantsFetch] = useState(false)
     const [restaurants, setRestaurants] = useState([])
+    const [isHotelsFetch, setIsHotelsFetch] = useState(false)
+    const [hotels, setHotels] = useState([])
+    const [isAttractionsFetch, setIsAttractionsFetch] = useState(false)
+    const [attractions, setAttractions] = useState([])
 
     const fetchCityInformation = async() =>{
         const data = await 
@@ -23,12 +27,25 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
         const info = await data.json();
         setIsFetch(true)
       console.log(info);
+      setHotels(info.data.filter((hotel) => {
+        return(
+            hotel.result_type === "lodging"
+        )
+      }))
+      setAttractions(info.data.filter((attraction) =>{
+          return(
+              attraction.result_type === "things_to_do"
+          )
+      }
+
+      ))
       setInfo(info.data);
       console.log(info)
       setHeader(info.data[0].result_object)
       console.log(header)
       setId(header.location_id);
       setItems(info.data[0].result_object.category_counts)
+      
 
         
 
@@ -46,12 +63,19 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
     setIsRestaurantsFetch(true)
     setRestaurants(restaurants.data.filter(restaurant =>{
         return(
-            restaurant.location_id != "294472"
+            restaurant.location_id !== "294472"
         )
     }))
     console.log(restaurants)
     
 
+      }
+      const fetchHotelsInformation = () =>{
+        setIsHotelsFetch(true) 
+      }
+
+      const fetchAttractionsInformation = () =>{
+          setIsAttractionsFetch(true)
       }
       
     return(
@@ -62,6 +86,8 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
               {console.log(items.restaurants)}
               {isFetch && <div>
                 <button onClick = {fetchRestaurantInformation}>Restaurants</button>
+                <button onClick = {fetchHotelsInformation}>Hotels</button>
+                <button onClick = {fetchAttractionsInformation}>Attractions</button>
              <h1>City: {header.name}</h1> 
              <h2>LONGITUDE: {header.longitude}</h2>
              <h2>LATITUDE: {header.latitude}</h2>
@@ -83,34 +109,85 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
                 <li>Nightlife: {header.category_counts.attractions.nightlife}</li>
     </ul></p>
              */} 
-             {isRestaurantsFetch &&
+             {//RESTAURANTS INFO
+             isRestaurantsFetch &&
              <div>
                  <h3>Food and Entertainment</h3>
-                 
+                 {console.log(restaurants)}
                    {restaurants.map((restaurant) =>{
                     return(
                         <div key = {restaurant.location_id}>
                            <h1>Name: {restaurant.name}</h1>
+                           <img src = {restaurant.photo.images.small.url} alt = {restaurant.name}/>
+                           <h2>Address: {restaurant.address}</h2>
+                           <h2>Phone: {restaurant.phone}</h2>
+                           <h2>E-mail: {restaurant.email}</h2>
+                            <h2>Website: {restaurant.website}</h2>
+                           <h2>Category: {restaurant.ranking_category}</h2>
+                           <h2>Rating: {restaurant.rating}</h2>
+                           <h2>Ranking: {restaurant.ranking}</h2>
+                           <h2>Ranking position: {restaurant.ranking_position}</h2>
+                           <h2>Price: {restaurant.price}</h2>
+                           <p>Description: {restaurant.description}</p>
+                           
                            <p>ID: {restaurant.location_id}</p>
+                           
                         </div>
                     )
                 })}
 
              </div>
              }
-             {console.log(restaurants)}
-             {console.log(header.location_id)}
-              
-                {console.log(info)}
-              {info.map((item) => {
+             {//HOTELS INFO
+                isHotelsFetch &&
+                <div>
+                    {console.log(hotels)}
+                    {hotels.map((item) => {
                   return(                      
-                      <div>
-                          {/*info[0].result_object.name*/}                          
+                      <div key = {item.result_object.location_id}>
+                                                    
                           <h1>Name: {item.result_object.name}</h1>
+                          <img src = {item.result_object.photo.images.small.url} alt = {item.result_object.name}/>
+                          <h2>Address: {item.result_object.address}</h2>
+                          <h2>ID: {item.result_object.location_id}</h2>
+                          <h2>Category: {item.result_object.category.name}</h2>
+                          <h2>Rating: {item.result_object.rating}</h2>
+                          <h2>Review snippet: {item.review_snippet.snippet}</h2>
                           <span>Type: {item.result_type}</span>                        
                       </div>
                   )
               })}
+                </div>
+             }
+             {//ATTRACTIONS INFO
+                isAttractionsFetch &&
+                <div>
+                    {console.log(attractions)}
+                    {
+                        attractions.map((attraction) => {
+                            return(
+                                <div key = {attraction.result_object.location_id}>
+                                    <h1>Name: {attraction.result_object.name}</h1>
+                                    <img 
+                                        src = {attraction.result_object.photo.images.small.url} 
+                                        alt = {attraction.result_object.name}
+                                    />                          
+                                    <h2>Address: {attraction.result_object.address}</h2>                          
+                                    <h2>ID: {attraction.result_object.location_id}</h2>
+                                    <h2>Category: {attraction.result_object.category.name}</h2>
+                                    <h2>Rating: {attraction.result_object.rating}</h2>
+                                    <h2>Review snippet: {attraction.review_snippet.snippet}</h2>
+                                    <span>Type: {attraction.result_type}</span>
+                                </div>
+                            )
+                        })
+                    }
+                    
+                </div>
+
+             }
+                
+              
         </div>
     
     )
