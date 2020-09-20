@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import Airports from './Airports';
+import Attractions from './Attractions';
 import Hotels from './Hotels';
 
 const City =({}) =>{
@@ -129,8 +130,10 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
                     name = "Hotels"
                     handleOnClick = {fetchHotelsInformation}
                 />
-                
-                <button onClick = {fetchAttractionsInformation}>Attractions</button>
+                <Button 
+                    name = "Attractions"
+                    handleOnClick = {fetchAttractionsInformation}
+                />
                 
                 <Button
                     name = "Airports"
@@ -194,30 +197,9 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
              }
              {//ATTRACTIONS INFO
                 isAttractionsFetch &&
-                <div>
-                    {console.log(attractions)}
-                    {
-                        attractions.map((attraction) => {
-                            return(
-                                <div key = {attraction.result_object.location_id}>
-                                    <h1>Name: {attraction.result_object.name}</h1>
-                                    <img 
-                                        src = {attraction.result_object.photo.images.small.url} 
-                                        alt = {attraction.result_object.name}
-                                    />                          
-                                    <h2>Address: {attraction.result_object.address}</h2>                          
-                                    <h2>ID: {attraction.result_object.location_id}</h2>
-                                    <h2>Category: {attraction.result_object.category.name}</h2>
-                                    <h2>Rating: {attraction.result_object.rating}</h2>
-                                    <h2>Review snippet: {attraction.review_snippet.snippet}</h2>
-                                    <span>Type: {attraction.result_type}</span>
-                                </div>
-                            )
-                        })
-                    }
-                    
-                </div>
-
+               <Attractions
+                    attractions = {attractions}
+               />
              }
             {//AIRPORTS INFO
             
