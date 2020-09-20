@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from '../components/Button';
 import Airports from './Airports';
 
 const City =({}) =>{
@@ -15,9 +16,10 @@ const City =({}) =>{
     const [hotels, setHotels] = useState([])
     const [isAttractionsFetch, setIsAttractionsFetch] = useState(false)
     const [attractions, setAttractions] = useState([])
+    
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([])
-
+   
     const fetchCityInformation = async() =>{
         const data = await 
      //props is name of the city sent from previous page
@@ -93,24 +95,26 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
       }
-      const fetchAirportsInformation = async() =>{
-          const data =
-          await fetch(`https://tripadvisor1.p.rapidapi.com/airports/search?locale=en_US&query=${header.name}`, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
-            }
-        })
-       const airports = await data.json();
-        setIsAirportsFetch(true);       
-        setIsAttractionsFetch(false);
-        setIsHotelsFetch(false);
-        setIsRestaurantsFetch(false);
+      
+    const fetchAirportsInformation = async() =>{
+        const data =
+        await fetch(`https://tripadvisor1.p.rapidapi.com/airports/search?locale=en_US&query=${header.name}`, {
+          "method": "GET",
+          "headers": {
+              "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+              "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+          }
+      })
+     const airports = await data.json();
+      setIsAirportsFetch(true);       
+      setIsAttractionsFetch(false);
+      setIsHotelsFetch(false);
+      setIsRestaurantsFetch(false);
 
-       setAirports(airports)
-       
-      }
+     setAirports(airports)
+     
+    }
+      
       
     return(
         <div>
@@ -122,7 +126,11 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
                 <button onClick = {fetchRestaurantInformation}>Restaurants</button>
                 <button onClick = {fetchHotelsInformation}>Hotels</button>
                 <button onClick = {fetchAttractionsInformation}>Attractions</button>
-                <button onClick = {fetchAirportsInformation}>Airports</button>
+                
+                <Button
+                    name = "Airports"
+                    handleOnClick = {fetchAirportsInformation}
+                />
              <h1>City: {header.name}</h1> 
              <h2>LONGITUDE: {header.longitude}</h2>
              <h2>LATITUDE: {header.latitude}</h2>
@@ -224,22 +232,10 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
             {//AIRPORTS INFO
             
                 isAirportsFetch &&
-                <div >
-                     <Airports/>
-                    {console.log(airports)}
-                    {airports.map((airport) => {
-                        return(
-                            <div key = {airport.country_code}>
-                                <h1>Name: {airport.name}</h1>
-                        <h2>City name: {airport.time_zone_name}</h2>
-                        <h2>Code: {airport.code}</h2>
-                        <h2>Display name: {airport.display_name}</h2>
-                        <h2>Country: {airport.country_code}</h2>
-                            </div>
-                        )
-                    })}
-                </div>
-
+                <Airports 
+                    airports = {airports}
+                />
+                
             }    
               
         </div>
