@@ -21,7 +21,8 @@ const City =({}) =>{
     const [attractions, setAttractions] = useState([])    
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([])
-   
+
+      
     const fetchCityInformation = async() =>{
         const data = await 
      //props is name of the city sent from previous page
@@ -116,33 +117,34 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
      setAirports(airports)
      
     }
+    const buttons = [
+        {name:"Restaurants", click: fetchRestaurantInformation},
+        {name: "Hotels", click: fetchHotelsInformation},
+        {name: "Attractions", click: fetchAttractionsInformation},
+        {name: "Airports", click: fetchAirportsInformation}
+    ]
+
       
       
     return(
-        <div>
-              <button onClick = {fetchCityInformation}>Info</button>
-              
-              {console.log(header.category_counts)}
-              {console.log(items.restaurants)}
+        <div>             
+              <Button
+                name = "Info"
+                handleOnClick = {fetchCityInformation}
+              />
               {isFetch && 
-                <div>                
-                    <Button
-                        name = "Restaurants"
-                        handleOnClick = {fetchRestaurantInformation}
-                    />
-                    <Button 
-                        name = "Hotels"
-                        handleOnClick = {fetchHotelsInformation}
-                    />
-                    <Button 
-                        name = "Attractions"
-                        handleOnClick = {fetchAttractionsInformation}
-                    />
-                    
-                    <Button
-                        name = "Airports"
-                        handleOnClick = {fetchAirportsInformation}
-                    />
+                <div>     
+                    {//SET BUTTONS
+                    buttons.map((button) => {
+                        return(
+                            <Button 
+                                key = {button.name}
+                                name = {button.name}
+                                handleOnClick = {button.click}
+                            />
+                        )
+                    })}           
+                   
              <h1>City: {header.name}</h1> 
              <h2>LONGITUDE: {header.longitude}</h2>
              <h2>LATITUDE: {header.latitude}</h2>
