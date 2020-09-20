@@ -6,7 +6,8 @@ import CityInfo from './CityInfo';
 import Hotels from './Hotels';
 import Restaurants from './Restaurants';
 
-const City =() =>{
+const City =({match}) =>{
+    console.log(match)
    // console.log(match), match is params sent from previous page
     const [info, setInfo] = useState([])  
     const [header, setHeader] = useState([])  
@@ -24,7 +25,7 @@ const City =() =>{
     const fetchCityInformation = async() =>{
         const data = await 
      //props is name of the city sent from previous page
-            fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=belgrade", {
+            fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
 	            "method": "GET",
 	            "headers": {
 		            "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",

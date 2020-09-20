@@ -30,7 +30,7 @@ const Shop = () =>{
             <button onClick = {fetchItems}>Show cities</button>
            {cities.map((city)=>{
                return(
-                   <Link key = {city.geonameid} to={`/shop/${city.geonameid}`}>
+                   <Link key = {city.geonameid} to={`/shop/${city.name}`}>
                   <h2 >{city.name}</h2> 
                   </Link>
                )

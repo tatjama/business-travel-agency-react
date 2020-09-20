@@ -3,10 +3,13 @@ import Button from '../components/Button';
 
 const Restaurants = (props) => {
     const [comments, setComments] = useState([])
-
+    const [id, setId] = useState(null)
+    console.log(props.restaurants.location_id)
     const fetchRestaurantComments = async () => {
+        setId(props.restaurants.location_id)
+        console.log(id)
         const data = await
-        fetch("https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=en_US&location_id=17514467", {
+        fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=en_US&location_id=17514467`, {
 	        "method": "GET",
 	        "headers": {
 		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
