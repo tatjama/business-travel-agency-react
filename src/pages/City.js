@@ -3,6 +3,7 @@ import Button from '../components/Button';
 import Airports from './Airports';
 import Attractions from './Attractions';
 import Hotels from './Hotels';
+import Restaurants from './Restaurants';
 
 const City =({}) =>{
    // console.log(match), match is params sent from previous page
@@ -17,8 +18,7 @@ const City =({}) =>{
     const [isHotelsFetch, setIsHotelsFetch] = useState(false)
     const [hotels, setHotels] = useState([])
     const [isAttractionsFetch, setIsAttractionsFetch] = useState(false)
-    const [attractions, setAttractions] = useState([])
-    
+    const [attractions, setAttractions] = useState([])    
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([])
    
@@ -124,21 +124,25 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
               
               {console.log(header.category_counts)}
               {console.log(items.restaurants)}
-              {isFetch && <div>
-                <button onClick = {fetchRestaurantInformation}>Restaurants</button>
-                <Button 
-                    name = "Hotels"
-                    handleOnClick = {fetchHotelsInformation}
-                />
-                <Button 
-                    name = "Attractions"
-                    handleOnClick = {fetchAttractionsInformation}
-                />
-                
-                <Button
-                    name = "Airports"
-                    handleOnClick = {fetchAirportsInformation}
-                />
+              {isFetch && 
+                <div>                
+                    <Button
+                        name = "Restaurants"
+                        handleOnClick = {fetchRestaurantInformation}
+                    />
+                    <Button 
+                        name = "Hotels"
+                        handleOnClick = {fetchHotelsInformation}
+                    />
+                    <Button 
+                        name = "Attractions"
+                        handleOnClick = {fetchAttractionsInformation}
+                    />
+                    
+                    <Button
+                        name = "Airports"
+                        handleOnClick = {fetchAirportsInformation}
+                    />
              <h1>City: {header.name}</h1> 
              <h2>LONGITUDE: {header.longitude}</h2>
              <h2>LATITUDE: {header.latitude}</h2>
@@ -161,33 +165,10 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
     </ul></p>
              */} 
              {//RESTAURANTS INFO
-             isRestaurantsFetch &&            
-             <div>
-                 <h3>Food and Entertainment</h3>
-                 {console.log(restaurants)}
-                   {restaurants.map((restaurant) =>{
-                    return(
-                        <div key = {restaurant.location_id}>
-                           <h1>Name: {restaurant.name}</h1>
-                           <img src = {restaurant.photo.images.small.url} alt = {restaurant.name}/>
-                           <h2>Address: {restaurant.address}</h2>
-                           <h2>Phone: {restaurant.phone}</h2>
-                           <h2>E-mail: {restaurant.email}</h2>
-                            <h2>Website: {restaurant.website}</h2>
-                           <h2>Category: {restaurant.ranking_category}</h2>
-                           <h2>Rating: {restaurant.rating}</h2>
-                           <h2>Ranking: {restaurant.ranking}</h2>
-                           <h2>Ranking position: {restaurant.ranking_position}</h2>
-                           <h2>Price: {restaurant.price}</h2>
-                           <p>Description: {restaurant.description}</p>
-                           
-                           <p>ID: {restaurant.location_id}</p>
-                           
-                        </div>
-                    )
-                })}
-
-             </div>
+                isRestaurantsFetch &&            
+                <Restaurants
+                    restaurants = {restaurants}
+                />
              }
              {//HOTELS INFO
                 isHotelsFetch &&
