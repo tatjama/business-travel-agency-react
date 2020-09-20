@@ -7,6 +7,7 @@ const City =({}) =>{
     const [items, setItems] = useState([])
     const [id, setId] = useState(null);
     const [isFetch, setIsFetch] = useState(false);
+    const [isRestaurantsFetch, setIsRestaurantsFetch] = useState(false)
     const [restaurants, setRestaurants] = useState([])
 
     const fetchCityInformation = async() =>{
@@ -42,8 +43,12 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
 	}
 })
     const restaurants = await data.json();
-    setIsFetch(true)
-    setRestaurants(restaurants.data)
+    setIsRestaurantsFetch(true)
+    setRestaurants(restaurants.data.filter(restaurant =>{
+        return(
+            restaurant.location_id != "294472"
+        )
+    }))
     console.log(restaurants)
     
 
@@ -78,15 +83,24 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
                 <li>Nightlife: {header.category_counts.attractions.nightlife}</li>
     </ul></p>
              */} 
-             {console.log(restaurants)}
-             {console.log(header.location_id)}
-                {restaurants.map((restaurant) =>{
+             {isRestaurantsFetch &&
+             <div>
+                 <h3>Food and Entertainment</h3>
+                 
+                   {restaurants.map((restaurant) =>{
                     return(
-                        <div>
-                           <h1>Restaurant name: {restaurant.name}</h1>
+                        <div key = {restaurant.location_id}>
+                           <h1>Name: {restaurant.name}</h1>
+                           <p>ID: {restaurant.location_id}</p>
                         </div>
                     )
                 })}
+
+             </div>
+             }
+             {console.log(restaurants)}
+             {console.log(header.location_id)}
+              
                 {console.log(info)}
               {info.map((item) => {
                   return(                      
