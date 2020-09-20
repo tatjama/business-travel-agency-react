@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const Airports = (props) =>{
-
-
     return(
         <div >                    
                     {console.log(props.airports)}
@@ -18,7 +16,6 @@ const Airports = (props) =>{
                         )
                     })}
                 </div>
-
     )
 }
 

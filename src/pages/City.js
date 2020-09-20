@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../components/Button';
 import Airports from './Airports';
+import Hotels from './Hotels';
 
 const City =({}) =>{
    // console.log(match), match is params sent from previous page
@@ -124,7 +125,11 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
               {console.log(items.restaurants)}
               {isFetch && <div>
                 <button onClick = {fetchRestaurantInformation}>Restaurants</button>
-                <button onClick = {fetchHotelsInformation}>Hotels</button>
+                <Button 
+                    name = "Hotels"
+                    handleOnClick = {fetchHotelsInformation}
+                />
+                
                 <button onClick = {fetchAttractionsInformation}>Attractions</button>
                 
                 <Button
@@ -183,24 +188,9 @@ fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=
              }
              {//HOTELS INFO
                 isHotelsFetch &&
-                <div>
-                    {console.log(hotels)}
-                    {hotels.map((item) => {
-                  return(                      
-                      <div key = {item.result_object.location_id}>
-                                                    
-                          <h1>Name: {item.result_object.name}</h1>
-                          <img src = {item.result_object.photo.images.small.url} alt = {item.result_object.name}/>
-                          <h2>Address: {item.result_object.address}</h2>
-                          <h2>ID: {item.result_object.location_id}</h2>
-                          <h2>Category: {item.result_object.category.name}</h2>
-                          <h2>Rating: {item.result_object.rating}</h2>
-                          <h2>Review snippet: {item.review_snippet.snippet}</h2>
-                          <span>Type: {item.result_type}</span>                        
-                      </div>
-                  )
-              })}
-                </div>
+                <Hotels
+                    hotels = {hotels}
+                />
              }
              {//ATTRACTIONS INFO
                 isAttractionsFetch &&
