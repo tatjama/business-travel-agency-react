@@ -48,7 +48,7 @@ const City =({match}) =>{
             setAttractions(info.data.filter((attraction) =>{
                 return(
                   attraction.result_type === "things_to_do" &&
-                  attraction.review_snippet
+                  attraction.review_snippet// if review snippwt does not exist
                 )}
             ))
            
