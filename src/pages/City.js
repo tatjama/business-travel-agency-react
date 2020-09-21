@@ -22,6 +22,11 @@ const City =({match}) =>{
     const [airports, setAirports] = useState([])
 
       
+    const [items, setItems] = useState([])
+    const [id, setId] = useState(null);
+    
+    
+      
     const fetchCityInformation = async() =>{
         const data = await 
      //props is name of the city sent from previous page
@@ -42,20 +47,28 @@ const City =({match}) =>{
             ))
             setAttractions(info.data.filter((attraction) =>{
                 return(
-                  attraction.result_type === "things_to_do"
+                  attraction.result_type === "things_to_do" &&
+                  attraction.review_snippet
                 )}
             ))
+           
             setInfo(info.data);
+            console.log(info)
             setHeader(info.data[0].result_object)
+            console.log(header)
+            setId(header.location_id);
+            setItems(info.data[0].result_object.category_counts)
     }
     const fetchRestaurantInformation = async() =>{
         const data = await
-        fetch(`https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${header.location_id}`, {
-	    "method": "GET",
-	    "headers": {
-		    "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		    "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
-	    }
+        fetch(`https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&
+        lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${header.location_id}`
+        ,{
+	        "method": "GET",
+	        "headers": {
+		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+		        "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+	        }
         })
         const restaurants = await data.json();        
         setRestaurants(restaurants.data.filter(restaurant =>{
