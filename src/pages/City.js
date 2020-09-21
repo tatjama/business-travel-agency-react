@@ -42,15 +42,16 @@ const City =({match}) =>{
             console.log(info);
             setHotels(info.data.filter((hotel) => {
                 return(
-                    hotel.result_type === "lodging"&&
-                    hotel.result_object.photo //if hotel image does not exist filter hotels
+                    hotel.result_type === "lodging"
+                    && hotel.result_object.photo //if hotel image does not exist filter hotels
                     && hotel.review_snippet
                 )}
             ))
             setAttractions(info.data.filter((attraction) =>{
                 return(
-                  attraction.result_type === "things_to_do" &&
-                  attraction.review_snippet// if review snippet does not exist
+                  attraction.result_type === "things_to_do" 
+                  && attraction.result_object.photo
+                  && attraction.review_snippet// if review snippet does not exist
                   
                 )}
             ))
