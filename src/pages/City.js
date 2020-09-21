@@ -73,7 +73,8 @@ const City =({match}) =>{
         const restaurants = await data.json();        
         setRestaurants(restaurants.data.filter(restaurant =>{
             return(
-                restaurant.location_id !== "294472"
+                restaurant.location_id !== "294472" &&
+                restaurant.photo //if photo does not exist
             )
         }))
         console.log(restaurants)
