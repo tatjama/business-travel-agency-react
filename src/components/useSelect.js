@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {countriesArray} from './data/countriesArray.json';
+import {countriesArray} from './data/countries';
 
 const countries = countriesArray;
 
@@ -14,6 +14,7 @@ const useSelect = () =>{
       setCountry(countries[e.target.value]);
  }
  useEffect(() => {
+     console.log(country);
          setCities(country.cities);
      },[country, cities])
 

@@ -84,7 +84,18 @@ const onLoad = () => {
             countryArray.map((country) => {
                 return(
                     <div key = {country.id}>
-                        Name: {country.name} Code:{country.id}
+                      <p>  value: {country.value},</p>
+                       <p>  id: {country.id}, </p>
+                        <p> name: {country.name}, </p>
+                        <p> cities: [</p>
+                      <p>  value: 0, id: "country2-city0", name: "Belgrade", </p>
+                      <p>value: 1, id: "country2-city1", name: "Nis",</p>
+                      <p>value: 2, id: "country2-city2", name: "Kraljevo", </p>
+                      <p>value: 3, id: "country2-city3",  name: "Novi Sad", </p>
+                      <p>value: 4, id: "country2-city4",  name: "Valjevo", </p>
+                      <p>value: 5, id: "country2-city5",  name: "Cacak"</p>
+                    <p>]</p>
+                       
                     </div>
                 )
             })
