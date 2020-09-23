@@ -4,10 +4,11 @@ import {countriesArray} from './data/countries';
 const countries = countriesArray;
 
 
-const useSelect = () =>{
+const useSelect = (callback) =>{
     const [country, setCountry] = useState(countries[0]);    
     const [cities, setCities] = useState([]);
     const [city, setCity] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false)
     let chosenCity = {}
 
     const fetchCities = async(id) =>{
@@ -59,6 +60,17 @@ const useSelect = () =>{
  useEffect(() => {
      console.log(city)
  },[city])      
+
+ const handleSubmit =(e) => {
+     console.log("useState submit")
+     e.preventDefault();
+     setIsSubmitted(true)
+ }
+ useEffect(() => {
+     if(Object.keys(city) !== 0 && isSubmitted){
+         callback()
+     }
+ },[isSubmitted])
  
 
     return{
@@ -67,7 +79,8 @@ const useSelect = () =>{
         cities,
          city,
          handleSelectCountry,
-         handleSelectCity
+         handleSelectCity,
+         handleSubmit
     }
 
 }

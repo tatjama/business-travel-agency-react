@@ -5,17 +5,16 @@ import useSelect from './useSelect';
 
 const SelectForm = () =>{
 
-    const{countries, cities, handleSelectCountry, handleSelectCity} = useSelect();
-     
-    function chooseDestination(e) {
-        e.preventDefault();
-        //sent select city id to back , that thay sent information about that
-        document.getElementById('start-page').style.display = "block";        
-        document.getElementById('home-page').style.display = "none";
+    const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit} = useSelect(submitted);
+    
+     function submitted(){
+         console.log('is submitted')
+        console.log(city)
     }
+
     
     return(
-        <form className="choose-destination">    
+        <form className="choose-destination" onSubmit = {handleSubmit}>    
         <label htmlFor="countries"> Choose a country</label>             
                 <Select 
                    handleChange = {handleSelectCountry}
@@ -31,7 +30,7 @@ const SelectForm = () =>{
                     name = "cities"
                 />
                 <br/>
-                <button type="submit" className="choose-destination-button" onClick={chooseDestination} >Select</button>
+                <button type="submit" className="choose-destination-button" >Select</button>
             </form>
     )
 }
