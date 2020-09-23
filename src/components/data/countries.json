@@ -2,3647 +2,1414 @@
     "countriesArray":[
      {  "value": 0,
         "id": "AD",
-        "name": "Andorra",
-        "cities": [
-        {"value": 0, "id": "country2-city0", "name": "Belgrade"}, 
-        {"value": 1, "id": "country2-city1", "name": "Nis"},
-        {"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-        {"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-        {"value": 4, "id": "country2-city4", "name": "Valjevo"},
-        {"value": 5, "id": "country2-city5", "name": "Cacak"}
-        ]
+        "name": "Andorra"
+        
      },
         {"value": 1,
         "id": "AE",
-        "name": "United Arab Emirates",
-        "cities": [
-        {"value": 0, "id": "country2-city0", "name": "Belgrade"},
-        {"value": 1, "id": "country2-city1", "name": "Nis"},
-        {"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-        {"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-        {"value": 4, "id": "country2-city4", "name": "Valjevo"},
-        {"value": 5, "id": "country2-city5", "name": "Cacak"}
-        ]},
+        "name": "United Arab Emirates"
+        },
 {"value": 2,
 "id": "AF",
-"name": "Afghanistan",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Afghanistan" },
 
 {"value": 3,
 "id": "AG",
-"name": "Antigua And Barbuda",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Antigua And Barbuda" },
 {"value": 4,
 "id": "AI",
-"name": "Anguilla",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Anguilla" },
 {"value": 5,
 "id": "AL",
-"name": "Albania",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Albania" },
 {"value": 6,
 "id": "AM",
-"name": "Armenia",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Armenia" },
 {"value": 7,
 "id": "AN",
-"name": "Netherlands Antilles",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Netherlands Antilles" },
 {"value": 8,
 "id": "AO",
-"name": "Angola",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
-{"value": 9,
-"id": "AQ",
-"name": "Antarctica",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Angola" },
 {"value": 10,
 "id": "AR",
-"name": "Argentina",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Argentina" },
 {"value": 11,
 "id": "AS",
-"name": "American Samoa",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "American Samoa" },
 {"value": 12,
 "id": "AT",
-"name": "Austria",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Austria" },
 {"value": 13,
 "id": "AU",
-"name": "Australia",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Australia" },
 {"value": 14,
 "id": "AW",
-"name": "Aruba",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Aruba" },
 {"value": 15,
 "id": "AX",
-"name": "Aland Islands",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Aland Islands" },
 {"value": 16,
 "id": "AZ",
-"name": "Azerbaijan",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Azerbaijan" },
 {"value": 17,
 "id": "BA",
-"name": "Bosnia And Herzegovina",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bosnia And Herzegovina" },
 {"value": 18,
 "id": "BB",
-"name": "Barbados",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Barbados" },
 {"value": 19,
 "id": "BD",
-"name": "Bangladesh",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bangladesh" },
 {"value": 20,
 "id": "BE",
-"name": "Belgium",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Belgium" },
 {"value": 21,
 "id": "BF",
-"name": "Burkina Faso",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Burkina Faso" },
 {"value": 22,
 "id": "BG",
-"name": "Bulgaria",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bulgaria" },
 {"value": 23,
 "id": "BH",
-"name": "Bahrain",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bahrain" },
 
 {"value": 24,
 "id": "BI",
-"name": "Burundi",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Burundi" },
 
 {"value": 25,
 "id": "BJ",
-"name": "Benin",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Benin" },
 
 {"value": 26,
 "id": "BL",
-"name": "Saint Barthelemy",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Barthelemy" },
 
 {"value": 27,
 "id": "BM",
-"name": "Bermuda",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bermuda" },
 
 {"value": 28,
 "id": "BN",
-"name": "Brunei",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Brunei" },
 
 {"value": 29,
 "id": "BO",
-"name": "Bolivia",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bolivia" },
 {"value": 30,
 "id": "BQ",
-"name": "Bonaire, Saint Eustatius And Saba" ,
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bonaire, Saint Eustatius And Saba"  },
 {"value": 31,
 "id": "BR",
-"name": "Brazil",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Brazil" },
 {"value": 32,
 "id": "BS",
-"name": "Bahamas",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bahamas" },
 
 {"value": 33,
 
 "id": "BT",
 
-"name": "Bhutan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bhutan" },
 
 {"value": 34,
 
 "id": "BV",
 
-"name": "Bouvet Island",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Bouvet Island" },
 
 {"value": 35,
 
 "id": "BW",
 
-"name": "Botswana",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Botswana" },
 
 {"value": 36,
 
 "id": "BY",
 
-"name": "Belarus",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Belarus" },
 
 {"value": 37,
 
 "id": "BZ",
 
-"name": "Belize",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Belize" },
 
 {"value": 38,
 
 "id": "CA",
 
-"name": "Canada",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Canada" },
 
 {"value": 39,
 
 "id": "CC",
 
-"name": "Cocos Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cocos Islands" },
 
 {"value": 40,
 
 "id": "CD",
 
-"name": "Democratic Republic of the Congo",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Democratic Republic of the Congo" },
 
 {"value": 41,
 
 "id": "CF",
-"name": "Central African Republic",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Central African Republic" },
 
 {"value": 42,
 
 "id": "CG",
 
-"name": "Republic of the Congo",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Republic of the Congo" },
 
 {"value": 43,
 
 "id": "CH",
 
-"name": "Switzerland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Switzerland" },
 
 {"value": 44,
 
 "id": "CI",
 
-"name": "Ivory Coast",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Ivory Coast" },
 
 {"value": 45,
 
 "id": "CK",
 
-"name": "Cook Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cook Islands" },
 
 {"value": 46,
 
 "id": "CL",
 
-"name": "Chile",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Chile" },
 
 {"value": 47,
 
 "id": "CM",
 
-"name": "Cameroon",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cameroon" },
 
 {"value": 48,
 
 "id": "CN",
 
-"name": "China",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "China" },
 
 {"value": 49,
 
 "id": "CO",
 
-"name": "Colombia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Colombia" },
 
 {"value": 50,
 
 "id": "CR",
 
-"name": "Costa Rica",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Costa Rica" },
 
 {"value": 51,
 
 "id": "CS",
 
-"name": "Serbia And Montenegro",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Serbia And Montenegro" },
 
 {"value": 52,
 
 "id": "CU",
 
-"name": "Cuba",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cuba" },
 
 {"value": 53,
 
 "id": "CV",
 
-"name": "Cape Verde",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cape Verde" },
 
 {"value": 54,
 
 "id": "CW",
 
-"name": "Curacao",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Curacao" },
 
 {"value": 55,
 
 "id": "CX",
 
-"name": "Christmas Island",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Christmas Island" },
 
 {"value": 56,
 
 "id": "CY",
 
-"name": "Cyprus",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cyprus" },
 
 {"value": 57,
 
 "id": "CZ",
 
-"name": "Czechia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Czechia" },
 
 {"value": 58,
 
 "id": "DE",
 
-"name": "Germany",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Germany" },
 
 {"value": 59,
 
 "id": "DJ",
 
-"name": "Djibouti",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Djibouti" },
 
 {"value": 60,
 
 "id": "DK",
 
-"name": "Denmark",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Denmark" },
 
 {"value": 61,
 
 "id": "DM",
 
-"name": "Dominica",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Dominica" },
 
 {"value": 62,
 
 "id": "DO",
 
-"name": "Dominican Republic",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Dominican Republic" },
 
 {"value": 63,
 
 "id": "DZ",
 
-"name": "Algeria",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Algeria" },
 
 {"value": 64,
 
 "id": "EC",
 
-"name": "Ecuador",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Ecuador" },
 
 {"value": 65,
 
 "id": "EE",
 
-"name": "Estonia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Estonia" },
 
 {"value": 66,
 
 "id": "EG",
 
-"name": "Egypt",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Egypt" },
 
 {"value": 67,
 
 "id": "EH",
 
-"name": "Western Sahara",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Western Sahara" },
 
 {"value": 68,
 
 "id": "ER",
 
-"name": "Eritrea",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Eritrea" },
 
 {"value": 69,
 
 "id": "ES",
 
-"name": "Spain",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Spain" },
 
 {"value": 70,
 
 "id": "ET",
 
-"name": "Ethiopia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Ethiopia" },
 
 {"value": 71,
 
 "id": "FI",
 
-"name": "Finland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Finland" },
 
 {"value": 72,
 
 "id": "FJ",
 
-"name": "Fiji",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Fiji" },
 
 {"value": 73,
 
 "id": "FK",
 
-"name": "Falkland Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Falkland Islands" },
 
 {"value": 74,
 
 "id": "FM",
 
-"name": "Micronesia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Micronesia" },
 
 {"value": 75,
 
 "id": "Fo",
 
-"name": "Faroe Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Faroe Islands" },
 
 {"value": 76,
 
 "id": "Fr",
 
-"name": "France",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "France" },
 
 {"value": 77,
 
 "id": "Ga",
 
-"name": "Gabon",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Gabon" },
 
 {"value": 78,
 
 "id": "GB",
 
-"name": "United Kingdom",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "United Kingdom" },
 
 {"value": 79,
 
 "id": "GD",
 
-"name": "Grenada",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Grenada" },
 
 {"value": 80,
 
 "id": "GE",
 
-"name": "Georgia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Georgia" },
 
 {"value": 81,
 
 "id": "GF",
 
-"name": "French Guiana",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "French Guiana" },
 
 {"value": 82,
 
 "id": "GG",
 
-"name": "Guernsey",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guernsey" },
 
 {"value": 83,
 
 "id": "GH",
 
-"name": "Ghana",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Ghana" },
 
 {"value": 84,
 
 "id": "GI",
 
-"name": "Gibraltar",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Gibraltar" },
 
 {"value": 85,
 
 "id": "Gl",
 
-"name": "Greenland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Greenland" },
 
 {"value": 86,
 
 "id": "GM",
 
-"name": "Gambia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Gambia" },
 
 {"value": 87,
 
 "id": "GN",
 
-"name": "Guinea",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guinea" },
 
 {"value": 88,
 
 "id": "GP",
 
-"name": "Guadeloupe",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guadeloupe" },
 
 {"value": 89,
 
 "id": "GQ",
 
-"name": "Equatorial Guinea",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Equatorial Guinea" },
 
 {"value": 90,
 
 "id": "GR",
 
-"name": "Greece",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Greece" },
 
 {"value": 91,
 
 "id": "GS",
 
-"name": "South Georgia And the South Sandwich Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "South Georgia And the South Sandwich Islands" },
 
 {"value": 92,
 
 "id": "GT",
 
-"name": "Guatemala",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guatemala" },
 
 {"value": 93,
 
 "id": "GU",
 
-"name": "Guam",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guam" },
 
 {"value": 94,
 
 "id": "GW",
 
-"name": "Guinea-Bissau",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guinea-Bissau" },
 
 {"value": 95,
 
 "id": "GY",
 
-"name": "Guyana",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Guyana" },
 
 {"value": 96,
 
 "id": "HK",
 
-"name": "Hong KonG",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Hong KonG" },
 
 {"value": 97,
 
 "id": "HM",
 
-"name": "Heard Island And McDonald Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Heard Island And McDonald Islands" },
 
 {"value": 98,
 
 "id": "HN",
 
-"name": "Honduras",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Honduras" },
 
 {"value": 99,
 
 "id": "HR",
 
-"name": "Croatia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Croatia" },
 
 {"value": 100,
 
 "id": "HT",
 
-"name": "Haiti",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Haiti" },
 
 {"value": 101,
 
 "id": "HU",
 
-"name": "Hungary",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Hungary" },
 
 {"value": 102,
 
 "id": "ID",
 
-"name": "Indonesia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Indonesia" },
 
 {"value": 103,
 
 "id": "IE",
 
-"name": "Ireland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Ireland" },
 
 {"value": 104,
 
 "id": "IL",
 
-"name": "Israel",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Israel" },
 
 {"value": 105,
 
 "id": "IM",
 
-"name": "Isle of Man",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Isle of Man" },
 
 {"value": 106,
 
 "id": "IN",
 
-"name": "India",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "India" },
 
 {"value": 107,
 
 "id": "IO",
 
-"name": "British Indian Ocean Territory",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "British Indian Ocean Territory" },
 
 {"value": 108,
 
 "id": "IQ",
 
-"name": "Iraq",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Iraq" },
 
 {"value": 109,
 
 "id": "IR",
 
-"name": "Iran",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Iran" },
 
 {"value": 110,
 
 "id": "IS",
 
-"name": "Iceland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Iceland" },
 
 {"value": 111,
 
 "id": "IT",
 
-"name": "Italy",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Italy" },
 
 {"value": 112,
 
 "id": "JE",
 
-"name": "Jersey",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Jersey" },
 
 {"value": 113,
 
 "id": "JM",
 
-"name": "Jamaica",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Jamaica" },
 
 {"value": 114,
 
 "id": "JO",
 
-"name": "Jordan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Jordan" },
 
 {"value": 115,
 
 "id": "JP",
 
-"name": "Japan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Japan" },
 
 {"value": 116,
 
 "id": "KE",
 
-"name": "Kenya",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Kenya" },
 
 {"value": 117,
 
 "id": "KG",
 
-"name": "Kyrgyzstan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Kyrgyzstan" },
 
 {"value": 118,
 
 "id": "KH",
 
-"name": "Cambodia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cambodia" },
 
 {"value": 119,
 
 "id": "KI",
 
-"name": "Kiribati",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Kiribati" },
 
 {"value": 120,
 
 "id": "KM",
 
-"name": "Comoros",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Comoros" },
 
 {"value": 121,
 
 "id": "KN",
 
-"name": "Saint Kitts And Nevis",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Kitts And Nevis" },
 
 {"value": 122,
 
 "id": "KP",
 
-"name": "North Korea",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "North Korea" },
 
 {"value": 123,
 
 "id": "KR",
 
-"name": "South Korea",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "South Korea" },
 
 {"value": 124,
 
 "id": "KW",
 
-"name": "Kuwait",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Kuwait" },
 
 {"value": 125,
 
 "id": "KY",
 
-"name": "Cayman Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Cayman Islands" },
 
 {"value": 126,
 
 "id": "KZ",
 
-"name": "Kazakhstan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Kazakhstan" },
 
 {"value": 127,
 
 "id": "LA",
 
-"name": "Laos",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Laos" },
 
 {"value": 128,
 
 "id": "LB",
 
-"name": "Lebanon",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Lebanon" },
 
 {"value": 129,
 
 "id": "LC",
 
-"name": "Saint Lucia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Lucia" },
 
 {"value": 130,
 
 "id": "LI",
 
-"name": "Liechtenstein",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Liechtenstein" },
 
 {"value": 131,
 
 "id": "LK",
 
-"name": "Sri Lanka",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Sri Lanka" },
 
 {"value": 132,
 
 "id": "LR",
 
-"name": "Liberia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Liberia" },
 
 {"value": 133,
 
 "id": "LS",
 
-"name": "Lesotho",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Lesotho" },
 
 {"value": 134,
 
 "id": "LT",
 
-"name": "Lithuania",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Lithuania" },
 
 {"value": 135,
 
 "id": "LU",
 
-"name": "Luxembourg",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Luxembourg" },
 
 {"value": 136,
 
 "id": "LV",
 
-"name": "Latvia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Latvia" },
 
 {"value": 137,
 
 "id": "LY",
 
-"name": "Libya",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Libya" },
 
 {"value": 138,
 
 "id": "MA",
 
-"name": "Morocco",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Morocco" },
 
 {"value": 139,
 
 "id": "MC",
 
-"name": "Monaco",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Monaco" },
 
 {"value": 140,
 
 "id": "MD",
 
-"name": "Moldova",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Moldova" },
 
 {"value": 141,
 
 "id": "ME",
 
-"name": "Montenegro",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Montenegro" },
 
 {"value": 142,
 
 "id": "MF",
 
-"name": "Saint Martin",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Martin" },
 
 {"value": 143,
 
 "id": "MG",
 
-"name": "Madagascar",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Madagascar" },
 
 {"value": 144,
 
 "id": "MH",
 
-"name": "Marshall Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Marshall Islands" },
 
 {"value": 145,
 
 "id": "MK",
 
-"name": "Macedonia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Macedonia" },
 
 {"value": 146,
 
 "id": "ML",
 
-"name": "Mali",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mali" },
 
 {"value": 147,
 
 "id": "MM",
 
-"name": "Myanmar",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Myanmar" },
 
 {"value": 148,
 
 "id": "MN",
 
-"name": "Mongolia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mongolia" },
 
 {"value": 149,
 
 "id": "MO",
 
-"name": "Macao",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Macao" },
 
 {"value": 150,
 
 "id": "MP",
 
-"name": "Northern Mariana Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Northern Mariana Islands" },
 
 {"value": 151,
 
 "id": "MQ",
 
-"name": "Martinique",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Martinique" },
 
 {"value": 152,
 
 "id": "MR",
 
-"name": "Mauritania",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mauritania" },
 
 {"value": 153,
 
 "id": "MS",
 
-"name": "Montserrat",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Montserrat" },
 
 {"value": 154,
 
 "id": "MT",
 
-"name": "Malta",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Malta" },
 
 {"value": 155,
 
 "id": "MU",
 
-"name": "Mauritius",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mauritius" },
 
 {"value": 156,
 
 "id": "MV",
 
-"name": "Maldives",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Maldives" },
 
 {"value": 157,
 
 "id": "MW",
 
-"name": "Malawi",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Malawi" },
 
 {"value": 158,
 
 "id": "MX",
 
-"name": "Mexico",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mexico" },
 
 {"value": 159,
 
 "id": "MY",
 
-"name": "Malaysia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Malaysia" },
 
 {"value": 160,
 
 "id": "MZ",
 
-"name": "Mozambique",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mozambique" },
 
 {"value": 161,
 
 "id": "NA",
 
-"name": "Namibia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Namibia" },
 
 {"value": 162,
 
 "id": "NC",
 
-"name": "New Caledonia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "New Caledonia" },
 
 {"value": 163,
 
 "id": "NE",
 
-"name": "Niger",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Niger" },
 
 {"value": 164,
 
 "id": "NF",
 
-"name": "Norfolk Island",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Norfolk Island" },
 
 {"value": 165,
 
 "id": "NG",
 
-"name": "Nigeria",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Nigeria" },
 
 {"value": 166,
 
 "id": "NI",
 
-"name": "Nicaragua",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Nicaragua" },
 
 {"value": 167,
 
 "id": "NL",
 
-"name": "Netherlands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Netherlands" },
 
 {"value": 168,
 
 "id": "NO",
 
-"name": "Norway",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Norway" },
 
 {"value": 169,
 
 "id": "NP",
 
-"name": "Nepal",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Nepal" },
 
 {"value": 170,
 
 "id": "NR",
 
-"name": "Nauru",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Nauru" },
 
 {"value": 171,
 
 "id": "NU",
 
-"name": "Niue",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Niue" },
 
 {"value": 172,
 
 "id": "NZ",
 
-"name": "New Zealand",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "New Zealand" },
 
 {"value": 173,
 
 "id": "OM",
 
-"name": "Oman",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Oman" },
 
 {"value": 174,
 
 "id": "PA",
 
-"name": "Panama",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Panama" },
 
 {"value": 175,
 
 "id": "PE",
 
-"name": "Peru",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Peru" },
 
 {"value": 176,
 
 "id": "PF",
 
-"name": "French Polynesia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "French Polynesia" },
 
 {"value": 177,
 
 "id": "PG",
 
-"name": "Papua New Guinea",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Papua New Guinea" },
 
 {"value": 178,
 
 "id": "PH",
 
-"name": "Philippines",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Philippines" },
 
 {"value": 179,
 
 "id": "PK",
 
-"name": "Pakistan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Pakistan" },
 
 {"value": 180,
 
 "id": "PL",
 
-"name": "Poland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Poland" },
 
 {"value": 181,
 
 "id": "PM",
 
-"name": "Saint Pierre And Miquelon",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Pierre And Miquelon" },
 
 {"value": 182,
 
 "id": "PN",
 
-"name": "Pitcairn",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Pitcairn" },
 
 {"value": 183,
 
 "id": "PR",
 
-"name": "Puerto Rico",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Puerto Rico" },
 
 {"value": 184,
 
 "id": "PS",
 
-"name": "Palestinian Territory",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Palestinian Territory" },
 
 {"value": 185,
 
 "id": "PT",
 
-"name": "Portugal",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Portugal" },
 
 {"value": 186,
 
 "id": "PW",
 
-"name": "Palau",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Palau" },
 
 {"value": 187,
 
 "id": "PY",
 
-"name": "Paraguay",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Paraguay" },
 
 {"value": 188,
 
 "id": "QA",
 
-"name": "Qatar",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Qatar" },
 
 {"value": 189,
 
 "id": "RE",
 
-"name": "Reunion",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Reunion" },
 
 {"value": 190,
 
 "id": "Ro",
 
-"name": "Romania",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Romania" },
 
 {"value": 191,
 
 "id": "Rs",
 
-"name": "Serbia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Serbia" },
 
 {"value": 192,
 
 "id": "RU",
 
-"name": "Russia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Russia" },
 
 {"value": 193,
 
 "id": "RW",
 
-"name": "Rwanda",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Rwanda" },
 
 {"value": 194,
 
 "id": "SA",
 
-"name": "Saudi Arabia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saudi Arabia" },
 
 {"value": 195,
 
 "id": "SB",
 
-"name": "Solomon Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Solomon Islands" },
 
 {"value": 196,
 
 "id": "SC",
 
-"name": "Seychelles",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Seychelles" },
 
 {"value": 197,
 
 "id": "SD",
 
-"name": "Sudan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Sudan" },
 
 {"value": 198,
 
 "id": "SE",
 
-"name": "Sweden",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Sweden" },
 
 {"value": 199,
 
 "id": "SG",
 
-"name": "Singapore",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Singapore" },
 
 {"value": 200,
 
 "id": "SH",
 
-"name": "Saint Helena",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Helena" },
 
 {"value": 201,
 
 "id": "SI",
 
-"name": "Slovenia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Slovenia" },
 
 {"value": 202,
 
 "id": "SJ",
 
-"name": "Svalbard And Jan Mayen",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Svalbard And Jan Mayen" },
 
 {"value": 203,
 
 "id": "SK",
 
-"name": "Slovakia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Slovakia" },
 
 {"value": 204,
 
 "id": "SL",
 
-"name": "Sierra Leone",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Sierra Leone" },
 
 {"value": 205,
 
 "id": "SM",
 
-"name": "San Marino",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "San Marino" },
 
 {"value": 206,
 
 "id": "SN",
 
-"name": "Senegal",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Senegal" },
 
 {"value": 207,
 
 "id": "SO",
 
-"name": "Somalia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Somalia" },
 
 {"value": 208,
 
 "id": "SR",
 
-"name": "Suriname",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Suriname" },
 
 {"value": 209,
 
 "id": "Ss",
 
-"name": "South Sudan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "South Sudan" },
 
 {"value": 210,
 
 "id": "ST",
 
-"name": "Sao Tome And Principe",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Sao Tome And Principe" },
 
 {"value": 211,
 
 "id": "SV",
 
-"name": "El Salvador",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "El Salvador" },
 
 {"value": 212,
 
 "id": "SX",
 
-"name": "Sint Maarten",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Sint Maarten" },
 
 {"value": 213,
 
 "id": "SY",
 
-"name": "Syria",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Syria" },
 
 {"value": 214,
 
 "id": "SZ",
 
-"name": "Swaziland",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Swaziland" },
 
 {"value": 215,
 
 "id": "TC",
 
-"name": "Turks And Caicos Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Turks And Caicos Islands" },
 
 {"value": 216,
 
 "id": "TD",
 
-"name": "Chad",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Chad" },
 
 {"value": 217,
 
 "id": "TF",
 
-"name": "French Southern Territories",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "French Southern Territories" },
 
 {"value": 218,
 
 "id": "TG",
 
-"name": "Togo",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Togo" },
 
 {"value": 219,
 
 "id": "TH",
 
-"name": "Thailand",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Thailand" },
 
 {"value": 220,
 
 "id": "TJ",
 
-"name": "Tajikistan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Tajikistan" },
 
 {"value": 221,
 
 "id": "TK",
 
-"name": "Tokelau",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Tokelau" },
 
 {"value": 222,
 
 "id": "TL",
 
-"name": "Timor Leste",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Timor Leste" },
 
 {"value": 223,
 
 "id": "TM",
 
-"name": "Turkmenistan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Turkmenistan" },
 
 {"value": 224,
 
 "id": "TN",
 
-"name": "Tunisia",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Tunisia" },
 
 {"value": 225,
 
 "id": "TO",
 
-"name": "Tonga",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Tonga" },
 
 {"value": 226,
 
 "id": "TR",
 
-"name": "Turkey",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Turkey" },
 
 {"value": 227,
 
 "id": "TT",
 
-"name": "Trinidad And Tobago",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Trinidad And Tobago" },
 
 {"value": 228,
 
 "id": "TV",
 
-"name": "Tuvalu",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Tuvalu" },
 
 {"value": 229,
 
 "id": "TW",
 
-"name": "Taiwan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Taiwan" },
 
 {"value": 230,
 
 "id": "TZ",
 
-"name": "Tanzania",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Tanzania" },
 
 {"value": 231,
 
 "id": "UA",
 
-"name": "Ukraine",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Ukraine" },
 
 {"value": 232,
 
 "id": "UG",
 
-"name": "Uganda",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Uganda" },
 
 {"value": 233,
 
 "id": "UM",
 
-"name": "United States Minor Outlying Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "United States Minor Outlying Islands" },
 
 {"value": 234,
 
 "id": "US",
 
-"name": "United States",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "United States" },
 
 {"value": 235,
 
 "id": "UY",
 
-"name": "Uruguay",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Uruguay" },
 
 {"value": 236,
 
 "id": "UZ",
 
-"name": "Uzbekistan",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Uzbekistan" },
 
 {"value": 237,
 
 "id": "VA",
 
-"name": "Vatican",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Vatican" },
 
 {"value": 238,
 
 "id": "VC",
 
-"name": "Saint Vincent And the Grenadines",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Saint Vincent And the Grenadines" },
 
 {"value": 239,
 
 "id": "VE",
 
-"name": "Venezuela",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Venezuela" },
 
 {"value": 240,
 
 "id": "VG",
 
-"name": "British Virgin Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "British Virgin Islands" },
 
 {"value": 241,
 
 "id": "VI",
 
-"name": "U.S. Virgin Islands",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "U.S. Virgin Islands" },
 
 {"value": 242,
 
 "id": "VN",
 
-"name": "Vietnam",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Vietnam" },
 
 {"value": 243,
 
 "id": "VU",
 
-"name": "Vanuatu",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Vanuatu" },
 
 {"value": 244,
 
 "id": "WF",
 
-"name": "Wallis And Futuna",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Wallis And Futuna" },
 
 {"value": 245,
 
 "id": "WS",
 
-"name": "Samoa",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Samoa" },
 
 {"value": 246,
 
 "id": "XK",
 
-"name": "Kosovo",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Kosovo" },
 
 {"value": 247,
 
 "id":"YE",
 
-"name":"Yemen",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name":"Yemen" },
 
 {"value": 248,
 
 "id": "YT",
 
-"name": "Mayotte",
-
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Mayotte" },
 
 {"value": 249,
 "id": "ZA",
-"name": "South Africa",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "South Africa" },
 {"value": 250,
 "id": "ZM",
-"name": "Zambia",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]},
+"name": "Zambia" },
 {"value": 251,
 "id": "ZW",
-"name": "Zimbabwe",
-"cities": [
-{"value": 0, "id": "country2-city0", "name": "Belgrade"},
-{"value": 1, "id": "country2-city1", "name": "Nis"},
-{"value": 2, "id": "country2-city2", "name": "Kraljevo"},
-{"value": 3, "id": "country2-city3", "name": "Novi Sad"},
-{"value": 4, "id": "country2-city4", "name": "Valjevo"},
-{"value": 5, "id": "country2-city5", "name": "Cacak"}
-]}
+"name": "Zimbabwe" }
     ]
 }

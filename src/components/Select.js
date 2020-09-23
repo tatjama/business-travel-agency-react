@@ -14,8 +14,8 @@ const Select = (props) =>{
     return(
         <option 
             value = {option.value} 
-            key = {option.id} 
-            id = {option.id}>
+            key = {option.id? option.id: option.geonameid} 
+            id = {option.geonameid}>
                 {option.name}
         </option>
     )
