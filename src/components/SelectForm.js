@@ -1,15 +1,17 @@
 import React from 'react';
 import Select from './Select';
 import useSelect from './useSelect';
+import {useHistory} from 'react-router-dom';
 
 
 const SelectForm = () =>{
-
+    const history = useHistory();
     const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit} = useSelect(submitted);
     
      function submitted(){
          console.log('is submitted')
         console.log(city)
+        history.push(`/${city.name}`)
     }
 
     

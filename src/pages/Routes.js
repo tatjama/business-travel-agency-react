@@ -25,7 +25,7 @@ export default function Routes() {
             <Route path = "/feedbacks" component = {Feedbacks} />
             <Route path = "/providers" component = {Providers} />   
             <Route path = "/shop" exact component = {Shop}/>  
-            <Route path = "/shop/:id" component = {City}/>          
+            <Route path = "/:id" component = {City}/>          
             <Route  component = {SignIn} />   
         </Switch>
     );
