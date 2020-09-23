@@ -129,7 +129,7 @@ const City =({match}) =>{
     return(
         <div>             
               <Button
-                name = "Info"
+                name = "Life in different countries..."
                 handleOnClick = {fetchCityInformation}
               />
               {isFetch && 
