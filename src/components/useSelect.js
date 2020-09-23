@@ -21,6 +21,7 @@ const useSelect = () =>{
             }
         })
         const cities = await data.json();
+        console.log(cities.cities.length);
         console.log(cities)
         setCities(cities.cities)
         console.log(cities)        
@@ -33,7 +34,7 @@ const useSelect = () =>{
       setCountry(countries[e.target.value]);
  }
  useEffect(() => {
-     console.log(country);
+     console.log(country);     
      fetchCities(country.id);
      //ERROR HANDLE     
      //!cities? alert("Nema grada"):
