@@ -2,13 +2,11 @@
     "countriesArray":[
      {  "value": 0,
         "id": "AD",
-        "name": "Andorra"
-        
+        "name": "Andorra" 
      },
         {"value": 1,
         "id": "AE",
-        "name": "United Arab Emirates"
-        },
+        "name": "United Arab Emirates" },
 {"value": 2,
 "id": "AF",
 "name": "Afghanistan" },
@@ -31,6 +29,9 @@
 {"value": 8,
 "id": "AO",
 "name": "Angola" },
+{"value": 9,
+"id": "AQ",
+"name": "Antarctica" },
 {"value": 10,
 "id": "AR",
 "name": "Argentina" },

@@ -8,6 +8,7 @@ const useSelect = () =>{
     const [country, setCountry] = useState(countries[0]);    
     const [cities, setCities] = useState([]);
     const [city, setCity] = useState({});
+    let chosenCity = {}
 
     const fetchCities = async(id) =>{
         const data  = await fetch(`https://countries-cities.p.rapidapi.com/location/country/${id}
@@ -34,12 +35,25 @@ const useSelect = () =>{
  useEffect(() => {
      console.log(country);
      fetchCities(country.id);
+     //ERROR HANDLE     
+     //!cities? alert("Nema grada"):
          setCities(cities);
          console.log(cities)
      },[country])
 
  const handleSelectCity = (e) =>{
-     setCity(cities[e.target.value]);
+     
+     console.log(e.target.value)
+     console.log(cities)
+     cities.map((city) => {
+        // console.log(city.geonameid)
+         //console.log(e.target.value)
+        if(city.geonameid == e.target.value){
+            chosenCity = city;           
+        }return chosenCity
+     })
+     
+     setCity(chosenCity);
  }
  useEffect(() => {
      console.log(city)

@@ -13,7 +13,7 @@ const Select = (props) =>{
                         {props.optionArray.map((option) =>{
     return(
         <option 
-            value = {option.value} 
+            value = {option.value? option.value: option.geonameid} 
             key = {option.id? option.id: option.geonameid} 
             id = {option.geonameid}>
                 {option.name}
