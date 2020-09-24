@@ -167,7 +167,7 @@ const City =({match}) =>{
     {
         name: "Airports", 
         source: airplane, 
-        handleOnClick: fetchAirportsInformation,
+        handleOnlick: fetchAirportsInformation,
         alt: "airplane" ,
         go: "#airport"
     }]
@@ -191,7 +191,7 @@ const City =({match}) =>{
                     <SectionFirstLife info = {figureProps}/>
                     <div>     
                         {//SET BUTTONS
-                        buttons.map((button) => {
+                       /* buttons.map((button) => {
                             return(
                                 <Button 
                                     key = {button.name}
@@ -199,7 +199,7 @@ const City =({match}) =>{
                                     handleOnClick = {button.click}
                                 />
                             )
-                        })}          
+                        })*/}          
                     
                         <CityInfo header = {header}/>
                     </div>
