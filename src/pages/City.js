@@ -129,6 +129,7 @@ const City =({match}) =>{
     return(
         <div>             
               <Button
+                className = "life-button"
                 name = "Life in different countries..."
                 handleOnClick = {fetchCityInformation}
               />
