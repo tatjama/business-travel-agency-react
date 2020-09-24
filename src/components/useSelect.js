@@ -22,7 +22,7 @@ const useSelect = (callback) =>{
             }
         })
         const cities = await data.json();
-        console.log(cities.cities.length);
+       // console.log(cities.cities.length);
         console.log(cities)
         setCities(cities.cities)
         console.log(cities)        

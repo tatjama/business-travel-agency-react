@@ -1,10 +1,19 @@
 import React, { useState} from 'react';
 import Button from '../components/Button';
+import { useAppContext } from '../libs/contextLib';
 import Airports from './Airports';
 import Attractions from './Attractions';
 import CityInfo from './CityInfo';
 import Hotels from './Hotels';
 import Restaurants from './Restaurants';
+import SelectForm from '../components/SelectForm';
+import SectionFirstLife from '../components/SectionFirstLife';
+import astronaut from '../images/astronaut.webp';
+import breakfast from '../images/breakfast.webp';
+import hotel from '../images/hotel.webp';
+import world from '../images/world.webp';
+import airplane from '../images/airplane.webp';
+
 
 const City =({match}) =>{
     console.log(match)
@@ -123,53 +132,92 @@ const City =({match}) =>{
         {name:"Restaurants", click: fetchRestaurantInformation},
         {name: "Hotels", click: fetchHotelsInformation},
         {name: "Attractions", click: fetchAttractionsInformation},
-        {name: "Airports", click: fetchAirportsInformation}
+        {name: "Airports", click: fetchAirportsInformation},
+        {name: "Nesto", click:fetchAirportsInformation}
     ]
+    const figureProps =  [{
+        name: "Local transport", 
+        source: astronaut, 
+        handleOnClick: fetchAirportsInformation, 
+        alt: "space astronaut", 
+        go:  "#transport"
 
+    },
+    {
+        name: "Restaurants", 
+        source: breakfast,
+        handleOnClick: fetchRestaurantInformation,
+        alt: "breakfast" ,
+        go: "#food"
+    },
+    {
+        name: "Hotels", 
+        source: hotel, 
+        handleOnClick: fetchHotelsInformation,
+        alt: "friends hands" ,
+        go: "#safety"
+    },
+    {
+        name: "Attractions" ,
+        source: world, 
+        handleOnClick: fetchAttractionsInformation,
+        alt: "world" ,
+        go: "#culture"
+    },
+    {
+        name: "Airports", 
+        source: airplane, 
+        handleOnClick: fetchAirportsInformation,
+        alt: "airplane" ,
+        go: "#airport"
+    }]
+    const {isUserAuthenticated} = useAppContext();
+    console.log(isUserAuthenticated)
     return(
-        <div>             
-              <Button
-                className = "life-button"
-                name = "Life in different countries..."
-                handleOnClick = {fetchCityInformation}
-              />
-              {isFetch && 
-                <div>     
-                    {//SET BUTTONS
-                    buttons.map((button) => {
-                        return(
-                            <Button 
-                                key = {button.name}
-                                name = {button.name}
-                                handleOnClick = {button.click}
-                            />
-                        )
-                    })}          
-                   
-             <CityInfo
-                header = {header}
-             />
-             </div>}            
-             {isRestaurantsFetch &&            
-                <Restaurants
-                    restaurants = {restaurants}
+        <div>     
+             <header className="header" id="header-life" >
+                <div id="message"></div>        
+                 <SelectForm />          
+            </header>
+                <Button
+                    className = "life-button"
+                    name = "Life in different countries..."
+                    handleOnClick = {fetchCityInformation}
                 />
-             }
-             {isHotelsFetch &&
-                <Hotels
-                    hotels = {hotels}
-                />
-             }
-             {isAttractionsFetch &&
-               <Attractions
-                    attractions = {attractions}
-               />
-             }
-            {isAirportsFetch &&
-                <Airports 
-                    airports = {airports}
-                />                
-            }                 
+                
+                {isFetch && 
+                    <div className="wrapper">
+                    <h3>Life in different countries....(Country-City)</h3>
+                    <SectionFirstLife info = {figureProps}/>
+                    <div>     
+                        {//SET BUTTONS
+                        buttons.map((button) => {
+                            return(
+                                <Button 
+                                    key = {button.name}
+                                    name = {button.name}
+                                    handleOnClick = {button.click}
+                                />
+                            )
+                        })}          
+                    
+                        <CityInfo header = {header}/>
+                    </div>
+                    </div>  
+                    }            
+                    {isRestaurantsFetch &&            
+                        <Restaurants restaurants = {restaurants}/>
+                    }
+                    {isHotelsFetch &&
+                        <Hotels hotels = {hotels}/>
+                    }
+                    {isAttractionsFetch &&
+                        <Attractions attractions = {attractions}/>
+                    }
+                    {isAirportsFetch &&
+                        <Airports airports = {airports}/>                
+                    }              
+                 
         </div>    
     )
 }

@@ -194,6 +194,10 @@ html {
 }
 .life-button {
     width: 100%;
+    padding: 20px;
+    margin: 0px;
+    font-size: medium;
+    font-weight: lighter;
 }
 /*-------ACCOMMODATION-----*/
 #header-accommodation {
