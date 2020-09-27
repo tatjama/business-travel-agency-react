@@ -65,7 +65,7 @@ const onLoad = () => {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "countries-cities.p.rapidapi.com",
-                "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+                "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
             }
         })
         const cities = await data.json();

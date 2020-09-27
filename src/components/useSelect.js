@@ -10,6 +10,8 @@ const useSelect = (callback) =>{
     const [city, setCity] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false)
     let chosenCity = {}
+    //const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411";
+    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470";
 
     const fetchCities = async(id) =>{
         const data  = await fetch(`https://countries-cities.p.rapidapi.com/location/country/${id}
@@ -18,13 +20,13 @@ const useSelect = (callback) =>{
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "countries-cities.p.rapidapi.com",
-                "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+                "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
             }
         })
         const cities = await data.json();
        // console.log(cities.cities.length);
         console.log(cities)
-        setCities(cities.cities)
+        await setCities(cities.cities)
         console.log(cities)        
     }
     

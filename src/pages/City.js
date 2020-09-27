@@ -15,7 +15,7 @@ import world from '../images/world.webp';
 import airplane from '../images/airplane.webp';
 
 
-const City =({match}) =>{
+const City =({match}) =>{    
     console.log(match)
    // console.log(match), match is params sent from previous page
     const [info, setInfo] = useState([])  
@@ -30,20 +30,22 @@ const City =({match}) =>{
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([])
 
-      
+   // const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
     const [items, setItems] = useState([])
     const [id, setId] = useState(null);
     
     
       
     const fetchCityInformation = async() =>{
+        setIsFetch(false)
         const data = await 
      //props is name of the city sent from previous page
             fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
 	            "method": "GET",
 	            "headers": {
 		            "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		            "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+		            "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
 	            }
             })
             const info = await data.json();
@@ -80,7 +82,7 @@ const City =({match}) =>{
 	        "method": "GET",
 	        "headers": {
 		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		        "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+		        "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
 	        }
         })
         const restaurants = await data.json();        
@@ -117,7 +119,7 @@ const City =({match}) =>{
           "method": "GET",
           "headers": {
               "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-              "x-rapidapi-key": "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
+              "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
           }
       })
         const airports = await data.json();
@@ -184,30 +186,26 @@ const City =({match}) =>{
                     name = "Life in different countries..."
                     handleOnClick = {fetchCityInformation}
                 />
-                
+                <div className = "wrapper">
                 {isFetch && 
-                    <div className="wrapper">
-                    <h3>Life in different countries....(Country-City)</h3>
-                    <SectionFirstLife info = {figureProps}/>
-                    <div>     
-                        {//SET BUTTONS
-                       /* buttons.map((button) => {
-                            return(
-                                <Button 
-                                    key = {button.name}
-                                    name = {button.name}
-                                    handleOnClick = {button.click}
-                                />
+                    <div >
+                        <h3>Life in different countries....(Country-City)</h3>
+                        <div >     
+                            {//SET BUTTONS
+                                /* buttons.map((button) => {return(
+                                <Button key = {button.name} name = {button.name} handleOnClick = {button.click}/>
                             )
-                        })*/}          
+                        })*/}                       
+                            <CityInfo header = {header}/>
+                        </div>
+                        <SectionFirstLife info = {figureProps}/>
                     
-                        <CityInfo header = {header}/>
-                    </div>
                     </div>  
                     }            
                     {isRestaurantsFetch &&            
                         <Restaurants restaurants = {restaurants}/>
                     }
+                    </div>
                     {isHotelsFetch &&
                         <Hotels hotels = {hotels}/>
                     }

@@ -25,28 +25,57 @@ const Restaurants = (props) => {
         <div>
                  <h3>Food and Entertainment</h3>
                  {console.log(props.restaurants)}
+                 <div id="showTransportation">
                    {props.restaurants.map((restaurant) =>{
                     return(
                         <div key = {restaurant.location_id}>
-                           <h1>Name: {restaurant.name}</h1>
-                           <img src = {restaurant.photo.images.small.url} alt = {restaurant.name}/>
-                           <h2>Address: {restaurant.address}</h2>
-                           <h2>Phone: {restaurant.phone}</h2>
-                           <h2>E-mail: {restaurant.email}</h2>
-                            <h2>Website: {restaurant.website}</h2>
-                           <h2>Category: {restaurant.ranking_category}</h2>
-                           <h2>Rating: {restaurant.rating}</h2>
-                           <h2>Ranking: {restaurant.ranking}</h2>
-                           <h2>Ranking position: {restaurant.ranking_position}</h2>
-                           <h2>Price: {restaurant.price}</h2>
-                           <p>Description: {restaurant.description}</p>
+                             
+                                <h1>Name:{restaurant.name}</h1>
+                    <div className="middle-wrapper ">
+                        <div className="provider-div ">
+                        <div className="provider-heading ">
+                            <div className="item">                                
+                                <img className="provider-logo " 
+                                    src={restaurant.photo.images.small.url} 
+                                    alt = {restaurant.name}
+                                />
+                                {/*props.header.photo.caption*/}
+                             </div>
+                             <div className="item ">
+                                        <h3>DESCRIPTION</h3>
+                                        <p>{restaurant.description}</p> 
+                                    </div>
+                             <div className = "item">   
+                                <p>Name: {restaurant.name}</p>                                                    
+                               <p> Type: Restaurant</p>    
+                               <p>Price: {restaurant.price}</p>                             
+                                <p>Category: {restaurant.ranking_category}</p>
+                                <p>Rating: {restaurant.rating}</p>
+                                <p>Ranking: {restaurant.ranking}</p>
+                                 <p>Ranking position: {restaurant.ranking_position}</p>                          
+                            </div>
+                            <div className="item ">
+                                        <p><span className = "info-restaurant"> Name: </span> {restaurant.name}</p>
+                                        <p><span className = "info-restaurant">Address: </span> {restaurant.address}</p>
+                                        <p><span className = "info-restaurant">Phone: </span>{restaurant.phone}</p>
+                                        <p><span className = "info-restaurant">Email:</span> {restaurant.email}</p>
+                                        <p><span className = "info-restaurant">Website:</span> {restaurant.website}</p>
+                                        <p><span className = "info-restaurant">LONGITUDE:</span> {restaurant.longitude}</p>
+                                        <p><span className = "info-restaurant">LATITUDE:</span> {restaurant.latitude}</p>
+                                        <p><span className = "info-restaurant">ID: </span>{restaurant.location_id}</p>
+                                    </div>
+                        </div>
                            
-                           <p>ID: {restaurant.location_id}</p>
-                           <Button
-                                name = "See Comments"
-                                handleOnClick = {fetchRestaurantComments} 
-                           />
-                           <div >
+                                                                       <Button name = "See Comments"
+                                    handleOnClick = {fetchRestaurantComments} 
+                                    />
+                                
+                        </div>
+                    </div>
+                         
+                          
+                              
+                                                      <div >
                                {/*console.log(comments)*/}
                                {comments.map((comment) => {
                                    return(
@@ -60,7 +89,7 @@ const Restaurants = (props) => {
                         </div>
                     )
                 })}
-
+                </div>
              </div>
     )
 }

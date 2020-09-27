@@ -7,7 +7,7 @@ import useStateWithSessionStorage from './components/utils/useStateWithSessionSt
 
 const App = ()=>{
     const history = useHistory();
-    const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
+    const [isUserAuthenticated, setUserHasAuthenticated] = useState({isAuthenticated: false, logInUser:{firstName: "guest", lastName: "guest", status: 9}});
     const [isAuthenticating, setIsAuthenticating ] = useState(true);
     const [value, setValue] = useStateWithSessionStorage('logInUser')
 
