@@ -39,13 +39,17 @@ const City =({match}) =>{
       
     const fetchCityInformation = async() =>{
         setIsFetch(false)
+        setIsAirportsFetch(false);
+        setIsAttractionsFetch(false);
+        setIsHotelsFetch(false);
+        setIsRestaurantsFetch(false);
         const data = await 
      //props is name of the city sent from previous page
             fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
 	            "method": "GET",
 	            "headers": {
 		            "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		            "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+		            "x-rapidapi-key": rapidKey
 	            }
             })
             const info = await data.json();
@@ -86,7 +90,7 @@ const City =({match}) =>{
 	        "method": "GET",
 	        "headers": {
 		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		        "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+		        "x-rapidapi-key": rapidKey
 	        }
         })
         const restaurants = await data.json();        
@@ -128,7 +132,7 @@ const City =({match}) =>{
           "method": "GET",
           "headers": {
               "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-              "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+              "x-rapidapi-key": rapidKey
           }
       })
         const airports = await data.json();
@@ -189,7 +193,7 @@ const City =({match}) =>{
             </header>
                 <Button
                     className = "life-button"
-                    name = "Life in different countries..."
+                    name = {`Show information about ${match.params.id}`} 
                     handleOnClick = {fetchCityInformation}
                 />
                 <div className = "wrapper">

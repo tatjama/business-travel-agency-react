@@ -19,12 +19,12 @@ const useSelect = (callback) =>{
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "countries-cities.p.rapidapi.com",
-                "x-rapidapi-key": "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+                "x-rapidapi-key": rapidKey
             }
         })
         const cities = await data.json();
        // console.log(cities.cities.length);
-       // console.log(cities)
+        console.log(cities)
        let citiesArray = [];
        citiesArray = JSON.parse(localStorage.getItem("fetchCities")) || []
        citiesArray.push(cities);
