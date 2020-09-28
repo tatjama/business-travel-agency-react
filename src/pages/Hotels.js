@@ -22,7 +22,7 @@ const Hotels = (props) =>{
                                 />:
                                 <img
                                     src = {avatarImage}
-                                    alt = "hotel generic"
+                                    alt = "generic"
                                     style = {{ height: "150px"}}
                                 />
                             }
