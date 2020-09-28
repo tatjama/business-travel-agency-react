@@ -371,41 +371,60 @@ padding: 40px;
 margin: 40px;
 }
 
-/*Hotels*/
-
-.hotels{
+/*DATA*/
+.main-header{
+    text-align: center;
+    font-size: x-large;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.main-div{
+    border: darkcyan dashed 4px;
+    padding: 15px;
+    margin: 15px;
+}
+.data-selected{
     text-align: center;
     padding: 10px;
 }
-.hotels h2{
+.data-selected h2{
     padding: 10px;
     color: rgb(23, 88, 88);
 }
-.hotels div{
+.data-selected div{
     padding: 10px;
 }
-.hotels-info{
+.data-info{
     display: flex;
-    justify-content: space-around;    
+    justify-content: space-around;  
 }
-.hotels-info p{
+.data-info p{
     font-weight: bold;
 }
-.hotels-info p span{
+.data-info div p{
+    padding: 2px;
+    font-size: medium;
+}
+
+.data-info p span{
     color: rgb(23, 88, 88);
     font-weight: bold;
 }
-.hotels-left{
+.data-left{
     width: 350px;
 }
-.hotels-right{
+.data-right{
     width: 550px;
     text-align: left;
 }
-
-.hotels-info div p{
-    padding: 2px;
-    font-size: medium;
+.data-restaurant{
+    text-align: left;
+    width: 48%;
+}
+.data-first,
+.data-second,
+.data-third {
+    width: 350px;
 }
 textarea{
     width: 100%;
@@ -568,8 +587,16 @@ input[type="radio"] {
             .text-comment{
                 width: 100%;
             }
-            .hotels-info div p{
+            /*DATA*/
+            .main-div {
+                padding: 5px;
+                margin: 5px;
+            }
+            .data-info div p{
                 font-size: small;
+            }
+            .data-selected div{
+                padding: 10px 5px;
             }
             p{
                 font-size: 10px;
@@ -623,6 +650,20 @@ input[type="radio"] {
                 text-align: center;
             }
             /*PAGES*/
+            /*DATA*/
+            .data-info{
+                flex-direction: column;
+            }
+            .data-info div{
+                max-width: 100%;
+                padding: 10px;
+            }
+            .data-restaurant{
+                width: 100%;
+            }
+            .data-info div p {
+                font-size: small;
+            }
             #showTransportation,
     #user-comment {
         border: darkcyan solid 1px;
@@ -661,17 +702,7 @@ input[type="radio"] {
             .item{
                 width: 100%;
             }
-            /*Hotels*/
-            .hotels-info{
-                flex-direction: column;
-            }
-            .hotels-info div{
-                max-width: 100%;
-                padding: 10px;
-            }
-            .hotels-info div p {
-                font-size: small;
-            }
+            
             #transportationFromTo div select{
                 width: 70%;
                  }

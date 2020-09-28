@@ -5,15 +5,15 @@ const Attractions  = (props) =>{
     return(
         <div>
         {console.log(props.attractions)}
-            <h1>Attractions </h1>
-            <div className = "provider-div" id = "attractions">
+            <h1 className = "main-header">ATTRACTIONS </h1>
+            <div className = "main-div" id = "attractions">
                 {props.attractions.map((attraction) => {
                     return(
-                        <div key = {attraction.result_object.location_id} className = "hotels">
+                        <div key = {attraction.result_object.location_id} className = "data-selected">
                             <h1> {attraction.result_object.name}</h1>
                             <h2>Rating: {attraction.result_object.rating}</h2>
-                            <div className = "hotels-info">
-                                <div className = "hotels-left">
+                            <div className = "data-info">
+                                <div className = "data-left">
                                     {attraction.result_object.photo.images.small.url?
                                         <img 
                                             src = {attraction.result_object.photo.images.small.url} 
@@ -26,7 +26,7 @@ const Attractions  = (props) =>{
                                         />
                                     }                                           
                                 </div>   
-                                <div className = "hotels-right">              
+                                <div className = "data-right">              
                                     <p>Address: <span>{attraction.result_object.address}</span></p>                          
                                     <p>ID: <span>{attraction.result_object.location_id}</span></p>
                                     <p>Category: <span>{attraction.result_object.category.name}</span></p>                        

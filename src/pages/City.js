@@ -137,14 +137,7 @@ const City =({match}) =>{
         {name: "Airports", click: fetchAirportsInformation},
         {name: "Nesto", click:fetchAirportsInformation}
     ]
-    const figureProps =  [{
-        name: "Local transport", 
-        source: astronaut, 
-        handleOnClick: fetchAirportsInformation, 
-        alt: "space astronaut", 
-        go:  "#transport"
-
-    },
+    const figureProps =  [
     {
         name: "Restaurants", 
         source: breakfast,
@@ -169,7 +162,7 @@ const City =({match}) =>{
     {
         name: "Airports", 
         source: airplane, 
-        handleOnlick: fetchAirportsInformation,
+        handleOnClick: fetchAirportsInformation,
         alt: "airplane" ,
         go: "#airport"
     }]
@@ -189,7 +182,7 @@ const City =({match}) =>{
                 <div className = "wrapper">
                 {isFetch && 
                     <div >
-                        <h3>Life in different countries....(Country-City)</h3>
+                        <h3>Life in different countries....CITY:</h3>
                         <div >     
                             {//SET BUTTONS
                                 /* buttons.map((button) => {return(
@@ -205,7 +198,7 @@ const City =({match}) =>{
                     {isRestaurantsFetch &&            
                         <Restaurants restaurants = {restaurants}/>
                     }
-                    </div>
+                    
                     {isHotelsFetch &&
                         <Hotels hotels = {hotels}/>
                     }
@@ -215,7 +208,7 @@ const City =({match}) =>{
                     {isAirportsFetch &&
                         <Airports airports = {airports}/>                
                     }              
-                 
+                 </div>
         </div>    
     )
 }

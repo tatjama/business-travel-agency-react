@@ -3,9 +3,8 @@ import {countriesArray} from './data/countries';
 
 const countries = countriesArray;
 
-
 const useSelect = (callback) =>{
-    const [country, setCountry] = useState(countries[0]);    
+    const [country, setCountry] = useState({value: 0, id: "AD", name: "Andorra"});    
     const [cities, setCities] = useState([]);
     const [city, setCity] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -25,7 +24,7 @@ const useSelect = (callback) =>{
         })
         const cities = await data.json();
        // console.log(cities.cities.length);
-        console.log(cities)
+       // console.log(cities)
         await setCities(cities.cities)
         console.log(cities)        
     }

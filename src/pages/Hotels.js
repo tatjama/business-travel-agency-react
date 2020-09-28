@@ -5,16 +5,16 @@ const Hotels = (props) =>{
     return(
         <div>
                     {console.log(props.hotels)}
-                    <h1>Hotels </h1>
-                    <div className = "provider-div" id = "hotels">
+                    <h1 className = "main-header">HOTELS </h1>
+                    <div className = "main-div" id = "hotels">
                     {props.hotels.map((item) => {
                   return(                      
-                      <div key = {item.result_object.location_id} className = "hotels">
+                      <div key = {item.result_object.location_id} className = "data-selected">
                                                     
                           <h1> {item.result_object.name}</h1>
                           <h2>Rating: {item.result_object.rating}</h2>
-                          <div className = "hotels-info">  
-                            <div className = "hotels-left">
+                          <div className = "data-info">  
+                            <div className = "data-left">
                                 {item.result_object.photo.images.small.url?
                                 <img 
                                     src = {item.result_object.photo.images.small.url} 
@@ -27,11 +27,11 @@ const Hotels = (props) =>{
                                 />
                             }
                                 </div> 
-                            <div className = "hotels-right"> 
+                            <div className = "data-right"> 
                                 <p>Address: <span>{item.result_object.address}</span></p>
                                 <p>ID: <span>{item.result_object.location_id}</span></p>
                                 <p>Category: <span>{item.result_object.category.name}</span></p>
-                                
+                                <p>Rating: <span>{item.result_object.rating}</span></p>
                                 <p>Review snippet: <span>{item.review_snippet.snippet}</span></p>
                                 <p>Type: <span>{item.result_type}</span></p>    
                             </div>  
