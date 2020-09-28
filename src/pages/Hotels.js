@@ -1,4 +1,5 @@
 import React from 'react';
+import avatarImage from '../images/travel-and-tourism.png';
 
 const Hotels = (props) =>{
     return(
@@ -14,8 +15,18 @@ const Hotels = (props) =>{
                           <h2>Rating: {item.result_object.rating}</h2>
                           <div className = "hotels-info">  
                             <div className = "hotels-left">
-                                <img src = {item.result_object.photo.images.small.url} alt = {item.result_object.name}/>
-                            </div> 
+                                {item.result_object.photo.images.small.url?
+                                <img 
+                                    src = {item.result_object.photo.images.small.url} 
+                                    alt = {item.result_object.name}
+                                />:
+                                <img
+                                    src = {avatarImage}
+                                    alt = "hotel generic"
+                                    style = {{ height: "150px"}}
+                                />
+                            }
+                                </div> 
                             <div className = "hotels-right"> 
                                 <p>Address: <span>{item.result_object.address}</span></p>
                                 <p>ID: <span>{item.result_object.location_id}</span></p>
