@@ -4,7 +4,8 @@ import React from 'react';
 const CityInfo = (props) =>{
     return(
         <div>
-            {console.log(props.header)}    
+            {console.log(props.header)}  
+            City:  
             <h1 className = "main-header">{props.header.name} </h1>                 
             <div className = "main-div">                              
                  <div className="data-info">

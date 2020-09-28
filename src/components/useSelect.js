@@ -25,6 +25,10 @@ const useSelect = (callback) =>{
         const cities = await data.json();
        // console.log(cities.cities.length);
        // console.log(cities)
+       let citiesArray = [];
+       citiesArray = JSON.parse(localStorage.getItem("fetchCities")) || []
+       citiesArray.push(cities);
+       localStorage.setItem("fetchCities", JSON.stringify(citiesArray))
         await setCities(cities.cities)
         console.log(cities)        
     }

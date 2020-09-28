@@ -49,6 +49,10 @@ const City =({match}) =>{
 	            }
             })
             const info = await data.json();
+            let infoArray = [];
+            infoArray = JSON.parse(localStorage.getItem("fetchCityInformation")) || [];
+            infoArray.push(info);
+            localStorage.setItem('fetchCityInformation', JSON.stringify(infoArray));
             setIsFetch(true)
             console.log(info);
             setHotels(info.data.filter((hotel) => {
@@ -86,6 +90,11 @@ const City =({match}) =>{
 	        }
         })
         const restaurants = await data.json();        
+        let restaurantsArray = [];
+        restaurantsArray = JSON.parse(localStorage.getItem('fetchRestaurantsInformation')) || [];
+        restaurantsArray.push(restaurants);
+        localStorage.setItem('fetchRestaurantsInformation', JSON.stringify(restaurantsArray));
+
         setRestaurants(restaurants.data.filter(restaurant =>{
             return(
                 restaurant.location_id !== "294472" &&
@@ -123,6 +132,10 @@ const City =({match}) =>{
           }
       })
         const airports = await data.json();
+        let airportsArray = [];
+        airportsArray = JSON.parse(localStorage.getItem('fetchAirportsInformation')) || [];
+        airportsArray.push(airports);
+        localStorage.setItem('fetchAirportsInformation',JSON.stringify(airportsArray))
         setAirports(airports);
         setIsAirportsFetch(true);       
         setIsAttractionsFetch(false);
@@ -182,7 +195,8 @@ const City =({match}) =>{
                 <div className = "wrapper">
                 {isFetch && 
                     <div >
-                        <h3>Life in different countries....CITY:</h3>
+                        <h3>Life in different countries....</h3>
+                            <SectionFirstLife info = {figureProps}/>
                         <div >     
                             {//SET BUTTONS
                                 /* buttons.map((button) => {return(
@@ -190,8 +204,7 @@ const City =({match}) =>{
                             )
                         })*/}                       
                             <CityInfo header = {header}/>
-                        </div>
-                        <SectionFirstLife info = {figureProps}/>
+                        </div>                  
                     
                     </div>  
                     }            
