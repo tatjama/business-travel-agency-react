@@ -10,9 +10,15 @@ const useSelect = (callback) =>{
     const [isSubmitted, setIsSubmitted] = useState(false)
     let chosenCity = {}
     //const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411";
-    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470";
+    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470";       
+    
 
-    const fetchCities = async(id) =>{
+ const handleSelectCountry = (e) =>{        
+      setCountry(countries[e.target.value]);
+ }
+ useEffect(() => {
+     console.log(country);     
+     const fetchCities = async(id) =>{
         const data  = await fetch(`https://countries-cities.p.rapidapi.com/location/country/${id}
         /city/list?page=1&per_page=20&format=json&population=100001`
         , {
@@ -32,24 +38,14 @@ const useSelect = (callback) =>{
         await setCities(cities.cities)
         console.log(cities)        
     }
-    
-   
-    
-
- const handleSelectCountry = (e) =>{        
-      setCountry(countries[e.target.value]);
- }
- useEffect(() => {
-     console.log(country);     
      fetchCities(country.id);
      //ERROR HANDLE     
      //!cities? alert("Nema grada"):
-         setCities(cities);
-         console.log(cities)
+     // setCities(cities);
+    // console.log(cities)
      },[country])
 
- const handleSelectCity = (e) =>{
-     
+ const handleSelectCity = (e) =>{     
      console.log(e.target.value)
      console.log(cities)
      cities.map((city) => {

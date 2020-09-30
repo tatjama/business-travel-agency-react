@@ -8,7 +8,7 @@ import Hotels from './Hotels';
 import Restaurants from './Restaurants';
 import SelectForm from '../components/SelectForm';
 import SectionFirstLife from '../components/SectionFirstLife';
-import astronaut from '../images/astronaut.webp';
+//import astronaut from '../images/astronaut.webp';
 import breakfast from '../images/breakfast.webp';
 import hotel from '../images/hotel.webp';
 import world from '../images/world.webp';
