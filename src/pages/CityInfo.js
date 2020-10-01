@@ -33,18 +33,3 @@ const CityInfo = (props) =>{
 
 export default CityInfo;
 
-/**
-             * <p>Restaurants: {header.category_counts.restaurants.total}</p>
-            <p><ul>Accommodations
-                <li>Hotels: {header.category_counts.accommodations.hotels}</li>
-                <li>BBS Inns: {header.category_counts.accommodations.bbs_inns}</li>
-                <li>Others: {header.category_counts.accommodations.others}</li>
-                Total: {header.category_counts.accommodations.total}
-            </ul></p>
-    <p><ul>Attractions: Total {header.category_counts.attractions.total}
-                <li>Activities: {header.category_counts.attractions.activities}</li>
-                <li>Attractions: {header.category_counts.attractions.attractions}</li>
-                <li>Shopping: {header.category_counts.attractions.shopping}</li>
-                <li>Nightlife: {header.category_counts.attractions.nightlife}</li>
-    </ul></p>
-             */

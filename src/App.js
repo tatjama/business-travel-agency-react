@@ -72,7 +72,6 @@ async function onLoad() {
                     <Link to="/enjoy"><li >Enjoy ...</li></Link>
                     <Link to="/feedbacks"><li >Feedbacks</li> </Link>
                     <Link to="/providers"><li id="providers" to="/providers">Providers</li></Link>
-                    <Link to="/shop"><li>Shop</li></Link>
                     <li className="icon" onClick={openNavHamburger}>
                         <i className="fa fa-bars"></i>
                     </li>
