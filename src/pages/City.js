@@ -8,7 +8,6 @@ import Hotels from './Hotels';
 import Restaurants from './Restaurants';
 import SelectForm from '../components/SelectForm';
 import SectionFirstLife from '../components/SectionFirstLife';
-//import astronaut from '../images/astronaut.webp';
 import breakfast from '../images/breakfast.webp';
 import hotel from '../images/hotel.webp';
 import world from '../images/world.webp';
@@ -146,14 +145,6 @@ const City =({match}) =>{
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
     }
-
-    const buttons = [
-        {name:"Restaurants", click: fetchRestaurantInformation},
-        {name: "Hotels", click: fetchHotelsInformation},
-        {name: "Attractions", click: fetchAttractionsInformation},
-        {name: "Airports", click: fetchAirportsInformation},
-        {name: "Nesto", click:fetchAirportsInformation}
-    ]
     const figureProps =  [
     {
         name: "Restaurants", 
@@ -201,12 +192,7 @@ const City =({match}) =>{
                     <div >
                         <h3>Life in different countries....</h3>
                             <SectionFirstLife info = {figureProps}/>
-                        <div >     
-                            {//SET BUTTONS
-                                /* buttons.map((button) => {return(
-                                <Button key = {button.name} name = {button.name} handleOnClick = {button.click}/>
-                            )
-                        })*/}                       
+                        <div >                      
                             <CityInfo header = {header}/>
                         </div>                  
                     

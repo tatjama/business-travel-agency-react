@@ -1,11 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SelectForm from '../components/SelectForm';
 import SectionFirstFeedback from '../components/SectionFirstFeedback';
 import {useAppContext} from '../libs/contextLib';
+import Button from '../components/Button';
 
 const Feedbacks = ()=>{
     const { isUserAuthenticated} = useAppContext();      
-    console.log( isUserAuthenticated)
+    console.log( isUserAuthenticated);
+    const [comments, setComments] = useState([]);    
+    const [id, setId] = useState(null);
+    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+
+    const fetchRestaurantComments = async () => {
+       // setId(props.restaurants.location_id)
+       // console.log(id)
+        const data = await
+        fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=en_US&location_id=3729577`, {
+	        "method": "GET",
+	        "headers": {
+		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+		        "x-rapidapi-key": rapidKey
+	    }
+    })
+    const comments = await data.json();
+    await setComments(comments.data);
+    console.log(comments)
+ }
     
     return(
         <div className="page-feedback">
@@ -16,6 +36,29 @@ const Feedbacks = ()=>{
     <div className="wrapper" >
         <h3>Feedback</h3>
             <SectionFirstFeedback/>
+            <div >                                 
+                <Button 
+                    name = "See Comments"
+                    handleOnClick = {fetchRestaurantComments} 
+                />          
+                 {comments.map((comment) => {
+                                return(
+                                    <div key = {comment.id} >
+                                        <h1>Title: {comment.title}</h1>
+                                        <h2>User:{comment.user.username}</h2>
+                                        <img src = {comment.user.contributions.avatar_url} alt = {comment.user.username}/>
+                                        <img src = {comment.user.avatar.small.url} alt = {comment.title}/>
+                                        <p>{comment.created_time}</p>
+                                        <p>{comment.text}</p>
+                                        <p>ID: {comment.id}</p>
+                                        <p>Published: {comment.published_date}</p>
+                                        <p>Rating: {comment.rating}</p>
+                                        <p>{comment.type}</p>
+                                        <p>Date: {comment.travel_date}</p>
+                                    </div>
+                                )
+                            })}
+                         </div> 
             <h2>TOP ADVISER </h2>
                 <section>
                     <p>
