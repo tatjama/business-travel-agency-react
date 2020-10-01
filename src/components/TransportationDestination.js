@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from './Select';
-import useSelect from './useSelect';
+import useSelect from '../hooks/useSelect';
 
 const TransportationDestination = (props) =>{
     const{countries, cities, handleSelectCity, handleSelectCountry} = useSelect();

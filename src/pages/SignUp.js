@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import useForm from '../components/useForm';
+import useForm from '../hooks/useForm';
 import validateSignUp from '../components/validateSignUp';
 //import useStateWithLocalStorage from '../components/utils/useStateWithLocalStorage';
 

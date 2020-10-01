@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from './Select';
-import useSelect from './useSelect';
+import useSelect from '../hooks/useSelect';
 import {useHistory} from 'react-router-dom';
 
 

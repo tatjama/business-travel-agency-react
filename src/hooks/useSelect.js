@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {countriesArray} from './data/countries';
+import {countriesArray} from '../components/data/countries.json';
 
 const countries = countriesArray;
 
