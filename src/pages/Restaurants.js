@@ -1,8 +1,37 @@
 import React, {useState} from 'react';
 import avatarImage from '../images/travel-and-tourism.png';
+import Button from '../components/Button';
+import CommentFromUsers from '../components/CommentFromUsers';
+
+const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
 
 const Restaurants = (props) => {    
-    console.log(props.restaurants.location_id);     
+    console.log(props.restaurants.location_id);   
+    const [query, setQuery] = useState(null) ;
+    const [comments, setComments] = useState([])
+
+    const fetchComments = async (id) => {
+        // setId(props.restaurants.location_id)
+         console.log(id)
+        let commentArray = []
+         const data = await
+         fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&
+         lang=en_US&location_id=${id}`, {
+             "method": "GET",
+             "headers": {
+                 "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+                 "x-rapidapi-key": rapidKey
+         }
+     })
+     const comments = await data.json();
+     await setComments(comments.data);
+     await setQuery(id);
+     console.log(comments);    
+     commentArray  = JSON.parse(localStorage.getItem("fetchComment")) || [];
+     commentArray.push(comments);
+     localStorage.setItem("fetchComment", JSON.stringify(commentArray))
+  }
+
 
  return(
         <div>                 
@@ -61,7 +90,27 @@ const Restaurants = (props) => {
                                             <p>ID: <span>{restaurant.location_id}</span></p>
                                         </div>
                                 </div>                               
-                            </div>                      
+                            </div>              
+                            <div>
+                            <Button 
+                                id = {restaurant.location_id}
+                                name = "See Comments"
+                                handleOnClick = {() => fetchComments(restaurant.location_id)}
+                            />
+                            {
+                                (query == restaurant.location_id) &&
+                            <div>
+                             {comments.map((comment) => {
+                                return(
+                                    <div key = {comment.id}>
+                                        <CommentFromUsers comment = {comment}/>
+                                   </div>
+                                )
+                            })}
+                            </div>
+                            }
+                                
+                            </div>        
                             <hr style={{"border":"3px solid #f1f1f1 "}}/> 
                         </div>
                     )
