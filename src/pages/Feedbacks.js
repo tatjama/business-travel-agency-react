@@ -3,6 +3,7 @@ import SelectForm from '../components/SelectForm';
 import SectionFirstFeedback from '../components/SectionFirstFeedback';
 import {useAppContext} from '../libs/contextLib';
 import Button from '../components/Button';
+import CommentFromUsers from '../components/CommentFromUsers';
 
 const Feedbacks = ()=>{
     const { isUserAuthenticated} = useAppContext();      
@@ -14,6 +15,7 @@ const Feedbacks = ()=>{
     const fetchRestaurantComments = async () => {
        // setId(props.restaurants.location_id)
        // console.log(id)
+       let commentArray = []
         const data = await
         fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=en_US&location_id=3729577`, {
 	        "method": "GET",
@@ -24,7 +26,10 @@ const Feedbacks = ()=>{
     })
     const comments = await data.json();
     await setComments(comments.data);
-    console.log(comments)
+    console.log(comments);    
+    commentArray  = JSON.parse(localStorage.getItem("fetchComment")) || [];
+    commentArray.push(comments);
+    localStorage.setItem("fetchComment", JSON.stringify(commentArray))
  }
     
     return(
@@ -43,19 +48,9 @@ const Feedbacks = ()=>{
                 />          
                  {comments.map((comment) => {
                                 return(
-                                    <div key = {comment.id} >
-                                        <h1>Title: {comment.title}</h1>
-                                        <h2>User:{comment.user.username}</h2>
-                                        <img src = {comment.user.contributions.avatar_url} alt = {comment.user.username}/>
-                                        <img src = {comment.user.avatar.small.url} alt = {comment.title}/>
-                                        <p>{comment.created_time}</p>
-                                        <p>{comment.text}</p>
-                                        <p>ID: {comment.id}</p>
-                                        <p>Published: {comment.published_date}</p>
-                                        <p>Rating: {comment.rating}</p>
-                                        <p>{comment.type}</p>
-                                        <p>Date: {comment.travel_date}</p>
-                                    </div>
+                                    <div key = {comment.id}>
+                                        <CommentFromUsers comment = {comment}/>
+                                   </div>
                                 )
                             })}
                          </div> 
@@ -78,3 +73,18 @@ const Feedbacks = ()=>{
 }
 
 export default Feedbacks;
+{/**
+     <div key = {comment.id} >
+                                        <h1>Title: {comment.title}</h1>
+                                        <h2>User:{comment.user.username}</h2>
+                                        <img src = {comment.user.contributions.avatar_url} alt = {comment.user.username}/>
+                                        <img src = {comment.user.avatar.small.url} alt = {comment.title}/>
+                                        <p>{comment.created_time}</p>
+                                        <p>{comment.text}</p>
+                                        <p>ID: {comment.id}</p>
+                                        <p>Published: {comment.published_date}</p>
+                                        <p>Rating: {comment.rating}</p>
+                                        <p>{comment.type}</p>
+                                        <p>Date: {comment.travel_date}</p>
+                                    </div>
+ */}
