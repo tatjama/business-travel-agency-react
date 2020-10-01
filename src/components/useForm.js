@@ -26,11 +26,6 @@ import {useState, useEffect} from 'react';
        }   
 
       useEffect(()=>{ 
-        /*console.log(errors); 
-        console.log(isSent);       
-        console.log(isSubmitting);
-        console.log(initValues);
-        console.log(callback);*/
           if(Object.keys(errors).length === 0 
           && isSubmitting 
           && isSent           

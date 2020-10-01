@@ -54,9 +54,9 @@ const City =({match}) =>{
             })
             const info = await data.json();
             let infoArray = [];
-            infoArray = JSON.parse(localStorage.getItem("fetchCityInformation")) || [];
+            infoArray = JSON.parse(localStorage.getItem("fetchCityInformation1")) || [];
             infoArray.push(info);
-            localStorage.setItem('fetchCityInformation', JSON.stringify(infoArray));
+            localStorage.setItem('fetchCityInformation1', JSON.stringify(infoArray));
             setIsFetch(true)
             console.log(info);
             setHotels(info.data.filter((hotel) => {
@@ -95,9 +95,9 @@ const City =({match}) =>{
         })
         const restaurants = await data.json();        
         let restaurantsArray = [];
-        restaurantsArray = JSON.parse(localStorage.getItem('fetchRestaurantsInformation')) || [];
+        restaurantsArray = JSON.parse(localStorage.getItem('fetchRestaurantsInformation1')) || [];
         restaurantsArray.push(restaurants);
-        localStorage.setItem('fetchRestaurantsInformation', JSON.stringify(restaurantsArray));
+        localStorage.setItem('fetchRestaurantsInformation1', JSON.stringify(restaurantsArray));
 
         setRestaurants(restaurants.data.filter(restaurant =>{
             return(
@@ -137,9 +137,9 @@ const City =({match}) =>{
       })
         const airports = await data.json();
         let airportsArray = [];
-        airportsArray = JSON.parse(localStorage.getItem('fetchAirportsInformation')) || [];
+        airportsArray = JSON.parse(localStorage.getItem('fetchAirportsInformation1')) || [];
         airportsArray.push(airports);
-        localStorage.setItem('fetchAirportsInformation',JSON.stringify(airportsArray))
+        localStorage.setItem('fetchAirportsInformation1',JSON.stringify(airportsArray))
         setAirports(airports);
         setIsAirportsFetch(true);       
         setIsAttractionsFetch(false);
