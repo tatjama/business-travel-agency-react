@@ -12,7 +12,7 @@ const Feedbacks = ()=>{
     const [id, setId] = useState(null);
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
 
-    const fetchRestaurantComments = async () => {
+    const fetchComments = async () => {
        // setId(props.restaurants.location_id)
        // console.log(id)
        let commentArray = []
@@ -32,6 +32,7 @@ const Feedbacks = ()=>{
     localStorage.setItem("fetchComment", JSON.stringify(commentArray))
  }
     
+
     return(
         <div className="page-feedback">
             <header className="header" id="header-feedback">
@@ -44,7 +45,7 @@ const Feedbacks = ()=>{
             <div >                                 
                 <Button 
                     name = "See Comments"
-                    handleOnClick = {fetchRestaurantComments} 
+                    handleOnClick = {fetchComments} 
                 />          
                  {comments.map((comment) => {
                                 return(
@@ -73,18 +74,3 @@ const Feedbacks = ()=>{
 }
 
 export default Feedbacks;
-{/**
-     <div key = {comment.id} >
-                                        <h1>Title: {comment.title}</h1>
-                                        <h2>User:{comment.user.username}</h2>
-                                        <img src = {comment.user.contributions.avatar_url} alt = {comment.user.username}/>
-                                        <img src = {comment.user.avatar.small.url} alt = {comment.title}/>
-                                        <p>{comment.created_time}</p>
-                                        <p>{comment.text}</p>
-                                        <p>ID: {comment.id}</p>
-                                        <p>Published: {comment.published_date}</p>
-                                        <p>Rating: {comment.rating}</p>
-                                        <p>{comment.type}</p>
-                                        <p>Date: {comment.travel_date}</p>
-                                    </div>
- */}

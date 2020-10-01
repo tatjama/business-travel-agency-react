@@ -467,11 +467,12 @@ padding: 5px;
 
 .comment {
     border: double 1px grey;
-    margin: 10px;
+    margin: 10px 0px;
     padding: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: left;
 }
 
 .avatar {
@@ -480,12 +481,12 @@ padding: 5px;
     height: 50px;
 }
 .user{
-    padding: 10px;
+    padding: 8px;
     width: 130px;
 }
 .text-comment {
     width: 50%;
-    padding: 10px;
+    padding: 8px;
 }
 .text-comment h2 {
     padding: 0px 0px 15px 0px;

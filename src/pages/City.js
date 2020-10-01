@@ -44,7 +44,8 @@ const City =({match}) =>{
         setIsRestaurantsFetch(false);
         const data = await 
      //props is name of the city sent from previous page
-            fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
+            fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&
+            sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
 	            "method": "GET",
 	            "headers": {
 		            "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",

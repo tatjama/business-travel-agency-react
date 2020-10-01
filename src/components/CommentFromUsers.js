@@ -6,13 +6,14 @@ const CommentFromUsers = (props) =>{
         <div className="comment" id= {props.comment.id}>       
         <div className="user">
             <img className="avatar" src = {props.comment.user.avatar.small.url} alt= {props.comment.user.username}/>
-            <p>Author: {props.comment.user.username}</p>
-            <p>Date: {props.comment.published_date}</p>
+            <p>Author: <br/><span>{props.comment.user.username}</span></p>
+            <p>Travel date: <span><br/>{props.comment.travel_date}</span></p>
         </div>
         <div className="text-comment">
             <h2> {props.comment.title}</h2>            
-            <p>Comment: {props.comment.text}</p>
-            <p>Travel date: {props.comment.travel_date}</p>
+            <p>Comment:<span> {props.comment.text}</span></p>
+            <br/>
+            <p>Published: <span>{props.comment.published_date}</span></p>
         </div>
         <div className="range">
             <div>
