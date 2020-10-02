@@ -2,19 +2,22 @@ import {useState, useEffect} from 'react';
 import {countriesArray} from '../components/data/countries.json';
 
 const countries = countriesArray;
+//const countries = array.sort((a, b) => a.name.localeCompare(b.name))
+//console.log(countries)
 
 const useSelect = (callback) =>{
-    const [country, setCountry] = useState({value: 0, id: "AD", name: "Andorra"});    
+    const [country, setCountry] = useState(countries[0]);    
     const [cities, setCities] = useState([]);
     const [city, setCity] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false)
     let chosenCity = {}
     //const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411";
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470";       
-    
+    console.log(country)
 
  const handleSelectCountry = (e) =>{        
       setCountry(countries[e.target.value]);
+      
  }
  useEffect(() => {
      console.log(country);     
@@ -51,7 +54,7 @@ const useSelect = (callback) =>{
      cities.map((city) => {
         // console.log(city.geonameid)
          //console.log(e.target.value)
-        if(city.geonameid == e.target.value){
+        if(city.geonameid === parseInt(e.target.value)){
             chosenCity = city;           
         }return chosenCity
      })

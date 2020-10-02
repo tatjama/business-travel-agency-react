@@ -49,7 +49,7 @@ const Attractions  = (props) =>{
                                 handleOnClick = {() => fetchComments(attraction.result_object.location_id)}
                             />
                             {
-                                (query == attraction.result_object.location_id) &&
+                                (query === attraction.result_object.location_id) &&
                             <div>
                              {comments.map((comment) => {
                                 return(

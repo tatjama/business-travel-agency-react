@@ -33,6 +33,7 @@ const SelectForm = () =>{
                 />
                 <br/>
                 <button type="submit" className="choose-destination-button" >Select</button>
+                
             </form>
     )
 }
