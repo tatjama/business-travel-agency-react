@@ -70,9 +70,9 @@ const City =({match}) =>{
                 )}
             ))
            
-            setInfo(info.data);
+            await setInfo(info.data);
             console.log(info)
-            setHeader(info.data[0].result_object)
+            await setHeader(info.data[0].result_object)
             console.log(header)
     }
     const fetchRestaurantInformation = async() =>{
@@ -181,9 +181,9 @@ const City =({match}) =>{
                     name = {`Show information about ${match.params.id}`} 
                     handleOnClick = {fetchCityInformation}
                 />
-                <div className = "wrapper">
+                <div >
                 {isFetch && 
-                    <div >
+                    <div className = "wrapper" >
                         <h3>Life in different countries....</h3>
                             <SectionFirstLife info = {figureProps}/>
                         <div >                      
@@ -192,18 +192,26 @@ const City =({match}) =>{
                     
                     </div>  
                     }            
-                    {isRestaurantsFetch &&            
-                        <Restaurants restaurants = {restaurants}/>
+                    {isRestaurantsFetch &&   
+                        <div className = "wrapper">         
+                            <Restaurants restaurants = {restaurants}/>
+                        </div>
                     }
                     
                     {isHotelsFetch &&
-                        <Hotels hotels = {hotels}/>
+                        <div className = "wrapper">  
+                            <Hotels hotels = {hotels}/>
+                        </div>
                     }
                     {isAttractionsFetch &&
-                        <Attractions attractions = {attractions}/>
+                        <div className = "wrapper">  
+                            <Attractions attractions = {attractions}/>
+                        </div>
                     }
                     {isAirportsFetch &&
-                        <Airports airports = {airports}/>                
+                        <div className = "wrapper">  
+                            <Airports airports = {airports}/> 
+                        </div>               
                     }              
                  </div>
         </div>    

@@ -47,6 +47,7 @@ const useSelect = (callback) =>{
      //!cities? alert("Nema grada"):
      // setCities(cities);
     // console.log(cities)
+        
      },[country])
 
  const handleSelectCity = (e) =>{     

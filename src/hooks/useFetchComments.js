@@ -8,7 +8,7 @@ const useFetchComments = () => {
 
     const fetchComments = async (id) => {
          console.log(id)
-        let commentArray = []
+       // let commentArray = []
          const data = await
          fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&
          lang=en_US&location_id=${id}`, {

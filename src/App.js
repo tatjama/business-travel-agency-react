@@ -7,9 +7,9 @@ import useStateWithSessionStorage from './hooks/useStateWithSessionStorage';
 
 const App = ()=>{
     const history = useHistory();
-    const [isUserAuthenticated, setUserHasAuthenticated] = useState({isAuthenticated: false, logInUser:{firstName: "guest", lastName: "guest", status: 9}});
-    //const [isAuthenticating, setIsAuthenticating ] = useState(true);
-    const [value, setValue] = useStateWithSessionStorage('logInUser')
+    const [isUserAuthenticated, setUserHasAuthenticated] = useState(false);
+    const [isAuthenticating, setIsAuthenticating ] = useState(true);
+    const [value] = useStateWithSessionStorage('logInUser')
 
    function handleSignOut() {
     // complete signOut from session    
@@ -20,6 +20,7 @@ const App = ()=>{
 }
 
 useEffect(() => {
+     
     onLoad();    
 }, [])
 
@@ -45,8 +46,8 @@ async function onLoad() {
             alert(error)
         }
     }
-    //setIsAuthenticating(false);
-}   
+    setIsAuthenticating(false);
+}
     function openNavHamburger() {
         const myTopNav = document.getElementById("my-top-nav");
         if(myTopNav.className === "top-nav"){
@@ -57,7 +58,7 @@ async function onLoad() {
     }
   
     return(
-       // !isAuthenticating &&
+        !isAuthenticating &&
         <div className = "App-container" >            
             <div className="top-nav" id="my-top-nav">
                 <ul>   
