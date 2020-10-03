@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import avatarImage from '../images/travel-and-tourism.png';
 import Button from '../components/Button';
 import CommentFromUsers from '../components/CommentFromUsers';
@@ -72,7 +72,7 @@ const Restaurants = (props) => {
                                 handleOnClick = {() => fetchComments(restaurant.location_id)}
                             />
                             {
-                                (query == restaurant.location_id) &&
+                                (query === restaurant.location_id) &&
                             <div>
                              {comments.map((comment) => {
                                 return(

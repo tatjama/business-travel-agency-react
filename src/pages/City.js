@@ -13,7 +13,6 @@ import hotel from '../images/hotel.webp';
 import world from '../images/world.webp';
 import airplane from '../images/airplane.webp';
 
-
 const City =({match}) =>{    
     console.log(match)
    // console.log(match), match is params sent from previous page
@@ -27,14 +26,10 @@ const City =({match}) =>{
     const [isAttractionsFetch, setIsAttractionsFetch] = useState(false)
     const [attractions, setAttractions] = useState([])    
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
-    const [airports, setAirports] = useState([])
+    const [airports, setAirports] = useState([]);
 
    // const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
-    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
-    const [items, setItems] = useState([])
-    const [id, setId] = useState(null);
-    
-    
+    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"       
       
     const fetchCityInformation = async() =>{
         setIsFetch(false)
@@ -79,8 +74,6 @@ const City =({match}) =>{
             console.log(info)
             setHeader(info.data[0].result_object)
             console.log(header)
-            setId(header.location_id);
-            setItems(info.data[0].result_object.category_counts)
     }
     const fetchRestaurantInformation = async() =>{
         const data = await

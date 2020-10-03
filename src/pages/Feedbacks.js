@@ -10,7 +10,7 @@ const Feedbacks = ()=>{
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated);
     const [comments, setComments] = useState([]);    
-    const [id, setId] = useState(null);
+    //const [id, setId] = useState(null);
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
 
     const fetchComments = async () => {

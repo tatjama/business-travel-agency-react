@@ -48,7 +48,7 @@ const Hotels = (props) =>{
                                 handleOnClick = {() => fetchComments(item.result_object.location_id)}
                             />
                             {
-                                (query == item.result_object.location_id) &&
+                                (query === item.result_object.location_id) &&
                             <div>
                              {comments.map((comment) => {
                                 return(

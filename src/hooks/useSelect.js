@@ -1,3 +1,4 @@
+import { cleanup } from '@testing-library/react';
 import {useState, useEffect} from 'react';
 import {countriesArray} from '../components/data/countries.json';
 
@@ -8,7 +9,7 @@ const countries = countriesArray;
 const useSelect = (callback) =>{
     const [country, setCountry] = useState(countries[0]);    
     const [cities, setCities] = useState([]);
-    const [city, setCity] = useState({});
+    const [city, setCity] = useState({geonameid: 1141857, name: "Gardez"});
     const [isSubmitted, setIsSubmitted] = useState(false)
     let chosenCity = {}
     //const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411";
@@ -73,6 +74,7 @@ const useSelect = (callback) =>{
  useEffect(() => {
      if(Object.keys(city) !== 0 && isSubmitted){
          callback()
+         cleanup(setIsSubmitted(false))
      }
  },[isSubmitted])
  
