@@ -419,7 +419,7 @@ margin: 40px;
 }
 .data-restaurant{
     text-align: left;
-    width: 48%;
+    width: 32%;
 }
 .data-first,
 .data-second,
@@ -598,6 +598,9 @@ input[type="radio"] {
             }
             .data-selected div{
                 padding: 10px 5px;
+            }
+            .data-restaurant{
+                width: 100%;
             }
             p{
                 font-size: 10px;

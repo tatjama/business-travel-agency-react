@@ -8,7 +8,7 @@ import useFetchComments from '../hooks/useFetchComments';
 
 const Attractions  = (props) =>{
     
-  const {query, comments, fetchComments} =  useFetchComments()
+  const {query, comments, fetchComments, isLoading} =  useFetchComments()
    
     return(
         <div>
@@ -48,7 +48,9 @@ const Attractions  = (props) =>{
                                 name = "See Comments"
                                 handleOnClick = {() => fetchComments(attraction.result_object.location_id)}
                             />
-                            {
+                            {isLoading?
+                                <div className = "loader">Loading...</div>
+                                :
                                 (query === attraction.result_object.location_id) &&
                             <div>
                              {comments.map((comment) => {

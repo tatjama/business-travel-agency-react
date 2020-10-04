@@ -6,7 +6,7 @@ import useFetchComments from '../hooks/useFetchComments';
 
 const Restaurants = (props) => {    
     console.log(props.restaurants.location_id);  
-    const { query, comments, fetchComments} = useFetchComments();
+    const { query, comments, fetchComments, isLoading} = useFetchComments();
  return(
         <div>                 
             {console.log(props.restaurants)}
@@ -45,24 +45,31 @@ const Restaurants = (props) => {
                                 </div>
                                 <div className = "data-info">
                                     <div className = "data-restaurant">
+                                        <h3>CONTACT</h3>
                                             <p>Name: <span>{restaurant.name}</span></p>
                                             <p>Address: <span>{restaurant.address}</span></p>
                                             <p>Phone: <span>{restaurant.phone}</span></p>
                                             <p>Email: <span>{restaurant.email}</span></p>
                                             <p>Website: <span>{restaurant.website}</span></p>
+                                            
+                                            
+                                    </div>
+                                    <div className = "data-restaurant"> 
+                                        <h3>INFO</h3>                                                   
+                                            <p>Type: <span>Restaurant</span></p>   
                                             <p>LONGITUDE: <span>{restaurant.longitude}</span></p>
                                             <p>LATITUDE: <span>{restaurant.latitude}</span></p>
-                                            
-                                        </div>
-                                        <div className = "data-restaurant">                                                    
-                                            <p>Type: <span>Restaurant</span></p>    
-                                            <p>Price: <span>{restaurant.price}</span></p>                             
-                                            <p>Category: <span>{restaurant.ranking_category}</span></p>
-                                            <p>Rating: <span>{restaurant.rating}</span></p>
-                                            <p>Ranking: <span>{restaurant.ranking}</span></p>
-                                            <p>Ranking position: <span>{restaurant.ranking_position}</span></p>
                                             <p>ID: <span>{restaurant.location_id}</span></p>
-                                        </div>
+                                    </div>
+                                    <div className = "data-restaurant">
+                                        <h3>RATING</h3>
+                                        <p>Rating: <span>{restaurant.rating}</span></p>
+                                        <p>Ranking: <span>{restaurant.ranking}</span></p>                                                                   
+                                        <p>Category: <span>{restaurant.ranking_category}</span></p>
+                                        <p>Ranking position: <span>{restaurant.ranking_position}</span></p>                                           
+                                        <p>Price: <span>{restaurant.price}</span></p>    
+
+                                    </div>
                                 </div>                               
                             </div>              
                             <div>
@@ -71,7 +78,9 @@ const Restaurants = (props) => {
                                 name = "See Comments"
                                 handleOnClick = {() => fetchComments(restaurant.location_id)}
                             />
-                            {
+                            {isLoading?
+                                <div className = "loader">Loading...</div>
+                                :
                                 (query === restaurant.location_id) &&
                             <div>
                              {comments.map((comment) => {

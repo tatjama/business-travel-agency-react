@@ -27,11 +27,13 @@ const City =({match}) =>{
     const [attractions, setAttractions] = useState([])    
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
 
    // const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"       
       
     const fetchCityInformation = async() =>{
+        setIsLoading(true)
         setIsFetch(false)
         setIsAirportsFetch(false);
         setIsAttractionsFetch(false);
@@ -47,9 +49,15 @@ const City =({match}) =>{
 		            "x-rapidapi-key": rapidKey
 	            }
             })
+            
             const info = await data.json();
             setIsFetch(true)
-            console.log(info);
+            await setInfo(info.data);
+            console.log(info)
+            await setHeader(info.data[0].result_object)
+            console.log(header)
+            setIsLoading(false)
+
             setHotels(info.data.filter((hotel) => {
                 return(
                     hotel.result_type === "lodging"
@@ -61,17 +69,12 @@ const City =({match}) =>{
                 return(
                   attraction.result_type === "things_to_do" 
                   && attraction.result_object.photo
-                  && attraction.review_snippet// if review snippet does not exist
-                  
+                  && attraction.review_snippet// if review snippet does not exist                  
                 )}
-            ))
-           
-            await setInfo(info.data);
-            console.log(info)
-            await setHeader(info.data[0].result_object)
-            console.log(header)
+            ))            
     }
     const fetchRestaurantInformation = async() =>{
+        setIsLoading(true)
         const data = await
         fetch(`https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&
         lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${header.location_id}`
@@ -94,6 +97,7 @@ const City =({match}) =>{
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(true);
+        setIsLoading(false)
     }
 
     const fetchHotelsInformation = () =>{        
@@ -111,6 +115,7 @@ const City =({match}) =>{
       }
       
     const fetchAirportsInformation = async() =>{
+        setIsLoading(true)
         const data =
         await fetch(`https://tripadvisor1.p.rapidapi.com/airports/search?locale=en_US&query=${header.name}`, {
           "method": "GET",
@@ -125,6 +130,7 @@ const City =({match}) =>{
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
+        setIsLoading(false)
     }
     const figureProps =  [
     {
@@ -169,16 +175,21 @@ const City =({match}) =>{
                     handleOnClick = {fetchCityInformation}
                 />
                 <div >
-                {isFetch && 
-                    <div className = "wrapper" >
-                        <h3>Life in different countries....</h3>
-                            <SectionFirstLife info = {figureProps}/>
-                        <div >                      
-                            <CityInfo header = {header}/>
-                        </div>                  
-                    
-                    </div>  
-                    }            
+                    {isLoading?
+                    <div>Loading...</div>
+                    :
+                    <div>
+                    {isFetch && 
+                        <div className = "wrapper" >
+                            <h3>Life in different countries....</h3>
+                                <SectionFirstLife info = {figureProps}/>
+                            <div >                      
+                                <CityInfo header = {header}/>
+                            </div>                      
+                        </div>  
+                        }  
+                    </div>
+                    }          
                     {isRestaurantsFetch &&   
                         <div className = "wrapper">         
                             <Restaurants restaurants = {restaurants}/>
