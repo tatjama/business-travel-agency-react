@@ -48,10 +48,6 @@ const City =({match}) =>{
 	            }
             })
             const info = await data.json();
-            let infoArray = [];
-            infoArray = JSON.parse(localStorage.getItem("fetchCityInformation1")) || [];
-            infoArray.push(info);
-            localStorage.setItem('fetchCityInformation1', JSON.stringify(infoArray));
             setIsFetch(true)
             console.log(info);
             setHotels(info.data.filter((hotel) => {
@@ -86,12 +82,7 @@ const City =({match}) =>{
 		        "x-rapidapi-key": rapidKey
 	        }
         })
-        const restaurants = await data.json();        
-        let restaurantsArray = [];
-        restaurantsArray = JSON.parse(localStorage.getItem('fetchRestaurantsInformation1')) || [];
-        restaurantsArray.push(restaurants);
-        localStorage.setItem('fetchRestaurantsInformation1', JSON.stringify(restaurantsArray));
-
+        const restaurants = await data.json();    
         setRestaurants(restaurants.data.filter(restaurant =>{
             return(
                 restaurant.location_id !== "294472" &&
@@ -129,10 +120,6 @@ const City =({match}) =>{
           }
       })
         const airports = await data.json();
-        let airportsArray = [];
-        airportsArray = JSON.parse(localStorage.getItem('fetchAirportsInformation1')) || [];
-        airportsArray.push(airports);
-        localStorage.setItem('fetchAirportsInformation1',JSON.stringify(airportsArray))
         setAirports(airports);
         setIsAirportsFetch(true);       
         setIsAttractionsFetch(false);

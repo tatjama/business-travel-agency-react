@@ -22,10 +22,6 @@ const useFetchComments = () => {
      await setComments(comments.data);
      await setQuery(id);
      console.log(comments);    
-     /* LocalStorage
-     commentArray  = JSON.parse(localStorage.getItem("fetchComment")) || [];
-     commentArray.push(comments);
-     localStorage.setItem("fetchComment", JSON.stringify(commentArray))*/
   }
 
   return{query,comments, fetchComments}
