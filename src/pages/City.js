@@ -27,55 +27,64 @@ const City =({match}) =>{
     const [attractions, setAttractions] = useState([])    
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([]);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false)
 
    // const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"       
       
     const fetchCityInformation = async() =>{
+        setIsError(false)
         setIsLoading(true)
         setIsFetch(false)
         setIsAirportsFetch(false);
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
-        const data = await 
-     //props is name of the city sent from previous page
-            fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&
-            sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
-	            "method": "GET",
-	            "headers": {
-		            "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		            "x-rapidapi-key": rapidKey
-	            }
-            })
+        try {
             
-            const info = await data.json();
-            setIsFetch(true)
-            await setInfo(info.data);
-            console.log(info)
-            await setHeader(info.data[0].result_object)
-            console.log(header)
-            setIsLoading(false)
-
-            setHotels(info.data.filter((hotel) => {
-                return(
-                    hotel.result_type === "lodging"
-                    && hotel.result_object.photo //if hotel image does not exist filter hotels
-                    && hotel.review_snippet
-                )}
-            ))
-            setAttractions(info.data.filter((attraction) =>{
-                return(
-                  attraction.result_type === "things_to_do" 
-                  && attraction.result_object.photo
-                  && attraction.review_snippet// if review snippet does not exist                  
-                )}
-            ))            
+        const data = await 
+        //props is name of the city sent from previous page
+               fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&
+               sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
+                   "method": "GET",
+                   "headers": {
+                       "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+                       "x-rapidapi-key": rapidKey
+                   }
+               })
+               
+               const info = await data.json();
+               setIsFetch(true)
+               await setInfo(info.data);
+               console.log(info)
+               await setHeader(info.data[0].result_object)
+               console.log(header)
+   
+               setHotels(info.data.filter((hotel) => {
+                   return(
+                       hotel.result_type === "lodging"
+                       && hotel.result_object.photo //if hotel image does not exist filter hotels
+                       && hotel.review_snippet
+                   )}
+               ))
+               setAttractions(info.data.filter((attraction) =>{
+                   return(
+                     attraction.result_type === "things_to_do" 
+                     && attraction.result_object.photo
+                     && attraction.review_snippet// if review snippet does not exist                  
+                   )}
+               ))            
+        } catch (error) {
+            setIsError(true)
+        }             
+        setIsLoading(false)       
     }
     const fetchRestaurantInformation = async() =>{
+        setIsError(false)
         setIsLoading(true)
-        const data = await
+        try {
+            const data = await
         fetch(`https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&
         lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${header.location_id}`
         ,{
@@ -97,6 +106,11 @@ const City =({match}) =>{
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(true);
+        
+            
+        } catch (error) {
+            setIsError(true)
+        }
         setIsLoading(false)
     }
 
@@ -115,8 +129,10 @@ const City =({match}) =>{
       }
       
     const fetchAirportsInformation = async() =>{
+        setIsError(false)
         setIsLoading(true)
-        const data =
+        try {
+            const data =
         await fetch(`https://tripadvisor1.p.rapidapi.com/airports/search?locale=en_US&query=${header.name}`, {
           "method": "GET",
           "headers": {
@@ -130,6 +146,11 @@ const City =({match}) =>{
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
+        
+            
+        } catch (error) {
+            setIsError(true)
+        }
         setIsLoading(false)
     }
     const figureProps =  [
@@ -175,6 +196,7 @@ const City =({match}) =>{
                     handleOnClick = {fetchCityInformation}
                 />
                 <div >
+                    {isError && <div className = "error">Error. Something went wrong...</div>}
                     {isLoading?
                     <div>Loading...</div>
                     :

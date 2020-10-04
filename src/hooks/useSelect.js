@@ -12,6 +12,7 @@ const useSelect = (callback) =>{
     const [city, setCity] = useState({geonameid: 1141857, name: "Gardez"});
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError] = useState(false)
     let chosenCity = {}
     //const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411";
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470";       
@@ -22,9 +23,11 @@ const useSelect = (callback) =>{
       
  }
  useEffect(() => {
-     console.log(country);    
-     setIsLoading(true) 
+     console.log(country);  
      const fetchCities = async(id) =>{
+        setIsError(false)  
+        setIsLoading(true) 
+       try {
         const data  = await fetch(`https://countries-cities.p.rapidapi.com/location/country/${id}
         /city/list?page=1&per_page=20&format=json&population=100001`
         , {
@@ -38,7 +41,11 @@ const useSelect = (callback) =>{
        // console.log(cities.cities.length);
         console.log(cities)
         await setCities(cities.cities)
-        console.log(cities)     
+        console.log(cities)  
+       } catch (error) {
+           setIsError(true)
+       }
+            
         setIsLoading(false)   
     }
      fetchCities(country.id);
@@ -87,7 +94,8 @@ const useSelect = (callback) =>{
          handleSelectCountry,
          handleSelectCity,
          handleSubmit,
-         isLoading
+         isLoading,
+         isError
     }
 
 }

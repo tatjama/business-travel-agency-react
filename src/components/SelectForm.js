@@ -6,7 +6,8 @@ import {useHistory} from 'react-router-dom';
 
 const SelectForm = () =>{
     const history = useHistory();
-    const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading} = useSelect(submitted);
+    const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError} 
+    = useSelect(submitted);
     
      function submitted(){
          console.log('is submitted')
@@ -25,6 +26,7 @@ const SelectForm = () =>{
                    name = "countries"
                 />
                         <br/>
+                {isError && <div className = "error">Error. Something went wrong...</div>}
                 {isLoading?
                 <div className = "loader"><p> Loading</p></div>
                 :                

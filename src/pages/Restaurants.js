@@ -6,7 +6,7 @@ import useFetchComments from '../hooks/useFetchComments';
 
 const Restaurants = (props) => {    
     console.log(props.restaurants.location_id);  
-    const { query, comments, fetchComments, isLoading} = useFetchComments();
+    const { query, comments, fetchComments, isLoading, isError} = useFetchComments();
  return(
         <div>                 
             {console.log(props.restaurants)}
@@ -78,6 +78,7 @@ const Restaurants = (props) => {
                                 name = "See Comments"
                                 handleOnClick = {() => fetchComments(restaurant.location_id)}
                             />
+                            {isError && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
                                 <div className = "loader">Loading...</div>
                                 :

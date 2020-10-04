@@ -5,7 +5,7 @@ import CommentFromUsers  from '../components/CommentFromUsers';
 import useFetchComments from '../hooks/useFetchComments';
 
 const Hotels = (props) =>{
-    const {query, comments, fetchComments, isLoading} = useFetchComments();
+    const {query, comments, fetchComments, isLoading, isError} = useFetchComments();
     
     return(
         <div>
@@ -47,6 +47,7 @@ const Hotels = (props) =>{
                                 name = "See Comments"
                                 handleOnClick = {() => fetchComments(item.result_object.location_id)}
                             />
+                            {isError && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
                                 <div className = "loader">Loading...</div>
                                 :
