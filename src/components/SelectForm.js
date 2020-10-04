@@ -6,7 +6,7 @@ import {useHistory} from 'react-router-dom';
 
 const SelectForm = () =>{
     const history = useHistory();
-    const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit} = useSelect(submitted);
+    const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading} = useSelect(submitted);
     
      function submitted(){
          console.log('is submitted')
@@ -25,12 +25,16 @@ const SelectForm = () =>{
                    name = "countries"
                 />
                         <br/>
+                {isLoading?
+                <div className = "loader"><p> Loading</p></div>
+                :                
                 <Select
                     handleChange = {handleSelectCity}
                     optionArray = {cities}
                     autoFocus = {false}
                     name = "cities"
                 />
+                }
                 <br/>
                 <button type="submit" className="choose-destination-button" >Select</button>
                 

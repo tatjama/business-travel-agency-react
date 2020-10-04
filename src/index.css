@@ -241,6 +241,9 @@ html {
 input{
     width: 100%;
 }
+.loader p{
+    font-size: small;
+}
 button {
     padding: 10px;
     margin: 10px 10px 10px 0px;
