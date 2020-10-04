@@ -40,13 +40,11 @@ async  function submitted() {
       history.push("/");
      }else{
        alert('invalid user')
-     }
-     
+     }     
     }catch{
-      console.log(errors);
+      alert("User name or password is not valid")
     }
-    }
-    
+    }   
   
     
     return(
