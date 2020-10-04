@@ -4,7 +4,9 @@ const Airports = (props) =>{
     return(
         <div >                    
                     {console.log(props.airports)}
+                    {console.log(props.airports.length)}
             <h1 className = "main-header">AIRPORTS </h1>
+            {(props.airports.length !== 0)?
             <div className = "main-div" id = "airports">            
                 {props.airports.map((airport) => {
                     return(
@@ -26,7 +28,10 @@ const Airports = (props) =>{
                         </div>
                         )
                     })}
-            </div>    
+            </div>:
+            <div className = "main-div" id = "no-airport">
+                There is no airport according to the given parameters!
+            </div>  }  
         </div>
     )
 }
