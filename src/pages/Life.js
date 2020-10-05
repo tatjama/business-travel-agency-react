@@ -14,6 +14,7 @@ import avatarDragan from '../images/avatar-dragan.webp';
 import airSerbiaLogo from '../images/logoavio1.webp';
 import {useAppContext} from '../libs/contextLib';
 import {lifeInformation} from '../components/data/lifeInformation';
+import SectionFirstLife from "../components/SectionFirstLife";
 
 function showAddComment() {
     document.getElementById('user-comment').style.display = "block";
@@ -31,7 +32,7 @@ const Life = ()=>{
             </header>    
             <div className="wrapper">
                 <h3>Life in different countries....(Country-City)</h3>
-                <SectionFirst/>
+                <SectionFirstLife/>
 
                 <section className="section-second">
                     <GeneralInformation

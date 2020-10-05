@@ -7,7 +7,7 @@ import CityInfo from './CityInfo';
 import Hotels from './Hotels';
 import Restaurants from './Restaurants';
 import SelectForm from '../components/SelectForm';
-import SectionFirstLife from '../components/SectionFirstLife';
+import SectionFirst from '../components/SectionFirst';
 import breakfast from '../images/breakfast.webp';
 import hotel from '../images/hotel.webp';
 import world from '../images/world.webp';
@@ -204,7 +204,7 @@ const City =({match}) =>{
                     {isFetch && 
                         <div className = "wrapper" >
                             <h3>Life in different countries....</h3>
-                                <SectionFirstLife info = {figureProps}/>
+                                <SectionFirst info = {figureProps}/>
                             <div >                      
                                 <CityInfo header = {header}/>
                             </div>                      

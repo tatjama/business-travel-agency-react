@@ -9,16 +9,15 @@ import CommentFromUsers from '../components/CommentFromUsers';
 const Feedbacks = ()=>{
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated);
-    const [comments, setComments] = useState([]);    
-    //const [id, setId] = useState(null);
+    const [comments, setComments] = useState([]);  
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
 
     const fetchComments = async () => {
        // setId(props.restaurants.location_id)
        // console.log(id)
-       let commentArray = []
         const data = await
-        fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=en_US&location_id=3729577`, {
+        fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=
+        en_US&location_id=3729577`, {
 	        "method": "GET",
 	        "headers": {
 		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
@@ -27,41 +26,40 @@ const Feedbacks = ()=>{
     })
     const comments = await data.json();
     await setComments(comments.data);
-    console.log(comments);    
-    commentArray  = JSON.parse(localStorage.getItem("fetchComment")) || [];
-    commentArray.push(comments);
-    localStorage.setItem("fetchComment", JSON.stringify(commentArray))
+    console.log(comments);       
  }
     
 
     return(
         <div className="page-feedback">
             <header className="header" id="header-feedback">
-                <div id="message" style={{"color": "rgb(29, 150, 187)"}}></div>
+                <div id="message" style={{"color": "rgb(29, 150, 187)"}}>
+                    Add comment {isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}
+                </div>
                 <SelectForm/>
             </header>
-    <div className="wrapper" >
-        <h3>Feedback</h3>
-            <SectionFirstFeedback/>
-            <div >                                 
-                <Button 
-                    name = "See Comments"
-                    handleOnClick = {fetchComments} 
-                />          
-                 {comments.map((comment) => {
+            <div className="wrapper" >
+                <h3>Feedback</h3>
+                <SectionFirstFeedback/>
+                <div >                                 
+                    <Button 
+                        name = "See Comments"
+                        handleOnClick = {fetchComments} 
+                    />          
+                    {comments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
                                         <CommentFromUsers comment = {comment}/>
                                    </div>
                                 )
                             })}
-                         </div> 
+                </div> 
             <h2>TOP ADVISER </h2>
                 <section>
                     
                     
                 </section>        
-    </div>
+            </div>
 
 
         </div>

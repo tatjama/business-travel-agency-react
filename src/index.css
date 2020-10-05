@@ -223,7 +223,10 @@ html {
     background-image: url("./images/feedback.webp");
     background-position: center;  
     }   
-    
+#header-feedback label,
+#header-feedback .loader p{
+    color: rgb(23, 88, 88);
+}    
 /*--------------PROVIDERS--------------------*/
 #header-providers {
     background-image: url("./images/providers.webp");

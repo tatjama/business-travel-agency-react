@@ -29,7 +29,21 @@ App. starts with signIn page. For the first time , you have to registered on sig
     
 -APP PAGES
 - Home Page
-    Select form to chose city        
+    Select country, and than city from drop-down menu. Redirect to desire city page with information.
+
+    Press button "SHOW INFORMATION ABOUT CITY" => 
+    Menu:
+    - Restaurants - information (name, contact, info, description, image, rating)   
+                  - comments (user comment)
+    - Hotels - information (name, contact, info, description, image, rating)   
+                  - comments (user comment)
+    - Attractions - information (name, contact, info, description, image, rating)   
+                  - comments (user comment)
+    - Airports - information (name, code, info)   
+    Select form => change city
+- Feedback
+                  
+
 
         
 
@@ -45,7 +59,7 @@ App. starts with signIn page. For the first time , you have to registered on sig
     - sign up,
     - see information about accommodation (hotels, hostels, apartments, houses), food & entertainment (restaurants, cafe, fast-food), safety (police, hospitals, hospitality, regulations ), transport (train, rent-a-car, bus), culture (museums, opera, dance) and airports (location, transportation, air-company),
     - see other users comments,
-    - leave comment,
+    - add comment,
     - choose transportation from first point to second point
 
 2. Admin
