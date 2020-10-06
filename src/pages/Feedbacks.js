@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import SelectForm from '../components/SelectForm';
-import SectionFirstFeedback from '../components/SectionFirstFeedback';
+import SectionFirst from '../components/SectionFirst';
 import {useAppContext} from '../libs/contextLib';
 import Button from '../components/Button';
 import CommentFromUsers from '../components/CommentFromUsers';
+import breakfast from '../images/breakfast.webp';
+import hotel from '../images/accomodation.webp';
+import world from '../images//world.webp';
 
 
 const Feedbacks = ()=>{
@@ -28,6 +31,38 @@ const Feedbacks = ()=>{
     await setComments(comments.data);
     console.log(comments);       
  }
+ const fetchRestaurantInformation = () =>{
+     alert("restaurant info")
+ }
+ const fetchHotelsInformation = () =>{
+     alert("hotels info")
+ }
+ const fetchAttractionsInformation = () =>{
+     alert("attractions info")
+ }
+ const figureProps =  [
+    {
+        name: "Restaurants", 
+        source: breakfast,
+        handleOnClick: fetchRestaurantInformation,
+        alt: "breakfast" ,
+        go: "#food"
+    },
+    {
+        name: "Hotels", 
+        source: hotel, 
+        handleOnClick: fetchHotelsInformation,
+        alt: "friends hands" ,
+        go: "#safety"
+    },
+    {
+        name: "Attractions" ,
+        source: world, 
+        handleOnClick: fetchAttractionsInformation,
+        alt: "world" ,
+        go: "#culture"
+    }]
+    
     
 
     return(
@@ -40,7 +75,7 @@ const Feedbacks = ()=>{
             </header>
             <div className="wrapper" >
                 <h3>Feedback</h3>
-                <SectionFirstFeedback/>
+                <SectionFirst info = {figureProps}/>
                 <div >                                 
                     <Button 
                         name = "See Comments"

@@ -369,7 +369,9 @@ border-radius: 10px;
 margin: 10px;
 padding: 10px;
 }
-
+.provider{
+    text-align: left;
+}
 .provider-div,
 .user-comment {
 border: darkcyan dashed 4px;
@@ -454,7 +456,7 @@ color: darkcyan;
 }
 
 .provider-logo {
-width: 240px;
+height: 240px;
 }
 
 .left,
@@ -480,7 +482,9 @@ padding: 5px;
     justify-content: space-between;
     text-align: left;
 }
-
+.comment-button{
+    width: 180px;
+}
 .avatar {
     border-radius: 50%;
     width: 50px;
@@ -577,7 +581,7 @@ input[type="radio"] {
                 font-size: 1.2em;
             }
             .provider-logo {
-                width: 150px;
+                height: 100px;
                 
             }
             .provider-div,
@@ -706,17 +710,15 @@ input[type="radio"] {
      }      
            }  
            @media screen and (max-width: 500px){   
-            button {
+            button, .comment-button {
                 width: 100%;
-            }
+            }            
             .item{
                 width: 100%;
-            }
-            
+            }            
             #transportationFromTo div select{
                 width: 70%;
                  }
-
         }  
            /*FOOTER*/
            

@@ -1,15 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import avatarImage from '../images/travel-and-tourism.png';
 import Button from '../components/Button';
 import CommentFromUsers from '../components/CommentFromUsers';
 import useFetchComments from '../hooks/useFetchComments';
+import LeaveCommentForm from '../components/LeaveCommentForm';
 
 
 
 const Attractions  = (props) =>{
+    const [isCommentForm, setIsCommentForm] = useState(false);
+    const [locationName, setLocationName] = useState('');
+    const [locationId, setLocationId] = useState(null);
+    const [commentId, setCommentId] = useState(null);
+    const [type, setType] = useState('');
+    const [locationImage, setLocationImage] = useState('')
     
   const {query, comments, fetchComments, isLoading, isError} =  useFetchComments()
-   
+  const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage) => {
+      setIsCommentForm(true)
+      setLocationName(name);
+      setLocationId(location_id);
+      setCommentId(location_id);
+      setType(type);
+      setLocationImage(locationImage)
+      console.log("Leave a comment about: " + name + " address: " + address + " type: "+ type + 
+      " and location id " + location_id + " location " + location + " latitude: " + latitude + " longitude: " 
+      + longitude)
+      
+  }
+const closeCommentForm = () =>{
+    setIsCommentForm(false)
+}
     return(
         <div>
         {console.log(props.attractions)}
@@ -44,10 +65,35 @@ const Attractions  = (props) =>{
                             </div>
                             <div>
                                 <Button 
-                                id = {attraction.result_object.location_id}
-                                name = "See Comments"
-                                handleOnClick = {() => fetchComments(attraction.result_object.location_id)}
-                            />
+                                    id = {attraction.result_object.location_id}
+                                    className = "comment-button"
+                                    name = "See Comments"
+                                    handleOnClick = {() => fetchComments(attraction.result_object.location_id)}
+                                />
+                                <Button
+                                    className = "comment-button"
+                                    name = "Leave a Comment"
+                                    handleOnClick = {() => 
+                                        openCommentForm(attraction.result_object.location_id, 
+                                            attraction.result_object.name, 
+                                            attraction.result_type,
+                                            attraction.result_object.address,
+                                            attraction.result_object.location_string,
+                                            attraction.result_object.latitude,
+                                            attraction.result_object.longitude,
+                                            attraction.result_object.photo.images.small.url
+                                            )}
+                                />
+                                {isCommentForm && 
+                                    <LeaveCommentForm
+                                        locationId = {locationId}
+                                        locationName = {locationName}
+                                        type = {type}
+                                        commentId = {commentId}
+                                        source = {locationImage}
+                                        handleOnClick = {closeCommentForm}
+                                    />
+                                }
                             {isError && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
                                 <div className = "loader">Loading...</div>
