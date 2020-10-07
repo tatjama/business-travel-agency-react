@@ -61,8 +61,19 @@ const LeaveCommentForm = (props) =>{
     }, [avatar])
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsSubmitted(true);
+        const d = new Date()
+        const newValues = {...values, published_date: d}
+        setValues(values => newValues)
         console.log(values)
     }
+    useEffect(() => {
+        isSubmitted &&
+        console.log(values)
+        setValues(initialValues)
+        
+
+    }, [isSubmitted])
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         
