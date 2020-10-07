@@ -10,7 +10,7 @@ import LeaveCommentForm from '../components/LeaveCommentForm';
 const Attractions  = (props) =>{
     const [isCommentForm, setIsCommentForm] = useState(false);
     const [locationName, setLocationName] = useState('');
-    const [locationId, setLocationId] = useState(null);
+    const [locationCommentId, setLocationCommentId] = useState(null);
     const [commentId, setCommentId] = useState(null);
     const [type, setType] = useState('');
     const [locationImage, setLocationImage] = useState('');
@@ -21,7 +21,7 @@ const Attractions  = (props) =>{
   const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage, rating, num_reviews) => {
       setIsCommentForm(true)
       setLocationName(name);
-      setLocationId(location_id);
+      setLocationCommentId(location_id);
       setCommentId(location_id);
       setType(type);
       setLocationImage(locationImage);
@@ -90,9 +90,9 @@ const closeCommentForm = () =>{
                                             attraction.result_object.num_reviews
                                             )}
                                 />
-                                {isCommentForm && 
+                                {locationCommentId === attraction.result_object.location_id && 
                                     <LeaveCommentForm
-                                        locationId = {locationId}
+                                        locationId = {locationCommentId}
                                         locationName = {locationName}
                                         type = {type}
                                         commentId = {commentId}

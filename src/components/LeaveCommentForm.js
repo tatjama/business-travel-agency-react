@@ -4,44 +4,79 @@ import adminAvatar from '../images/avatar-ivana.jpg';
 import userAvatar from '../images/avatar-dragan.webp';
 import tAdminAvatar from '../images/avatar-jelena.webp';
 import appAvatar from '../images/travel-and-tourism.png';
+import Rating from './Rating';
+const initialCommentValues = {
+    comment:{
+        id: null,
+        published_date: "",
+        rating: null,
+        text: "",
+        title: "",
+        travel_date: "",
+        user: {
+            username: "",
+            avatar: {small:{
+                url: appAvatar
+            }}
+        }
+    }
+}
+const initialValues = {    
+        published_date: "",
+        rating: "",
+        text: "",
+        title: ""    
+}
 
 const LeaveCommentForm = (props) =>{
     const [avatar, setAvatar] = useState(appAvatar);
+    const [values, setValues] = useState(initialValues);
+    const [radio, setRadio] = useState(null);
+    const [isSubmitted, setIsSubmitted] = useState(false)
     const [published, setPublished] = useState("");
+    
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setIsSubmitted(false)
+        const newValues = {...values, [name]: value}
+        setValues(values => newValues)
+        console.log(values)
+    }
     useEffect(() => {
-        setPublished(new Date())
-        if(props.user.logInUser.firstName == "Admin"){
-            setAvatar(adminAvatar)
-        }else if(props.user.logInUser.firstName == "User"){
-            setAvatar(userAvatar)
-        }else if(props.user.logInUser.firstName = "Tanja"){
-            setAvatar(tAdminAvatar)
-        }else{
-            setAvatar(appAvatar)
-        }
-
-       
+       // setPublished(new Date())       
+       switch (props.user.logInUser.firstName) {
+           case "Admin":
+               setAvatar(adminAvatar)
+               break;
+            case "User":
+                setAvatar(userAvatar)
+                break;
+            case "Tanja":
+                setAvatar(tAdminAvatar)
+                break;              
+           default:
+               setAvatar(appAvatar)
+               break;
+       }
     }, [avatar])
+    /*const handleRadioChange = (e) => {
+        const {name, value} = e.target
+        const newRadioValue = {[name]: value}
+        setRadio(newRadioValue)
+    }*/
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         
             <form>
-                 <div className = "provider">
-                     
-                     <img className = "provider-logo" src = {props.source} alt = {props.locationName}/>
-                      
+                 <div className = "provider">                     
+                     <img className = "provider-logo" src = {props.source} alt = {props.locationName}/>                    
                     
                          <h2>Add feedback about <br/> {props.locationName}</h2>
                          <p>Location ID: {props.locationId}</p>
                          <p>Type: {props.type}</p>
                             <div>
-                                                <span className="heading">User Rating</span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star checked"></span>
-                                                <span className="fa fa-star "></span>
-                                                <p>{props.rating} average based on {props.num_reviews} reviews.</p>    
+                                <Rating rate = {props.rating}/>
+                                 <p>{props.rating} average based on {props.num_reviews} reviews.</p>    
                             </div>
                      
                  </div>
@@ -51,16 +86,108 @@ const LeaveCommentForm = (props) =>{
                      <br/><span>{props.user.logInUser.firstName + " " + props.user.logInUser.lastName}</span></p>
                
                 </div>
+                Travel date:
+                <input 
+                    type = "date" 
+                    name = "travel_date"
+                    onChange = {handleChange}
+                    value = {values.travel_date}
+                    required = {true}
+                    autoFocus
+                />
                 Header:
                 <br/>
-                <textarea  rows="1" id="comment-header" placeholder="Try to describe your range"></textarea> 
+                <textarea  
+                    rows="1" 
+                    name = "title" 
+                    id="comment-header" 
+                    placeholder="Try to describe your range"
+                    onChange = {handleChange}
+                    value = {values.title}
+                    required = {true}
+                >                    
+                </textarea> 
                 <br/> 
                 Comment:
                 <br/>
-                <textarea  rows="10" placeholder="Place for your comment..."></textarea>
+                <textarea  
+                    rows="10" 
+                    name = "text" 
+                    placeholder="Place for your comment..."
+                    onChange = {handleChange}
+                    value = {values.text}
+                    required = {true}
+                >
+                </textarea>
                 <br/>
                 <p className = "message-range">Click for range</p>
-                <RangeDiv/>
+                <div>
+            <div className = "range">
+                                            5 star 
+                                            <input 
+                                                type="radio" 
+                                                name="rating" 
+                                                value="5"
+                                                
+                                                onChange = {handleChange}
+                                            />
+                                            <span className="fa fa-star checked" checked></span>
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>
+                                        
+                                        </div>
+                                        <div className="range">
+                                            <label>4 star </label>
+                                            <input 
+                                                type="radio" 
+                                                name="rating" 
+                                                value="4"
+                                                
+                                                onChange = {handleChange}
+                                                />
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>                                        
+                                        </div>
+                                        <div className="range">
+                                            <span>3 star </span>
+                                            <input 
+                                                type="radio" 
+                                                name="rating" 
+                                                value="3"
+                                                
+                                                onChange = {handleChange}
+                                                />
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>                                            
+                                        </div>
+                                        <div className = "range">
+                                            2 star 
+                                            <input 
+                                                type="radio" 
+                                                name="rating" 
+                                                value="2"
+                                                
+                                                onChange = {handleChange}
+                                                />
+                                            <span className="fa fa-star checked"></span>
+                                            <span className="fa fa-star checked"></span>                                     
+                                        </div>
+                                        <div className = "range">
+                                            1 star 
+                                            <input 
+                                                type="radio" 
+                                                name="rating" 
+                                                value="1"
+                                                onChange = {handleChange}
+                                                />
+                                            <span className="fa fa-star checked"></span>    
+                                        </div>
+        </div>
                 <br/>
                 <button type="submit">Submit</button>
                 <button onClick ={props.handleOnClick}>Close</button>    

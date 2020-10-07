@@ -1,37 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Rating = (props) => {
     return(
         <div>
-        {(props.rate === 5)? 
+        {(Math.round(props.rate) === 5)? 
             <div>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
-            </div>: (props.rate === 4)?
+            </div>: (Math.round(props.rate) === 4)?
             <div>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star"></span>
-            </div>: (props.rate === 3)?
+            </div>: (Math.round(props.rate) === 3)?
             <div>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star"></span>
             <span className="fa fa-star"></span>
-            </div>: (props.rate === 2)?
+            </div>: (Math.round(props.rate) === 2)?
             <div>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star "></span>
             <span className="fa fa-star "></span>
             <span className="fa fa-star"></span>
-            </div>: (props.rate === 1)?
+            </div>: (Math.round(props.rate) === 1)?
             <div>
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star"></span>
