@@ -31,9 +31,7 @@ const initialValues = {
 const LeaveCommentForm = (props) =>{
     const [avatar, setAvatar] = useState(appAvatar);
     const [values, setValues] = useState(initialValues);
-    const [radio, setRadio] = useState(null);
-    const [isSubmitted, setIsSubmitted] = useState(false)
-    const [published, setPublished] = useState("");
+    const [isSubmitted, setIsSubmitted] = useState(false);
     
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -62,8 +60,9 @@ const LeaveCommentForm = (props) =>{
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitted(true);
-        const d = new Date()
-        const newValues = {...values, published_date: d}
+        const d = new Date();
+        const newId = Math.floor((Math.random()*100000000000) + 10000000)  + "user"
+        const newValues = {...values, published_date: d, id: newId}
         setValues(values => newValues)
         console.log(values)
     }
