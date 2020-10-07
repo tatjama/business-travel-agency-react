@@ -22,7 +22,7 @@ const initialCommentValues = {
     }
 }
 const initialValues = {    
-        published_date: "",
+        travel_date: "",
         rating: "",
         text: "",
         title: ""    
@@ -59,15 +59,14 @@ const LeaveCommentForm = (props) =>{
                break;
        }
     }, [avatar])
-    /*const handleRadioChange = (e) => {
-        const {name, value} = e.target
-        const newRadioValue = {[name]: value}
-        setRadio(newRadioValue)
-    }*/
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(values)
+    }
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         
-            <form>
+            <form id = "leave-comment-form" onSubmit = {handleSubmit}>
                  <div className = "provider">                     
                      <img className = "provider-logo" src = {props.source} alt = {props.locationName}/>                    
                     
