@@ -378,6 +378,9 @@ border: darkcyan dashed 4px;
 padding: 40px;
 margin: 40px;
 }
+.user-comment form{
+    text-align: left;
+}
 
 /*DATA*/
 .main-header{

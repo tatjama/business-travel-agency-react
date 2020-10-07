@@ -225,7 +225,7 @@ const City =({match}) =>{
                     }
                     {isAttractionsFetch &&
                         <div className = "wrapper">  
-                            <Attractions attractions = {attractions}/>
+                            <Attractions attractions = {attractions} user = {isUserAuthenticated}/>
                         </div>
                     }
                     {isAirportsFetch &&

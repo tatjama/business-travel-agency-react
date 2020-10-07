@@ -13,19 +13,23 @@ const Attractions  = (props) =>{
     const [locationId, setLocationId] = useState(null);
     const [commentId, setCommentId] = useState(null);
     const [type, setType] = useState('');
-    const [locationImage, setLocationImage] = useState('')
+    const [locationImage, setLocationImage] = useState('');
+    const [rating, setRating] = useState(null);
+    const [num_reviews, setNum_reviews] = useState(null);
     
   const {query, comments, fetchComments, isLoading, isError} =  useFetchComments()
-  const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage) => {
+  const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage, rating, num_reviews) => {
       setIsCommentForm(true)
       setLocationName(name);
       setLocationId(location_id);
       setCommentId(location_id);
       setType(type);
-      setLocationImage(locationImage)
+      setLocationImage(locationImage);
+      setRating(rating);
+      setNum_reviews(num_reviews);
       console.log("Leave a comment about: " + name + " address: " + address + " type: "+ type + 
       " and location id " + location_id + " location " + location + " latitude: " + latitude + " longitude: " 
-      + longitude)
+      + longitude + " rating " + rating + " number of reviews " + num_reviews)
       
   }
 const closeCommentForm = () =>{
@@ -81,7 +85,9 @@ const closeCommentForm = () =>{
                                             attraction.result_object.location_string,
                                             attraction.result_object.latitude,
                                             attraction.result_object.longitude,
-                                            attraction.result_object.photo.images.small.url
+                                            attraction.result_object.photo.images.small.url,
+                                            attraction.result_object.rating,
+                                            attraction.result_object.num_reviews
                                             )}
                                 />
                                 {isCommentForm && 
@@ -92,6 +98,9 @@ const closeCommentForm = () =>{
                                         commentId = {commentId}
                                         source = {locationImage}
                                         handleOnClick = {closeCommentForm}
+                                        user = {props.user}
+                                        rating = {rating}
+                                        num_reviews = {num_reviews}
                                     />
                                 }
                             {isError && <div className = "error">Error. Something went wrong...</div>}
