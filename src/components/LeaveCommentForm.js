@@ -31,6 +31,7 @@ const initialValues = {
 const LeaveCommentForm = (props) =>{
     const [avatar, setAvatar] = useState(appAvatar);
     const [values, setValues] = useState(initialValues);
+    const [commentValues, setCommentValues] = useState(initialCommentValues);
     const [isSubmitted, setIsSubmitted] = useState(false);
     
     const handleChange = (e) => {
@@ -62,16 +63,22 @@ const LeaveCommentForm = (props) =>{
         setIsSubmitted(true);
         const d = new Date();
         const newId = Math.floor((Math.random()*100000000000) + 10000000)  + "user"
-        const newValues = {...values, published_date: d, id: newId}
-        setValues(values => newValues)
-        console.log(values)
+        const newValues = {...values, published_date: d, id: newId,  
+                            user: {username: props.user.logInUser.firstName,
+                                    avatar: {small: {url: avatar}}
+            }}
+        const newCommentValues = {comment:newValues}
+        //setValues(values => newValues)        
+        //console.log(values)
+        setCommentValues(newCommentValues)
     }
     useEffect(() => {
         isSubmitted &&
-        console.log(values)
+        //console.log(values)
+        //setCommentValues({comment:values})
+        console.log(commentValues)
         setValues(initialValues)
         
-
     }, [isSubmitted])
     return(
         <div className="user-comment">   
