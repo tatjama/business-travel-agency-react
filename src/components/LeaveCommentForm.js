@@ -36,15 +36,7 @@ const LeaveCommentForm = (props) =>{
     const [errors, setErrors] = useState({})
     const [commentValues, setCommentValues] = useState(initialCommentValues);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setIsSubmitted(false)
-        const newValues = {...values, [name]: value}
-        setErrors(validateCommentForm(newValues))
-        setValues(values => newValues)
-        console.log(values)
-    }
+
     useEffect(() => {
        // setPublished(new Date())       
        switch (props.user.logInUser.firstName) {
@@ -61,7 +53,17 @@ const LeaveCommentForm = (props) =>{
                setAvatar(appAvatar)
                break;
        }
-    }, [avatar])
+    }, [props.user.logInUser.firstName])
+    
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setIsSubmitted(false)
+        const newValues = {...values, [name]: value}
+        setErrors(validateCommentForm(newValues))
+        setValues(values => newValues)
+        console.log(values)
+    }
+    
     const handleSubmit = (e) => {
         e.preventDefault();    
         setErrors(validateCommentForm(values))    
@@ -85,14 +87,16 @@ const LeaveCommentForm = (props) =>{
             //console.log(commentValues)        
         localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
         setValues(initialValues)
-        }
-        
-        
+        }            
     }, [isSubmitted])
+
+    const handleReset = (e) => {
+        setValues(initialValues)
+    }
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         
-            <form id = "leave-comment-form" onSubmit = {handleSubmit}>
+            <form id = "leave-comment-form" onSubmit = {handleSubmit} noValidate>
                  <div className = "provider">                     
                      <img className = "provider-logo" src = {props.source} alt = {props.locationName}/>                    
                     
@@ -221,6 +225,7 @@ const LeaveCommentForm = (props) =>{
         {errors.rating && <p className = "error-message-comment">{errors.rating}</p>}
                 <br/>
                 <button type="submit">Submit</button>
+                <button onClick = {handleReset}>Reset</button>
                 <button onClick ={props.handleOnClick}>Close</button>    
             </form>
         </div>
