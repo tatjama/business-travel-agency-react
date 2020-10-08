@@ -32,7 +32,10 @@ const SignUp = ()=>{
 
     history.push('/signin');
     console.log(values);
-    localStorage.setItem('usersInLocalStorage',JSON.stringify(values))
+    let usersInLocalStorageArray = [];
+    usersInLocalStorageArray = JSON.parse(localStorage.getItem('usersInLocalStorage')) || []
+    usersInLocalStorageArray.push(values)
+    localStorage.setItem('usersInLocalStorage',JSON.stringify(usersInLocalStorageArray))
   }
    return(
       <div className = "intro-page">        

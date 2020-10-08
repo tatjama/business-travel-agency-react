@@ -73,12 +73,9 @@ const LeaveCommentForm = (props) =>{
     useEffect(() => {
         let commentsArray = []
         commentsArray =JSON.parse(localStorage.getItem('commentsArray')) || []
-         commentsArray.push(commentValues)
-        
+         commentsArray.push(commentValues)        
         isSubmitted &&
-        //console.log(commentValues)
-        
-         
+        //console.log(commentValues)        
         localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
         setValues(initialValues)
         
