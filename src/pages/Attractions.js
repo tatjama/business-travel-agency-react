@@ -91,6 +91,7 @@ const closeCommentForm = () =>{
                                             )}
                                 />
                                 {locationCommentId === attraction.result_object.location_id && 
+                                 isCommentForm &&
                                     <LeaveCommentForm
                                         locationId = {locationCommentId}
                                         locationName = {locationName}

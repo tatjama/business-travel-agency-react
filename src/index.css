@@ -45,6 +45,9 @@ html {
                font-size: 12px;
                text-transform: initial;
            }
+           .error-message-comment{
+               color: salmon;
+           }
            .inputError{
                color: red;
            }            

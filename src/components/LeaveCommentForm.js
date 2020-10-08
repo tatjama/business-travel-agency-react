@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import RangeDiv from './RangeDiv';
+//import RangeDiv from './RangeDiv';
 import adminAvatar from '../images/avatar-ivana.jpg';
 import userAvatar from '../images/avatar-dragan.webp';
 import tAdminAvatar from '../images/avatar-jelena.webp';
 import appAvatar from '../images/travel-and-tourism.png';
 import Rating from './Rating';
+import validateCommentForm from '../components/utils/validateCommentForm';
+
 const initialCommentValues = {
     comment:{
         id: null,
@@ -31,6 +33,7 @@ const initialValues = {
 const LeaveCommentForm = (props) =>{
     const [avatar, setAvatar] = useState(appAvatar);
     const [values, setValues] = useState(initialValues);
+    const [errors, setErrors] = useState({})
     const [commentValues, setCommentValues] = useState(initialCommentValues);
     const [isSubmitted, setIsSubmitted] = useState(false);
     
@@ -38,6 +41,7 @@ const LeaveCommentForm = (props) =>{
         const {name, value} = e.target;
         setIsSubmitted(false)
         const newValues = {...values, [name]: value}
+        setErrors(validateCommentForm(newValues))
         setValues(values => newValues)
         console.log(values)
     }
@@ -59,8 +63,8 @@ const LeaveCommentForm = (props) =>{
        }
     }, [avatar])
     const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsSubmitted(true);
+        e.preventDefault();    
+        setErrors(validateCommentForm(values))    
         const d = new Date();
         const newId = Math.floor((Math.random()*100000000000) + 10000000)  + "user"
         const newValues = {...values, published_date: d, id: newId,  
@@ -69,15 +73,20 @@ const LeaveCommentForm = (props) =>{
             }}
         const newCommentValues = {comment:newValues}
         setCommentValues(newCommentValues)
+       // setErrors(validateCommentForm(commentValues))
+        setIsSubmitted(true);
     }
     useEffect(() => {
         let commentsArray = []
         commentsArray =JSON.parse(localStorage.getItem('commentsArray')) || []
-         commentsArray.push(commentValues)        
-        isSubmitted &&
-        //console.log(commentValues)        
+         commentsArray.push(commentValues)   
+         if(Object.keys(errors).length === 0 && isSubmitted)    
+        {
+            //console.log(commentValues)        
         localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
         setValues(initialValues)
+        }
+        
         
     }, [isSubmitted])
     return(
@@ -108,9 +117,11 @@ const LeaveCommentForm = (props) =>{
                     name = "travel_date"
                     onChange = {handleChange}
                     value = {values.travel_date}
+                    className = {`${errors.travel_date && 'inputError'}`}
                     required = {true}
                     autoFocus
                 />
+                {errors.travel_date && <p className = "error-message-comment">{errors.travel_date}</p>}
                 Header:
                 <br/>
                 <textarea  
@@ -120,9 +131,11 @@ const LeaveCommentForm = (props) =>{
                     placeholder="Try to describe your range"
                     onChange = {handleChange}
                     value = {values.title}
+                    className = {`${errors.title && 'inputError'}`}
                     required = {true}
                 >                    
                 </textarea> 
+                {errors.title && <p className = "error-message-comment">{errors.title}</p>}
                 <br/> 
                 Comment:
                 <br/>
@@ -132,78 +145,80 @@ const LeaveCommentForm = (props) =>{
                     placeholder="Place for your comment..."
                     onChange = {handleChange}
                     value = {values.text}
+                    className = {`${errors.text && 'inputError'}`}
                     required = {true}
                 >
                 </textarea>
+                {errors.text && <p className = "error-message-comment">{errors.text}</p>}
                 <br/>
                 <p className = "message-range">Click for range</p>
                 <div>
-            <div className = "range">
-                                            5 star 
-                                            <input 
-                                                type="radio" 
-                                                name="rating" 
-                                                value="5"
-                                                
-                                                onChange = {handleChange}
-                                            />
-                                            <span className="fa fa-star checked" checked></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                        
-                                        </div>
-                                        <div className="range">
-                                            <label>4 star </label>
-                                            <input 
-                                                type="radio" 
-                                                name="rating" 
-                                                value="4"
-                                                
-                                                onChange = {handleChange}
-                                                />
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>                                        
-                                        </div>
-                                        <div className="range">
-                                            <span>3 star </span>
-                                            <input 
-                                                type="radio" 
-                                                name="rating" 
-                                                value="3"
-                                                
-                                                onChange = {handleChange}
-                                                />
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>                                            
-                                        </div>
-                                        <div className = "range">
-                                            2 star 
-                                            <input 
-                                                type="radio" 
-                                                name="rating" 
-                                                value="2"
-                                                
-                                                onChange = {handleChange}
-                                                />
-                                            <span className="fa fa-star checked"></span>
-                                            <span className="fa fa-star checked"></span>                                     
-                                        </div>
-                                        <div className = "range">
-                                            1 star 
-                                            <input 
-                                                type="radio" 
-                                                name="rating" 
-                                                value="1"
-                                                onChange = {handleChange}
-                                                />
-                                            <span className="fa fa-star checked"></span>    
-                                        </div>
+                    <div className = "range">
+                        <label>5 star</label> 
+                        <input 
+                            type="radio" 
+                            name="rating" 
+                            value="5"                                                
+                            onChange = {handleChange}
+                            className = {`${errors.rating && "inputError"}`}
+                        />
+                        <span className="fa fa-star checked" checked></span>
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>                                       
+                    </div>
+                    <div className="range">
+                        <label>4 star </label>
+                        <input 
+                            type="radio" 
+                            name="rating" 
+                            value="4"                                                
+                            onChange = {handleChange}
+                        />
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>                                        
+                    </div>
+                    <div className="range">
+                        <label>3 star </label>
+                        <input 
+                            type="radio" 
+                            name="rating" 
+                            value="3"                                                
+                            onChange = {handleChange}
+                            className = {`${errors.rating && "inputError"}`}
+                        />
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>                                            
+                    </div>
+                    <div className = "range">
+                        <label>2 star</label>                   
+                        <input 
+                            type="radio" 
+                            name="rating" 
+                            value="2"                                                
+                            onChange = {handleChange}
+                            className = {`${errors.rating && "inputError"}`}
+                        />
+                        <span className="fa fa-star checked"></span>
+                        <span className="fa fa-star checked"></span>                                     
+                    </div>
+                    <div className = "range">
+                        <label>1 star</label>                   
+                        <input 
+                            type="radio" 
+                            name="rating" 
+                            value="1"
+                            onChange = {handleChange}
+                            className = {`${errors.rating && "inputError"}`}
+                        />
+                        <span className="fa fa-star checked"></span>    
+                    </div>                 
         </div>
+        {errors.rating && <p className = "error-message-comment">{errors.rating}</p>}
                 <br/>
                 <button type="submit">Submit</button>
                 <button onClick ={props.handleOnClick}>Close</button>    
