@@ -6,6 +6,7 @@ import tAdminAvatar from '../images/avatar-jelena.webp';
 import appAvatar from '../images/travel-and-tourism.png';
 import Rating from './Rating';
 import validateCommentForm from '../components/utils/validateCommentForm';
+import useCommentForm from '../hooks/useCommentForm';
 
 const initialCommentValues = {
     comment:{
@@ -32,10 +33,10 @@ const initialValues = {
 
 const LeaveCommentForm = (props) =>{
     const [avatar, setAvatar] = useState(appAvatar);
-    const [values, setValues] = useState(initialValues);
-    const [errors, setErrors] = useState({})
-    const [commentValues, setCommentValues] = useState(initialCommentValues);
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    //const [values, setValues] = useState(initialValues);
+    //const [errors, setErrors] = useState({})
+    //const [commentValues, setCommentValues] = useState(initialCommentValues);
+    //const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
        // setPublished(new Date())       
@@ -55,18 +56,10 @@ const LeaveCommentForm = (props) =>{
        }
     }, [props.user.logInUser.firstName])
     
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setIsSubmitted(false)
-        const newValues = {...values, [name]: value}
-        setErrors(validateCommentForm(newValues))
-        setValues(values => newValues)
-        console.log(values)
-    }
+    const {values, errors, handleChange, handleSubmit, handleReset} 
+    = useCommentForm(initialValues, initialCommentValues, validateCommentForm, submitted)
     
-    const handleSubmit = (e) => {
-        e.preventDefault();    
-        setErrors(validateCommentForm(values))    
+     function submitted(){
         const d = new Date();
         const newId = Math.floor((Math.random()*100000000000) + 10000000)  + "user"
         const newValues = {...values, published_date: d, id: newId,  
@@ -74,25 +67,16 @@ const LeaveCommentForm = (props) =>{
                                     avatar: {small: {url: avatar}}
             }}
         const newCommentValues = {comment:newValues}
-        setCommentValues(newCommentValues)
-       // setErrors(validateCommentForm(commentValues))
-        setIsSubmitted(true);
-    }
-    useEffect(() => {
+        
+        console.log(newCommentValues)
         let commentsArray = []
         commentsArray =JSON.parse(localStorage.getItem('commentsArray')) || []
-         commentsArray.push(commentValues)   
-         if(Object.keys(errors).length === 0 && isSubmitted)    
-        {
-            //console.log(commentValues)        
-        localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
-        setValues(initialValues)
-        }            
-    }, [isSubmitted])
-
-    const handleReset = (e) => {
-        setValues(initialValues)
+         commentsArray.push(newCommentValues)   
+         localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
+        
     }
+    
+    
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         

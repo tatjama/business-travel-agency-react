@@ -1,41 +1,44 @@
-import React, {useState, UseEffect} from 'react';
+import {useState, useEffect} from 'react';
 
-const useCommentForm = () => {
+const useCommentForm = (initialValues, initialCommentValues, validateCommentForm, callback) => {
+    const [values, setValues] = useState(initialValues)
+    const [errors, setErrors] = useState({})
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [commentValues, setCommentValues] = useState(initialCommentValues)
+
     const handleChange = (e) => {
         const {name, value} = e.target;
         setIsSubmitted(false)
         const newValues = {...values, [name]: value}
         setErrors(validateCommentForm(newValues))
-        setValues(values => newValues)        
+        setValues(values => newValues) 
+        console.log(values)       
     }
     
     const handleSubmit = (e) => {
         e.preventDefault();    
-        setErrors(validateCommentForm(values)) 
-        setIsSubmitted(true);   
-        const d = new Date();
-        const newId = Math.floor((Math.random()*100000000000) + 10000000)  + "user"
-        const newValues = {...values, published_date: d, id: newId,  
-                            user: {username: props.user.logInUser.firstName,
-                                    avatar: {small: {url: avatar}}
-            }}
-        const newCommentValues = {comment:newValues}
-        setCommentValues(newCommentValues)        
+        setErrors(validateCommentForm(values))          
+       // setErrors(validateCommentForm(commentValues))
+        setIsSubmitted(true);
     }
+    
+    
     useEffect(() => {
-        let commentsArray = []
-        commentsArray =JSON.parse(localStorage.getItem('commentsArray')) || []
-         commentsArray.push(commentValues)   
          if(Object.keys(errors).length === 0 && isSubmitted)    
         {
             //console.log(commentValues)        
-        localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
-        setValues(initialValues)
+        callback(setValues(initialValues))
+        
         }
         
         
-    }, [isSubmitted])
-    
+    }, [isSubmitted, errors, initialValues])
+    const handleReset = (e) => {
+        setValues(initialValues)
+    }
+    return{
+        values, errors,  handleChange, handleSubmit, handleReset
+    }
 
 }
 
