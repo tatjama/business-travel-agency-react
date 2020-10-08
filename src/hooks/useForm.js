@@ -5,16 +5,13 @@ import {useState, useEffect} from 'react';
     const [values, setValues] = useState(initValues);
     const [errors, setErrors] = useState({});    
     const [isSent, setIsSent] = useState(false);  
-    const [isSubmitting, setIsSubmitting] = useState(false);  
-   
+    const [isSubmitting, setIsSubmitting] = useState(false);     
     
       const handleChange = (e)=>{
         const {name, value} = e.target;
-
         setIsSubmitting(false);
         const newValues = {...values, [name]: value};       
         isSent && setErrors(validate(newValues));
-        //console.log("newValues = " + value );
         setValues(values =>(newValues));
       };     
     
@@ -47,7 +44,6 @@ import {useState, useEffect} from 'react';
     handleReset,
     errors,
     isSubmitting
-    //, user
 } 
 }
 

@@ -17,42 +17,32 @@ const SignIn = () => {
   const { setUserHasAuthenticated} = useAppContext();
   const { values, handleChange, handleSubmit, handleReset, errors } = useForm(submitted, validateSignIn, initValuesForSignIn, login);
   
-  //const [isSuccess, setIsSuccess] = useState(false)  
- 
-
- 
-async  function submitted() {    
-    //setIsSuccess(true);
+ async  function submitted() {  
     console.log(values);
     try{
      const user = await   login(values);
      console.log(user);
      if(Object.keys(user).length !==0){
-      alert('Submitted successfully');
-      
+      alert('Submitted successfully');      
       sessionStorage.setItem('logInUser', JSON.stringify(user)) ;
       console.log('submitted ')
       setUserHasAuthenticated({
               isAuthenticated:true,
               logInUser: user
-            });
-        
+            });        
       history.push("/");
      }else{
        alert('invalid user')
      }     
-    }catch{
-      alert("User name or password is not valid")
-    }
-    }   
-  
+      }catch{
+        alert("User name or password is not valid")
+      }
+    }     
     
     return(
     <div className = "intro-page">        
-      <div className="intro-page-gradient">                          
-           
+      <div className="intro-page-gradient">           
         <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
-        {/*isSuccess && <div className="success-message">Thank you for Sign In</div>*/}
           <fieldset>
             <legend>Sign in</legend>
             <br/>

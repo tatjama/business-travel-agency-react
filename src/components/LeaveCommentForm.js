@@ -6,24 +6,9 @@ import tAdminAvatar from '../images/avatar-jelena.webp';
 import appAvatar from '../images/travel-and-tourism.png';
 import Rating from './Rating';
 import validateCommentForm from '../components/utils/validateCommentForm';
-import useCommentForm from '../hooks/useCommentForm';
+//import useCommentForm from '../hooks/useCommentForm';
+import useForm from '../hooks/useForm';
 
-const initialCommentValues = {
-    comment:{
-        id: null,
-        published_date: "",
-        rating: null,
-        text: "",
-        title: "",
-        travel_date: "",
-        user: {
-            username: "",
-            avatar: {small:{
-                url: appAvatar
-            }}
-        }
-    }
-}
 const initialValues = {    
         travel_date: "",
         rating: "",
@@ -33,13 +18,8 @@ const initialValues = {
 
 const LeaveCommentForm = (props) =>{
     const [avatar, setAvatar] = useState(appAvatar);
-    //const [values, setValues] = useState(initialValues);
-    //const [errors, setErrors] = useState({})
-    //const [commentValues, setCommentValues] = useState(initialCommentValues);
-    //const [isSubmitted, setIsSubmitted] = useState(false);
 
-    useEffect(() => {
-       // setPublished(new Date())       
+    useEffect(() => {       
        switch (props.user.logInUser.firstName) {
            case "Admin":
                setAvatar(adminAvatar)
@@ -57,7 +37,7 @@ const LeaveCommentForm = (props) =>{
     }, [props.user.logInUser.firstName])
     
     const {values, errors, handleChange, handleSubmit, handleReset} 
-    = useCommentForm(initialValues, initialCommentValues, validateCommentForm, submitted)
+    = useForm(submitted, validateCommentForm, initialValues)
     
      function submitted(){
         const d = new Date();
@@ -67,15 +47,14 @@ const LeaveCommentForm = (props) =>{
                                     avatar: {small: {url: avatar}}
             }}
         const newCommentValues = {comment:newValues}
-        
+        alert("Thank you. Your comment is submitted")
         console.log(newCommentValues)
         let commentsArray = []
         commentsArray =JSON.parse(localStorage.getItem('commentsArray')) || []
          commentsArray.push(newCommentValues)   
          localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
-        
-    }
-    
+         props.handleOnClick()
+    }   
     
     return(
         <div className="user-comment">   
