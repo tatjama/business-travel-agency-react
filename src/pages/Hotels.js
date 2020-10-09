@@ -1,18 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 import avatarImage from '../images/travel-and-tourism.png';
 import Button from '../components/Button';
 import CommentFromUsers  from '../components/CommentFromUsers';
 import useFetchComments from '../hooks/useFetchComments';
+import LeaveCommentForm from '../components/LeaveCommentForm';
+import createCommentArray from '../components/utils/createCommentsArray';
+
 
 const Hotels = (props) =>{
-    const {query, comments, fetchComments, isLoading, isError} = useFetchComments();
+    const [isCommentForm, setIsCommentForm] = useState(false);
+    const [locationCommentId, setLocationCommentId] = useState(null);
+    const [commentFromUser, setCommentFromUser] = useState({});    
+    const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
     
+    const {query, comments, fetchComments, isLoading, isError} = useFetchComments(submitted);
+    
+    function submitted(){      
+        const commentsArray = createCommentArray(query, comments)
+         setCommentsFromLocalStorageAndFetchComments(commentsArray)
+       }
+   
+       const openCommentForm = (attractionResultObject) => {
+         setLocationCommentId(attractionResultObject.location_id);
+         setCommentFromUser(attractionResultObject)
+         console.log(attractionResultObject)
+         setIsCommentForm(true)
+       }
+   
+       const closeCommentForm = () =>{
+       setIsCommentForm(false)
+       }
+
     return(
         <div>
-                    {console.log(props.hotels)}
-                    <h1 className = "main-header">HOTELS </h1>
-                    <div className = "main-div" id = "hotels">
-                    {props.hotels.map((item) => {
+            {console.log(props.hotels)}
+            <h1 className = "main-header">HOTELS </h1>
+            <div className = "main-div" id = "hotels">
+                {props.hotels.map((item) => {
                   return(                      
                       <div key = {item.result_object.location_id} className = "data-selected">
                                                     
@@ -47,19 +71,35 @@ const Hotels = (props) =>{
                                 name = "See Comments"
                                 handleOnClick = {() => fetchComments(item.result_object.location_id)}
                             />
+                            <Button
+                                    className = "comment-button"
+                                    name = "Leave a Comment"
+                                    handleOnClick = {() => 
+                                        openCommentForm(item.result_object
+                                            )}
+                                />
+                                {locationCommentId === item.result_object.location_id && 
+                                 isCommentForm &&
+                                    <LeaveCommentForm
+                                        handleOnClick = {closeCommentForm}
+                                        user = {props.user}
+                                        info = {commentFromUser}
+                                    />
+                                }
                             {isError && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
                                 <div className = "loader">Loading...</div>
                                 :
                                 (query === item.result_object.location_id) &&
                             <div>
-                             {comments.map((comment) => {
+                             {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
                                         <CommentFromUsers comment = {comment}/>
                                    </div>
                                 )
-                            })}
+                            })}   
+                             
                             </div>
                             }
   

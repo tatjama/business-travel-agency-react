@@ -210,13 +210,13 @@ const City =({match}) =>{
                     }          
                     {isRestaurantsFetch &&   
                         <div className = "wrapper">         
-                            <Restaurants restaurants = {restaurants}/>
+                            <Restaurants restaurants = {restaurants} user = {isUserAuthenticated}/>
                         </div>
                     }
                     
                     {isHotelsFetch &&
                         <div className = "wrapper">  
-                            <Hotels hotels = {hotels}/>
+                            <Hotels hotels = {hotels} user = {isUserAuthenticated}/>
                         </div>
                     }
                     {isAttractionsFetch &&
