@@ -20,10 +20,10 @@ const Hotels = (props) =>{
          setCommentsFromLocalStorageAndFetchComments(commentsArray)
        }
    
-       const openCommentForm = (attractionResultObject) => {
-         setLocationCommentId(attractionResultObject.location_id);
-         setCommentFromUser(attractionResultObject)
-         console.log(attractionResultObject)
+       const openCommentForm = (resultObject) => {
+         setLocationCommentId(resultObject.location_id);
+         setCommentFromUser(resultObject)
+         console.log(resultObject)
          setIsCommentForm(true)
        }
    
