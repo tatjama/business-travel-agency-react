@@ -17,6 +17,7 @@ const Attractions  = (props) =>{
     const [locationImage, setLocationImage] = useState('');
     const [rating, setRating] = useState(null);
     const [num_reviews, setNum_reviews] = useState(null);
+    const [commentFromUser, setCommentFromUser] = useState({})
     const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
     
   const {query, comments, fetchComments, isLoading, isError} =  useFetchComments(submitted);
@@ -25,14 +26,20 @@ const Attractions  = (props) =>{
       setCommentsFromLocalStorageAndFetchComments(commentsArray)
   }
   const openCommentForm = (attractionResultObject) => {
-      setIsCommentForm(true)
-      setLocationName(attractionResultObject.name);
       setLocationCommentId(attractionResultObject.location_id);
+      setCommentFromUser(attractionResultObject)
+      console.log(attractionResultObject)
+      setIsCommentForm(true)
+      
+      
+
+      /*setLocationName(attractionResultObject.name);
+      
       setCommentId(attractionResultObject.location_id);
       setType(attractionResultObject.type);
       setLocationImage(attractionResultObject.locationImage);
       setRating(attractionResultObject.rating);
-      setNum_reviews(attractionResultObject.num_reviews);
+      setNum_reviews(attractionResultObject.num_reviews);*/
   }
 const closeCommentForm = () =>{
     setIsCommentForm(false)
@@ -86,15 +93,9 @@ const closeCommentForm = () =>{
                                 {locationCommentId === attraction.result_object.location_id && 
                                  isCommentForm &&
                                     <LeaveCommentForm
-                                        locationId = {locationCommentId}
-                                        locationName = {locationName}
-                                        type = {type}
-                                        commentId = {commentId}
-                                        source = {locationImage}
                                         handleOnClick = {closeCommentForm}
                                         user = {props.user}
-                                        rating = {rating}
-                                        num_reviews = {num_reviews}
+                                        info = {commentFromUser}
                                     />
                                 }
                             {isError && <div className = "error">Error. Something went wrong...</div>}

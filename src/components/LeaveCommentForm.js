@@ -49,7 +49,7 @@ const LeaveCommentForm = (props) =>{
         const newCommentValues = {
             comment:newValues,
             result_object:{
-                location_id: props.locationId
+                location_id: props.info.location_id
             }
                                     }
         alert("Thank you. Your comment is submitted")
@@ -60,20 +60,26 @@ const LeaveCommentForm = (props) =>{
          localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
          props.handleOnClick()
     }   
-    
+    /*setLocationName(attractionResultObject.name);--
+      setLocationCommentId(attractionResultObject.location_id);-
+      setCommentId(attractionResultObject.location_id);--
+      setType(attractionResultObject.type);--
+      setLocationImage(attractionResultObject.locationImage);
+      setRating(attractionResultObject.rating);--
+      setNum_reviews(attractionResultObject.num_reviews);--*/
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         
             <form id = "leave-comment-form" onSubmit = {handleSubmit} noValidate>
                  <div className = "provider">                     
-                     <img className = "provider-logo" src = {props.source} alt = {props.locationName}/>                    
+                     <img className = "provider-logo" src = {props.info.photo.images.small.url} alt = {props.info.name}/>                    
                     
-                         <h2>Add feedback about <br/> {props.locationName}</h2>
-                         <p>Location ID: {props.locationId}</p>
-                         <p>Type: {props.type}</p>
+                         <h2>Add feedback about <br/> {props.info.name}</h2>
+                         <p>Location ID: {props.info.location_id}</p>
+                         <p>Type: {props.info.category.name}</p>
                             <div>
-                                <Rating rate = {props.rating}/>
-                                 <p>{props.rating} average based on {props.num_reviews} reviews.</p>    
+                                <Rating rate = {props.info.rating}/>
+                                 <p>{props.info.rating} average based on {props.info.num_reviews} reviews.</p>    
                             </div>
                      
                  </div>
