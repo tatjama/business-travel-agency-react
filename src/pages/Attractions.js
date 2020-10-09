@@ -24,19 +24,15 @@ const Attractions  = (props) =>{
      const commentsArray = createCommentArray(query, comments)
       setCommentsFromLocalStorageAndFetchComments(commentsArray)
   }
-  const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage, rating, num_reviews) => {
+  const openCommentForm = (attractionResultObject) => {
       setIsCommentForm(true)
-      setLocationName(name);
-      setLocationCommentId(location_id);
-      setCommentId(location_id);
-      setType(type);
-      setLocationImage(locationImage);
-      setRating(rating);
-      setNum_reviews(num_reviews);
-      console.log("Leave a comment about: " + name + " address: " + address + " type: "+ type + 
-      " and location id " + location_id + " location " + location + " latitude: " + latitude + " longitude: " 
-      + longitude + " rating " + rating + " number of reviews " + num_reviews)
-      
+      setLocationName(attractionResultObject.name);
+      setLocationCommentId(attractionResultObject.location_id);
+      setCommentId(attractionResultObject.location_id);
+      setType(attractionResultObject.type);
+      setLocationImage(attractionResultObject.locationImage);
+      setRating(attractionResultObject.rating);
+      setNum_reviews(attractionResultObject.num_reviews);
   }
 const closeCommentForm = () =>{
     setIsCommentForm(false)
@@ -84,16 +80,7 @@ const closeCommentForm = () =>{
                                     className = "comment-button"
                                     name = "Leave a Comment"
                                     handleOnClick = {() => 
-                                        openCommentForm(attraction.result_object.location_id, 
-                                            attraction.result_object.name, 
-                                            attraction.result_type,
-                                            attraction.result_object.address,
-                                            attraction.result_object.location_string,
-                                            attraction.result_object.latitude,
-                                            attraction.result_object.longitude,
-                                            attraction.result_object.photo.images.small.url,
-                                            attraction.result_object.rating,
-                                            attraction.result_object.num_reviews
+                                        openCommentForm(attraction.result_object
                                             )}
                                 />
                                 {locationCommentId === attraction.result_object.location_id && 
