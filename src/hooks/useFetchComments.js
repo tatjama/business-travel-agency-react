@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
-const useFetchComments = () => {
+const useFetchComments = (callback) => {
     const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
     const [comments, setComments] = useState([]);
     const [query, setQuery] = useState(null);
@@ -27,12 +27,20 @@ const useFetchComments = () => {
      await setComments(comments.data);
      await setQuery(id);
      console.log(comments);
+     //callback();
              
          } catch (error) {
              setIsError(true)
          }  
      setIsLoading(false)  
   }
+  useEffect(() => {
+      console.log(query)
+      console.log(comments)
+       {
+          callback()
+      }
+  }, [query, comments])
 
   return{query,comments, fetchComments, isLoading, isError}
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import avatarImage from '../images/travel-and-tourism.png';
 import Button from '../components/Button';
 import CommentFromUsers from '../components/CommentFromUsers';
@@ -16,8 +16,20 @@ const Attractions  = (props) =>{
     const [locationImage, setLocationImage] = useState('');
     const [rating, setRating] = useState(null);
     const [num_reviews, setNum_reviews] = useState(null);
+    const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
     
-  const {query, comments, fetchComments, isLoading, isError} =  useFetchComments()
+  const {query, comments, fetchComments, isLoading, isError} =  useFetchComments(submitted);
+  function submitted(){
+      
+      const commentsArrayFromStorage = JSON.parse(localStorage.getItem('commentsArray')) || []
+      function checkIdOnArray(commentFromStorage){
+          return commentFromStorage.result_object.location_id == query
+      }
+      const commentsFilterArray = commentsArrayFromStorage.filter(checkIdOnArray)
+      const newCommentsFilterArray = commentsFilterArray.map(comment => comment.comment )
+      const commentsArray = newCommentsFilterArray.concat(comments)
+      setCommentsFromLocalStorageAndFetchComments(commentsArray)
+  }
   const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage, rating, num_reviews) => {
       setIsCommentForm(true)
       setLocationName(name);
@@ -110,7 +122,7 @@ const closeCommentForm = () =>{
                                 :
                                 (query === attraction.result_object.location_id) &&
                             <div>
-                             {comments.map((comment) => {
+                             {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
                                         <CommentFromUsers comment = {comment}/>

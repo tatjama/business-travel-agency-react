@@ -46,7 +46,12 @@ const LeaveCommentForm = (props) =>{
                             user: {username: props.user.logInUser.firstName,
                                     avatar: {small: {url: avatar}}
             }}
-        const newCommentValues = {comment:newValues}
+        const newCommentValues = {
+            comment:newValues,
+            result_object:{
+                location_id: props.locationId
+            }
+                                    }
         alert("Thank you. Your comment is submitted")
         console.log(newCommentValues)
         let commentsArray = []
