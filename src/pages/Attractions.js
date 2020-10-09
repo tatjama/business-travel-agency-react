@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import CommentFromUsers from '../components/CommentFromUsers';
 import useFetchComments from '../hooks/useFetchComments';
 import LeaveCommentForm from '../components/LeaveCommentForm';
+import createCommentArray from '../components/utils/createCommentsArray';
 
 
 
@@ -19,15 +20,8 @@ const Attractions  = (props) =>{
     const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
     
   const {query, comments, fetchComments, isLoading, isError} =  useFetchComments(submitted);
-  function submitted(){
-      
-      const commentsArrayFromStorage = JSON.parse(localStorage.getItem('commentsArray')) || []
-      function checkIdOnArray(commentFromStorage){
-          return commentFromStorage.result_object.location_id == query
-      }
-      const commentsFilterArray = commentsArrayFromStorage.filter(checkIdOnArray)
-      const newCommentsFilterArray = commentsFilterArray.map(comment => comment.comment )
-      const commentsArray = newCommentsFilterArray.concat(comments)
+  function submitted(){      
+     const commentsArray = createCommentArray(query, comments)
       setCommentsFromLocalStorageAndFetchComments(commentsArray)
   }
   const openCommentForm = (location_id, name, type, address, location, latitude, longitude, locationImage, rating, num_reviews) => {
