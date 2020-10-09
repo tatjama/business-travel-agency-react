@@ -5,15 +5,13 @@ const useFetchComments = (callback) => {
     const [comments, setComments] = useState([]);
     const [query, setQuery] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false)
-
+    const [isError, setIsError] = useState(false);
 
     const fetchComments = async (id) => {
          console.log(id)
          setIsError(false)
          setIsLoading(true)
-         try {
-             
+         try {             
          const data = await
          fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&
          lang=en_US&location_id=${id}`, {
@@ -27,8 +25,6 @@ const useFetchComments = (callback) => {
      await setComments(comments.data);
      await setQuery(id);
      console.log(comments);
-     //callback();
-             
          } catch (error) {
              setIsError(true)
          }  
@@ -36,10 +32,8 @@ const useFetchComments = (callback) => {
   }
   useEffect(() => {
       console.log(query)
-      console.log(comments)
-       {
-          callback()
-      }
+      console.log(comments)       
+          callback()      
   }, [query, comments])
 
   return{query,comments, fetchComments, isLoading, isError}

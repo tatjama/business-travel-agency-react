@@ -14,9 +14,7 @@ import world from '../images/world.webp';
 import airplane from '../images/airplane.webp';
 
 const City =({match}) =>{    
-    console.log(match)
-   // console.log(match), match is params sent from previous page
-    const [info, setInfo] = useState([])  
+    console.log(match) 
     const [header, setHeader] = useState([])  
     const [isFetch, setIsFetch] = useState(false);
     const [isRestaurantsFetch, setIsRestaurantsFetch] = useState(false)
@@ -56,8 +54,6 @@ const City =({match}) =>{
                
                const info = await data.json();
                setIsFetch(true)
-               await setInfo(info.data);
-               console.log(info)
                await setHeader(info.data[0].result_object)
                console.log(header)
    
