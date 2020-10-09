@@ -6,7 +6,6 @@ import tAdminAvatar from '../images/avatar-jelena.webp';
 import appAvatar from '../images/travel-and-tourism.png';
 import Rating from './Rating';
 import validateCommentForm from '../components/utils/validateCommentForm';
-//import useCommentForm from '../hooks/useCommentForm';
 import useForm from '../hooks/useForm';
 
 const initialValues = {    
@@ -59,14 +58,8 @@ const LeaveCommentForm = (props) =>{
          commentsArray.push(newCommentValues)   
          localStorage.setItem('commentsArray', JSON.stringify(commentsArray))
          props.handleOnClick()
-    }   
-    /*setLocationName(attractionResultObject.name);--
-      setLocationCommentId(attractionResultObject.location_id);-
-      setCommentId(attractionResultObject.location_id);--
-      setType(attractionResultObject.type);--
-      setLocationImage(attractionResultObject.locationImage);
-      setRating(attractionResultObject.rating);--
-      setNum_reviews(attractionResultObject.num_reviews);--*/
+    } 
+    
     return(
         <div className="user-comment">   
         <p>{console.log(props.user)}</p>         

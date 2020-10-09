@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import avatarImage from '../images/travel-and-tourism.png';
 import Button from '../components/Button';
 import CommentFromUsers from '../components/CommentFromUsers';
@@ -6,44 +6,30 @@ import useFetchComments from '../hooks/useFetchComments';
 import LeaveCommentForm from '../components/LeaveCommentForm';
 import createCommentArray from '../components/utils/createCommentsArray';
 
-
-
 const Attractions  = (props) =>{
     const [isCommentForm, setIsCommentForm] = useState(false);
-    const [locationName, setLocationName] = useState('');
     const [locationCommentId, setLocationCommentId] = useState(null);
-    const [commentId, setCommentId] = useState(null);
-    const [type, setType] = useState('');
-    const [locationImage, setLocationImage] = useState('');
-    const [rating, setRating] = useState(null);
-    const [num_reviews, setNum_reviews] = useState(null);
-    const [commentFromUser, setCommentFromUser] = useState({})
+    const [commentFromUser, setCommentFromUser] = useState({});    
     const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
     
-  const {query, comments, fetchComments, isLoading, isError} =  useFetchComments(submitted);
-  function submitted(){      
+    const {query, comments, fetchComments, isLoading, isError} =  useFetchComments(submitted);
+  
+    function submitted(){      
      const commentsArray = createCommentArray(query, comments)
       setCommentsFromLocalStorageAndFetchComments(commentsArray)
-  }
-  const openCommentForm = (attractionResultObject) => {
+    }
+
+    const openCommentForm = (attractionResultObject) => {
       setLocationCommentId(attractionResultObject.location_id);
       setCommentFromUser(attractionResultObject)
       console.log(attractionResultObject)
       setIsCommentForm(true)
-      
-      
+    }
 
-      /*setLocationName(attractionResultObject.name);
-      
-      setCommentId(attractionResultObject.location_id);
-      setType(attractionResultObject.type);
-      setLocationImage(attractionResultObject.locationImage);
-      setRating(attractionResultObject.rating);
-      setNum_reviews(attractionResultObject.num_reviews);*/
-  }
-const closeCommentForm = () =>{
+    const closeCommentForm = () =>{
     setIsCommentForm(false)
-}
+    }
+    
     return(
         <div>
         {console.log(props.attractions)}
