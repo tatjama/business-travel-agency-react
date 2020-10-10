@@ -11,16 +11,14 @@ const App = ()=>{
     const [isAuthenticating, setIsAuthenticating ] = useState(true);
     const [value] = useStateWithSessionStorage('logInUser')
 
-   function handleSignOut() {
-    // complete signOut from session    
+   function handleSignOut() {    
     sessionStorage.clear();    
     history.replace("/signin");
     setUserHasAuthenticated(false);
     alert('Sign Out');
 }
 
-useEffect(() => {
-     
+useEffect(() => {     
     onLoad();    
 }, [])
 
@@ -28,9 +26,7 @@ async function onLoad() {
     try {
         await 
         console.log('Is user in session?');
-       // console.log(value);
         if(value === ""){
-            console.log('No user in Session!')
             history.replace('/signin');
         }else{
             let user = JSON.parse(value);
@@ -84,8 +80,7 @@ async function onLoad() {
                         </>
                         : <>
                         <Link to="/signin"><li>Sign in</li></Link>
-                        <Link to="/signup"><li>Sign Up</li></Link>
-                        
+                        <Link to="/signup"><li>Sign Up</li></Link>                        
                         </>
                     }
                                     
@@ -98,6 +93,5 @@ async function onLoad() {
         </div>
     )
 }
-
 
 export default App;
