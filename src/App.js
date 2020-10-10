@@ -36,9 +36,14 @@ async function onLoad() {
             let user = JSON.parse(value);
             alert("user " + user.email + " is on session!")
             history.replace('/');
+            
+      //rk = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"     -t.g.c
+      //rk = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"       -t.m.p.b.c
             await setUserHasAuthenticated({
                 isAuthenticated:true,
-                logInUser: user
+                logInUser: user,
+                rk:"84a65184famshb001956fd650790p1710e5jsnf0ddc18f6e0e",// - dm
+                rkcc: "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
               })
         }
     } catch (error) {

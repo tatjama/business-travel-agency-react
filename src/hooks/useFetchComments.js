@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
+import {useAppContext} from '../libs/contextLib';
 
 const useFetchComments = (callback) => {
-    const rapidKey = "84a65184famshb001956fd650790p1710e5jsnf0ddc18f6e0e"
+    const { isUserAuthenticated} = useAppContext(); 
     const [comments, setComments] = useState([]);
     const [query, setQuery] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +19,7 @@ const useFetchComments = (callback) => {
              "method": "GET",
              "headers": {
                  "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                 "x-rapidapi-key": rapidKey
+                 "x-rapidapi-key": isUserAuthenticated.rk
          }
      })
      const comments = await data.json();

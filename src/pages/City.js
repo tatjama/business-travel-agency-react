@@ -26,12 +26,9 @@ const City =({match}) =>{
     const [isAirportsFetch, setIsAirportsFetch] = useState(false)
     const [airports, setAirports] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false)
+    const [isError, setIsError] = useState(false);
+    const {isUserAuthenticated} = useAppContext();
 
-   // const rapidKey = "3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411"     -t.g.c
-   //const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"       -t.m.p.b.c
-   const rapidKey = "84a65184famshb001956fd650790p1710e5jsnf0ddc18f6e0e"; //-dm
-      
     const fetchCityInformation = async() =>{
         setIsError(false)
         setIsLoading(true)
@@ -49,7 +46,7 @@ const City =({match}) =>{
                    "method": "GET",
                    "headers": {
                        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                       "x-rapidapi-key": rapidKey
+                       "x-rapidapi-key": isUserAuthenticated.rk
                    }
                })
                
@@ -88,7 +85,7 @@ const City =({match}) =>{
 	        "method": "GET",
 	        "headers": {
 		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		        "x-rapidapi-key": rapidKey
+		        "x-rapidapi-key": isUserAuthenticated.rk
 	        }
         })
         const restaurants = await data.json();    
@@ -134,7 +131,7 @@ const City =({match}) =>{
           "method": "GET",
           "headers": {
               "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-              "x-rapidapi-key": rapidKey
+              "x-rapidapi-key": isUserAuthenticated.rk
           }
       })
         const airports = await data.json();
@@ -179,8 +176,7 @@ const City =({match}) =>{
         alt: "airplane" ,
         go: "#airport"
     }]
-    const {isUserAuthenticated} = useAppContext();
-    console.log(isUserAuthenticated)
+    
     return(
         <div>     
              <header className="header" id="header-life" >
