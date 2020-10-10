@@ -7,6 +7,7 @@ import appAvatar from '../images/travel-and-tourism.png';
 import Rating from './Rating';
 import validateCommentForm from '../components/utils/validateCommentForm';
 import useForm from '../hooks/useForm';
+import { useAppContext } from '../libs/contextLib';
 
 const initialValues = {    
         travel_date: "",
@@ -16,10 +17,12 @@ const initialValues = {
 }
 
 const LeaveCommentForm = (props) =>{
+    const {isUserAuthenticated} = {useAppContext}
+    console.log(isUserAuthenticated)
     const [avatar, setAvatar] = useState(appAvatar);
 
     useEffect(() => {       
-       switch (props.user.logInUser.firstName) {
+       switch (isUserAuthenticated.logInUser.firstName) {
            case "Admin":
                setAvatar(adminAvatar)
                break;
@@ -33,7 +36,7 @@ const LeaveCommentForm = (props) =>{
                setAvatar(appAvatar)
                break;
        }
-    }, [props.user.logInUser.firstName])
+    }, [isUserAuthenticated.logInUser.firstName])
     
     const {values, errors, handleChange, handleSubmit, handleReset} 
     = useForm(submitted, validateCommentForm, initialValues)
@@ -41,10 +44,10 @@ const LeaveCommentForm = (props) =>{
      function submitted(){
         const d = new Date();
         const newId = Math.floor((Math.random()*100000000000) + 10000000)  + "user"
-        const newValues = {...values, published_date: d, id: newId,  
-                            user: {username: props.user.logInUser.firstName,
-                                    avatar: {small: {url: avatar}}
-            }}
+        const newValues = {...values, published_date: d, id: newId,  feedback: "new",
+                            user: {username: isUserAuthenticated.logInUser.firstName,
+                                    avatar: {small: {url: avatar}}},
+                         }
         const newCommentValues = {
             comment:newValues,
             result_object:{
@@ -62,10 +65,14 @@ const LeaveCommentForm = (props) =>{
     
     return(
         <div className="user-comment">   
-        <p>{console.log(props.user)}</p>         
+        <p>{console.log(isUserAuthenticated)}</p>         
             <form id = "leave-comment-form" onSubmit = {handleSubmit} noValidate>
                  <div className = "provider">                     
-                     <img className = "provider-logo" src = {props.info.photo.images.small.url} alt = {props.info.name}/>                    
+                     <img 
+                        className = "provider-logo" 
+                        src = {props.info.photo.images.small.url} 
+                        alt = {props.info.name}
+                    />                    
                     
                          <h2>Add feedback about <br/> {props.info.name}</h2>
                          <p>Location ID: {props.info.location_id}</p>
@@ -77,9 +84,13 @@ const LeaveCommentForm = (props) =>{
                      
                  </div>
                  <div className = "user">
-                     <img className = "avatar" src = {avatar} alt = {props.user.logInUser.firstName}/>
+                     <img 
+                        className = "avatar" 
+                        src = {avatar} 
+                        alt = {isUserAuthenticated.logInUser.firstName}
+                    />
                  <p>Author:
-                     <br/><span>{props.user.logInUser.firstName + " " + props.user.logInUser.lastName}</span></p>
+                     <br/><span>{isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}</span></p>
                
                 </div>
                 Travel date:

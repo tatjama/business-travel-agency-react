@@ -17,6 +17,7 @@ const Attractions  = (props) =>{
     function submitted(){      
      const commentsArray = createCommentArray(query, comments)
       setCommentsFromLocalStorageAndFetchComments(commentsArray)
+      
     }
 
     const openCommentForm = (resultObject) => {
@@ -80,7 +81,6 @@ const Attractions  = (props) =>{
                                  isCommentForm &&
                                     <LeaveCommentForm
                                         handleOnClick = {closeCommentForm}
-                                        user = {props.user}
                                         info = {commentFromUser}
                                     />
                                 }
@@ -90,6 +90,7 @@ const Attractions  = (props) =>{
                                 :
                                 (query === attraction.result_object.location_id) &&
                             <div>
+                                {console.log(commentsFromLocalStorageAndFetchComments)}
                              {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>

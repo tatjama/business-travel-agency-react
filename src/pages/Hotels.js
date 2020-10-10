@@ -82,7 +82,6 @@ const Hotels = (props) =>{
                                  isCommentForm &&
                                     <LeaveCommentForm
                                         handleOnClick = {closeCommentForm}
-                                        user = {props.user}
                                         info = {commentFromUser}
                                     />
                                 }
