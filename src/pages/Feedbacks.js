@@ -13,7 +13,7 @@ const Feedbacks = ()=>{
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated);
     const [comments, setComments] = useState([]);  
-    const rapidKey = "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+    const rapidKey = "84a65184famshb001956fd650790p1710e5jsnf0ddc18f6e0e"
 
     const fetchComments = async () => {
        // setId(props.restaurants.location_id)

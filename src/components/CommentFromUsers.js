@@ -8,9 +8,17 @@ const CommentFromUsers = (props) =>{
     console.log( isUserAuthenticated)   
 
     const deleteComment = (id) => {
-        (window.confirm(`Do you want to delete ${id} comment?`))
-                    ?console.log(`You want to delete ${id} comment`)
-                    : console.log(`You don't want to delete ${id} comment`)
+        if(window.confirm(`Do you want to delete ${id} comment?`))
+                    {const commentsArray = JSON.parse(localStorage.getItem('commentsArray'))
+                    function findCommentById(comment){
+                        return comment.comment.id !== id                        
+                    }
+                    const comments = commentsArray.filter(findCommentById)
+                    localStorage.removeItem('commentsArray');
+                    localStorage.setItem('commentsArray', JSON.stringify(comments))
+                    alert(`You removed ${id} comment `)
+                    }
+                    else{alert(`You didn't remove ${id} comment`)} 
     }
     return(
         <div className="comment" id= {props.comment.id}>       
