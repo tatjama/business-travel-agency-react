@@ -1,7 +1,17 @@
 import React from 'react';
+import Button from './Button';
 import Rating from './Rating';
+import {useAppContext} from '../libs/contextLib';
 
 const CommentFromUsers = (props) =>{
+    const { isUserAuthenticated} = useAppContext();      
+    console.log( isUserAuthenticated)   
+
+    const deleteComment = (id) => {
+        (window.confirm(`Do you want to delete ${id} comment?`))
+                    ?console.log(`You want to delete ${id} comment`)
+                    : console.log(`You don't want to delete ${id} comment`)
+    }
     return(
         <div className="comment" id= {props.comment.id}>       
         <div className="user">
@@ -18,12 +28,14 @@ const CommentFromUsers = (props) =>{
         <div className="range">
             <div>
                 <span className="heading">User Rating: {props.comment.rating} </span>
-                <Rating rate = {parseInt(props.comment.rating)}/>
-               
+                <Rating rate = {parseInt(props.comment.rating)}/>               
             </div>
-            <br/><br/>
-            <input type="checkbox"/> 
-            <span>Choose comment</span>
+            <br/><br/>{(props.comment.feedback === "new")
+            && (isUserAuthenticated.logInUser.status === 1)
+            && <Button
+                name = "Delete Comment"
+                handleOnClick = {() => {deleteComment(props.comment.id)}}
+            />}
         </div>
     </div>
     )
