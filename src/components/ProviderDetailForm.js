@@ -11,17 +11,12 @@ const initValuesForProvider = {
 }
 
 const ProviderDetailForm = () =>{
-    const [isFormOpen, setIsFormOpen] = useState(true)
-    function closeProviderEdit() {
-        alert('Close provider Edit')
-        setIsFormOpen(false)
-    }
+    
     return(
         
         <form className="show-provider-edit " id="showEditProvider" >
                             <hr style={{"border":"3px solid #f1f1f1 "}}/>
-        {isFormOpen                
-        && <div className="provider-detail-form " id="providerDetail">
+         <div className="provider-detail-form " id="providerDetail">
             <div className="left ">
                 <p>Type:</p>
                              <br/>
@@ -47,11 +42,10 @@ const ProviderDetailForm = () =>{
                 
             </div>
             <div>
-            <button onClick={closeProviderEdit}>Close Edit</button>
                 <button type="submit">Submit</button>
             </div>
         </div>
-        }
+    
         </form>
     )
 }

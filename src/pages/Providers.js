@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SelectForm from '../components/SelectForm';
 import ProviderHeading from '../components/ProviderHeading';
 import ProviderDetail from '../components/ProviderDetail';
 import ProviderDetailForm from '../components/ProviderDetailForm';
 import {useAppContext} from '../libs/contextLib';
+import Button from '../components/Button';
+
+const initialButtonName = "Show Details";
 
 const Providers = ()=>{
     const [isShowDetail, setIsShowDetail] = useState(false)
@@ -12,12 +15,11 @@ const Providers = ()=>{
     console.log( isUserAuthenticated)
 
     function showProviderDetail(){
-        alert("Show provider detail")
-        setIsShowDetail(true)
+        (isShowDetail === false)? setIsShowDetail(true): setIsShowDetail(false)      
     }
+   
     function showProviderEdit(){
-        alert ("Show provider Edit")
-        setIsShowEdit(true)
+        (isShowEdit === false)? setIsShowEdit(true): setIsShowEdit(false)
     }
      
     return(
@@ -34,8 +36,14 @@ const Providers = ()=>{
                         <div className="provider-div ">
                             <ProviderHeading/>                            
                             <div>
-                                <button onClick={showProviderDetail}> Details</button>
-                                <button onClick={showProviderEdit} >Edit</button>
+                                <Button
+                                    name = "Details"
+                                    handleOnClick={showProviderDetail}
+                                />
+                                <Button
+                                    name = "Edit"
+                                    handleOnClick = {showProviderEdit}
+                                />
                             </div>
                             {isShowDetail && <ProviderDetail/>}
                             {isShowEdit && <ProviderDetailForm/>}                          
