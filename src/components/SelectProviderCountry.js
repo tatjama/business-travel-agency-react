@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SelectTypeOfProvider = (props) =>{
+const SelectProviderCountry = (props) =>{
    //console.log(props)   
    
     return(
@@ -8,16 +8,16 @@ const SelectTypeOfProvider = (props) =>{
             name = {props.name} 
             id = {props.name} 
             onChange={props.handleChange} 
-            autoFocus = {props.autoFocus} 
+            autoFocus = {props.autoFocus}             
             className = "select-provider"
         >       
                         {props.optionArray.map((option) =>{
     return(
         <option 
-            value = {option} 
-            key = {option} 
-            id = {option}>
-                {option}
+            value = {option.name} 
+            key = {option.id} 
+            id = {option.id}>
+                {option.name}
         </option>
     )
    })}
@@ -26,4 +26,4 @@ const SelectTypeOfProvider = (props) =>{
     )
 }
 
-export default SelectTypeOfProvider;
+export default SelectProviderCountry;

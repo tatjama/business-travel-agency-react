@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import useForm from '../hooks/useForm';
 import validateProviderDetailForm from './utils/validateProviderDetailForm';
 import SelectTypeOfProvider from './SelectTypeOfProvider';
+import SelectProviderCountry from './SelectProviderCountry';
+import {countriesArray} from './data/countries.json';
 
 const initValuesForProvider = {
     type: "",
@@ -13,6 +15,7 @@ const initValuesForProvider = {
     text: "",
 }
 const typeArray = ["Airplane", "Bus", "Train", "Taxi","Rent a car", "Company car"];
+const countries = countriesArray;
 
 const ProviderDetailForm = () =>{
     const [isSuccess, setIsSuccess] = useState(false);  
@@ -23,8 +26,11 @@ const ProviderDetailForm = () =>{
   function submitted() {
     alert('Submitted successfully');
     setIsSuccess(true);
-    console.log(isSuccess)
     console.log(values);
+    let providersInLocalStorageArray = [];
+    providersInLocalStorageArray = JSON.parse(localStorage.getItem('providersArray')) || [];
+    providersInLocalStorageArray.push(values);
+    localStorage.setItem('providersArray', JSON.stringify(providersInLocalStorageArray))
   }
 
     return(        
@@ -38,7 +44,10 @@ const ProviderDetailForm = () =>{
                    optionArray = {typeArray}
                    autoFocus = {true}
                    name = "type"
+                   required = {true}
+                   placeholder = "Choose type of transport"
                 />
+                {errors.type && <p className = "error-message-comment">{errors.type}</p>}
                              <br/>
                               
                 <p>Provider name:</p>
@@ -54,8 +63,27 @@ const ProviderDetailForm = () =>{
                 />
                 {errors.name && <p className = "error-message-comment">{errors.name}</p>}
                 
-                <p>Country:</p><input type="text"/>
-                <p>City:</p><input type="text"/>
+                <p>Country:</p>
+                <SelectProviderCountry
+                   handleChange = {handleChange}
+                   optionArray = {countries}
+                   name = "country"
+                   required = {true}
+                   placeholder = "Choose country"
+                />
+                {errors.country && <p className = "error-message-comment">{errors.country}</p>}
+                <p>City:</p>
+                <input 
+                    type="text"
+                    name = "city"
+                    className = {`${errors.city && "inputError"}`}
+                    placeholder = "City"
+                    id = "provider-form-city"
+                    value = {values.city}
+                    onChange = {handleChange}
+                    required = {true}
+                />
+                {errors.city && <p className = "error-message-comment">{errors.city}</p>}
                 <p>Address:</p>
                 <input 
                     type="text"
