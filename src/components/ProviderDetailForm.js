@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import useForm from '../hooks/useForm';
 import validateProviderDetailForm from './utils/validateProviderDetailForm';
+import SelectTypeOfProvider from './SelectTypeOfProvider';
 
 const initValuesForProvider = {
     type: "",
@@ -9,15 +10,15 @@ const initValuesForProvider = {
     city: "",
     address: "",
     phone: "",
-    aboutProvider: "",
+    text: "",
 }
+const typeArray = ["Airplane", "Bus", "Train", "Taxi","Rent a car", "Company car"];
 
 const ProviderDetailForm = () =>{
+    const [isSuccess, setIsSuccess] = useState(false);  
 
     const { values, handleChange, handleSubmit, handleReset, errors } 
-  = useForm(submitted, validateProviderDetailForm, initValuesForProvider);
-
-  const [isSuccess, setIsSuccess] = useState(false);    
+  = useForm(submitted, validateProviderDetailForm, initValuesForProvider);    
   
   function submitted() {
     alert('Submitted successfully');
@@ -32,37 +33,14 @@ const ProviderDetailForm = () =>{
          <div className="provider-detail-form " id="providerDetail">
             <div className="left ">
                 <p>Type:</p>
+                <SelectTypeOfProvider 
+                   handleChange = {handleChange}
+                   optionArray = {typeArray}
+                   autoFocus = {true}
+                   name = "type"
+                />
                              <br/>
-                <input list="typeProvider" name="typeProvider"/>
-                <datalist id="typeProvider">       
-                <option value="Airplane"/>
-                                            <option 
-                                                name = "type"
-                                                value="Bus"
-                                                onChange = {handleChange}
-                                            />
-                                            <option 
-                                                value="Company car"
-                                                name = "type"
-                                                onChange = {handleChange}
-                                            />
-                                            <option 
-                                                name = "type"
-                                                value="Rent a car"
-                                                onChange = {handleChange}
-                                            />
-                                            <option 
-                                                name = "type"
-                                                value="Train"
-                                                onChange = {handleChange}
-                                            />
-                                            <option 
-                                                name = "type"
-                                                value="Taxi"
-                                                onChange = {handleChange}
-                                            />  
-                </datalist>
-                               
+                              
                 <p>Provider name:</p>
                 <input 
                     type="text"
