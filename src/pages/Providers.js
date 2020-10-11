@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SelectForm from '../components/SelectForm';
 import ProviderHeading from '../components/ProviderHeading';
 import ProviderDetail from '../components/ProviderDetail';
@@ -6,8 +6,19 @@ import ProviderDetailForm from '../components/ProviderDetailForm';
 import {useAppContext} from '../libs/contextLib';
 
 const Providers = ()=>{
+    const [isShowDetail, setIsShowDetail] = useState(false)
+    const [isShowEdit, setIsShowEdit] = useState(false)
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated)
+
+    function showProviderDetail(){
+        alert("Show provider detail")
+        setIsShowDetail(true)
+    }
+    function showProviderEdit(){
+        alert ("Show provider Edit")
+        setIsShowEdit(true)
+    }
      
     return(
         <div className="page-providers">
@@ -21,15 +32,14 @@ const Providers = ()=>{
                     <h1>Provider list:</h1>
                     <div className="middle-wrapper ">
                         <div className="provider-div ">
-                            <ProviderHeading/>
-                            <div className="show-provider-detail " id="showProviderDetail ">
-                                <hr style={{"border":"3px solid #f1f1f1 "}}/>
-                                 <ProviderDetail/>
+                            <ProviderHeading/>                            
+                            <div>
+                                <button onClick={showProviderDetail}> Details</button>
+                                <button onClick={showProviderEdit} >Edit</button>
                             </div>
-                        <form className="show-provider-edit " id="showEditProvider" >
-                            <hr style={{"border":"3px solid #f1f1f1 "}}/>
-                            <ProviderDetailForm/>                            
-                        </form>
+                            {isShowDetail && <ProviderDetail/>}
+                            {isShowEdit && <ProviderDetailForm/>}                          
+                        
                         </div>
                     </div>
                 </div>
