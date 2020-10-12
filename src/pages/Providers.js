@@ -39,22 +39,15 @@ const Providers = ()=>{
                     </div>
                 }
                     <h1>Provider list:</h1>
-                    <ProviderInfo                        
-                        info = {providersInfoArray[0]}
-                        key = {providersInfoArray[0].id}
-                        id = {providersInfoArray[0].id}
-                    />
-                    <ProviderInfo
-                        info = {providersInfoArray[1]}
-                        key = {providersInfoArray[1].id}
-                        id = {providersInfoArray[1].id}
-                    />
-                    <ProviderInfo
-                        info = {providersInfoArray[2]}
-                        key = {providersInfoArray[2].id}
-                        id = {providersInfoArray[2].id}
-                    />
-                    
+                    {providersInfoArray.map((provider) => {
+                        return(
+                            <ProviderInfo
+                                info = {provider}
+                                key = {provider.id}
+                                id = {provider.id}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         </div>
