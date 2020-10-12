@@ -5,6 +5,15 @@ import Button from '../components/Button';
 import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
 
+const initValuesForProvider = {
+    type: "",
+    name: "",
+    country: "",
+    city: "",
+    address: "",
+    phone: "",
+    text: "",
+}
 
 const Providers = ()=>{
     const [newProvider, setNewProvider] = useState(false)
@@ -25,16 +34,15 @@ const Providers = ()=>{
                 handleOnClick = {showNewProviderForm}
             />
             </header>
-
-            <div className="wrapper">
-                
+            <div className="wrapper">                
                 <div id="showTransportation">
                 {newProvider 
                 && <div className = "middle-wrapper">
-                        <h1>Add new provider:</h1>
-                            
+                        <h1>Add new provider:</h1>                            
                             <div className="provider-div ">
-                                <ProviderDetailForm/>
+                                <ProviderDetailForm
+                                    initValues = {initValuesForProvider}
+                                />
                             </div>
                     </div>
                 }

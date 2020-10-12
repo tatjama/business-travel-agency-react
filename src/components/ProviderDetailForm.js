@@ -5,23 +5,14 @@ import SelectTypeOfProvider from './SelectTypeOfProvider';
 import SelectProviderCountry from './SelectProviderCountry';
 import {countriesArray} from './data/countries.json';
 
-const initValuesForProvider = {
-    type: "",
-    name: "",
-    country: "",
-    city: "",
-    address: "",
-    phone: "",
-    text: "",
-}
 const typeArray = ["Airplane", "Bus", "Train", "Taxi","Rent a car", "Company car"];
 const countries = countriesArray;
 
-const ProviderDetailForm = () =>{
+const ProviderDetailForm = (props) =>{
     const [isSuccess, setIsSuccess] = useState(false);  
 
     const { values, handleChange, handleSubmit, handleReset, errors } 
-  = useForm(submitted, validateProviderDetailForm, initValuesForProvider);    
+  = useForm(submitted, validateProviderDetailForm, props.initValues);    
   
   function submitted() {
     alert('Submitted successfully');
@@ -100,8 +91,8 @@ const ProviderDetailForm = () =>{
                 <input 
                                   type="number" 
                                   name="phone" 
-                                  minLength="11" 
-                                  maxLength="15" 
+                                  minLength="8" 
+                                  maxLength="35" 
                                   className = {`${errors.phone && "inputError"}`}
                                   placeholder=" Phone 1 - (required)" 
                                   id="phone1"   

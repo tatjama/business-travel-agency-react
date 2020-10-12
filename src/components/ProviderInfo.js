@@ -40,6 +40,7 @@ const ProviderInfo = (props) =>{
                             && (props.id === props.info.id)
                             && <ProviderDetailForm
                                 info = {props.info}
+                                initValues = {props.info}
                                 />}                          
                         
                         </div>
