@@ -282,11 +282,15 @@ button:hover {
     margin: 4px;
     width: 100%;
 } 
-.choose-city button {
+.choose-city button{
     width: 200px;
     margin: 5px;
 }
 
+#header-providers button{
+    width: 200px;
+    margin: 80px 0px;
+}
 
     /*WRAPPER*/      
     .wrapper {
@@ -414,7 +418,8 @@ margin: 40px;
     display: flex;
     justify-content: space-around;  
 }
-.data-info p{
+.data-info p,
+.provider-heading p{
     font-weight: bold;
 }
 .data-info div p{
@@ -422,7 +427,8 @@ margin: 40px;
     font-size: medium;
 }
 
-.data-info p span{
+.data-info p span,
+.provider-heading p span{
     color: rgb(23, 88, 88);
     font-weight: bold;
 }
@@ -455,6 +461,12 @@ flex-wrap: wrap;
 padding: 10px;
 }
 
+
+.provider-logo {
+    height: 50px;
+    }
+    
+
 .fa {
 font-size: 25px;
 }
@@ -463,9 +475,6 @@ font-size: 25px;
 color: darkcyan;
 }
 
-.provider-logo {
-height: 240px;
-}
 
 .left,
 .right {
@@ -589,7 +598,7 @@ input[type="radio"] {
                 font-size: 1.2em;
             }
             .provider-logo {
-                height: 100px;
+                height: 40px;
                 
             }
             .provider-div,

@@ -1,25 +1,25 @@
 import React from 'react';
-import logoAirplane from '../images/logoavio1.webp';;
 
-const ProviderHeading = () =>{
+
+const ProviderHeading = (props) =>{
    
     return(
         <div className="provider-heading ">
             <div className="left">
-                <img className="provider-logo " src={logoAirplane} alt = "Air Serbia logo"/>
-                <h2>Provider name: AirSerbia
-                                    <br/>
-                Type: Airplane
-                </h2>
+                <img className="provider-logo " src={props.src} alt = {props.name}/>
+                
             </div>
             <div className="right">
+                <p>Provider name:<span> {props.info.name}</span></p>                                    
+                <p>Type: <span>{props.info.type}</span></p>
+                <br/>
                 <span className="heading ">User Rating</span>
                 <span className="fa fa-star checked "></span>
                 <span className="fa fa-star checked "></span>
                 <span className="fa fa-star checked "></span>
                 <span className="fa fa-star "></span>
                 <span className="fa fa-star "></span>
-                <p>4.1 average based on 254 reviews.</p>
+                <p>{props.info.rating} average based on {props.info.num_review} reviews.</p>
                 
             </div>
             

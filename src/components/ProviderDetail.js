@@ -1,25 +1,22 @@
 import React, {useState} from 'react';
 
-const ProviderDetail = () =>{
+const ProviderDetail = (props) =>{
     
     return(
     <div className="show-provider-detail " id="showProviderDetail ">
                     <hr style={{"border":"3px solid #f1f1f1 "}}/>
      <div className="provider-detail " id="providerDetail">
             <div className="left ">
-                <p>Name: AirSerbia</p>
-                <p>Country: Serbia</p>
-                <p>City: Belgrade</p>
-                <p>Adress: Bulevar umetnosti bb</p>
-                <p>Phone:+381-11-444-444</p>
-                <p>Contact:</p>
+                <p>Name: {props.info.name}</p>
+                <p>Country: {props.info.country}</p>
+                <p>City: {props.info.city}</p>
+                <p>Address: {props.info.address}</p>
+                <p>Phone: {props.info.phone}</p>
+                <p>Contact:{props.info.contact}</p>
             </div>
             <div className="right ">
                 <h3>About company</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus neque et nulla dictum, ac scelerisque quam ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam volutpat
-                viverra dolor, ac efficitur libero commodo ac. Nam venenatis sodales sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis sed libero et purus feugiat blandit. Cras egestas lectus sit amet
-                faucibus maximus. Proin non nulla lectus.
-                </p>
+                <p>{props.info.text}</p>
                 
             </div>
         </div>
