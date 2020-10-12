@@ -6,6 +6,7 @@ import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
 
 const initValuesForProvider = {
+    id: "",
     type: "",
     name: "",
     country: "",

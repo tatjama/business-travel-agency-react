@@ -17,11 +17,16 @@ const ProviderDetailForm = (props) =>{
   function submitted() {
     alert('Submitted successfully');
     setIsSuccess(true);
-    console.log(values);
+    values.id = values.name;
     let providersInLocalStorageArray = [];
-    providersInLocalStorageArray = JSON.parse(localStorage.getItem('providersArray')) || [];
-    providersInLocalStorageArray.push(values);
-    localStorage.setItem('providersArray', JSON.stringify(providersInLocalStorageArray))
+    providersInLocalStorageArray = JSON.parse(localStorage.getItem('providersArray'));
+    function findProviderById(provider){
+        return provider.id !== values.id
+    }
+    const providers = providersInLocalStorageArray.filter(findProviderById)
+    localStorage.removeItem('providersArray')
+    providers.push(values);
+    localStorage.setItem('providersArray', JSON.stringify(providers))
   }
 
     return(        
@@ -101,7 +106,7 @@ const ProviderDetailForm = (props) =>{
                                   required = {true}
                                 />
                                  { errors.phone && <p className="error-message-comment">{errors.phone}</p>}
-                                
+                            
             </div>
             <div className="right ">
                 <h3>About company</h3>
