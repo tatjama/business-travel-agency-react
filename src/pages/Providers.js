@@ -19,7 +19,7 @@ const Providers = ()=>{
 
    
     const providersInfoArray = [
-        {
+        {   id: "airserbia",
             name: "Air Serbia",
             type: "Airplane",
             rating: "5",
@@ -39,7 +39,7 @@ const Providers = ()=>{
              Air Serbia has been a member of the International Air Transport Association 
              (IATA) since 1961.`
         },
-        {
+        {   id: "wizzair",
             name: "Wizz Air",
             type: "Airplane",
             rating: "5",
@@ -51,7 +51,7 @@ const Providers = ()=>{
             contact: "0900 232 321",
             text: `Wizz Air is continuously looking for opportunities to expand its network of destinations and provide low-cost air transport. We are committed to achieving the lowest cost base in the Central and Eastern European region and airport choice has a crucial impact. This is why we fly to a mix of primary, secondary and regional airports, providing friendly and fast customer service for low costs, which are reflected in WIZZ fares. We are in constant negotiations to establish a network of operations at more airports.`
         },
-        {
+        {   id: "aeroflot",
             name: "Aeroflot",
             type: "Airplane",
             rating: "5",
@@ -91,14 +91,20 @@ const Providers = ()=>{
                     <ProviderInfo
                         image = {logoAirSerbia}
                         info = {providersInfoArray[0]}
+                        key = {providersInfoArray[0].id}
+                        id = {providersInfoArray[0].id}
                     />
                     <ProviderInfo
                         image = {logoWizz}
                         info = {providersInfoArray[1]}
+                        key = {providersInfoArray[1].id}
+                        id = {providersInfoArray[1].id}
                     />
                     <ProviderInfo
                         image = {logoAeroflot}
                         info = {providersInfoArray[2]}
+                        key = {providersInfoArray[2].id}
+                        id = {providersInfoArray[2].id}
                     />
                     
                 </div>

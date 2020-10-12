@@ -33,10 +33,12 @@ const ProviderInfo = (props) =>{
                                 />
                             </div>
                             {isShowDetail 
+                            && (props.id === props.info.id)
                             && <ProviderDetail
                                     info = {props.info}
                                 />}
                             {isShowEdit 
+                            && (props.id === props.info.id)
                             && <ProviderDetailForm
                                 info = {props.info}
                                 />}                          
