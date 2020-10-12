@@ -70,13 +70,19 @@ async function onLoad() {
                         <li onClick = {handleSignOut}>Sign Out</li>
                         <Link to="/"><li className="active">Home</li></Link>
                     <Link to="/life"><li>Life ...</li></Link>
-                    <Link to="/accommodation"> <li>Accommodation</li></Link>
-                    <Link to="/enjoy"><li >Enjoy ...</li></Link>
-                    <Link to="/feedbacks"><li >Feedbacks</li> </Link>
-                    <Link to="/providers"><li id="providers" to="/providers">Providers</li></Link>
-                    <li className="icon" onClick={openNavHamburger}>
+                    {/*<Link to="/accommodation"> <li>Accommodation</li></Link>*/}
+                    <Link to="/enjoy"><li >Enjoy</li></Link>
+                    {
+                        (isUserAuthenticated.logInUser.status == 0)
+                        && <Link to="/feedbacks"><li >Feedbacks</li> </Link>
+}                    {
+                        (isUserAuthenticated.logInUser.status == 1) 
+                        && <Link to="/providers"><li id="providers" to="/providers">Providers</li></Link>
+                    }
+                    
+                    {/*<li className="icon" onClick={openNavHamburger}>
                         <i className="fa fa-bars"></i>
-                    </li>
+                    </li>*/}
                         </>
                         : <>
                         <Link to="/signin"><li>Sign in</li></Link>

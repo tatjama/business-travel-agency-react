@@ -18,8 +18,8 @@ export default function Routes() {
             <Route path = "/signIn"  component = {SignIn}/>  
             <Route path = "/signup" component = {SignUp} />
             <Route path = "/" exact  component = {Home}/>         
-            <Route path = "/life" component = {Life} />
-            <Route path = "/accommodation" component = {Accommodation}/>
+            <Route path = "/life" component = {City} />
+           {/* <Route path = "/accommodation" component = {Accommodation}/>*/}
             <Route path = "/enjoy" component = {Enjoy}/>
             <Route path = "/feedbacks" component = {Feedbacks} />
             <Route path = "/providers" component = {Providers} />   
