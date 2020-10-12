@@ -23,17 +23,13 @@ const LeaveCommentForm = (props) =>{
 
     useEffect(() => {       
        switch (isUserAuthenticated.logInUser.firstName) {
-           case "Admin":
-               setAvatar(adminAvatar)
+           case "Admin": setAvatar(adminAvatar)
                break;
-            case "User":
-                setAvatar(userAvatar)
+            case "User": setAvatar(userAvatar)
                 break;
-            case "Tanja":
-                setAvatar(tAdminAvatar)
+            case "Tanja": setAvatar(tAdminAvatar)
                 break;              
-           default:
-               setAvatar(appAvatar)
+           default:  setAvatar(appAvatar)
                break;
        }
     }, [isUserAuthenticated.logInUser.firstName])

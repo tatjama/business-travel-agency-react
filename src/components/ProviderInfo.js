@@ -19,7 +19,6 @@ const ProviderInfo = (props) =>{
         <div className="middle-wrapper ">
                         <div className="provider-div ">
                             <ProviderHeading
-                                src = {props.image}
                                 info = {props.info}
                             />                            
                             <div>
