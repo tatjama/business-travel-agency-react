@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ProviderDetailForm from '../components/ProviderDetailForm';
 import {useAppContext} from '../libs/contextLib';
 import Button from '../components/Button';
@@ -17,7 +17,21 @@ const initValuesForProvider = {
 
 const Providers = ()=>{
     const [newProvider, setNewProvider] = useState(false)
-    const providersInfoArray = providersInfo
+    const [providersInfoArray, setProvidersInfoArray] = useState(providersInfo)
+    let newProvidersInfoArrayFromLocalStorage = []
+    const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray')) || []
+    useEffect(() => {
+       
+    if(providersInfoArrayFromLocalStorage.length === 0){
+        localStorage.setItem('providersArray', JSON.stringify(providersInfoArray))
+        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
+    } else{
+        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
+    }
+    setProvidersInfoArray(newProvidersInfoArrayFromLocalStorage)
+    console.log(providersInfoArray)
+    }, [])
+
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated)
 
