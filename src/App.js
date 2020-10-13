@@ -73,10 +73,10 @@ async function onLoad() {
                     {/*<Link to="/accommodation"> <li>Accommodation</li></Link>*/}
                     <Link to="/enjoy"><li >Enjoy</li></Link>
                     {
-                        (isUserAuthenticated.logInUser.status == 0)
+                        (isUserAuthenticated.logInUser.status === 0)
                         && <Link to="/feedbacks"><li >Feedbacks</li> </Link>
 }                    {
-                        (isUserAuthenticated.logInUser.status == 1) 
+                        (isUserAuthenticated.logInUser.status === 1) 
                         && <Link to="/providers"><li id="providers" to="/providers">Providers</li></Link>
                     }
                     

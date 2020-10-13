@@ -1,66 +1,24 @@
-import React, {useState} from 'react';
-import SelectForm from '../components/SelectForm';
-import SectionFirst from '../components/SectionFirst';
+import React, {useState, useEffect} from 'react';
 import {useAppContext} from '../libs/contextLib';
-import Button from '../components/Button';
-import CommentFromUsers from '../components/CommentFromUsers';
-import breakfast from '../images/breakfast.webp';
-import hotel from '../images/accomodation.webp';
-import world from '../images//world.webp';
+import ProviderInfo from '../components/ProviderInfo';
+import providersInfo from '../components/data/providersInfo';
 
-
-const Feedbacks = ()=>{
+const Feedbacks = ()=>{    
+    const [providersInfoArray, setProvidersInfoArray] = useState(providersInfo)
+    let newProvidersInfoArrayFromLocalStorage = []
+    const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray')) || []
+    useEffect(() => {       
+    if(providersInfoArrayFromLocalStorage.length === 0){
+        localStorage.setItem('providersArray', JSON.stringify(providersInfoArray))
+        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
+    } else{
+        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
+    }
+    setProvidersInfoArray(newProvidersInfoArrayFromLocalStorage)
+    console.log(providersInfoArray)
+    }, [])
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated);
-    const [comments, setComments] = useState([]);  
-
-    const fetchComments = async () => {
-        const data = await
-        fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&lang=
-        en_US&location_id=3729577`, {
-	        "method": "GET",
-	        "headers": {
-		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		        "x-rapidapi-key": isUserAuthenticated.rk
-	    }
-    })
-    const comments = await data.json();
-    await setComments(comments.data);
-    console.log(comments);       
- }
- const fetchRestaurantInformation = () =>{
-     alert("restaurant info")
- }
- const fetchHotelsInformation = () =>{
-     alert("hotels info")
- }
- const fetchAttractionsInformation = () =>{
-     alert("attractions info")
- }
- const figureProps =  [
-    {
-        name: "Restaurants", 
-        source: breakfast,
-        handleOnClick: fetchRestaurantInformation,
-        alt: "breakfast" ,
-        go: "#food"
-    },
-    {
-        name: "Hotels", 
-        source: hotel, 
-        handleOnClick: fetchHotelsInformation,
-        alt: "friends hands" ,
-        go: "#safety"
-    },
-    {
-        name: "Attractions" ,
-        source: world, 
-        handleOnClick: fetchAttractionsInformation,
-        alt: "world" ,
-        go: "#culture"
-    }]
-    
-    
 
     return(
         <div className="page-feedback">
@@ -68,32 +26,24 @@ const Feedbacks = ()=>{
                 <div id="message" style={{"color": "rgb(29, 150, 187)"}}>
                     Add comment {isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}
                 </div>
-                <SelectForm/>
-            </header>
-            <div className="wrapper" >
-                <h3>Feedback</h3>
-                <SectionFirst info = {figureProps}/>
-                <div >                                 
-                    <Button 
-                        name = "See Comments"
-                        handleOnClick = {fetchComments} 
-                    />          
-                    {comments.map((comment) => {
-                                return(
-                                    <div key = {comment.id}>
-                                        <CommentFromUsers comment = {comment}/>
-                                   </div>
-                                )
-                            })}
-                </div> 
-            <h2>TOP ADVISER </h2>
-                <section>
-                    
-                    
-                </section>        
-            </div>
+            </header>            
+                <h3>Feedback about Providers</h3>           
 
+            <div className="wrapper">                
+                <div id="showTransportation">
 
+                    <h1>Provider list:</h1>
+                    {providersInfoArray.map((provider) => {
+                        return(
+                            <ProviderInfo
+                                info = {provider}
+                                key = {provider.id}
+                                id = {provider.id}
+                            />
+                        )
+                    })}
+                </div>
+            </div>    
         </div>
     )
 }

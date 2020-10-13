@@ -3,10 +3,13 @@ import ProviderHeading from './ProviderHeading';
 import ProviderDetail from './ProviderDetail';
 import ProviderDetailForm from './ProviderDetailForm';
 import Button from './Button';
+import {useAppContext} from '../libs/contextLib';
 
 const ProviderInfo = (props) =>{
     const [isShowDetail, setIsShowDetail] = useState(false)
     const [isShowEdit, setIsShowEdit] = useState(false)
+    const [isShowCommentForm, setIsShowCommentForm] = useState(false)
+    const {isUserAuthenticated} = useAppContext();
     
     function showProviderDetail(){
         (isShowDetail === false)? setIsShowDetail(true): setIsShowDetail(false)      
@@ -14,6 +17,10 @@ const ProviderInfo = (props) =>{
    
     function showProviderEdit(){
         (isShowEdit === false)? setIsShowEdit(true): setIsShowEdit(false)
+    }
+
+    function leaveComment(){
+        (isShowCommentForm === false)? setIsShowCommentForm(true): setIsShowCommentForm(false)
     }
     return(
         <div className="middle-wrapper ">
@@ -26,10 +33,18 @@ const ProviderInfo = (props) =>{
                                     name = "Details"
                                     handleOnClick={showProviderDetail}
                                 />
-                                <Button
+                                {(isUserAuthenticated.logInUser.status === 1)
+                                && <Button
                                     name = "Edit"
                                     handleOnClick = {showProviderEdit}
-                                />
+                                />}
+                                {
+                                    (isUserAuthenticated.logInUser.status === 0)
+                                    && <Button
+                                        name = "Leave comment"
+                                        handleOnClick = {leaveComment}
+                                    />
+                                }
                             </div>
                             {isShowDetail 
                             && (props.id === props.info.id)
@@ -42,7 +57,13 @@ const ProviderInfo = (props) =>{
                                 info = {props.info}
                                 initValues = {props.info}
                                 />}                          
-                        
+                            {isShowCommentForm
+                            && (props.id === props.info.id)
+                            && <div>
+                                Leave comment...
+                            </div>
+
+                            }
                         </div>
                     </div>
     )

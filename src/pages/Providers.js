@@ -21,8 +21,7 @@ const Providers = ()=>{
     const [providersInfoArray, setProvidersInfoArray] = useState(providersInfo)
     let newProvidersInfoArrayFromLocalStorage = []
     const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray')) || []
-    useEffect(() => {
-       
+    useEffect(() => {       
     if(providersInfoArrayFromLocalStorage.length === 0){
         localStorage.setItem('providersArray', JSON.stringify(providersInfoArray))
         newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
