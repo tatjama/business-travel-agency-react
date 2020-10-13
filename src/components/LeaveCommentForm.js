@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-//import RangeDiv from './RangeDiv';
 import adminAvatar from '../images/avatar-ivana.jpg';
 import userAvatar from '../images/avatar-dragan.webp';
 import tAdminAvatar from '../images/avatar-jelena.webp';

@@ -1,7 +1,6 @@
 import React from 'react';
 import logoAirplane from '../images/logoavio1.webp';
 //import avatar from '../images/traveler.webp';
-import RangeDiv from '../components/RangeDiv';
 import TransportationForm from '../components/TransportationForm';
 import ProviderHeading from '../components/ProviderHeading';
 import ProviderDetail from '../components/ProviderDetail';
@@ -9,8 +8,6 @@ import ProviderDetail from '../components/ProviderDetail';
 import avatarDragan from '../images/avatar-dragan.webp';
 import avatarJelena from '../images/avatar-jelena.webp';
 import avatarIvana from '../images/avatar-ivana.jpg';
-import UserComment from '../components/UserComment';
-import Yellow from '../components/Yellow';
 import CommentsForm from '../components/CommentsForm';
 import {useAppContext} from '../libs/contextLib';
 
@@ -45,9 +42,8 @@ const Enjoy = () =>{
                         <div className="providerFeedback">
                             <div>
                                 <h2>User rating </h2>
-                                <RangeDiv/>
-                            </div>                           
-                            <Yellow/>
+                                
+                            </div>   
                             <div id="showComments">
                                 <CommentsForm arrayComments = {comments}/>
                                 
@@ -57,17 +53,7 @@ const Enjoy = () =>{
                 </div>
             </div>
         </div>
-                <div id="userComment" >
-            <h1>Add feedback about transportation</h1>
-            <p>or Add feedback about hotels, restoraunts, cities...</p>
-            <div className="middle-wrapper">
-            <UserComment
-                                    source = {logoAirplane}
-                                    nameProvider = "Air Serbia"
-                                    handleOnClick = {() =>{document.getElementById('user-comment').style.display = "none";}}
-            />            
-            </div>
-        </div>
+                
             </div>
         </div>
     )
