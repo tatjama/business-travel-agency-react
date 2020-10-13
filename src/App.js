@@ -49,15 +49,7 @@ async function onLoad() {
     }
     setIsAuthenticating(false);
 }
-    function openNavHamburger() {
-        const myTopNav = document.getElementById("my-top-nav");
-        if(myTopNav.className === "top-nav"){
-            myTopNav.className += " responsive";
-        } else {
-            myTopNav.className = "top-nav";
-        }
-    }
-  
+     
     return(
         !isAuthenticating &&
         <div className = "App-container" >            
@@ -70,7 +62,6 @@ async function onLoad() {
                         <li onClick = {handleSignOut}>Sign Out</li>
                         <Link to="/"><li className="active">Home</li></Link>
                     <Link to="/life"><li>Life ...</li></Link>
-                    {/*<Link to="/accommodation"> <li>Accommodation</li></Link>*/}
                     <Link to="/enjoy"><li >Enjoy</li></Link>
                     {
                         (isUserAuthenticated.logInUser.status === 0)
@@ -79,10 +70,6 @@ async function onLoad() {
                         (isUserAuthenticated.logInUser.status === 1) 
                         && <Link to="/providers"><li id="providers" to="/providers">Providers</li></Link>
                     }
-                    
-                    {/*<li className="icon" onClick={openNavHamburger}>
-                        <i className="fa fa-bars"></i>
-                    </li>*/}
                         </>
                         : <>
                         <Link to="/signin"><li>Sign in</li></Link>
