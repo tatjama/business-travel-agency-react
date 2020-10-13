@@ -287,7 +287,8 @@ button:hover {
     margin: 5px;
 }
 
-#header-providers button{
+#header-providers button,
+#header-feedback button{
     width: 200px;
     margin: 80px 0px;
 }
@@ -644,6 +645,9 @@ input[type="radio"] {
            }
            
            @media screen and (max-width: 630px) {
+               button{
+                   width: 100%;
+               }
             #sign-up-form input{
                 width: 145px;
                 height: 30px;

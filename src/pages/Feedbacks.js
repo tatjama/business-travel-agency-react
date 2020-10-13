@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useAppContext} from '../libs/contextLib';
+import Button from '../components/Button';
 import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
 
@@ -20,12 +21,21 @@ const Feedbacks = ()=>{
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated);
 
+    const showMyComments = () => {
+        alert("Show my comments")
+    }
+
     return(
         <div className="page-feedback">
             <header className="header" id="header-feedback">
                 <div id="message" style={{"color": "rgb(29, 150, 187)"}}>
                     Add comment {isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}
+                   
                 </div>
+                <Button
+                    name = "My comments"
+                handleOnClick = {showMyComments}
+            />
             </header>            
                 <h3>Feedback about Providers</h3>           
 
