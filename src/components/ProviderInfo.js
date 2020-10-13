@@ -1,4 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import logoApp from '../images/travel-and-tourism.png';
+import logoAirSerbia from '../images/logoavio1.webp';
+import logoAeroflot from '../images/aeroflot.png';
+import logoWizz from '../images/wizz.png';
 import ProviderHeading from './ProviderHeading';
 import ProviderDetail from './ProviderDetail';
 import ProviderDetailForm from './ProviderDetailForm';
@@ -27,11 +31,27 @@ const ProviderInfo = (props) =>{
     const closeCommentForm = () => {
         setIsCommentForm(false)
     }
+    const [logo, setLogo] = useState(logoApp)
+
+    useEffect(() => {
+        switch(props.info.id){
+            case "Air Serbia": setLogo(logoAirSerbia);
+            break;
+            case "Wizz Air": setLogo(logoWizz);
+            break;
+            case "Aeroflot": setLogo(logoAeroflot);
+            break;
+            default: setLogo(logoApp);
+        }
+        
+    }, [props.info.id])
+   
     return(
         <div className="middle-wrapper ">
                         <div className="provider-div ">
                             <ProviderHeading
                                 info = {props.info}
+                                logo = {logo}
                             />                            
                             <div>
                                 <Button
@@ -63,13 +83,14 @@ const ProviderInfo = (props) =>{
                             && <ProviderDetailForm
                                 info = {props.info}
                                 initValues = {props.info}
+                                logo = {logo}
                                 />}                          
                             {isCommentForm
                             && (props.id === props.info.id)
-                            && <div>Loading...</div>}{/*<LeaveCommentForm
+                            && <LeaveCommentForm
                                 handleOnClick = {closeCommentForm}
-                                info = {commentFromUser}
-                            />*/}
+                                info = {props.info}
+                            />}
 
                             
                         </div>

@@ -17,7 +17,7 @@ const initialValues = {
 }
 
 const LeaveCommentForm = (props) =>{
-    const {isUserAuthenticated} = {useAppContext}
+    const {isUserAuthenticated} = useAppContext();
     console.log(isUserAuthenticated)
     const [avatar, setAvatar] = useState(appAvatar);
 

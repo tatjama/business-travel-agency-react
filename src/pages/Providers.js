@@ -7,13 +7,16 @@ import providersInfo from '../components/data/providersInfo';
 
 const initValuesForProvider = {
     id: "",
+    location_id: "",
     type: "",
+    category: {name: ""},
     name: "",
     country: "",
     city: "",
     address: "",
     phone: "",
     text: "",
+    photo: {images: {small: {url: ""}}}
 }
 
 const Providers = ()=>{
