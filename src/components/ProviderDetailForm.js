@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-
-import logoApp from '../images/travel-and-tourism.png';
 import useForm from '../hooks/useForm';
 import validateProviderDetailForm from './utils/validateProviderDetailForm';
 import SelectTypeOfProvider from './SelectTypeOfProvider';
@@ -22,7 +20,7 @@ const ProviderDetailForm = (props) =>{
     values.id = values.name;
     values.location_id = values.name;
     values.category.name = values.type;
-    values.photo.images.small.url = props.logo || {logoApp} ;
+    values.photo.images.small.url = props.logo  ;
     let providersInLocalStorageArray = [];
     providersInLocalStorageArray = JSON.parse(localStorage.getItem('providersArray'));
     function findProviderById(provider){

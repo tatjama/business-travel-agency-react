@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ProviderDetailForm from '../components/ProviderDetailForm';
 import {useAppContext} from '../libs/contextLib';
 import Button from '../components/Button';
+import appAvatar from '../images/travel-and-tourism.png'
 import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
 
@@ -59,6 +60,7 @@ const Providers = ()=>{
                             <div className="provider-div ">
                                 <ProviderDetailForm
                                     initValues = {initValuesForProvider}
+                                    logo = {appAvatar}
                                 />
                             </div>
                     </div>
