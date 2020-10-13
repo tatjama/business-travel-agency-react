@@ -4,11 +4,12 @@ import ProviderDetail from './ProviderDetail';
 import ProviderDetailForm from './ProviderDetailForm';
 import Button from './Button';
 import {useAppContext} from '../libs/contextLib';
+import LeaveCommentForm from '../components/LeaveCommentForm';
 
 const ProviderInfo = (props) =>{
     const [isShowDetail, setIsShowDetail] = useState(false)
     const [isShowEdit, setIsShowEdit] = useState(false)
-    const [isShowCommentForm, setIsShowCommentForm] = useState(false)
+    const [isCommentForm, setIsCommentForm] = useState(false)
     const {isUserAuthenticated} = useAppContext();
     
     function showProviderDetail(){
@@ -19,8 +20,12 @@ const ProviderInfo = (props) =>{
         (isShowEdit === false)? setIsShowEdit(true): setIsShowEdit(false)
     }
 
-    function leaveComment(){
-        (isShowCommentForm === false)? setIsShowCommentForm(true): setIsShowCommentForm(false)
+    const openCommentForm = (provider) => {
+        console.log(provider)
+        setIsCommentForm(true)
+    }
+    const closeCommentForm = () => {
+        setIsCommentForm(false)
     }
     return(
         <div className="middle-wrapper ">
@@ -42,7 +47,9 @@ const ProviderInfo = (props) =>{
                                     (isUserAuthenticated.logInUser.status === 0)
                                     && <Button
                                         name = "Leave comment"
-                                        handleOnClick = {leaveComment}
+                                        handleOnClick = {() => {
+                                            openCommentForm(props.info)
+                                        }}
                                     />
                                 }
                             </div>
@@ -57,13 +64,14 @@ const ProviderInfo = (props) =>{
                                 info = {props.info}
                                 initValues = {props.info}
                                 />}                          
-                            {isShowCommentForm
+                            {isCommentForm
                             && (props.id === props.info.id)
-                            && <div>
-                                Leave comment...
-                            </div>
+                            && <div>Loading...</div>}{/*<LeaveCommentForm
+                                handleOnClick = {closeCommentForm}
+                                info = {commentFromUser}
+                            />*/}
 
-                            }
+                            
                         </div>
                     </div>
     )
