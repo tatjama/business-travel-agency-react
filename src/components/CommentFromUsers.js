@@ -39,9 +39,9 @@ const CommentFromUsers = (props) =>{
                 <Rating rate = {parseInt(props.comment.rating)}/>               
             </div>
             <br/><br/>{(props.comment.feedback === "new")
-            && (isUserAuthenticated.logInUser.status === 1) 
+            && ((isUserAuthenticated.logInUser.status === 1) 
                 || 
-                (isUserAuthenticated.logInUser.firstName === props.comment.user.username )
+                (isUserAuthenticated.logInUser.firstName === props.comment.user.username ))
             && <Button
                 name = "Delete Comment"
                 handleOnClick = {() => {deleteComment(props.comment.id)}}
