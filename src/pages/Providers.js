@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import appAvatar from '../images/travel-and-tourism.png'
 import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
+import {scroller} from 'react-scroll';
 
 const initValuesForProvider = {
     id: "",
@@ -23,6 +24,7 @@ const initValuesForProvider = {
 const Providers = ()=>{
     const [newProvider, setNewProvider] = useState(false)
     const [providersInfoArray, setProvidersInfoArray] = useState(providersInfo)
+
     let newProvidersInfoArrayFromLocalStorage = []
     const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray')) || []
     useEffect(() => {       
@@ -41,7 +43,15 @@ const Providers = ()=>{
 
     function showNewProviderForm() {
         (newProvider === false)? setNewProvider(true): setNewProvider(false)
-    }   
+        scrollToSection("provider-div")
+    }
+    const  scrollToSection = (ident) => {
+        scroller.scrollTo(ident, {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
+      };   
      
     return(
         <div className="page-providers">
