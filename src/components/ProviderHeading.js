@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from './Rating';
 
 const ProviderHeading = (props) =>{
    
@@ -12,12 +13,9 @@ const ProviderHeading = (props) =>{
                 <p>Provider name:<span> {props.info.name}</span></p>                                    
                 <p>Type: <span>{props.info.type}</span></p>
                 <br/>
-                <span className="heading ">User Rating</span>
-                <span className="fa fa-star checked "></span>
-                <span className="fa fa-star checked "></span>
-                <span className="fa fa-star checked "></span>
-                <span className="fa fa-star "></span>
-                <span className="fa fa-star "></span>
+                <Rating
+                    rate = {props.info.rating}
+                />
                 <p>{props.info.rating} average based on {props.info.num_review} reviews.</p>
                 
             </div>

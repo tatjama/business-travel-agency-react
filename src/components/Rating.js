@@ -39,7 +39,7 @@ const Rating = (props) => {
             <span className="fa fa-star"></span>
             <span className="fa fa-star"></span>
             </div>:
-            <div>There is not user rating!</div>                
+            <div>There is no user rating!</div>                
             }
             </div>
    )
