@@ -34,8 +34,9 @@ const ProviderDetailForm = (props) =>{
     localStorage.setItem('providersArray', JSON.stringify(providers))
   }
 
-    return(        
-        <form className="show-provider-edit " id="showEditProvider" onSubmit = {handleSubmit} noValidate> 
+    return( 
+    <>{     !isSuccess
+        && <form className="show-provider-edit " id="showEditProvider" onSubmit = {handleSubmit} noValidate> 
                             <hr style={{"border":"3px solid #f1f1f1 "}}/>
          <div className="provider-detail-form " id="providerDetail">
             <div className="left ">
@@ -134,6 +135,8 @@ const ProviderDetailForm = (props) =>{
         </div>
     
         </form>
+        }
+    </>        
     )
 }
 

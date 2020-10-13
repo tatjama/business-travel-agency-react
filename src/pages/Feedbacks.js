@@ -20,7 +20,6 @@ const Feedbacks = ()=>{
     }, [])
     const { isUserAuthenticated} = useAppContext();      
     console.log( isUserAuthenticated);
-
     const showMyComments = () => {
         alert("Show my comments")
     }
@@ -29,8 +28,7 @@ const Feedbacks = ()=>{
         <div className="page-feedback">
             <header className="header" id="header-feedback">
                 <div id="message" style={{"color": "rgb(29, 150, 187)"}}>
-                    Add comment {isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}
-                   
+                    Add comment {isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}                   
                 </div>
                 <Button
                     name = "My comments"

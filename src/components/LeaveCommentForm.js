@@ -66,7 +66,7 @@ const LeaveCommentForm = (props) =>{
                  <div className = "provider">                     
                      <img 
                         className = "provider-logo" 
-                        src = {props.info.photo.images.small.url} 
+                        src = {props.info.photo.images.small.url || props.logo}
                         alt = {props.info.name}
                     />                    
                     

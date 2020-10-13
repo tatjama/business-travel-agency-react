@@ -90,6 +90,7 @@ const ProviderInfo = (props) =>{
                             && <LeaveCommentForm
                                 handleOnClick = {closeCommentForm}
                                 info = {props.info}
+                                logo = {logo}
                             />}
 
                             
