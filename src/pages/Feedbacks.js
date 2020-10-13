@@ -34,7 +34,7 @@ const Feedbacks = ()=>{
         const commentsArrayFromLocalStorage = JSON.parse(localStorage.getItem('commentsArray'))
         console.log(commentsArrayFromLocalStorage) 
         function findCommentsByUserName(comment){
-            return comment.comment.user.username == isUserAuthenticated.logInUser.firstName 
+            return comment.comment.user.username === isUserAuthenticated.logInUser.firstName 
         }
         const myCommentsArray = commentsArrayFromLocalStorage.filter(findCommentsByUserName) 
         setCommentsArray(myCommentsArray)

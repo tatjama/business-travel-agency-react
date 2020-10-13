@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Footer from './components/Footer';
-import { Link, useHistory} from  'react-router-dom';
+import { NavLink, useHistory} from  'react-router-dom';
 import {AppContext} from './libs/contextLib';
 import Routes from './pages/Routes';
 import useStateWithSessionStorage from './hooks/useStateWithSessionStorage';
@@ -60,20 +60,20 @@ async function onLoad() {
                     isUserAuthenticated
                         ? <>
                         <li onClick = {handleSignOut}>Sign Out</li>
-                        <Link to="/"><li className="active">Home</li></Link>
-                    <Link to="/life"><li>Life ...</li></Link>
-                    <Link to="/enjoy"><li >Enjoy</li></Link>
+                    <NavLink to="/" exact activeClassName="active"><li>Home</li></NavLink>
+                    <NavLink to="/life" activeClassName="active"><li>Life ...</li></NavLink>
+                    <NavLink to="/enjoy" activeClassName="active"><li >Enjoy</li></NavLink>
                     {
                         (isUserAuthenticated.logInUser.status === 0)
-                        && <Link to="/feedbacks"><li >Feedbacks</li> </Link>
+                        && <NavLink to="/feedbacks" activeClassName="active"><li >Feedbacks</li> </NavLink>
 }                    {
                         (isUserAuthenticated.logInUser.status === 1) 
-                        && <Link to="/providers"><li id="providers" to="/providers">Providers</li></Link>
+                        && <NavLink to="/providers" activeClassName="active"><li id="providers" to="/providers">Providers</li></NavLink>
                     }
                         </>
                         : <>
-                        <Link to="/signin"><li>Sign in</li></Link>
-                        <Link to="/signup"><li>Sign Up</li></Link>                        
+                        <NavLink to="/signin" activeClassName="active"><li>Sign in</li></NavLink>
+                        <NavLink to="/signup" activeClassName="active"><li>Sign Up</li></NavLink>                        
                         </>
                     }
                                     
