@@ -6,6 +6,7 @@ import appAvatar from '../images/travel-and-tourism.png'
 import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
 import {scroller} from 'react-scroll';
+import arrowUp from '../images/arrow-up.svg';
 
 const initValuesForProvider = {
     id: "",
@@ -87,6 +88,12 @@ const Providers = ()=>{
                     })}
                 </div>
             </div>
+            <figure 
+                    className = "top" 
+                    onClick = {() => {scrollToSection("header")}}
+                 >
+                    <img src = {arrowUp} alt = "arrow up"  />
+                 </figure>
         </div>
 
     )

@@ -250,10 +250,12 @@ const City =({match}) =>{
                         </div>               
                     }              
                  </div>
-                 <figure className = "top" 
-                 onClick = {() => {scrollToSection("section-first")}}>
-                 <img src = {arrowUp} alt = "arrow up"  />
-                </figure>
+                 <figure 
+                    className = "top" 
+                    onClick = {() => {scrollToSection("section-first")}}
+                 >
+                    <img src = {arrowUp} alt = "arrow up"  />
+                 </figure>
                  
         
         </div>    
