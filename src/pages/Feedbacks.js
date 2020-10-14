@@ -4,6 +4,8 @@ import Button from '../components/Button';
 import ProviderInfo from '../components/ProviderInfo';
 import providersInfo from '../components/data/providersInfo';
 import CommentFromUsers from '../components/CommentFromUsers';
+import {scroller} from 'react-scroll';
+import arrowUp from '../images/arrow-up.svg';
 
 const Feedbacks = ()=>{    
     const [providersInfoArray, setProvidersInfoArray] = useState(providersInfo);
@@ -39,6 +41,14 @@ const Feedbacks = ()=>{
         const myCommentsArray = commentsArrayFromLocalStorage.filter(findCommentsByUserName) 
         setCommentsArray(myCommentsArray)
     }, [])
+
+    const  scrollToSection = (ident) => {
+        scroller.scrollTo(ident, {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
+      };
 
     return(
         <div className="page-feedback">
@@ -80,6 +90,12 @@ const Feedbacks = ()=>{
                     })}
                 </div>
             </div>    
+            <figure 
+                    className = "top" 
+                    onClick = {() => {scrollToSection("header")}}
+                 >
+                    <img src = {arrowUp} alt = "arrow up"  />
+                 </figure>
         </div>
     )
 }
