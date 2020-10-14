@@ -209,6 +209,25 @@ html {
 .provider-detail p{
     margin: 15px;
 }
+.top{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(23, 88, 88, 40%);
+    border: 0px;
+    z-index: 5;
+    padding: 15px;
+}
+.top img{
+    width: 20px;
+    height: 20px;
+}
+.top:hover{
+    background-color: salmon;
+}
 /*-------ACCOMMODATION-----*/
 #header-accommodation {
     background-image: url("./images/accomodation.webp");
@@ -259,6 +278,7 @@ button {
     color: white;
     font-weight: bold;
     width: 130px;
+    cursor: pointer;
 }
 
 button:hover {
@@ -492,7 +512,8 @@ padding: 5px;
 /*COMMENT -- LIFE*/
 
 .comment {
-    border: double 1px grey;
+    border: double 1px rgb(173, 169, 169);
+    background-color: rgb(243, 247, 240);
     margin: 10px 0px;
     padding: 15px;
     display: flex;
@@ -502,6 +523,9 @@ padding: 5px;
 }
 .comment-button{
     width: 150px;
+}
+#leave-comment-form{
+    background-color: ivory;
 }
 .avatar {
     border-radius: 50%;
@@ -591,6 +615,11 @@ input[type="radio"] {
                 font-size: small;
             }    
             /*PAGES*/   
+            .top{
+                bottom: 5px;
+                right: 5px;
+            }
+            
             .general-information-list{
                 margin: 15px;
                 padding: 15px;
@@ -734,7 +763,19 @@ input[type="radio"] {
            @media screen and (max-width: 500px){   
             button, .comment-button {
                 width: 100%;
-            }            
+            }    
+            .top{
+                width: 40px;
+                height: 40px;
+                bottom: 6px;
+                right: 6px;
+                padding: 12px;
+            }
+            .top img{
+                width: 16px;
+                height: 16px;
+            }
+                    
             .item{
                 width: 100%;
             }            

@@ -13,6 +13,7 @@ import hotel from '../images/hotel.webp';
 import world from '../images/world.webp';
 import airplane from '../images/airplane.webp';
 import {scroller} from 'react-scroll';
+import arrowUp from '../images/arrow-up.svg';
 
 const City =({match}) =>{    
     console.log(match) 
@@ -249,6 +250,12 @@ const City =({match}) =>{
                         </div>               
                     }              
                  </div>
+                 <figure className = "top" 
+                 onClick = {() => {scrollToSection("section-first")}}>
+                 <img src = {arrowUp} alt = "arrow up"  />
+                </figure>
+                 
+        
         </div>    
     )
 }
