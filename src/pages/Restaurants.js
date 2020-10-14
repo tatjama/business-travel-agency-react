@@ -5,6 +5,7 @@ import CommentFromUsers from '../components/CommentFromUsers';
 import useFetchComments from '../hooks/useFetchComments';
 import LeaveCommentForm from '../components/LeaveCommentForm';
 import createCommentArray from '../components/utils/createCommentsArray';
+import { scroller } from 'react-scroll';
 
 
 const Restaurants = (props) => {    
@@ -12,14 +13,21 @@ const Restaurants = (props) => {
 
     const [isCommentForm, setIsCommentForm] = useState(false);
     const [locationCommentId, setLocationCommentId] = useState(null);
+    const [isShowComments, setIsShowComments] = useState(false)
     const [commentFromUser, setCommentFromUser] = useState({});    
     const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
     
     const { query, comments, fetchComments, isLoading, isError} = useFetchComments(submitted);
 
-    function submitted(){      
+    async function submitted(){      
         const commentsArray = createCommentArray(query, comments)
-         setCommentsFromLocalStorageAndFetchComments(commentsArray)
+        await setCommentsFromLocalStorageAndFetchComments(commentsArray)
+        setIsShowComments(true)
+        scrollToSection("comment")
+       }
+
+       const closeComments = () => {
+           setIsShowComments(false)
        }
    
        const openCommentForm = (resultObject) => {
@@ -32,6 +40,15 @@ const Restaurants = (props) => {
        const closeCommentForm = () =>{
        setIsCommentForm(false)
        }
+
+       const  scrollToSection = (ident) => {
+        scroller.scrollTo(ident, {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
+      };
+
 
  return(
         <div className = "restaurants">                 
@@ -101,8 +118,14 @@ const Restaurants = (props) => {
                             <div>
                             <Button 
                                 id = {restaurant.location_id}
+                                className = "comment-button"
                                 name = "See Comments"
                                 handleOnClick = {() => fetchComments(restaurant.location_id)}
+                            />
+                            <Button 
+                                className = "comment-button"
+                                name = "Close Comments"
+                                handleOnClick = {closeComments}
                             />
                             <Button
                                     className = "comment-button"
@@ -122,7 +145,9 @@ const Restaurants = (props) => {
                             {isLoading?
                                 <div className = "loader">Loading...</div>
                                 :
-                                (query === restaurant.location_id) &&
+                                (query === restaurant.location_id) 
+                                && isShowComments
+                                &&
                             <div>
                              {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
