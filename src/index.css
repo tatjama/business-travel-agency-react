@@ -513,7 +513,7 @@ padding: 5px;
 
 .comment {
     border: double 1px rgb(173, 169, 169);
-    background-color: rgb(243, 247, 240);
+    background-color: ivory;
     margin: 10px 0px;
     padding: 15px;
     display: flex;
@@ -524,8 +524,8 @@ padding: 5px;
 .comment-button{
     width: 150px;
 }
-#leave-comment-form{
-    background-color: ivory;
+.user-comment{
+    background-color: rgb(243, 247, 240);
 }
 .avatar {
     border-radius: 50%;
