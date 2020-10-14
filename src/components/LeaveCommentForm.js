@@ -197,9 +197,9 @@ const LeaveCommentForm = (props) =>{
         </div>
         {errors.rating && <p className = "error-message-comment">{errors.rating}</p>}
                 <br/>
-                <button type="submit">Submit</button>
-                <button onClick = {handleReset}>Reset</button>
-                <button onClick ={props.handleOnClick}>Close</button>    
+                <button className = "comment-button" type="submit">Submit</button>
+                <button className = "comment-button" onClick = {handleReset}>Reset</button>
+                <button className = "comment-button" onClick ={props.handleOnClick}>Close</button>    
             </form>
         </div>
     )
