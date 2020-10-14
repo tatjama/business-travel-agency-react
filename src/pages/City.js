@@ -12,6 +12,7 @@ import breakfast from '../images/breakfast.webp';
 import hotel from '../images/hotel.webp';
 import world from '../images/world.webp';
 import airplane from '../images/airplane.webp';
+import {scroller} from 'react-scroll';
 
 const City =({match}) =>{    
     console.log(match) 
@@ -72,7 +73,8 @@ const City =({match}) =>{
         } catch (error) {
             setIsError(true)
         }             
-        setIsLoading(false)       
+        setIsLoading(false)    
+        scrollToSection("main-header")   
     }
     const fetchRestaurantInformation = async() =>{
         setIsError(false)
@@ -106,20 +108,30 @@ const City =({match}) =>{
             setIsError(true)
         }
         setIsLoading(false)
+        scrollToSection("restaurants")
     }
 
-    const fetchHotelsInformation = () =>{        
+    const fetchHotelsInformation = async() =>{        
         setIsAirportsFetch(false);
         setIsAttractionsFetch(false);
-        setIsHotelsFetch(true);
+        await setIsHotelsFetch(true);
         setIsRestaurantsFetch(false);
+        scrollToSection("hotels");
       }
 
-    const fetchAttractionsInformation = () =>{          
+    const fetchAttractionsInformation = async () =>{   
+        setIsError(false)  
+        try {
         setIsAirportsFetch(false);
-        setIsAttractionsFetch(true);
+        await setIsAttractionsFetch(true);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
+            
+        } catch (error) {
+            setIsError(true)
+        }     
+        
+        scrollToSection("attractions")
       }
       
     const fetchAirportsInformation = async() =>{
@@ -146,6 +158,7 @@ const City =({match}) =>{
             setIsError(true)
         }
         setIsLoading(false)
+        scrollToSection("airports")
     }
     const figureProps =  [
     {
@@ -176,6 +189,15 @@ const City =({match}) =>{
         alt: "airplane" ,
         go: "#airport"
     }]
+
+    const  scrollToSection = (ident) => {
+        scroller.scrollTo(ident, {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
+      };   
+    
     
     return(
         <div>     

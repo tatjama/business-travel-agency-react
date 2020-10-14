@@ -34,7 +34,7 @@ const Restaurants = (props) => {
        }
 
  return(
-        <div>                 
+        <div className = "restaurants">                 
             {console.log(props.restaurants)}
             <h1 className = "main-header">RESTAURANTS </h1>
             <div className = "main-div" id = "restaurants">

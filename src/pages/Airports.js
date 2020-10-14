@@ -2,7 +2,7 @@ import React from 'react';
 
 const Airports = (props) =>{
     return(
-        <div >                    
+        <div className = "airports" >                    
                     {console.log(props.airports)}
                     {console.log(props.airports.length)}
             <h1 className = "main-header">AIRPORTS </h1>

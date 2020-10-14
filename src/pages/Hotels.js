@@ -32,7 +32,7 @@ const Hotels = (props) =>{
        }
 
     return(
-        <div>
+        <div className = "hotels" >
             {console.log(props.hotels)}
             <h1 className = "main-header">HOTELS </h1>
             <div className = "main-div" id = "hotels">
