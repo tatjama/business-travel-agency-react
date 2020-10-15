@@ -83,8 +83,7 @@ html {
                margin: 7px;
                padding: 0px;
            }
-           .sign-form button,
-           .sign-nav button {
+           .sign-form button{
                padding: 5px;
                width: 100px;
                margin: 3px;
@@ -123,17 +122,7 @@ html {
            }        
            
            /* NAVIGATION */
-           
-           .sign-nav {
-               overflow: hidden;
-               background-color: transparent;
-               transition: transform .2s;
-              /* z-index:5;*/
-           }    
-           /**PAGES**/
-           
-           /******---NAVIGATION----*****/
-
+         
            .top-nav {
             overflow: hidden;
             background-color: black;
