@@ -2,6 +2,8 @@ import React from 'react';
 import Select from './Select';
 import useSelect from '../hooks/useSelect';
 import {useHistory} from 'react-router-dom';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
 
 
 const SelectForm = () =>{
@@ -28,7 +30,7 @@ const SelectForm = () =>{
                         <br/>
                 {isError && <div className = "error">Error. Something went wrong...</div>}
                 {isLoading?
-                <div className = "loader"><p> Loading</p></div>
+                <div className = "loader"><Loader type="Grid" color="#bae7e7" height={40} width={40} /></div>
                 :                
                 <Select
                     handleChange = {handleSelectCity}

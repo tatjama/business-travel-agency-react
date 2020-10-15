@@ -6,6 +6,7 @@ import useFetchComments from '../hooks/useFetchComments';
 import LeaveCommentForm from '../components/LeaveCommentForm';
 import createCommentArray from '../components/utils/createCommentsArray';
 import {scroller} from 'react-scroll';
+import Loader from 'react-loader-spinner';
 
 
 const Hotels = (props) =>{
@@ -107,7 +108,12 @@ const Hotels = (props) =>{
                                 }
                             {isError && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
-                                <div className = "loader">Loading...</div>
+                                <Loader
+                                    type = "Grid"
+                                    height = {40}
+                                    width = {40}
+                                    color="#00BFFF"
+                                />
                                 :
                                 (query === item.result_object.location_id) 
                                 && isShowComments

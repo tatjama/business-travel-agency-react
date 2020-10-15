@@ -237,10 +237,12 @@ html {
     background-image: url("./images/feedback.webp");
     background-position: center;  
     }   
-#header-feedback label,
-#header-feedback .loader p{
+#header-feedback label{
     color: rgb(23, 88, 88);
 }    
+.loader{
+    text-align: center;
+}
 /*--------------PROVIDERS--------------------*/
 #header-providers {
     background-image: url("./images/providers.webp");
@@ -260,9 +262,7 @@ select{
 input, .select-provider{
     width: 100%;
 }
-.loader p{
-    font-size: small;
-}
+
 button {
     padding: 10px;
     margin: 10px 10px 10px 0px;
