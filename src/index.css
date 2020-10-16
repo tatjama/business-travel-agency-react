@@ -6,54 +6,41 @@
 
 body,
 html {
-               height: 100vh;
-               margin: 0%;
-               padding: 0%;
-               font-family: Arial, Helvetica, sans-serif;
-               box-sizing: border-box;
-               scroll-behavior: smooth; 
-               overflow-x: hidden;
-              /* overflow: hidden;*/
-           }  
-                         
-           .intro-page {
-               background-image: url("./images/suitcases.png");
-               background-position: bottom;
-               background-repeat: no-repeat;
-               background-size: cover;
-               height: 100vh;
-               padding: Spx;
-               text-align: center;
-               z-index: -10;
-               
-           } 
-           .intro-page-gradient{
-               padding-top: 20px;
-               background-color: hsla(0, 0%, 0%, 30%);
-               height: 100vh;
-               z-index: -5;
-           }
-           .pages h1{
-               color: red;
-               background-color: white;
-               
-           }
-           .success-message{
-               color: white;
-               position: relative;
-               top: -50px;
-           }
-           .error-message{
-               color: white;
-               font-size: 12px;
-               text-transform: initial;
-           }
-           .error-message-comment{
-               color: salmon;
-           }
-           .inputError{
-               color: red;
-           }            
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+    overflow-x: hidden;
+}
+.intro-page {
+    background-image: url("./images/suitcases.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding: Spx;
+    text-align: center;
+    z-index: -10;               
+} 
+.intro-page-gradient{
+    padding-top: 20px;
+    background-color: hsla(0, 0%, 0%, 30%);
+    height: 100vh;
+    z-index: -5;
+}
+.error-message{
+    color: white;
+    font-size: 12px;
+    text-transform: initial;
+}
+.error-message-comment{
+    color: salmon;
+}
+.inputError{
+    color: red;
+}            
 
            /*SIGN IN*/
            .sign-form{
@@ -169,9 +156,7 @@ html {
     padding: 10px;
 }
 
-           /*-------HOME-----*/
-
-/*HEADER*/
+/*HOME*/
 
 #header-home {
     background-image: url("./images/metropolis.png");
@@ -179,9 +164,8 @@ html {
     height: 100vh;
     padding: 50px 0px;
 }
-/***********************************/
-/*----------LIFE--------------------*/
- /*HEADER*/
+
+/*LIFE - CITY*/
         
  #header-life {
     background-image: url("./images/city_lights.png");
@@ -225,14 +209,16 @@ html {
     background-image: url("./images/accomodation.png");
     background-position-y: 80%;    
 }
-/*--------ENJOY-------*/
+
+/*ENJOY*/
 
 #header-enjoy {
     background-image: url("./images/enjoy.png");
     background-position-y: 30%;   
 }
-/*********************************/
-/*-------------FEEDBACK-------------*/
+
+/*FEEDBACK*/
+
 #header-feedback {
     background-image: url("./images/Lets-Go-Travel.jpg");
     background-position-y: 0%;  
@@ -244,16 +230,17 @@ html {
 .loader{
     text-align: center;
 }
-/*--------------PROVIDERS--------------------*/
+
+/*PROVIDERS*/
+
 #header-providers {
     background-image: url("./images/providers.png");
     background-position: center;
 }
 
-/***SELECT***/
-   /*SELECT*/
+/*SELECT*/
 
-   input, select, .select-provider {
+input, select, .select-provider {
     padding: 10px;
     margin: 5px;
 }
@@ -306,19 +293,19 @@ button:hover {
     margin: 80px 0px;
 }
 
-    /*WRAPPER*/      
-    .wrapper {
-        padding: 20px;
-    }
-    h2 {
-        color: black;
-        padding: 4%;
-        font-size: medium;
-    }
+/*WRAPPER*/      
+.wrapper {
+    padding: 20px;
+}
+h2 {
+    color: black;
+    padding: 4%;
+    font-size: medium;
+}
 
+/*SECTION-FIRST*/
 
-    /*SECTION-FIRST*/    
-    .section-first {
+.section-first {
         text-align: center;        
         display: flex;
         flex-direction: row;
@@ -349,36 +336,7 @@ button:hover {
         box-shadow: gray 0px 0px 10px;
         transition: transform .2s;
     } 
-   /* #user-comment,
-    #transport,
-    #safety,
-    #culture, 
-    #airport,
-    #food{
-        display: none;
-    }*/
-    /***SECTION-SECOND**/
-.section-second{
-    padding-top: 50px;
-}
- /*ADD COMMENT--ACCOMMODATION*/
-/*SHOW TRANSPORTATION -- ENJOY*/
-/*SHOW TRANSPORTATION -- LIFE*/
-/*SHOW TRANSPORTATION -- PROVIDERS*/
-.general-information-list{
-    margin: 40px;
-    padding: 40px;
-}
-.general-information-list h1{
-    font-size: xx-large;
-    text-align: center;
-    margin: 30px 0px;
-}
-.general-information-list h2{
-    font-size: 1.4em;
-    margin: 10px 0px;
-    padding: 0px;
-}
+ 
 #showTransportation,
 #user-comment {
 border: darkcyan solid 1px;
@@ -497,9 +455,9 @@ padding: 5px;
     width: 250px;
     padding: 5px;
 }
-/*COMMENT-ACCOMMODATION*/
-/*COMMENT --ENJOY*/
-/*COMMENT -- LIFE*/
+
+/*COMMENT */
+
 #leave-comment-form{
     padding: 5px;
 }
@@ -554,7 +512,9 @@ input[type="radio"] {
 .checked {
     color: darkcyan;
 }
+
 /*FORM TRANSPORTATION*/
+
 .destination{
     text-align: right;
 }
@@ -589,13 +549,9 @@ input[type="radio"] {
     padding: 5px;
 }
 
+/*RESPONSIVE*/           
 
-    
-
-          
-           /*RESPONSIVE*/           
-           
-           @media screen and (max-width: 800px) {                
+@media screen and (max-width: 800px) {                
                #sign-in-form,
                #sign-up-form{
                    left: -3%;
@@ -616,14 +572,7 @@ input[type="radio"] {
                 bottom: 5px;
                 right: 5px;
             }
-            
-            .general-information-list{
-                margin: 15px;
-                padding: 15px;
-            }
-            .general-information-list h2{
-                font-size: 1.2em;
-            }
+           
             .provider-logo {
                 height: 40px;
                 
@@ -670,7 +619,7 @@ input[type="radio"] {
             }      
            }
            
-           @media screen and (max-width: 630px) {
+@media screen and (max-width: 630px) {
             .comment-button,
                button{
                    width: 100%;
@@ -757,8 +706,9 @@ input[type="radio"] {
 #transportationFromTo div input{
     margin: 10px;
      }      
-           }  
-           @media screen and (max-width: 500px){   
+           }
+           
+@media screen and (max-width: 500px){   
             button, .comment-button {
                 width: 100%;
             }    
@@ -788,7 +738,7 @@ input[type="radio"] {
             }
         } 
 
-           /*FOOTER*/
+/*FOOTER*/
            
            footer {
                background-color: black;
