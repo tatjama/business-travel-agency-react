@@ -17,7 +17,7 @@ html {
            }  
                          
            .intro-page {
-               background-image: url("./images/suitcases.webp");
+               background-image: url("./images/suitcases.png");
                background-position: bottom;
                background-repeat: no-repeat;
                background-size: cover;
@@ -174,7 +174,7 @@ html {
 /*HEADER*/
 
 #header-home {
-    background-image: url("./images/metropolis.webp");
+    background-image: url("./images/metropolis.png");
     background-position: center;   
     height: 100vh;
     padding: 50px 0px;
@@ -184,7 +184,7 @@ html {
  /*HEADER*/
         
  #header-life {
-    background-image: url("./images/city_lights.webp");
+    background-image: url("./images/city_lights.png");
     background-position-y:75%;    
 }
 .life-button {
@@ -222,20 +222,21 @@ html {
 }
 /*-------ACCOMMODATION-----*/
 #header-accommodation {
-    background-image: url("./images/accomodation.webp");
+    background-image: url("./images/accomodation.png");
     background-position-y: 80%;    
 }
 /*--------ENJOY-------*/
 
 #header-enjoy {
-    background-image: url("./images/enjoy.webp");
+    background-image: url("./images/enjoy.png");
     background-position-y: 30%;   
 }
 /*********************************/
 /*-------------FEEDBACK-------------*/
 #header-feedback {
-    background-image: url("./images/feedback.webp");
-    background-position: center;  
+    background-image: url("./images/Lets-Go-Travel.jpg");
+    background-position-y: 0%;  
+    background-position-x: -40%;  
     }   
 #header-feedback label{
     color: rgb(23, 88, 88);
@@ -245,7 +246,7 @@ html {
 }
 /*--------------PROVIDERS--------------------*/
 #header-providers {
-    background-image: url("./images/providers.webp");
+    background-image: url("./images/providers.png");
     background-position: center;
 }
 
@@ -779,7 +780,14 @@ input[type="radio"] {
             #transportationFromTo div select{
                 width: 70%;
                  }
-        }  
+            .provider-div,
+           .user-comment {
+                border: darkcyan dashed 2px;
+                padding: 5px;
+                margin: 5px;
+            }
+        } 
+
            /*FOOTER*/
            
            footer {

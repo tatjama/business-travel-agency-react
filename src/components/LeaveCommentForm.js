@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import adminAvatar from '../images/avatar-ivana.jpg';
-import userAvatar from '../images/avatar-dragan.webp';
-import tAdminAvatar from '../images/avatar-jelena.webp';
+import userAvatar from '../images/avatar-dragan.png';
+import tAdminAvatar from '../images/avatar-jelena.png';
 import appAvatar from '../images/travel-and-tourism.png';
 import Rating from './Rating';
 import validateCommentForm from '../components/utils/validateCommentForm';
