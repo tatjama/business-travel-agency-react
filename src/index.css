@@ -302,38 +302,75 @@ button:hover {
         font-size: medium;
     }
 
+/*SECTION FIRST*/
 
-    /*SECTION-FIRST*/  
+figcaption{
+    color: slategray;
+}
+figcaption:hover{
+   color: darkcyan;
+}
 
-    .section-first {
+    /*horizontalPosition*/ 
+     
+
+    .horizontalPosition {
         text-align: center;        
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-    }
+    }    
     
-    figcaption{
-         color: slategray;
-    }
-    figcaption:hover{
-        color: darkcyan;
-    }
-    .section-first figure {
+    .horizontalPosition figure {
         width: 150px;
         padding: 10px;
         margin: auto;
         font-weight: bold;       
     }
-    .section-first figure:hover {
+    .horizontalPosition figure:hover {
         transform: scale(1.2);
     }    
-    .section-first figure img {
+    .horizontalPosition figure img {
         width: 130px;
         height: 130px;
         border: solid 1px white;
         margin: 10px;
         box-shadow: gray 0px 0px 10px;
+        transition: transform .2s;
+    } 
+    /*verticalPosition*/ 
+     
+
+    .verticalPosition {
+        background-color: ivory;
+        position: fixed;
+        left: 0px;
+        top: 30px;
+        text-align: center;        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        padding: 1px;
+    }    
+    
+    .verticalPosition figure {
+        width: 65px;
+        padding: 7px;
+        margin: auto;
+        font-weight: bold;  
+        font-size: xx-small;     
+    }
+    .verticalPosition figure:hover {
+        transform: scale(1.2);
+    }    
+    .verticalPosition figure img {
+        width: 50px;
+        height: 50px;
+        border: solid 1px white;
+        margin: 5px;
+        box-shadow: gray 0px 0px 5px;
         transition: transform .2s;
     } 
   
@@ -575,17 +612,34 @@ input[type="radio"] {
                 font-size: small;
             }    
             /*PAGES*/ 
-.section-first figure {
+
+/*SECTION FIRST*/
+
+/*horizontal position*/
+
+.horizontalPosition figure {
     width: 135px;
     padding: 10px;       
 }
-.section-first figure:hover {
+.horizontalPosition figure:hover {
     transform: scale(1.1);
 }    
-.section-first figure img {
+.horizontalPosition figure img {
     width: 117px;
     height: 117px;
     margin: 8px;
+}
+/*vertical position*/
+
+.verticalPosition figure {
+    width: 55px;       
+}
+.verticalPosition figure:hover {
+    transform: scale(1.1);
+}    
+.verticalPosition figure img {
+    width: 35px;
+    height: 35px;
 }
 .top{
                 bottom: 5px;

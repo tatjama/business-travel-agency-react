@@ -10,6 +10,7 @@ class SectionFirst extends React.Component{
         
         return(
             <section className="section-first">
+                <div className = {this.props.position}>
                 {console.log(this.props.info)}
                 {this.props.info.map((figure) =>{
                     return(
@@ -24,7 +25,7 @@ class SectionFirst extends React.Component{
                     )}
                 )}
                     
-                    
+                    </div>   
                 </section>
 
         )

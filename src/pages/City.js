@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import Button from '../components/Button';
 import { useAppContext } from '../libs/contextLib';
 import Airports from './Airports';
@@ -12,7 +12,7 @@ import breakfast from '../images/breakfast.png';
 import hotel from '../images/hotel.png';
 import world from '../images/world.png';
 import airplane from '../images/airplane.png';
-import {scroller} from 'react-scroll';
+import {scroller, scrollLeft, scrollTop} from 'react-scroll';
 import arrowUp from '../images/arrow-up.svg';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from 'react-loader-spinner';
@@ -32,6 +32,21 @@ const City =({match}) =>{
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const {isUserAuthenticated} = useAppContext();
+    const [position, setPosition] = useState("horizontalPosition");
+
+    const scrollFunction = () => {
+        console.log("scrollFunction")        
+        console.log(window.scrollY)
+        if(window.scrollY > 850){
+            setPosition("verticalPosition")
+        }else{
+            setPosition("horizontalPosition")
+        }
+    }
+    useEffect(() => {
+        window.onscroll = function() {scrollFunction()};
+
+    }, [window.onscroll])
 
     const fetchCityInformation = async() =>{
         setIsError(false)
@@ -77,7 +92,7 @@ const City =({match}) =>{
             setIsError(true)
         }             
         setIsLoading(false)    
-        scrollToSection("main-header")   
+        scrollToSection("section-first")   
     }
     const fetchRestaurantInformation = async() =>{
         setIsError(false)
@@ -227,7 +242,7 @@ const City =({match}) =>{
                     {isFetch && 
                         <div className = "wrapper" >
                             <h3>Life in different countries....</h3>
-                                <SectionFirst info = {figureProps}/>
+                                <SectionFirst info = {figureProps} position = {position}/>
                             <div >                      
                                 <CityInfo header = {header}/>
                             </div>                      
