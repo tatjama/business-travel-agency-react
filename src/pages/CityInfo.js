@@ -1,5 +1,5 @@
 import React from 'react';
-//import logoAirplane from '../images/logoavio1.webp';
+//import logoAirplane from '../images/logoavio1.png';
 
 const CityInfo = (props) =>{
     return(

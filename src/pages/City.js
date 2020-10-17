@@ -8,12 +8,14 @@ import Hotels from './Hotels';
 import Restaurants from './Restaurants';
 import SelectForm from '../components/SelectForm';
 import SectionFirst from '../components/SectionFirst';
-import breakfast from '../images/breakfast.webp';
-import hotel from '../images/hotel.webp';
-import world from '../images/world.webp';
-import airplane from '../images/airplane.webp';
+import breakfast from '../images/breakfast.png';
+import hotel from '../images/hotel.png';
+import world from '../images/world.png';
+import airplane from '../images/airplane.png';
 import {scroller} from 'react-scroll';
 import arrowUp from '../images/arrow-up.svg';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from 'react-loader-spinner';
 
 const City =({match}) =>{    
     console.log(match) 
@@ -214,7 +216,12 @@ const City =({match}) =>{
                 <div >
                     {isError && <div className = "error">Error. Something went wrong...</div>}
                     {isLoading?
-                    <div>Loading...</div>
+                    <div className = "loader">
+                    <Loader type="Grid"
+                    color="#00BFFF"
+                    height={40}
+                    width={40} />
+                    </div>
                     :
                     <div>
                     {isFetch && 

@@ -10,11 +10,11 @@ html {
                padding: 0%;
                font-family: Arial, Helvetica, sans-serif;
                box-sizing: border-box;
-               scroll-behavior: smooth; 
-              /* overflow: hidden;*/
+               /*scroll-behavior: smooth; 
+               /*overflow-x: hidden;*/
            }                
            .intro-page {
-               background-image: url("./images/suitcases.webp");
+               background-image: url("./images/suitcases.png");
                background-position: bottom;
                background-repeat: no-repeat;
                background-size: cover;
@@ -29,17 +29,7 @@ html {
                background-color: hsla(0, 0%, 0%, 30%);
                height: 100vh;
                z-index: -5;
-           }
-           .pages h1{
-               color: red;
-               background-color: white;
-               
-           }
-           .success-message{
-               color: white;
-               position: relative;
-               top: -50px;
-           }
+           }        
            .error-message{
                color: white;
                font-size: 12px;
@@ -80,11 +70,10 @@ html {
            .sign-form input {
                width: 90%;
                height: 30px;
-               margin: 7px;
+               margin: 5px;
                padding: 0px;
            }
-           .sign-form button,
-           .sign-nav button {
+           .sign-form button{
                padding: 5px;
                width: 100px;
                margin: 3px;
@@ -119,21 +108,11 @@ html {
            #formLeft,
            #formRight {
                width: 200px;
-               margin: 20px;
+               margin: 5px;
            }        
            
            /* NAVIGATION */
            
-           .sign-nav {
-               overflow: hidden;
-               background-color: transparent;
-               transition: transform .2s;
-              /* z-index:5;*/
-           }    
-           /**PAGES**/
-           
-           /******---NAVIGATION----*****/
-
            .top-nav {
             overflow: hidden;
             background-color: black;
@@ -177,22 +156,18 @@ html {
     padding: 10px;
 }
 
-           /*-------HOME-----*/
-
-/*HEADER*/
+/*HOME*/
 
 #header-home {
-    background-image: url("./images/metropolis.webp");
+    background-image: url("./images/metropolis.png");
     background-position: center;   
     height: 100vh;
     padding: 50px 0px;
 }
-/***********************************/
-/*----------LIFE--------------------*/
- /*HEADER*/
+/*LIFE-CITY*/
         
  #header-life {
-    background-image: url("./images/city_lights.webp");
+    background-image: url("./images/city_lights.png");
     background-position-y:75%;    
 }
 .life-button {
@@ -230,32 +205,39 @@ html {
 }
 /*-------ACCOMMODATION-----*/
 #header-accommodation {
-    background-image: url("./images/accomodation.webp");
+    background-image: url("./images/accomodation.png");
     background-position-y: 80%;    
 }
-/*--------ENJOY-------*/
+
+
+/*ENJOY*/
 
 #header-enjoy {
-    background-image: url("./images/enjoy.webp");
+    background-image: url("./images/enjoy.png");
     background-position-y: 30%;   
 }
-/*********************************/
-/*-------------FEEDBACK-------------*/
+
+/*FEEDBACK*/
+
 #header-feedback {
-    background-image: url("./images/feedback.webp");
+    background-image: url("./images/feedback.jpeg");
     background-position: center;  
     }   
-#header-feedback label,
-#header-feedback .loader p{
+#header-feedback label{
     color: rgb(23, 88, 88);
 }    
-/*--------------PROVIDERS--------------------*/
+
+.loader{
+    text-align: center;
+}
+
+/*PROVIDERS--*/
+
 #header-providers {
-    background-image: url("./images/providers.webp");
+    background-image: url("./images/providers.png");
     background-position: center;
 }
 
-/***SELECT***/
    /*SELECT*/
 
    input, select, .select-provider {
@@ -267,9 +249,6 @@ select{
 }
 input, .select-provider{
     width: 100%;
-}
-.loader p{
-    font-size: small;
 }
 button {
     padding: 10px;
@@ -324,7 +303,8 @@ button:hover {
     }
 
 
-    /*SECTION-FIRST*/    
+    /*SECTION-FIRST*/  
+
     .section-first {
         text-align: center;        
         display: flex;
@@ -356,36 +336,7 @@ button:hover {
         box-shadow: gray 0px 0px 10px;
         transition: transform .2s;
     } 
-   /* #user-comment,
-    #transport,
-    #safety,
-    #culture, 
-    #airport,
-    #food{
-        display: none;
-    }*/
-    /***SECTION-SECOND**/
-.section-second{
-    padding-top: 50px;
-}
- /*ADD COMMENT--ACCOMMODATION*/
-/*SHOW TRANSPORTATION -- ENJOY*/
-/*SHOW TRANSPORTATION -- LIFE*/
-/*SHOW TRANSPORTATION -- PROVIDERS*/
-.general-information-list{
-    margin: 40px;
-    padding: 40px;
-}
-.general-information-list h1{
-    font-size: xx-large;
-    text-align: center;
-    margin: 30px 0px;
-}
-.general-information-list h2{
-    font-size: 1.4em;
-    margin: 10px 0px;
-    padding: 0px;
-}
+  
 #showTransportation,
 #user-comment {
 border: darkcyan solid 1px;
@@ -507,10 +458,17 @@ padding: 5px;
     width: 250px;
     padding: 5px;
 }
-/*COMMENT-ACCOMMODATION*/
-/*COMMENT --ENJOY*/
+
 /*COMMENT -- LIFE*/
 
+#leave-comment-form{
+    padding: 5px;
+}
+#leave-comment-form input,
+#leave-comment-form textarea{
+    margin: 0px;
+    padding: 3px;
+}
 .comment {
     border: double 1px rgb(173, 169, 169);
     background-color: ivory;
@@ -601,32 +559,39 @@ input[type="radio"] {
            @media screen and (max-width: 800px) {                
                #sign-in-form,
                #sign-up-form{
-                   left: -3%;
+                   left: -2%;
                    top: 10%;
                    width: 100%;
                    height: 700px;
-                   padding: 100px 10px;
+                   padding: 30px 10px;
                }
                .sign-form input{
                    width: 200px;
+                   font-size: 12px;
+                   padding: 3px;
                }   
                .top-nav li{
                 padding: 10px 9px;               
                 font-size: small;
             }    
-            /*PAGES*/   
-            .top{
+            /*PAGES*/ 
+.section-first figure {
+    width: 135px;
+    padding: 10px;       
+}
+.section-first figure:hover {
+    transform: scale(1.1);
+}    
+.section-first figure img {
+    width: 117px;
+    height: 117px;
+    margin: 8px;
+}
+.top{
                 bottom: 5px;
                 right: 5px;
             }
             
-            .general-information-list{
-                margin: 15px;
-                padding: 15px;
-            }
-            .general-information-list h2{
-                font-size: 1.2em;
-            }
             .provider-logo {
                 height: 40px;
                 
@@ -681,6 +646,7 @@ input[type="radio"] {
             #sign-up-form input{
                 width: 145px;
                 height: 30px;
+                font-size: 10px;
             }
                #sign-up-form input[type = "button"]{
                    width: 185px;
@@ -782,6 +748,12 @@ input[type="radio"] {
             #transportationFromTo div select{
                 width: 70%;
                  }
+                 .provider-div,
+                 .user-comment {
+                      border: darkcyan dashed 2px;
+                      padding: 5px;
+                      margin: 5px;
+                  }
         }  
            /*FOOTER*/
            

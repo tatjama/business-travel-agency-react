@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import logoApp from '../images/travel-and-tourism.png';
-import logoAirSerbia from '../images/logoavio1.webp';
+import logoAirSerbia from '../images/logoavio1.png';
 import logoAeroflot from '../images/aeroflot.png';
 import logoWizz from '../images/wizz.png';
 import ProviderHeading from './ProviderHeading';
