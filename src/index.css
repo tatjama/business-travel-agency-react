@@ -108,7 +108,7 @@ html {
            #formLeft,
            #formRight {
                width: 200px;
-               margin: 20px;
+               margin: 5px;
            }        
            
            /* NAVIGATION */
@@ -562,12 +562,27 @@ input[type="radio"] {
                }
                .sign-form input{
                    width: 200px;
+                   font-size: 12px;
+                   padding: 3px;
                }   
                .top-nav li{
                 padding: 10px 9px;               
                 font-size: small;
             }    
-            /*PAGES*/   
+/*PAGES*/ 
+.section-first figure {
+    width: 135px;
+    padding: 10px;       
+}
+.section-first figure:hover {
+    transform: scale(1.1);
+}    
+.section-first figure img {
+    width: 117px;
+    height: 117px;
+    margin: 8px;
+}
+
             .top{
                 bottom: 5px;
                 right: 5px;
