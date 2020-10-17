@@ -102,7 +102,7 @@ const LeaveCommentForm = (props) =>{
                 Header:
                 <br/>
                 <textarea  
-                    rows="2" 
+                    rows="1" 
                     name = "title" 
                     id="comment-header" 
                     placeholder="Try to describe your range"
