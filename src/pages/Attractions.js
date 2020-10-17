@@ -6,8 +6,6 @@ import useFetchComments from '../hooks/useFetchComments';
 import LeaveCommentForm from '../components/LeaveCommentForm';
 import createCommentArray from '../components/utils/createCommentsArray';
 import {scroller} from 'react-scroll';
-import Loader from 'react-loader-spinner';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Attractions  = (props) =>{
     const [isCommentForm, setIsCommentForm] = useState(false);
@@ -106,7 +104,7 @@ const Attractions  = (props) =>{
                                 }
                             {isError && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
-                                <Loader type="Grid" color="#00BFFF" height={40} width={40} />
+                                <div className = "loader">Loading...</div>
                                 :
                                 (query === attraction.result_object.location_id) 
                                 && isShowComments

@@ -14,8 +14,6 @@ import world from '../images/world.webp';
 import airplane from '../images/airplane.webp';
 import {scroller} from 'react-scroll';
 import arrowUp from '../images/arrow-up.svg';
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from 'react-loader-spinner';
 
 const City =({match}) =>{    
     console.log(match) 
@@ -216,12 +214,7 @@ const City =({match}) =>{
                 <div >
                     {isError && <div className = "error">Error. Something went wrong...</div>}
                     {isLoading?
-                    <div className = "loader">
-                    <Loader type="Grid"
-                    color="#00BFFF"
-                    height={40}
-                    width={40} />
-                    </div>
+                    <div>Loading...</div>
                     :
                     <div>
                     {isFetch && 
