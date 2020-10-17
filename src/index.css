@@ -3,9 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 body,
 html {
-<<<<<<< HEAD
     height: 100vh;
     margin: 0%;
     padding: 0%;
@@ -41,54 +41,6 @@ html {
 .inputError{
     color: red;
 }            
-=======
-               height: 100vh;
-               margin: 0%;
-               padding: 0%;
-               font-family: Arial, Helvetica, sans-serif;
-               box-sizing: border-box;
-               scroll-behavior: smooth; 
-              /* overflow: hidden;*/
-           }                
-           .intro-page {
-               background-image: url("./images/suitcases.webp");
-               background-position: bottom;
-               background-repeat: no-repeat;
-               background-size: cover;
-               height: 100vh;
-               padding: Spx;
-               text-align: center;
-               z-index: -10;
-               
-           } 
-           .intro-page-gradient{
-               padding-top: 20px;
-               background-color: hsla(0, 0%, 0%, 30%);
-               height: 100vh;
-               z-index: -5;
-           }
-           .pages h1{
-               color: red;
-               background-color: white;
-               
-           }
-           .success-message{
-               color: white;
-               position: relative;
-               top: -50px;
-           }
-           .error-message{
-               color: white;
-               font-size: 12px;
-               text-transform: initial;
-           }
-           .error-message-comment{
-               color: salmon;
-           }
-           .inputError{
-               color: red;
-           }            
->>>>>>> parent of f420f9b... styling update
 
            /*SIGN IN*/
            .sign-form{
@@ -118,7 +70,7 @@ html {
            .sign-form input {
                width: 90%;
                height: 30px;
-               margin: 7px;
+               margin: 5px;
                padding: 0px;
            }
            .sign-form button{
@@ -480,12 +432,9 @@ justify-content: space-between;
 flex-wrap: wrap;
 padding: 10px;
 }
-
-
 .provider-logo {
     height: 50px;
-    }
-    
+    }  
 
 .fa {
 font-size: 25px;
@@ -506,7 +455,6 @@ padding: 5px;
     width: 250px;
     padding: 5px;
 }
-<<<<<<< HEAD
 
 /*COMMENT */
 
@@ -518,12 +466,6 @@ padding: 5px;
     margin: 0px;
     padding: 3px;
 }
-=======
-/*COMMENT-ACCOMMODATION*/
-/*COMMENT --ENJOY*/
-/*COMMENT -- LIFE*/
-
->>>>>>> parent of f420f9b... styling update
 .comment {
     border: double 1px rgb(173, 169, 169);
     background-color: ivory;
@@ -616,7 +558,7 @@ input[type="radio"] {
                    top: 10%;
                    width: 100%;
                    height: 700px;
-                   padding: 100px 10px;
+                   padding: 30px 10px;
                }
                .sign-form input{
                    width: 200px;
@@ -700,6 +642,7 @@ input[type="radio"] {
             #sign-up-form input{
                 width: 145px;
                 height: 30px;
+                font-size: 10px;
             }
                #sign-up-form input[type = "button"]{
                    width: 185px;
