@@ -35,17 +35,10 @@ const City =({match}) =>{
     const [position, setPosition] = useState("horizontalPosition");
 
     const scrollFunction = () => {
-        console.log("scrollFunction")        
-        console.log(window.scrollY)
-        if(window.scrollY > 850){
-            setPosition("verticalPosition")
-        }else{
-            setPosition("horizontalPosition")
-        }
+        (window.scrollY > 850)? setPosition("verticalPosition"): setPosition("horizontalPosition")        
     }
     useEffect(() => {
         window.onscroll = function() {scrollFunction()};
-
     }, [window.onscroll])
 
     const fetchCityInformation = async() =>{
@@ -56,8 +49,7 @@ const City =({match}) =>{
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
-        try {
-            
+        try {            
         const data = await 
         //props is name of the city sent from previous page
                fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&
