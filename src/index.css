@@ -5,14 +5,12 @@
 }
 body,
 html {
-               height: 100vh;
-               margin: 0%;
-               padding: 0%;
-               font-family: Arial, Helvetica, sans-serif;
-               box-sizing: border-box;
-               /*scroll-behavior: smooth; 
-               /*overflow-x: hidden;*/
-           }                
+     height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}                
            .intro-page {
                background-image: url("./images/suitcases.png");
                background-position: bottom;
@@ -42,10 +40,11 @@ html {
                color: red;
            }            
 
-           /*SIGN IN*/
+/*SIGN IN*/
+
            .sign-form{
                text-align: center;
-               position: fixed;
+               position: relative;
               
            }
            #sign-in-form {              
@@ -83,8 +82,8 @@ html {
                text-transform: uppercase;
            }                
            .sign-form button:hover {
-               background-color: rgb(151, 170, 206);
-               color: black;
+               color: lightcoral;
+               background-color: transparent;
                font-weight: bold;
            }           
 
@@ -95,10 +94,6 @@ html {
                height: 520px;               
                left: 30%;
                top: 30%;               
-           }
-           .sign-up-fieldset{
-               display: flex;
-               flex-direction: column;
            }
            #formMain {
                display: flex;
@@ -115,7 +110,7 @@ html {
            
            .top-nav {
             overflow: hidden;
-            background-color: black;
+            background-color: rgb(23, 30, 43);
             transition: transform .2s;
         }    
         .top-nav li {
@@ -127,13 +122,16 @@ html {
             text-transform: uppercase;            
         }    
         .top-nav li:hover {
-            text-shadow: black 2px 2px 2px;
-            transform: scale(1.1);
+           color: lightcoral;
         }    
         .active li {
-            background-color: slategray;
-            color: wheat;
+            background-color: ivory;
+            color: rgb(23, 88, 88);
+            border-radius: 3px;
         }    
+        .active-sign li {
+            color: rgb(23, 30, 43);
+        }
         .top-nav .icon {
             display: none;
             text-align: center;
@@ -587,30 +585,29 @@ input[type="radio"] {
     padding: 5px;
 }
 
+/*RESPONSIVE*/ 
 
-    
-
-          
-           /*RESPONSIVE*/           
-           
-           @media screen and (max-width: 800px) {                
-               #sign-in-form,
-               #sign-up-form{
-                   left: -2%;
-                   top: 10%;
-                   width: 100%;
-                   height: 700px;
-                   padding: 30px 10px;
-               }
-               .sign-form input{
-                   width: 200px;
-                   font-size: 12px;
-                   padding: 3px;
-               }   
-               .top-nav li{
-                padding: 10px 9px;               
-                font-size: small;
-            }    
+@media screen and (max-width: 800px) {                
+    #sign-in-form,
+    #sign-up-form{
+    left: -2%;
+    top: 0%;
+    width: 100%;
+    height: 700px;
+    padding: 30px 10px;
+    }
+.sign-form input{
+    width: 200px;
+    font-size: 12px;
+    padding: 3px;
+}   
+.error-message{
+    font-size: 10px;
+}
+.top-nav li{
+    padding: 10px 9px;               
+    font-size: small;
+}    
             /*PAGES*/ 
 
 /*SECTION FIRST*/
@@ -812,7 +809,7 @@ input[type="radio"] {
            /*FOOTER*/
            
            footer {
-               background-color: black;
+               background-color: rgb(23, 30, 43);
                color: white;
                font-size: 14px;
                font-weight: bold;

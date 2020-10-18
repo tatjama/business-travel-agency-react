@@ -115,7 +115,7 @@ const ProviderDetailForm = (props) =>{
             <div className="right ">
                 <h3>About company</h3>
                 <textarea  
-                    rows="20" 
+                    rows="13" 
                     cols = "50"
                     name = "text" 
                     placeholder="Place for your comment..."

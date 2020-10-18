@@ -72,8 +72,8 @@ async function onLoad() {
                     }
                         </>
                         : <>
-                        <NavLink to="/signin" activeClassName="active"><li>Sign in</li></NavLink>
-                        <NavLink to="/signup" activeClassName="active"><li>Sign Up</li></NavLink>                        
+                        <NavLink to="/signin" activeClassName="active-sign"><li>Sign in</li></NavLink>
+                        <NavLink to="/signup" activeClassName="active-sign"><li>Sign Up</li></NavLink>                        
                         </>
                     }
                                     
