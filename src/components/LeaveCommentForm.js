@@ -62,6 +62,7 @@ const LeaveCommentForm = (props) =>{
         <div className="user-comment">   
         <p>{console.log(isUserAuthenticated)}</p>         
             <form id = "leave-comment-form" onSubmit = {handleSubmit} noValidate>
+                <div className = "leave-comment-header">
                  <div className = "provider">                     
                      <img 
                         className = "provider-logo" 
@@ -75,10 +76,10 @@ const LeaveCommentForm = (props) =>{
                             <div>
                                 <Rating rate = {props.info.rating}/>
                                  <p>{props.info.rating} average based on {props.info.num_reviews} reviews.</p>    
-                            </div>
-                     
+                            </div>                     
                  </div>
-                 <div className = "user">
+
+                 <div className = "leave-comment-user">
                      <img 
                         className = "avatar" 
                         src = {avatar} 
@@ -87,6 +88,7 @@ const LeaveCommentForm = (props) =>{
                  <p>Author:
                      <br/><span>{isUserAuthenticated.logInUser.firstName + " " + isUserAuthenticated.logInUser.lastName}</span></p>
                
+                </div>
                 </div>
                 Travel date:
                 <input 

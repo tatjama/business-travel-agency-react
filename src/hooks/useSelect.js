@@ -28,7 +28,7 @@ const useSelect = (callback) =>{
         setIsLoading(true) 
        try {
         const data  = await fetch(`https://countries-cities.p.rapidapi.com/location/country/${id}
-        /city/list?page=1&per_page=20&format=json&population=100001`
+        /city/list?page=1&per_page=100&format=json&population=100001`
         , {
             "method": "GET",
             "headers": {
