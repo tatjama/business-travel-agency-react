@@ -505,6 +505,13 @@ padding: 5px;
     margin: 0px;
     padding: 3px;
 }
+#leave-comment-form button{
+    background-color: rgb(66, 150, 150);
+}
+#leave-comment-form button:hover{
+    background-color: lightcoral;
+    color: white;
+}
 .leave-comment-header{
     display: flex;
     flex-direction: row;
@@ -797,10 +804,7 @@ input[type="radio"] {
     margin: 10px;
      }      
            }  
-           @media screen and (max-width: 500px){   
-            button, .comment-button {
-                width: 100%;
-            }    
+           @media screen and (max-width: 500px){  
             .top{
                 width: 40px;
                 height: 40px;
