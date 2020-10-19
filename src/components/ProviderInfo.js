@@ -3,6 +3,8 @@ import logoApp from '../images/travel-and-tourism.png';
 import logoAirSerbia from '../images/logoavio1.png';
 import logoAeroflot from '../images/aeroflot.png';
 import logoWizz from '../images/wizz.png';
+import logoSerbianRailways from '../images/serbianrailways.png';
+import logoFudex from '../images/logoFudex.png';
 import ProviderHeading from './ProviderHeading';
 import ProviderDetail from './ProviderDetail';
 import ProviderDetailForm from './ProviderDetailForm';
@@ -40,6 +42,10 @@ const ProviderInfo = (props) =>{
             case "Wizz Air": setLogo(logoWizz);
             break;
             case "Aeroflot": setLogo(logoAeroflot);
+            break;
+            case "Serbian Railways": setLogo(logoSerbianRailways);
+            break;
+            case "Fudex": setLogo(logoFudex);
             break;
             default: setLogo(logoApp);
         }

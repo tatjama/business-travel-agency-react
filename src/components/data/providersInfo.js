@@ -53,6 +53,39 @@
         text: `We work to ensure that our customers can quickly and comfortably travel great distances, and thus be mobile, meet more often, work successfully and see the world in all its diversity.
         We give our customers a choice through an extensive route network and different carriers operating within our Group, from low cost to premium class airlines.`
     }
+    ,
+    {   id: "Serbian Railways",
+        location_id: "Serbian Railways",
+        name: "Serbian Railways",
+        type: "Train",
+        category: {name: "Train"},
+        rating: "4",
+        num_review: "250",
+        country: "Serbia",
+        city: "Belgrade",
+        address: "Nemanjina No.6",
+        phone: "+381 11 360-28-99",
+        contact: "+381 11 360-28-99",
+        photo: {images: {small: {url: ""}}},
+        text: `The activities of the company “Serbian Railways” JSC are: engineering and technical consulting, consulting activities in the fieldof information technology and other information technology services, buying and selling real estates, and rental and management activities, accounting, bookkeeping and auditing activities , tax advisory services, technical testing and analysis, rental and leasing of other machinery, equipment of non-material goods, activities of the museums, galleries and collections.`
+    }
+    
+    ,
+    {   id: "Fudex",
+        location_id: "Fudex",
+        name: "Fudex",
+        type: "Bus",
+        category: {name: "Bus"},
+        rating: "5",
+        num_review: "450",
+        country: "Serbia",
+        city: "Belgrade",
+        address: "Balkanska 47",
+        phone: "+011/7620-255",
+        contact: "011/7620-255",
+        photo: {images: {small: {url: ""}}},
+        text: `Fudeks Company Ltd. was founded in 1989. Over the years, Fudeks has achieved a great success in business, in relation to international and domestic road passenger transport. In relation to the economic parameters Fudeks is classified in the medium companies, and according to the number of buses Fudeks is one of the leading private companies in Serbia. We has a modern equipped office in the Balkanska 47th street, in Belgrade.`
+    }
 ]
 
 export default providersInfo;

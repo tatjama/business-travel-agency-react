@@ -41,10 +41,10 @@ const SelectForm = () =>{
                 }
                 <br/>
                 <button type="submit" className="choose-destination-button" >Select</button>
-                { isCities && <div className = "error-pop-up">
+                { isCities && <p className = "error-pop-up">
                     {country.name} doesn't have a city over 100,000 citizens.
-                    <br/> Please select another country ...
-                </div>}
+                    <br/> Please select another country
+                </p>}
             </form>
     )
 }

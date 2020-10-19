@@ -62,7 +62,7 @@ async function onLoad() {
                         <li onClick = {handleSignOut}>Sign Out</li>
                     <NavLink to="/" exact activeClassName="active"><li>Home</li></NavLink>
                     <NavLink to="/life" activeClassName="active"><li>Life ...</li></NavLink>
-                    <NavLink to="/enjoy" activeClassName="active"><li >Enjoy</li></NavLink>
+                    {/*<NavLink to="/enjoy" activeClassName="active"><li >Enjoy</li></NavLink>*/}
                     {
                         (isUserAuthenticated.logInUser.status === 0)
                         && <NavLink to="/feedbacks" activeClassName="active"><li >Feedbacks</li> </NavLink>
