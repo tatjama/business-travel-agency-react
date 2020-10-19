@@ -9,6 +9,7 @@ const useSelect = (callback) =>{
     const [country, setCountry] = useState(countries[0]);    
     const [cities, setCities] = useState([]);
     const [city, setCity] = useState({geonameid: 1141857, name: "Gardez"});
+    const [isCities, setIsCities] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -36,9 +37,13 @@ const useSelect = (callback) =>{
                 "x-rapidapi-key": isUserAuthenticated.rkcc
             }
         })
-        const cities = await data.json();
-       // console.log(cities.cities.length);
+        const cities = await data.json();      
         console.log(cities)
+        if(cities.cities.length === 0){
+            setIsCities(true)
+        }else{
+            setIsCities(false)
+        }
         await setCities(cities.cities)
         console.log(cities)  
        } catch (error) {
@@ -94,7 +99,8 @@ const useSelect = (callback) =>{
          handleSelectCity,
          handleSubmit,
          isLoading,
-         isError
+         isError, 
+         isCities
     }
 
 }

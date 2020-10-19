@@ -284,6 +284,18 @@ button:hover {
     width: 200px;
     margin: 5px;
 }
+.error-pop-up{
+    color: red;
+    background-color: ivory;
+    border-radius: 10px;
+    border: solid 1px  grey;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 5px 10px;
+    margin: 4px 0px 4px 4px;
+    text-align: left;
+    position: relative;
+}
 
 #header-providers button,
 #header-feedback button{

@@ -8,7 +8,7 @@ import Loader from 'react-loader-spinner';
 
 const SelectForm = () =>{
     const history = useHistory();
-    const{city, countries, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError} 
+    const{city, countries, country, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError, isCities} 
     = useSelect(submitted);
     
      function submitted(){
@@ -41,7 +41,10 @@ const SelectForm = () =>{
                 }
                 <br/>
                 <button type="submit" className="choose-destination-button" >Select</button>
-                
+                { isCities && <div className = "error-pop-up">
+                    {country.name} doesn't have a city over 100,000 citizens.
+                    <br/> Please select another country ...
+                </div>}
             </form>
     )
 }
