@@ -778,7 +778,7 @@ input[type="radio"] {
             .data-info div p {
                 font-size: small;
             }
-            #showTransportation,
+            
 .leave-comment-user img{
     width: 30px;
     height: 30px;
@@ -786,6 +786,7 @@ input[type="radio"] {
 .leave-comment-user p{
     font-size: 8px;
 }
+#showTransportation,
     #user-comment {
         border: darkcyan solid 1px;
         border-radius: 10px;
