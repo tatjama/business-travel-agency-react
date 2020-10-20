@@ -15,14 +15,14 @@ const Feedbacks = ()=>{
     console.log( isUserAuthenticated);
 
     let newProvidersInfoArrayFromLocalStorage = []
-    const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray')) || []
+    const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArr')) || []
     
     useEffect(() => {       
     if(providersInfoArrayFromLocalStorage.length === 0){
-        localStorage.setItem('providersArray', JSON.stringify(providersInfoArray))
-        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
+        localStorage.setItem('providersArr', JSON.stringify(providersInfoArray))
+        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArr'))
     } else{
-        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArray'))
+        newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArr'))
     }
     setProvidersInfoArray(newProvidersInfoArrayFromLocalStorage)
     console.log(providersInfoArray)

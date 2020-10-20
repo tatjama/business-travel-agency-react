@@ -22,14 +22,14 @@ const ProviderDetailForm = (props) =>{
     values.category.name = values.type;
     values.photo.images.small.url = props.logo  ;
     let providersInLocalStorageArray = [];
-    providersInLocalStorageArray = JSON.parse(localStorage.getItem('providersArray'));
+    providersInLocalStorageArray = JSON.parse(localStorage.getItem('providersArr'));
     function findProviderById(provider){
         return provider.id !== values.id
     }
     const providers = providersInLocalStorageArray.filter(findProviderById)
-    localStorage.removeItem('providersArray')
+    localStorage.removeItem('providersArr')
     providers.push(values);
-    localStorage.setItem('providersArray', JSON.stringify(providers))
+    localStorage.setItem('providersArr', JSON.stringify(providers))
   }
 
     return( 
