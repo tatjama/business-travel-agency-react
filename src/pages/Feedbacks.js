@@ -39,7 +39,6 @@ const Feedbacks = ()=>{
             function findCommentsByUserName(comment){
                 return comment.comment.user.username === isUserAuthenticated.logInUser.firstName 
             }
-            findCommentsByUserName
             const myCommentsArray = commentsArrayFromLocalStorage.filter(findCommentsByUserName) 
             setCommentsArray(myCommentsArray)
         }
