@@ -33,13 +33,17 @@ const Feedbacks = ()=>{
         setShowMyCommentsList(true)
     }
     useEffect(() => {
-        const commentsArrayFromLocalStorage = JSON.parse(localStorage.getItem('commentsArray'))
+        const commentsArrayFromLocalStorage = JSON.parse(localStorage.getItem('commentsArray')) || []
         console.log(commentsArrayFromLocalStorage) 
-        function findCommentsByUserName(comment){
-            return comment.comment.user.username === isUserAuthenticated.logInUser.firstName 
+        if (commentsArrayFromLocalStorage.length !== 0){
+            function findCommentsByUserName(comment){
+                return comment.comment.user.username === isUserAuthenticated.logInUser.firstName 
+            }
+            findCommentsByUserName
+            const myCommentsArray = commentsArrayFromLocalStorage.filter(findCommentsByUserName) 
+            setCommentsArray(myCommentsArray)
         }
-        const myCommentsArray = commentsArrayFromLocalStorage.filter(findCommentsByUserName) 
-        setCommentsArray(myCommentsArray)
+        
     }, [])
 
     const  scrollToSection = (ident) => {
