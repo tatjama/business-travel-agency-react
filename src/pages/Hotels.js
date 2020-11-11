@@ -22,7 +22,7 @@ const Hotels = (props) =>{
     const commentsArray = createCommentArray(query, comments)
       await setCommentsFromLocalStorageAndFetchComments(commentsArray)   
       setIsShowComments(true)    
-      scrollToSection("comment")      
+           
     }
     const closeComments = () => {
         setIsShowComments(false)
@@ -31,7 +31,6 @@ const Hotels = (props) =>{
        const openCommentForm = (resultObject) => {
          setLocationCommentId(resultObject.location_id);
          setCommentFromUser(resultObject)
-         console.log(resultObject)
          setIsCommentForm(true)
        }
    
@@ -48,7 +47,6 @@ const Hotels = (props) =>{
 
     return(
         <div className = "hotels" >
-            {console.log(props.hotels)}
             <h1 className = "main-header">HOTELS </h1>
             <div className = "main-div" id = "hotels">
                 {props.hotels.map((item) => {
@@ -118,7 +116,7 @@ const Hotels = (props) =>{
                                 (query === item.result_object.location_id) 
                                 && isShowComments
                                 &&
-                            <div>
+                            <div className = {item.result_object.location_id} id = {item.result_object.location_id}>
                              {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
@@ -126,7 +124,8 @@ const Hotels = (props) =>{
                                    </div>
                                 )
                             })}   
-                             
+                            {console.log(item.result_object.location_id)}
+                            {scrollToSection(`${item.result_object.location_id}`) }
                             </div>
                             }
   
