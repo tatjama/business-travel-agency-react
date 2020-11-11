@@ -22,8 +22,6 @@ const Attractions  = (props) =>{
      const commentsArray = createCommentArray(query, comments)
      await setCommentsFromLocalStorageAndFetchComments(commentsArray)
      setIsShowComments(true)
-      scrollToSection("comment")
-      
     }
     const closeComments = () => {
         setIsShowComments(false)
@@ -108,7 +106,7 @@ const Attractions  = (props) =>{
                                 :
                                 (query === attraction.result_object.location_id) 
                                 && isShowComments
-                            && <div>
+                            && <div className = {attraction.result_object.location_id}>
                              {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
@@ -116,8 +114,11 @@ const Attractions  = (props) =>{
                                    </div>
                                 )
                             })}
+                            {scrollToSection(`${attraction.result_object.location_id}`)}
                             </div>
+                            
                             }
+                            
                             </div>
                             <hr style={{"border":"3px solid #f1f1f1 "}}/>   
                         </div>
