@@ -60,10 +60,7 @@ const useSelect = (callback) =>{
      
      setCity(chosenCity);
  }
- useEffect(() => {
-     console.log(city)
- },[city])      
-
+ 
  const handleSubmit =(e) => {
      e.preventDefault();
      setIsSubmitted(true)
