@@ -1,10 +1,8 @@
 import React from 'react';
-//import logoAirplane from '../images/logoavio1.png';
 
 const CityInfo = (props) =>{
     return(
-        <div>
-            {console.log(props.header)}  
+        <div>  
             City:  
             <h1 className = "main-header">{props.header.name} </h1>                 
             <div className = "main-div">                              

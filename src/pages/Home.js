@@ -3,11 +3,7 @@ import SelectForm from '../components/SelectForm';
 import {useAppContext} from '../libs/contextLib';
 
 const Home = () =>{
- // const [user, setUser] = useState({})
-  const { isUserAuthenticated} = useAppContext();      
-  console.log( isUserAuthenticated)
-  //const user = useContext(useAppContext)
-  //console.log(user)
+  const { isUserAuthenticated} = useAppContext();  
  
     return(
       <header className="header" id="header-home">

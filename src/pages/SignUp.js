@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import useForm from '../hooks/useForm';
 import validateSignUp from '../components/validateSignUp';
-//import useStateWithLocalStorage from '../components/utils/useStateWithLocalStorage';
 
 const initValuesForSignUp = {
   firstName: "",
@@ -28,10 +27,8 @@ const SignUp = ()=>{
   function submitted() {
     alert('Submitted successfully');
     setIsSuccess(true);
-    console.log(isSuccess)
 
     history.push('/signin');
-    console.log(values);
     let usersInLocalStorageArray = [];
     usersInLocalStorageArray = JSON.parse(localStorage.getItem('usersInLocalStorage')) || []
     usersInLocalStorageArray.push(values)
@@ -182,7 +179,6 @@ const SignUp = ()=>{
                             <button type="submit">Sign Up</button>
                             <button type="reset" onClick = {handleReset} >Clear</button>
                             <br/><br/>
-                            {/*<input type="button" onClick={hideSignUpForm} value="Close"/>*/}
                         </div>
                    </fieldset>
                 </form>

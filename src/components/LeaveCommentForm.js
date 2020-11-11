@@ -17,7 +17,6 @@ const initialValues = {
 
 const LeaveCommentForm = (props) =>{
     const {isUserAuthenticated} = useAppContext();
-    console.log(isUserAuthenticated)
     const [avatar, setAvatar] = useState(appAvatar);
 
     useEffect(() => {       
@@ -50,7 +49,6 @@ const LeaveCommentForm = (props) =>{
             }
                                     }
         alert("Thank you. Your comment is submitted")
-        console.log(newCommentValues)
         let commentsArray = []
         commentsArray =JSON.parse(localStorage.getItem('commentsArray')) || []
          commentsArray.push(newCommentValues)   
@@ -60,7 +58,7 @@ const LeaveCommentForm = (props) =>{
     
     return(
         <div className="user-comment">   
-        <p>{console.log(isUserAuthenticated)}</p>         
+        <p></p>         
             <form id = "leave-comment-form" onSubmit = {handleSubmit} noValidate>
                 <div className = "leave-comment-header">
                  <div className = "provider">                     

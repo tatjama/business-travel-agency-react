@@ -4,8 +4,7 @@ import Rating from './Rating';
 import {useAppContext} from '../libs/contextLib';
 
 const CommentFromUsers = (props) =>{
-    const { isUserAuthenticated} = useAppContext();      
-    console.log( isUserAuthenticated)   
+    const { isUserAuthenticated} = useAppContext();   
 
     const deleteComment = (id) => {
         if(window.confirm(`Do you want to delete ${id} comment?`))
@@ -20,6 +19,7 @@ const CommentFromUsers = (props) =>{
                     }
                     else{alert(`You didn't remove ${id} comment`)} 
     }
+    
     return(
         <div className="comment" id= {props.comment.id}>       
         <div className="user">

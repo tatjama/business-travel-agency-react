@@ -12,7 +12,6 @@ const Feedbacks = ()=>{
     const [commentsArray, setCommentsArray] = useState([])
     const [showMyCommentsList, setShowMyCommentsList] = useState(false)
     const { isUserAuthenticated} = useAppContext();      
-    console.log( isUserAuthenticated);
 
     let newProvidersInfoArrayFromLocalStorage = []
     const providersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArr')) || []
@@ -25,16 +24,13 @@ const Feedbacks = ()=>{
         newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArr'))
     }
     setProvidersInfoArray(newProvidersInfoArrayFromLocalStorage)
-    console.log(providersInfoArray)
     }, [])
     
-    const showMyComments = () => {       
-        console.log(commentsArray)
+    const showMyComments = () => {   
         setShowMyCommentsList(true)
     }
     useEffect(() => {
         const commentsArrayFromLocalStorage = JSON.parse(localStorage.getItem('commentsArray')) || []
-        console.log(commentsArrayFromLocalStorage) 
         if (commentsArrayFromLocalStorage.length !== 0){
             function findCommentsByUserName(comment){
                 return comment.comment.user.username === isUserAuthenticated.logInUser.firstName 

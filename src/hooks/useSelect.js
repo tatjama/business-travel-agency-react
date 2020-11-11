@@ -16,14 +16,11 @@ const useSelect = (callback) =>{
     const {isUserAuthenticated} = useAppContext()
     let chosenCity = {}
           
-    console.log(country)
-
  const handleSelectCountry = (e) =>{        
       setCountry(countries[e.target.value]);
       
  }
- useEffect(() => {
-     console.log(country);  
+ useEffect(() => {  
      const fetchCities = async(id) =>{
         setIsError(false)  
         setIsLoading(true) 
@@ -37,15 +34,13 @@ const useSelect = (callback) =>{
                 "x-rapidapi-key": isUserAuthenticated.rkcc
             }
         })
-        const cities = await data.json();      
-        console.log(cities)
+        const cities = await data.json();    
         if(cities.cities.length === 0){
             setIsCities(true)
         }else{
             setIsCities(false)
         }
         await setCities(cities.cities)
-        console.log(cities)  
        } catch (error) {
            setIsError(true)
        }
@@ -53,19 +48,11 @@ const useSelect = (callback) =>{
         setIsLoading(false)   
     }
      fetchCities(country.id);
-     //ERROR HANDLE     
-     //!cities? alert("Nema grada"):
-     // setCities(cities);
-    // console.log(cities)
         
      },[country])
 
- const handleSelectCity = (e) =>{     
-     console.log(e.target.value)
-     console.log(cities)
+ const handleSelectCity = (e) =>{   
      cities.map((city) => {
-        // console.log(city.geonameid)
-         //console.log(e.target.value)
         if(city.geonameid === parseInt(e.target.value)){
             chosenCity = city;           
         }return chosenCity
@@ -78,7 +65,6 @@ const useSelect = (callback) =>{
  },[city])      
 
  const handleSubmit =(e) => {
-     console.log("useState submit")
      e.preventDefault();
      setIsSubmitted(true)
  }

@@ -17,8 +17,7 @@ import arrowUp from '../images/arrow-up.svg';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from 'react-loader-spinner';
 
-const City =({match}) =>{    
-    console.log(match) 
+const City =({match}) =>{   
     const [header, setHeader] = useState([])  
     const [isFetch, setIsFetch] = useState(false);
     const [isRestaurantsFetch, setIsRestaurantsFetch] = useState(false)
@@ -64,7 +63,6 @@ const City =({match}) =>{
                const info = await data.json();
                setIsFetch(true)
                await setHeader(info.data[0].result_object)
-               console.log(header)
    
                setHotels(info.data.filter((hotel) => {
                    return(
@@ -107,7 +105,6 @@ const City =({match}) =>{
                 restaurant.photo //if photo does not exist
             )
         }))
-        console.log(restaurants)
         setIsAirportsFetch(false);
         setIsAttractionsFetch(false);
         setIsHotelsFetch(false);

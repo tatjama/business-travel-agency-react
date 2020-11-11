@@ -9,7 +9,6 @@ const useFetchComments = (callback) => {
     const [isError, setIsError] = useState(false);
 
     const fetchComments = async (id) => {
-         console.log(id)
          setIsError(false)
          setIsLoading(true)
          try {             
@@ -25,15 +24,12 @@ const useFetchComments = (callback) => {
      const comments = await data.json();
      await setComments(comments.data);
      await setQuery(id);
-     console.log(comments);
          } catch (error) {
              setIsError(true)
          }  
      setIsLoading(false)  
   }
-  useEffect(() => {
-      console.log(query)
-      console.log(comments)       
+  useEffect(() => {       
           callback()      
   }, [query, comments])
 

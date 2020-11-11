@@ -2,9 +2,7 @@ import React from 'react';
 
 const Airports = (props) =>{
     return(
-        <div className = "airports" >                    
-                    {console.log(props.airports)}
-                    {console.log(props.airports.length)}
+        <div className = "airports" >  
             <h1 className = "main-header">AIRPORTS </h1>
             {(props.airports.length !== 0)?
             <div className = "main-div" id = "airports">            

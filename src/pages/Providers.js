@@ -36,11 +36,9 @@ const Providers = ()=>{
         newProvidersInfoArrayFromLocalStorage = JSON.parse(localStorage.getItem('providersArr'))
     }
     setProvidersInfoArray(newProvidersInfoArrayFromLocalStorage)
-    console.log(providersInfoArray)
     }, [])
 
     const { isUserAuthenticated} = useAppContext();      
-    console.log( isUserAuthenticated)
 
     function showNewProviderForm() {
         (newProvider === false)? setNewProvider(true): setNewProvider(false)

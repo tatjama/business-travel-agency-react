@@ -33,7 +33,6 @@ const ProviderInfo = (props) =>{
     }
 
     const openCommentForm = (provider) => {
-        console.log(provider)
         setIsCommentForm(true)
     }
     const closeCommentForm = () => {

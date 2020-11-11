@@ -12,8 +12,6 @@ const SelectForm = () =>{
     = useSelect(submitted);
     
      function submitted(){
-         console.log('is submitted')
-        console.log(city)
         history.push(`/${city.name}`)
     }
 

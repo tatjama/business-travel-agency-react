@@ -9,8 +9,7 @@ import { scroller } from 'react-scroll';
 import Loader from 'react-loader-spinner';
 
 
-const Restaurants = (props) => {    
-    console.log(props.restaurants.location_id);  
+const Restaurants = (props) => {     
 
     const [isCommentForm, setIsCommentForm] = useState(false);
     const [locationCommentId, setLocationCommentId] = useState(null);
@@ -34,7 +33,6 @@ const Restaurants = (props) => {
        const openCommentForm = (resultObject) => {
          setLocationCommentId(resultObject.location_id);
          setCommentFromUser(resultObject)
-         console.log(resultObject)
          setIsCommentForm(true)
        }
    
@@ -52,8 +50,7 @@ const Restaurants = (props) => {
 
 
  return(
-        <div className = "restaurants">                 
-            {console.log(props.restaurants)}
+        <div className = "restaurants">   
             <h1 className = "main-header">RESTAURANTS </h1>
             <div className = "main-div" id = "restaurants">
                 {props.restaurants.map((restaurant) =>{

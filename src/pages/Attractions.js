@@ -31,7 +31,6 @@ const Attractions  = (props) =>{
     const openCommentForm = (resultObject) => {
       setLocationCommentId(resultObject.location_id);
       setCommentFromUser(resultObject)
-      console.log(resultObject)
       setIsCommentForm(true)
     }
 
@@ -48,7 +47,6 @@ const Attractions  = (props) =>{
     
     return(
         <div className = "attractions">
-        {console.log(props.attractions)}
             <h1 className = "main-header">ATTRACTIONS </h1>
             <div className = "main-div" id = "attractions">
                 {props.attractions.map((attraction) => {
@@ -111,7 +109,6 @@ const Attractions  = (props) =>{
                                 (query === attraction.result_object.location_id) 
                                 && isShowComments
                             && <div>
-                                {console.log(commentsFromLocalStorageAndFetchComments)}
                              {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
