@@ -23,7 +23,6 @@ const Restaurants = (props) => {
         const commentsArray = createCommentArray(query, comments)
         await setCommentsFromLocalStorageAndFetchComments(commentsArray)
         setIsShowComments(true)
-        scrollToSection("comment")
        }
 
        const closeComments = () => {
@@ -146,7 +145,7 @@ const Restaurants = (props) => {
                                 (query === restaurant.location_id) 
                                 && isShowComments
                                 &&
-                            <div>
+                            <div className = {restaurant.location_id}>
                              {commentsFromLocalStorageAndFetchComments.map((comment) => {
                                 return(
                                     <div key = {comment.id}>
@@ -154,7 +153,7 @@ const Restaurants = (props) => {
                                    </div>
                                 )
                             })}   
-                             
+                            {scrollToSection(`${restaurant.location_id}`)}
                             </div>
                             }
                                 
