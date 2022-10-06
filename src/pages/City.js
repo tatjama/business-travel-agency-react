@@ -1,21 +1,28 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import { scroller, scrollLeft, scrollTop } from 'react-scroll';
+import Loader from 'react-loader-spinner';
+//components
 import Button from '../components/Button';
+import SelectForm from '../components/SelectForm';
+import SectionFirst from '../components/SectionFirst';
+//context
 import { useAppContext } from '../libs/contextLib';
+//pages
 import Airports from './Airports';
 import Attractions from './Attractions';
 import CityInfo from './CityInfo';
 import Hotels from './Hotels';
 import Restaurants from './Restaurants';
-import SelectForm from '../components/SelectForm';
-import SectionFirst from '../components/SectionFirst';
+//assets
 import breakfast from '../images/breakfast.png';
 import hotel from '../images/hotel.png';
 import world from '../images/world.png';
 import airplane from '../images/airplane.png';
-import {scroller, scrollLeft, scrollTop} from 'react-scroll';
 import arrowUp from '../images/arrow-up.svg';
+//styles
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from 'react-loader-spinner';
+//utils
+import { getCityInformationURL, getRestaurantInformationURL, getAirportsInformationURL } from '../utils/constants';
 
 const City =({match}) =>{   
     const [header, setHeader] = useState([])  
@@ -51,11 +58,10 @@ const City =({match}) =>{
         try {            
         const data = await 
         //props is name of the city sent from previous page
-               fetch(`https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&
-               sort=relevance&offset=0&lang=en_US&currency=USD&units=km&query=${match.params.id}`, {
+               fetch(getCityInformationURL(match.params.id), {
                    "method": "GET",
                    "headers": {
-                       "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+                       "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
                        "x-rapidapi-key": isUserAuthenticated.rk
                    }
                })
@@ -89,12 +95,10 @@ const City =({match}) =>{
         setIsLoading(true)
         try {
             const data = await
-        fetch(`https://tripadvisor1.p.rapidapi.com/restaurants/list?restaurant_tagcategory_standalone=10591&
-        lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${header.location_id}`
-        ,{
+        fetch(getRestaurantInformationURL(header.location_id),{
 	        "method": "GET",
 	        "headers": {
-		        "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+		        "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
 		        "x-rapidapi-key": isUserAuthenticated.rk
 	        }
         })
@@ -146,10 +150,10 @@ const City =({match}) =>{
         setIsLoading(true)
         try {
             const data =
-        await fetch(`https://tripadvisor1.p.rapidapi.com/airports/search?locale=en_US&query=${header.name}`, {
+        await fetch(getAirportsInformationURL(header.name), {
           "method": "GET",
           "headers": {
-              "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+              "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
               "x-rapidapi-key": isUserAuthenticated.rk
           }
       })

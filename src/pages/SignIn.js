@@ -1,9 +1,12 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
-import useForm from '../hooks/useForm';
-import validateSignIn from '../components/validateSignIn';
-import {useAppContext} from '../libs/contextLib';
+import { useHistory } from 'react-router-dom';
+//components
 import login from "../components/utils/login";
+import validateSignIn from '../components/validateSignIn';
+//context
+import { useAppContext } from '../libs/contextLib';
+//hooks
+import useForm from '../hooks/useForm';
 
 const initValuesForSignIn = {
   email: '',
@@ -18,15 +21,15 @@ const SignIn = () => {
   
  async  function submitted() {  
     try{
-     const user = await   login(values);
+     const user = login(values);
      if(Object.keys(user).length !==0){
       alert('Submitted successfully');      
       sessionStorage.setItem('logInUser', JSON.stringify(user)) ;
       setUserHasAuthenticated({
               isAuthenticated:true,
               logInUser: user,
-              rk:"3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411",
-              rkcc: "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
+              rk:process.env.REACT_APP_RAPID_API_KEY,
+              rkcc: process.env.REACT_APP_RAPID_API_KEY_COUNTRIES_CITIES
             });        
       history.push("/");
      }else{
