@@ -1,5 +1,8 @@
-import {useState, useEffect} from 'react';
-import {useAppContext} from '../libs/contextLib';
+import { useState, useEffect } from 'react';
+//context
+import { useAppContext } from '../libs/contextLib';
+//utils
+import { getCommentsURL } from '../utils/constants';
 
 const useFetchComments = (callback) => {
     const { isUserAuthenticated} = useAppContext(); 
@@ -11,24 +14,26 @@ const useFetchComments = (callback) => {
     const fetchComments = async (id) => {
          setIsError(false)
          setIsLoading(true)
+
          try {             
          const data = await
-         fetch(`https://tripadvisor1.p.rapidapi.com/reviews/list?limit=20&currency=USD&
-         lang=en_US&location_id=${id}`, {
+         fetch(getCommentsURL(id), {
              "method": "GET",
              "headers": {
-                 "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+                 "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
                  "x-rapidapi-key": isUserAuthenticated.rk
          }
      })
      const comments = await data.json();
-     await setComments(comments.data);
-     await setQuery(id);
+     setComments(comments.data);
+     setQuery(id);
          } catch (error) {
              setIsError(true)
          }  
+
      setIsLoading(false)  
   }
+
   useEffect(() => {       
           callback()      
   }, [query, comments])

@@ -1,7 +1,10 @@
 import { cleanup } from '@testing-library/react';
-import {useState, useEffect} from 'react';
-import {countriesArray} from '../components/data/countries.json';
-import {useAppContext} from '../libs/contextLib';
+import { useState, useEffect } from 'react';
+//context
+import { useAppContext } from '../libs/contextLib';
+//utils
+import { getCitiesURL } from '../utils/constants';
+import { countriesArray } from '../components/data/countries.json';
 
 const countries = countriesArray;
 
@@ -25,12 +28,10 @@ const useSelect = (callback) =>{
         setIsError(false)  
         setIsLoading(true) 
        try {
-        const data  = await fetch(`https://countries-cities.p.rapidapi.com/location/country/${id}
-        /city/list?page=1&per_page=100&format=json&population=100001`
-        , {
+        const data  = await fetch(getCitiesURL(id), {
             "method": "GET",
             "headers": {
-                "x-rapidapi-host": "countries-cities.p.rapidapi.com",
+                "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST_COUNTRIES_CITIES,
                 "x-rapidapi-key": isUserAuthenticated.rkcc
             }
         })
@@ -40,7 +41,7 @@ const useSelect = (callback) =>{
         }else{
             setIsCities(false)
         }
-        await setCities(cities.cities)
+        setCities(cities.cities)
        } catch (error) {
            setIsError(true)
        }

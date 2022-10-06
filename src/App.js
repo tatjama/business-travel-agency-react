@@ -1,8 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import Footer from './components/Footer';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useHistory} from  'react-router-dom';
-import {AppContext} from './libs/contextLib';
+//components
+import Footer from './components/Footer';
+//routes
 import Routes from './pages/Routes';
+//context
+import { AppContext } from './libs/contextLib';
+//hooks
 import useStateWithSessionStorage from './hooks/useStateWithSessionStorage';
 
 const App = ()=>{
@@ -19,33 +23,33 @@ const App = ()=>{
 }
 
 useEffect(() => {     
-    onLoad();    
-}, [])
-
-async function onLoad() {
-    try {
-        await 
-        console.log('Is user in session?');
-        if(value === ""){
-            history.replace('/signin');
-        }else{
-            let user = JSON.parse(value);
-            alert("user " + user.email + " is on session!")
-            history.replace('/');
-            await setUserHasAuthenticated({
-                isAuthenticated:true,
-                logInUser: user,
-                rk:"3a41e73b67msh3835cf67055f37bp1fcf6ejsn149531416411",
-                rkcc: "e972fb1e60msh0d592a9ef4ed992p1e0e2bjsne8349b28c470"
-              })
+    async function onLoad() {
+        try {
+            console.log('Is user in session?');
+            if(value === ""){
+                history.replace('/signin');
+            }else{
+                let user = JSON.parse(value);
+                alert("user " + user.email + " is on session!")
+                history.replace('/');
+                 setUserHasAuthenticated({
+                    isAuthenticated:true,
+                    logInUser: user,
+                    rk: process.env.REACT_APP_RAPID_API_KEY,
+                    rkcc: process.env.REACT_APP_RAPID_API_KEY_COUNTRIES_CITIES
+                  })
+            }
+        } catch (error) {
+            if(error !== 'No current user'){
+                alert(error)
+            }
         }
-    } catch (error) {
-        if(error !== 'No current user'){
-            alert(error)
-        }
+        setIsAuthenticating(false);
     }
-    setIsAuthenticating(false);
-}
+    onLoad();    
+}, [history, value])
+
+
      
     return(
         !isAuthenticating &&
