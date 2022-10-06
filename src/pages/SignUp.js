@@ -39,8 +39,7 @@ const SignUp = ()=>{
       <div className="intro-page-gradient"> 
         <form className="sign-form" id="sign-up-form" onSubmit = {handleSubmit} noValidate   >
           {isSuccess && <div className="success-message">Thank you for register</div>}
-                   <fieldset className="sign-up-fieldset">     
-                   <legend>SIGN UP</legend>           
+                     
                         <div id="formMain">
                            <div id="formLeft" >
                                 
@@ -56,7 +55,7 @@ const SignUp = ()=>{
                                   autoFocus
                                   required
                                 />
-                                {errors.firstName && <p className="error-message">{errors.firstName}</p>}
+                                {<p className="error-message">{errors.firstName}</p>}
                                 <span className="error-sign-up" title="Error. Valid surname contain only letters"></span>
                                 <input 
                                   type="text" 
@@ -68,7 +67,7 @@ const SignUp = ()=>{
                                   onChange = {handleChange}
                                   required
                                 />
-                                {errors.lastName && <p className="error-message">{errors.lastName}</p>}
+                                {<p className="error-message">{errors.lastName}</p>}
                                 <span className="error-sign-up" title="Error. E-mail format something@something.com"></span>
                                 <input 
                                   type="email" 
@@ -81,7 +80,7 @@ const SignUp = ()=>{
                                   required
                                 />
                                 
-                                {errors.email && <p className="error-message">{errors.email}</p>}
+                                {<p className="error-message">{errors.email}</p>}
                                 
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
@@ -94,7 +93,7 @@ const SignUp = ()=>{
                                   onChange = {handleChange}
                                   required
                                 />
-                                {errors.password && <p className="error-message">{errors.password}</p>}
+                                {<p className="error-message">{errors.password}</p>}
                                 <span className="error-sign-up" title="Error. Password format only letters and numbers"></span>
                                 <input 
                                   type="password" 
@@ -106,7 +105,7 @@ const SignUp = ()=>{
                                   onChange = {handleChange}
                                   required
                                 />
-                                {errors.password && <p className="error-message">{errors.password}</p>}
+                                {<p className="error-message">{errors.password}</p>}
                                 {errors.passwordConfirm && <p className="error-message">{errors.passwordConfirm}</p>}
                             </div>
 
@@ -123,7 +122,7 @@ const SignUp = ()=>{
                                   onChange = {handleChange}
                                   required
                                 />
-                              {errors.address && <p className="error-message">{errors.address}</p>}
+                              {<p className="error-message">{errors.address}</p>}
                                 <span className="error-sign-up" title="Error. Address contain only letters and numbers"></span>
                                 <input 
                                   type="text" 
@@ -134,7 +133,7 @@ const SignUp = ()=>{
                                   value = {values.addressAlternative}
                                   onChange = {handleChange}
                                 />
-                                <br/> 
+                                <p className="error-message"></p>
                                 <span className="error-sign-up" title="Error. Phone contain only numbers"></span>
                                 <input 
                                   type="number" 
@@ -148,7 +147,7 @@ const SignUp = ()=>{
                                   onChange = {handleChange}
                                   required
                                 />
-                                 { errors.phone && <p className="error-message">{errors.phone}</p>}
+                                 {<p className="error-message">{errors.phone}</p>}
                                 <span className="error-sign-up" title="Error. Phone contain only numbers"></span>
                                 <input 
                                   type="number" 
@@ -180,7 +179,7 @@ const SignUp = ()=>{
                             <button type="reset" onClick = {handleReset} >Clear</button>
                             <br/><br/>
                         </div>
-                   </fieldset>
+                   
                 </form>
                 </div>
       </div>

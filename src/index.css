@@ -30,8 +30,12 @@ html {
            }        
            .error-message{
                color: white;
+               color: salmon;
                font-size: 12px;
                text-transform: initial;
+               text-align: right;
+               width: 100%;
+               height: 12px;
            }
            .error-message-comment{
                color: salmon;
@@ -50,8 +54,7 @@ html {
            #sign-in-form {              
                width: 250px;
                height: 260px;
-               left: 40%;
-               top: 30%;
+               margin: 15% auto;
               
            }            
            .sign-form fieldset {
@@ -67,10 +70,13 @@ html {
                font-size: 16px;
            }
            .sign-form input {
-               width: 90%;
                height: 30px;
                margin: 5px;
                padding: 0px;
+           }
+           .sign-form .error-message {
+               width: 250px;
+               margin: 0 auto;
            }
            .sign-form button{
                padding: 5px;
@@ -91,9 +97,7 @@ html {
            
            #sign-up-form {
                width: 550px;
-               height: 520px;               
-               left: 30%;
-               top: 30%;               
+               margin: 10% auto;               
            }
            #formMain {
                display: flex;
@@ -239,8 +243,13 @@ html {
    /*SELECT*/
 
    input, select, .select-provider {
-    padding: 10px;
-    margin: 5px;
+    padding: 10px 15px;
+    margin: 10px;
+    outline: none;
+}
+input::placeholder, select::placeholder {
+    color:rgb(173, 169, 169);
+    font-size:x-small;
 }
 select{
     width: 200px;
@@ -249,13 +258,14 @@ input, .select-provider{
     width: 100%;
 }
 button {
-    padding: 10px;
-    margin: 10px 10px 10px 0px;
+    padding: 12px 15px;
+    margin: 10px;
     background-color: rgb(23, 88, 88);
     color: white;
     font-weight: bold;
     width: 130px;
     cursor: pointer;
+    border: transparent;
 }
 
 button:hover {
@@ -277,7 +287,6 @@ button:hover {
     font-size: small;
 } 
 .choose-destination button {
-    margin: 4px;
     width: 100%;
 } 
 .choose-city button{
@@ -622,10 +631,7 @@ input[type="radio"] {
 @media screen and (max-width: 800px) {                
     #sign-in-form,
     #sign-up-form{
-    left: -2%;
-    top: 0%;
     width: 100%;
-    height: 700px;
     padding: 30px 10px;
     }
 .sign-form input{
@@ -635,6 +641,10 @@ input[type="radio"] {
 }   
 .error-message{
     font-size: 10px;
+}
+#sign-in-form .error-message {
+    width: 200px;
+    margin: 0 auto;
 }
 .top-nav li{
     padding: 10px 9px;               
@@ -832,7 +842,26 @@ input[type="radio"] {
                     
             .item{
                 width: 100%;
-            }            
+            }
+            #sign-up-form {
+                width: 100%;
+                margin: 0 auto;
+            } 
+            #formMain{
+                flex-direction: column;
+            }
+            #formLeft,
+            #formRight {
+               width: 100%;
+           }
+           #sign-up-form input{
+            width: 80%;
+            height: 35px;
+           }
+           .error-message{
+            width: 80%;
+            margin: 0 auto;
+           }
             #transportationFromTo div select{
                 width: 70%;
                  }

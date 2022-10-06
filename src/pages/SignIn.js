@@ -44,7 +44,7 @@ const SignIn = () => {
     <div className = "intro-page">        
       <div className="intro-page-gradient">           
         <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
-          <fieldset>
+          
             <legend>Sign in</legend>
             <br/>
             <span className="error-sign-in"  title="Error. E-mail format something@something.com"></span>
@@ -60,7 +60,7 @@ const SignIn = () => {
                 required = {true}                
             />
             <br/>
-             {errors.email && <p className="error-message">{errors.email}</p>}
+             {<p className="error-message">{errors.email}</p>}
             <span className="error-sign-in"  title="Error. Password format only recive letters and numbers"></span>
             <input 
                 type="password"                 
@@ -72,12 +72,12 @@ const SignIn = () => {
                 onChange = {handleChange} 
                 required = {true}                
             />
-            {errors.password && <p className = "error-message">{errors.password}</p>}
+            {<p className = "error-message">{errors.password}</p>}
             <br/>
             <br/>            
             <button type="submit" >Sign in </button>
             <button type="reset" onClick = {handleReset}>Clear</button>
-        </fieldset>
+        
       </form>      
     </div>
     </div>
