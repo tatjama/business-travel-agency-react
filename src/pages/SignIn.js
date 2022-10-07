@@ -44,10 +44,7 @@ const SignIn = () => {
     <div className = "intro-page">        
       <div className="intro-page-gradient">           
         <form className="sign-form" id="sign-in-form" onSubmit = {handleSubmit}  noValidate >
-          
-            <legend>Sign in</legend>
-            <br/>
-            <span className="error-sign-in"  title="Error. E-mail format something@something.com"></span>
+           <span className="error-sign-in"  title="Error. E-mail format something@something.com"></span>
             <input 
                 type="email"                 
                 name = "email"
