@@ -5,10 +5,10 @@ const Airports = (props) =>{
         <div className = "airports" >  
             <h1 className = "main-header">AIRPORTS </h1>
             {(props.airports.length !== 0)?
-            <div className = "main-div" id = "airports">            
+            <div className = "main-div" id = "airports"> 
                 {props.airports.map((airport) => {
                     return(
-                        <div key = {airport.country_code} className = "data-selected">
+                        <div key = {airport.code} className = "data-selected">
                             <h1>{airport.display_name}</h1>
                             <h2>Code: {airport.code}</h2>
                             <div className = "data-info">

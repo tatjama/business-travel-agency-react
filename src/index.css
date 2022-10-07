@@ -181,7 +181,10 @@ body, html {
     padding: 100px 0px;
 }
 /*LIFE-CITY*/
-        
+ .cityContainer {
+    min-height: 100vh;
+ }  
+
  #header-life {
     background-image: url("./images/city_lights.png");
     background-position-y:75%;    

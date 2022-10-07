@@ -25,6 +25,9 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { getCityInformationURL, getRestaurantInformationURL, getAirportsInformationURL } from '../utils/constants';
 
 const City =({match}) =>{   
+    
+    const [city, setCity] = useState(null);
+    const [country, setCountry] = useState('');
     const [header, setHeader] = useState([])  
     const [isFetch, setIsFetch] = useState(false);
     const [isRestaurantsFetch, setIsRestaurantsFetch] = useState(false)
@@ -39,15 +42,26 @@ const City =({match}) =>{
     const [isError, setIsError] = useState(false);
     const {isUserAuthenticated} = useAppContext();
     const [position, setPosition] = useState("horizontalPosition");
-
+    
     const scrollFunction = () => {
         (window.scrollY > 850)? setPosition("verticalPosition"): setPosition("horizontalPosition")        
     }
     useEffect(() => {
         window.onscroll = function() {scrollFunction()};
-    }, [window.onscroll])
+    }, [window.onscroll]);
 
-    const fetchCityInformation = async() =>{
+    useEffect(() => {
+        if(match.params.id){
+            setCity(match.params.id.split('-')[1]);
+            setCountry(match.params.id.split('-')[0]);            
+        }         
+    },[match.params.id])
+
+    useEffect(() => {
+      city &&  fetchCityInformation(city);
+    },[city])
+
+    const fetchCityInformation = async(city) =>{
         setIsError(false)
         setIsLoading(true)
         setIsFetch(false)
@@ -58,7 +72,7 @@ const City =({match}) =>{
         try {            
         const data = await 
         //props is name of the city sent from previous page
-               fetch(getCityInformationURL(match.params.id), {
+               fetch(getCityInformationURL(city), {
                    "method": "GET",
                    "headers": {
                        "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
@@ -68,7 +82,7 @@ const City =({match}) =>{
                
                const info = await data.json();
                setIsFetch(true)
-               await setHeader(info.data[0].result_object)
+               setHeader(info.data[0].result_object)
    
                setHotels(info.data.filter((hotel) => {
                    return(
@@ -211,19 +225,15 @@ const City =({match}) =>{
     
     
     return(
-        <div>     
+        <div className = "cityContainer">     
              <header className="header" id="header-life" >
                 <div id="message"></div>        
                  <SelectForm />          
-            </header>
-                <Button
-                    className = "life-button"
-                    name = {`Show information about ${match.params.id}`} 
-                    handleOnClick = {fetchCityInformation}
-                />
+            </header>                
                 <div >
                     {isError && <div className = "error">Error. Something went wrong...</div>}
-                    {isLoading?
+                    
+                    { !city ? <h2>Please select a city...</h2> : isLoading?
                     <div className = "loader">
                     <Loader type="Grid"
                     color="#00BFFF"

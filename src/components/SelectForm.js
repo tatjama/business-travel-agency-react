@@ -12,7 +12,7 @@ const SelectForm = () =>{
     = useSelect(submitted);
     
      function submitted(){
-        history.push(`/${city.name}`)
+        history.push(`/${country.name}-${city.name}`)
     }
 
     
