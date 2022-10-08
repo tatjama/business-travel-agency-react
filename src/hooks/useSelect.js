@@ -4,9 +4,7 @@ import { useState, useEffect } from 'react';
 import { useAppContext } from '../libs/contextLib';
 //utils
 import { getCitiesURL } from '../utils/constants';
-import { countriesArray } from '../components/data/countries.json';
-
-//const countries = countriesArray;
+import { filterArrayByValue } from '../utils/helper';
 
 const useSelect = (callback, countries) =>{
     const [country, setCountry] = useState(null);    
@@ -20,7 +18,7 @@ const useSelect = (callback, countries) =>{
     let chosenCity = {}
        
  const handleSelectCountry = (e) =>{
-      setCountry(countries[e.target.value]);      
+      setCountry(filterArrayByValue(countries, e));      
  }
  
  useEffect(() => {  

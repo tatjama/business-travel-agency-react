@@ -8,7 +8,7 @@ export const getCountriesURL = () => `${process.env.REACT_APP_RAPID_API_BASE_URL
 /location/country/list`;
 
 export const getCitiesURL = (id) => `${process.env.REACT_APP_RAPID_API_BASE_URL_COUNTRIES_CITIES}
-/location/country/${id}/city/list?page=1&per_page=100&format=json&population=10001`;
+/location/country/${id}/city/list?page=1&per_page=100&format=json&population=50001`;
 
 export const getCommentsURL = (id) => `${process.env.REACT_APP_RAPID_API_BASE_URL_TRIPADVISOR}
 /reviews/list?limit=20&currency=USD&lang=en_US&location_id=${id}`;

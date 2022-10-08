@@ -10,7 +10,7 @@ import Select from './Select';
 import useSelect from '../hooks/useSelect';
 //utils
 import { getCountriesURL } from '../utils/constants';
-import { mapperDictionaryToArray } from '../utils/helper';
+import { mapperDictionaryToArray, sortedArrayByName } from '../utils/helper';
 
 
 const SelectForm = () =>{
@@ -32,12 +32,11 @@ const SelectForm = () =>{
         }
     })
     const fetchCountries = await data.json(); 
-
-    setCountries(mapperDictionaryToArray(fetchCountries.countries));
+    const mappedCountries = mapperDictionaryToArray(fetchCountries.countries); 
+    setCountries(sortedArrayByName(mappedCountries));
    } catch (error) {
        setIsErrorCountries(true)
-   }
-        
+   }        
     setIsLoadingCountries(false)   
 }
 
