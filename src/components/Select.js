@@ -1,25 +1,22 @@
 import React from 'react';
 
-const Select = (props) =>{
-   //console.log(props)   
-   
+const Select = ({ handleChange, optionArray, autoFocus, name}) =>{
     return(
         <select 
-            name = {props.name} 
-            id = {props.name} 
-            onChange={props.handleChange} 
-            autoFocus = {props.autoFocus} 
-        >       
-                        {props.optionArray.map((option) =>{
-    return(
-        <option 
-            value = {option.value? option.value: option.geonameid} 
-            key = {option.id? option.id: option.geonameid} 
-            id = {option.id? option.id: option.geonameid}>
-                {option.name}
-        </option>
-    )
-   })}
+            name = {name} 
+            id = {name} 
+            onChange={handleChange} 
+            autoFocus = {autoFocus} 
+        >     
+        <option  value="">Choose {name}</option>
+  
+        {optionArray.map((option) => <option 
+                                        value = {option.value? option.value: option.geonameid} 
+                                        key = {option.id? option.id: option.geonameid} 
+                                        id = {option.id? option.id: option.geonameid}>
+                                            {option.name}
+                                    </option>)
+        }
                         
         </select>
     )

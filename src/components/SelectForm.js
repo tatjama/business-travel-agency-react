@@ -1,28 +1,65 @@
-import React from 'react';
-import Select from './Select';
-import useSelect from '../hooks/useSelect';
+import React, { useState, useEffect } from 'react';
 import {useHistory} from 'react-router-dom';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from 'react-loader-spinner';
+//context
+import {useAppContext} from '../libs/contextLib';
+//components
+import Select from './Select';
+//hooks
+import useSelect from '../hooks/useSelect';
+//utils
+import { getCountriesURL } from '../utils/constants';
+import { mapperDictionaryToArray } from '../utils/helper';
 
 
 const SelectForm = () =>{
     const history = useHistory();
-    const {city, countries, country, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError, isCities} 
-    = useSelect(submitted);
+    const { isUserAuthenticated } = useAppContext();
+    const [countries, setCountries] = useState([]);
+    const [isErrorCountries, setIsErrorCountries] = useState(false);
+    const [isLoadingCountries, setIsLoadingCountries] = useState(false);
+
+  const fetchCountries = async() =>{
+    setIsErrorCountries(false)  
+    setIsLoadingCountries(true) 
+   try {
+    const data  = await fetch(getCountriesURL(), {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST_COUNTRIES_CITIES,
+            "x-rapidapi-key": isUserAuthenticated.rkcc
+        }
+    })
+    const fetchCountries = await data.json(); 
+
+    setCountries(mapperDictionaryToArray(fetchCountries.countries));
+   } catch (error) {
+       setIsErrorCountries(true)
+   }
+        
+    setIsLoadingCountries(false)   
+}
+
+useEffect(() => {
+  fetchCountries();
+}, [])
+ 
+    const {city, country, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError, isCities} 
+    =  useSelect(submitted, countries);
     
      function submitted(){
-        history.push(`/${country.name}-${city.name}`)
+      city && country ?  history.push(`/${country.name}-${city.name}`) : history.push('/life')
     }
     
     return(
         <form className="choose-destination" onSubmit = {handleSubmit}>    
-                <Select 
+        {countries.length > 1 && <Select 
                    handleChange = {handleSelectCountry}
                    optionArray = {countries}
                    autoFocus = {true}
                    name = "countries"
-                />
+                />}
                         <br/>
                 {isError && <div className = "error">Error. Something went wrong...</div>}
                 {isLoading?

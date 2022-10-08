@@ -291,8 +291,8 @@ input, .select-provider{
 button {
     padding: 12px 15px;
     margin: 10px;
-    background-color: rgb(23, 88, 88);
-    color: white;
+    background-color: rgb(66, 150, 150);
+    color: aliceblue;
     font-weight: bold;
     width: 130px;
     cursor: pointer;
@@ -300,8 +300,8 @@ button {
 }
 
 button:hover {
-    background-color: ivory;
-    color: lightcoral;
+    background-color: rgb(23, 88, 88);
+    color: white;    
 }
 
 .choose-destination {

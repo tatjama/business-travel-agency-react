@@ -4,8 +4,11 @@ import hotel from '../images/hotel.png';
 import world from '../images/world.png';
 import airplane from '../images/airplane.png';
 
+export const getCountriesURL = () => `${process.env.REACT_APP_RAPID_API_BASE_URL_COUNTRIES_CITIES}
+/location/country/list`;
+
 export const getCitiesURL = (id) => `${process.env.REACT_APP_RAPID_API_BASE_URL_COUNTRIES_CITIES}
-/location/country/${id}/city/list?page=1&per_page=100&format=json&population=100001`;
+/location/country/${id}/city/list?page=1&per_page=100&format=json&population=10001`;
 
 export const getCommentsURL = (id) => `${process.env.REACT_APP_RAPID_API_BASE_URL_TRIPADVISOR}
 /reviews/list?limit=20&currency=USD&lang=en_US&location_id=${id}`;

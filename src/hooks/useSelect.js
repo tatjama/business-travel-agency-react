@@ -6,23 +6,23 @@ import { useAppContext } from '../libs/contextLib';
 import { getCitiesURL } from '../utils/constants';
 import { countriesArray } from '../components/data/countries.json';
 
-const countries = countriesArray;
+//const countries = countriesArray;
 
-const useSelect = (callback) =>{
-    const [country, setCountry] = useState(countries[0]);    
+const useSelect = (callback, countries) =>{
+    const [country, setCountry] = useState(null);    
     const [cities, setCities] = useState([]);
-    const [city, setCity] = useState({geonameid: 1141857, name: "Gardez"});
+    const [city, setCity] = useState({});
     const [isCities, setIsCities] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const {isUserAuthenticated} = useAppContext()
     let chosenCity = {}
-          
- const handleSelectCountry = (e) =>{        
-      setCountry(countries[e.target.value]);
-      
+       
+ const handleSelectCountry = (e) =>{
+      setCountry(countries[e.target.value]);      
  }
+ 
  useEffect(() => {  
      const fetchCities = async(id) =>{
         setIsError(false)  
@@ -48,7 +48,7 @@ const useSelect = (callback) =>{
             
         setIsLoading(false)   
     }
-     fetchCities(country.id);
+     country && fetchCities(country.id);
         
      },[country])
 
