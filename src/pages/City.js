@@ -14,15 +14,14 @@ import CityInfo from './CityInfo';
 import Hotels from './Hotels';
 import Restaurants from './Restaurants';
 //assets
-import breakfast from '../images/breakfast.png';
-import hotel from '../images/hotel.png';
-import world from '../images/world.png';
-import airplane from '../images/airplane.png';
 import arrowUp from '../images/arrow-up.svg';
 //styles
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 //utils
-import { getCityInformationURL, getRestaurantInformationURL, getAirportsInformationURL } from '../utils/constants';
+import { getCityInformationURL, 
+         getRestaurantInformationURL, 
+         getAirportsInformationURL, 
+         figureProps } from '../utils/constants';
 
 const City =({match}) =>{   
     
@@ -136,19 +135,19 @@ const City =({match}) =>{
         scrollToSection("restaurants")
     }
 
-    const fetchHotelsInformation = async() =>{        
+    const getHotelsInformation = () =>{        
         setIsAirportsFetch(false);
         setIsAttractionsFetch(false);
-        await setIsHotelsFetch(true);
+        setIsHotelsFetch(true);
         setIsRestaurantsFetch(false);
         scrollToSection("hotels");
       }
 
-    const fetchAttractionsInformation = async () =>{   
+    const getAttractionsInformation = () =>{   
         setIsError(false)  
         try {
         setIsAirportsFetch(false);
-        await setIsAttractionsFetch(true);
+        setIsAttractionsFetch(true);
         setIsHotelsFetch(false);
         setIsRestaurantsFetch(false);
             
@@ -185,35 +184,7 @@ const City =({match}) =>{
         setIsLoading(false)
         scrollToSection("airports")
     }
-    const figureProps =  [
-    {
-        name: "Restaurants", 
-        source: breakfast,
-        handleOnClick: fetchRestaurantInformation,
-        alt: "breakfast" ,
-        go: "#food"
-    },
-    {
-        name: "Hotels", 
-        source: hotel, 
-        handleOnClick: fetchHotelsInformation,
-        alt: "friends hands" ,
-        go: "#safety"
-    },
-    {
-        name: "Attractions" ,
-        source: world, 
-        handleOnClick: fetchAttractionsInformation,
-        alt: "world" ,
-        go: "#culture"
-    },
-    {
-        name: "Airports", 
-        source: airplane, 
-        handleOnClick: fetchAirportsInformation,
-        alt: "airplane" ,
-        go: "#airport"
-    }]
+    
 
     const  scrollToSection = (ident) => {
         scroller.scrollTo(ident, {
@@ -230,59 +201,59 @@ const City =({match}) =>{
                 <div id="message"></div>        
                  <SelectForm />          
             </header>                
-                <div >
-                    {isError && <div className = "error">Error. Something went wrong...</div>}
-                    
-                    { !city ? <h2>Please select a city...</h2> : isLoading?
-                    <div className = "loader">
-                    <Loader type="Grid"
+            <div >
+            {isError && <div className = "error">Error. Something went wrong...</div>}
+            
+            { !city ? <h2>Please select a city...</h2> : isLoading
+            ?    <div className = "loader">
+                <Loader type="Grid"
                     color="#00BFFF"
                     height={40}
-                    width={40} />
-                    </div>
-                    :
-                    <div>
-                    {isFetch && 
-                        <div className = "wrapper" >
-                            <h3>Life in different countries....</h3>
-                                <SectionFirst info = {figureProps} position = {position}/>
-                            <div >                      
-                                <CityInfo header = {header}/>
-                            </div>                      
-                        </div>  
-                        }  
-                    </div>
-                    }          
-                    {isRestaurantsFetch &&   
-                        <div className = "wrapper">         
-                            <Restaurants restaurants = {restaurants} />
-                        </div>
-                    }
-                    
-                    {isHotelsFetch &&
-                        <div className = "wrapper">  
-                            <Hotels hotels = {hotels} />
-                        </div>
-                    }
-                    {isAttractionsFetch &&
-                        <div className = "wrapper">  
-                            <Attractions attractions = {attractions} />
-                        </div>
-                    }
-                    {isAirportsFetch &&
-                        <div className = "wrapper">  
-                            <Airports airports = {airports}/> 
-                        </div>               
-                    }              
-                 </div>
-                 <figure 
-                    className = "top" 
-                    onClick = {() => {scrollToSection("section-first")}}
-                 >
-                    <img src = {arrowUp} alt = "arrow up"  />
-                 </figure>
-                 
-        
+                    width={40} 
+                />
+                </div>
+            :
+                <div>
+                {isFetch && 
+                    <div className = "wrapper" >
+                        <h3>Life in different countries....</h3>
+                            <SectionFirst 
+                            info = {figureProps(fetchRestaurantInformation, getHotelsInformation, getAttractionsInformation, fetchAirportsInformation)} 
+                            position = {position}/>
+                        <div >                      
+                            <CityInfo header = {header}/>
+                        </div>                      
+                    </div>  
+                    }  
+                </div>
+            }          
+            {isRestaurantsFetch &&   
+                <div className = "wrapper">         
+                    <Restaurants restaurants = {restaurants} />
+                </div>
+            }            
+            {isHotelsFetch &&
+                <div className = "wrapper">  
+                    <Hotels hotels = {hotels} />
+                </div>
+            }
+            {isAttractionsFetch &&
+                <div className = "wrapper">  
+                    <Attractions attractions = {attractions} />
+                </div>
+            }
+            {isAirportsFetch &&
+                <div className = "wrapper">  
+                    <Airports airports = {airports}/> 
+                </div>               
+            }              
+            </div>
+            <figure 
+                className = "top" 
+                onClick = {() => {scrollToSection("section-first")}}
+            >
+            <img src = {arrowUp} alt = "arrow up"  />
+            </figure>        
         </div>    
     )
 }

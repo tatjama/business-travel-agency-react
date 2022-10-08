@@ -8,17 +8,15 @@ import Loader from 'react-loader-spinner';
 
 const SelectForm = () =>{
     const history = useHistory();
-    const{city, countries, country, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError, isCities} 
+    const {city, countries, country, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError, isCities} 
     = useSelect(submitted);
     
      function submitted(){
         history.push(`/${country.name}-${city.name}`)
     }
-
     
     return(
         <form className="choose-destination" onSubmit = {handleSubmit}>    
-        <label htmlFor="countries"> Choose a country</label>             
                 <Select 
                    handleChange = {handleSelectCountry}
                    optionArray = {countries}

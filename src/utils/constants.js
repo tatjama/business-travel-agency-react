@@ -1,3 +1,9 @@
+//assets
+import breakfast from '../images/breakfast.png';
+import hotel from '../images/hotel.png';
+import world from '../images/world.png';
+import airplane from '../images/airplane.png';
+
 export const getCitiesURL = (id) => `${process.env.REACT_APP_RAPID_API_BASE_URL_COUNTRIES_CITIES}
 /location/country/${id}/city/list?page=1&per_page=100&format=json&population=100001`;
 
@@ -13,3 +19,35 @@ export const getRestaurantInformationURL = (id) => `${process.env.REACT_APP_RAPI
 export const getAirportsInformationURL = (name) => `${process.env.REACT_APP_RAPID_API_BASE_URL_TRIPADVISOR}
 /airports/search?locale=en_US&query=${name}`
         
+export const figureProps = (fetchRestaurantInformation, 
+                            getHotelsInformation, 
+                            getAttractionsInformation, 
+                            fetchAirportsInformation) =>  [
+    {
+        name: "Restaurants", 
+        source: breakfast,
+        handleOnClick: fetchRestaurantInformation,
+        alt: "breakfast" ,
+        go: "#food"
+    },
+    {
+        name: "Hotels", 
+        source: hotel, 
+        handleOnClick: getHotelsInformation,
+        alt: "friends hands" ,
+        go: "#safety"
+    },
+    {
+        name: "Attractions" ,
+        source: world, 
+        handleOnClick: getAttractionsInformation,
+        alt: "world" ,
+        go: "#culture"
+    },
+    {
+        name: "Airports", 
+        source: airplane, 
+        handleOnClick: fetchAirportsInformation,
+        alt: "airplane" ,
+        go: "#airport"
+    }]
