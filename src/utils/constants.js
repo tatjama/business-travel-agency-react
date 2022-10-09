@@ -23,8 +23,8 @@ export const getAirportsInformationURL = (name) => `${process.env.REACT_APP_RAPI
 /airports/search?locale=en_US&query=${name}`
         
 export const figureProps = (fetchRestaurantInformation, 
-                            getHotelsInformation, 
-                            getAttractionsInformation, 
+                            renderHotelsInformation, 
+                            renderAttractionsInformation, 
                             fetchAirportsInformation) =>  [
     {
         name: "Restaurants", 
@@ -36,14 +36,14 @@ export const figureProps = (fetchRestaurantInformation,
     {
         name: "Hotels", 
         source: hotel, 
-        handleOnClick: getHotelsInformation,
+        handleOnClick: renderHotelsInformation,
         alt: "friends hands" ,
         go: "#safety"
     },
     {
         name: "Attractions" ,
         source: world, 
-        handleOnClick: getAttractionsInformation,
+        handleOnClick: renderAttractionsInformation,
         alt: "world" ,
         go: "#culture"
     },
