@@ -21,31 +21,32 @@ const Hotels = (props) =>{
     const {query, comments, fetchComments} = useFetchComments(submitted, setError, setIsLoading);
     
     async function submitted(){      
-    const commentsArray = createCommentArray(query, comments)
-      await setCommentsFromLocalStorageAndFetchComments(commentsArray)   
-      setIsShowComments(true)    
-           
+        const commentsArray = createCommentArray(query, comments)
+        setCommentsFromLocalStorageAndFetchComments(commentsArray)   
+        setIsShowComments(true)           
     }
+
     const closeComments = () => {
         setIsShowComments(false)
     }
    
-       const openCommentForm = (resultObject) => {
-         setLocationCommentId(resultObject.location_id);
-         setCommentFromUser(resultObject)
-         setIsCommentForm(true)
-       }
-   
-       const closeCommentForm = () =>{
-       setIsCommentForm(false)
-       }
-        const  scrollToSection = (ident) => {
-            scroller.scrollTo(ident, {
-              duration: 800,
-              delay: 0,
-              smooth: "easeInOutQuart",
-            });
-          };
+    const openCommentForm = (resultObject) => {
+        setLocationCommentId(resultObject.location_id);
+        setCommentFromUser(resultObject)
+        setIsCommentForm(true)
+    }
+
+    const closeCommentForm = () =>{
+        setIsCommentForm(false)
+    }
+
+    const  scrollToSection = (ident) => {
+        scroller.scrollTo(ident, {
+            duration: 800,
+            delay: 0,
+            smooth: "easeInOutQuart",
+        });
+    };
 
     return(
         <div className = "hotels" >
@@ -126,7 +127,6 @@ const Hotels = (props) =>{
                                    </div>
                                 )
                             })}   
-                            {console.log(item.result_object.location_id)}
                             {scrollToSection(`${item.result_object.location_id}`) }
                             </div>
                             }

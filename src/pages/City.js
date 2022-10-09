@@ -4,8 +4,6 @@ import Loader from 'react-loader-spinner';
 //components
 import SelectForm from '../components/SelectForm';
 import SectionFirst from '../components/SectionFirst';
-//context
-import { useAppContext } from '../libs/contextLib';
 //hooks
 import useFetchCity from '../hooks/useFetchCity';
 import useFetchAirports from '../hooks/useFetchAirports';

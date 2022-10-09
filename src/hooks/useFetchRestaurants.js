@@ -2,7 +2,7 @@ import { useState } from 'react';
 //context
 import { useAppContext } from '../libs/contextLib';
 //utils 
-import { getRestaurantInformationURL } from '../utils/constants';
+import { getRestaurantInformationURL, header } from '../utils/constants';
 
 const useFetchRestaurants = ( setError, setIsLoading, callback) => {
     const { isUserAuthenticated } = useAppContext();
@@ -12,26 +12,21 @@ const useFetchRestaurants = ( setError, setIsLoading, callback) => {
         setError(null)
         setIsLoading(true)
         try {
-            const data = await
-        fetch(getRestaurantInformationURL(locationId),{
-	        "method": "GET",
-	        "headers": {
-		        "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
-		        "x-rapidapi-key": isUserAuthenticated.rk
-	        }
-        })
-        const restaurants = await data.json();    
-        setRestaurants(restaurants.data.filter(restaurant =>{
-            return(
-                restaurant.location_id !== "294472" &&
-                restaurant.photo //if photo does not exist
-            )
-        }))
-        callback()
+            const response = await fetch(getRestaurantInformationURL(locationId), 
+            header(process.env.REACT_APP_RAPID_API_HOST, isUserAuthenticated.rk));
+            const data = await response.json();    
+            if(response.status === 200){
+                setRestaurants(data.data.filter(restaurant => restaurant.location_id !== "294472" && restaurant.photo))   
+            }else {
+                setError(data.error);
+            }
             
-        } catch (error) {
-            setError(error)
-        }
+            callback()
+            
+            } catch (error) {
+                setError(error)
+            }
+
         setIsLoading(false)
     }
     return { restaurants, fetchRestaurantInformation }

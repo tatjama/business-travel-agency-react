@@ -2,7 +2,7 @@ import { useState } from 'react';
 //context
 import { useAppContext } from '../libs/contextLib';
 //utils 
-import { getCityInformationURL } from '../utils/constants';
+import { getCityInformationURL, header} from '../utils/constants';
 
 const useFetchCity = ( setError, setIsLoading, callback ) => {
     const { isUserAuthenticated } = useAppContext();
@@ -12,14 +12,8 @@ const useFetchCity = ( setError, setIsLoading, callback ) => {
         setError(null)
         setIsLoading(true)
         try {            
-        const response = await fetch(getCityInformationURL(city), {
-                   "method": "GET",
-                   "headers": {
-                       "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
-                       "x-rapidapi-key": isUserAuthenticated.rk
-                   }
-               })
-               
+        const response = await fetch(getCityInformationURL(city), 
+        header(process.env.REACT_APP_RAPID_API_HOST, isUserAuthenticated.rk));               
                const data = await response.json();
                if(response.status === 200){
                 setInfo(data.data);               

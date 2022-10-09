@@ -20,7 +20,15 @@ export const getRestaurantInformationURL = (id) => `${process.env.REACT_APP_RAPI
 /restaurants/list?restaurant_tagcategory_standalone=10591&lunit=km&restaurant_tagcategory=10591&limit=30&currency=USD&lang=en_US&location_id=${id}`
 
 export const getAirportsInformationURL = (name) => `${process.env.REACT_APP_RAPID_API_BASE_URL_TRIPADVISOR}
-/airports/search?locale=en_US&query=${name}`
+/airports/search?locale=en_US&query=${name}`;
+
+export const header = (host, key) => ({
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": host,
+        "x-rapidapi-key": key
+    }
+})  
         
 export const figureProps = (fetchRestaurantInformation, 
                             renderHotelsInformation, 

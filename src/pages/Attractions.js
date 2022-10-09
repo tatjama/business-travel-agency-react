@@ -21,8 +21,8 @@ const Attractions  = (props) =>{
   
     async function submitted (){      
      const commentsArray = createCommentArray(query, comments)
-     setCommentsFromLocalStorageAndFetchComments(commentsArray)
-     setIsShowComments(true)
+        setCommentsFromLocalStorageAndFetchComments(commentsArray)
+        setIsShowComments(true)
     }
     const closeComments = () => {
         setIsShowComments(false)
@@ -34,7 +34,7 @@ const Attractions  = (props) =>{
     }
 
     const closeCommentForm = () =>{
-    setIsCommentForm(false)
+        setIsCommentForm(false)
     }
     const  scrollToSection = (ident) => {
         scroller.scrollTo(ident, {
