@@ -14,9 +14,11 @@ const Hotels = (props) =>{
     const [locationCommentId, setLocationCommentId] = useState(null);
     const [isShowComments, setIsShowComments] = useState(false)
     const [commentFromUser, setCommentFromUser] = useState({});    
-    const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
+    const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     
-    const {query, comments, fetchComments, isLoading, isError} = useFetchComments(submitted);
+    const {query, comments, fetchComments} = useFetchComments(submitted, setError, setIsLoading);
     
     async function submitted(){      
     const commentsArray = createCommentArray(query, comments)
@@ -104,7 +106,7 @@ const Hotels = (props) =>{
                                         info = {commentFromUser}
                                     />
                                 }
-                            {isError && <div className = "error">Error. Something went wrong...</div>}
+                            {error && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
                                   <Loader
                                   type = "Grid"

@@ -10,15 +10,18 @@ import useSelect from '../hooks/useSelect';
 import useFetchCountries from './../hooks/useFetchCountries';
 
 const SelectForm = () =>{
-    const history = useHistory();    
-    const {isErrorCountries, isLoadingCountries, countries, fetchCountries}  = useFetchCountries();
+    const history = useHistory(); 
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(null);
+      
+    const { countries, fetchCountries}  = useFetchCountries(setError, setIsLoading);
 
     useEffect(() => {
         fetchCountries();
     }, [])
  
-    const {city, country, cities, handleSelectCountry, handleSelectCity, handleSubmit, isLoading, isError, isCities} 
-    =  useSelect(submitted, countries);
+    const {city, country, cities, handleSelectCountry, handleSelectCity, handleSubmit} 
+    =  useSelect(submitted, countries, setError, setIsLoading);
     
      function submitted(){
       city && country ?  history.push(`/${country.name}-${city.name}`) : history.push('/life')
@@ -33,9 +36,7 @@ const SelectForm = () =>{
                    name = "countries"
                 />}
                         <br/>
-                {isError && <div className = "error">Error. Something went wrong...</div>}
-                {isErrorCountries && <div className = "error">Error. We can't get the country...</div>}
-                {isLoading || isLoadingCountries ?
+                {isLoading ?
                     <div className = "loader">
                         <Loader type="Grid" color="#bae7e7" height={40} width={40} />
                     </div>
@@ -48,11 +49,9 @@ const SelectForm = () =>{
                 />
                 }
                 <br/>
-                <button type="submit" className="choose-destination-button" >Select</button>
-                { isCities && <p className = "error-pop-up">
-                    {country.name} doesn't have a city over 50,000 citizens.
-                    <br/> Please select another country
-                </p>}
+                <button type="submit" className="choose-destination-button" >Select</button>                
+                {error && <p className = "error-pop-up">Error: {error.detail} {error.code}...{error.message}</p>}
+               
             </form>
     )
 }

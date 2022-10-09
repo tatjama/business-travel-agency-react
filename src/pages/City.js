@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { scroller, scrollLeft, scrollTop } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import Loader from 'react-loader-spinner';
 //components
-import Button from '../components/Button';
 import SelectForm from '../components/SelectForm';
 import SectionFirst from '../components/SectionFirst';
 //context
@@ -26,7 +25,6 @@ import { getCityInformationURL,
 const City =({match}) =>{   
     
     const [city, setCity] = useState(null);
-    const [country, setCountry] = useState('');
     const [header, setHeader] = useState([])  
     const [isFetch, setIsFetch] = useState(false);
     const [isRestaurantsFetch, setIsRestaurantsFetch] = useState(false)
@@ -50,10 +48,7 @@ const City =({match}) =>{
     }, [window.onscroll]);
 
     useEffect(() => {
-        if(match.params.id){
-            setCity(match.params.id.split('-')[1]);
-            setCountry(match.params.id.split('-')[0]);            
-        }         
+        match.params.id && setCity(match.params.id.split('-')[1])
     },[match.params.id])
 
     useEffect(() => {

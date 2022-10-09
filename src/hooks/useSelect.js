@@ -1,53 +1,24 @@
 import { cleanup } from '@testing-library/react';
 import { useState, useEffect } from 'react';
-//context
-import { useAppContext } from '../libs/contextLib';
+//hooks
+import useFetchCities from '../hooks/useFetchCities';
 //utils
-import { getCitiesURL } from '../utils/constants';
 import { filterArrayByValue } from '../utils/helper';
 
-const useSelect = (callback, countries) =>{
+const useSelect = (callback, countries, setError, setIsLoading) =>{
     const [country, setCountry] = useState(null);    
-    const [cities, setCities] = useState([]);
     const [city, setCity] = useState({});
-    const [isCities, setIsCities] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const {isUserAuthenticated} = useAppContext()
     let chosenCity = {}
        
  const handleSelectCountry = (e) =>{
-      setCountry(filterArrayByValue(countries, e));      
+      setCountry(filterArrayByValue(countries, e));     
  }
+
+ const { cities, fetchCities } = useFetchCities(setError, setIsLoading)
  
- useEffect(() => {  
-     const fetchCities = async(id) =>{
-        setIsError(false)  
-        setIsLoading(true) 
-       try {
-        const data  = await fetch(getCitiesURL(id), {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST_COUNTRIES_CITIES,
-                "x-rapidapi-key": isUserAuthenticated.rkcc
-            }
-        })
-        const cities = await data.json();    
-        if(cities.cities.length === 0){
-            setIsCities(true)
-        }else{
-            setIsCities(false)
-        }
-        setCities(cities.cities)
-       } catch (error) {
-           setIsError(true)
-       }
-            
-        setIsLoading(false)   
-    }
-     country && fetchCities(country.id);
-        
+ useEffect(() => {       
+     country && fetchCities(country.id);        
      },[country])
 
  const handleSelectCity = (e) =>{   
@@ -70,7 +41,6 @@ const useSelect = (callback, countries) =>{
          cleanup(setIsSubmitted(false))
      }
  },[isSubmitted])
- 
 
     return{
         countries,
@@ -79,12 +49,8 @@ const useSelect = (callback, countries) =>{
          city,
          handleSelectCountry,
          handleSelectCity,
-         handleSubmit,
-         isLoading,
-         isError, 
-         isCities
+         handleSubmit
     }
-
 }
 
 export default useSelect;

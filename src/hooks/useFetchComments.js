@@ -4,19 +4,17 @@ import { useAppContext } from '../libs/contextLib';
 //utils
 import { getCommentsURL } from '../utils/constants';
 
-const useFetchComments = (callback) => {
+const useFetchComments = (callback, setError, setIsLoading) => {
     const { isUserAuthenticated} = useAppContext(); 
     const [comments, setComments] = useState([]);
     const [query, setQuery] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
 
     const fetchComments = async (id) => {
-         setIsError(false)
+         setError(null)
          setIsLoading(true)
 
          try {             
-         const data = await
+         const response = await
          fetch(getCommentsURL(id), {
              "method": "GET",
              "headers": {
@@ -24,11 +22,11 @@ const useFetchComments = (callback) => {
                  "x-rapidapi-key": isUserAuthenticated.rk
          }
      })
-     const comments = await data.json();
-     setComments(comments.data);
+     const data = await response.json();
+     setComments(data.data);
      setQuery(id);
          } catch (error) {
-             setIsError(true)
+             setError(error)
          }  
 
      setIsLoading(false)  
@@ -38,7 +36,7 @@ const useFetchComments = (callback) => {
           callback()      
   }, [query, comments])
 
-  return{query,comments, fetchComments, isLoading, isError}
+  return{query,comments, fetchComments}
 }
 
 export default useFetchComments;
