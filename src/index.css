@@ -9,6 +9,7 @@ body, html {
     margin: 0%;
     padding: 0%;
     font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto, sans-serif;
     box-sizing: border-box;
 }
 
@@ -462,7 +463,7 @@ figcaption:hover{
 }
 
 .provider-div,.user-comment {
-    border: darkcyan dashed 4px;
+    border: darkcyan dashed 1px;
     padding: 40px;
     margin: 40px;
 }
@@ -480,7 +481,7 @@ figcaption:hover{
 }
 
 .main-div{
-    border: darkcyan dashed 4px;
+    border: darkcyan dashed 1px;
     padding: 15px;
     margin: 15px;
 }
