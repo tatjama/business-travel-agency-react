@@ -14,36 +14,39 @@ const Hotels = (props) =>{
     const [locationCommentId, setLocationCommentId] = useState(null);
     const [isShowComments, setIsShowComments] = useState(false)
     const [commentFromUser, setCommentFromUser] = useState({});    
-    const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([])
+    const [commentsFromLocalStorageAndFetchComments, setCommentsFromLocalStorageAndFetchComments] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     
-    const {query, comments, fetchComments, isLoading, isError} = useFetchComments(submitted);
+    const {query, comments, fetchComments} = useFetchComments(submitted, setError, setIsLoading);
     
     async function submitted(){      
-    const commentsArray = createCommentArray(query, comments)
-      await setCommentsFromLocalStorageAndFetchComments(commentsArray)   
-      setIsShowComments(true)    
-           
+        const commentsArray = createCommentArray(query, comments)
+        setCommentsFromLocalStorageAndFetchComments(commentsArray)   
+        setIsShowComments(true)           
     }
+
     const closeComments = () => {
         setIsShowComments(false)
     }
    
-       const openCommentForm = (resultObject) => {
-         setLocationCommentId(resultObject.location_id);
-         setCommentFromUser(resultObject)
-         setIsCommentForm(true)
-       }
-   
-       const closeCommentForm = () =>{
-       setIsCommentForm(false)
-       }
-        const  scrollToSection = (ident) => {
-            scroller.scrollTo(ident, {
-              duration: 800,
-              delay: 0,
-              smooth: "easeInOutQuart",
-            });
-          };
+    const openCommentForm = (resultObject) => {
+        setLocationCommentId(resultObject.location_id);
+        setCommentFromUser(resultObject)
+        setIsCommentForm(true)
+    }
+
+    const closeCommentForm = () =>{
+        setIsCommentForm(false)
+    }
+
+    const  scrollToSection = (ident) => {
+        scroller.scrollTo(ident, {
+            duration: 800,
+            delay: 0,
+            smooth: "easeInOutQuart",
+        });
+    };
 
     return(
         <div className = "hotels" >
@@ -104,7 +107,7 @@ const Hotels = (props) =>{
                                         info = {commentFromUser}
                                     />
                                 }
-                            {isError && <div className = "error">Error. Something went wrong...</div>}
+                            {error && <div className = "error">Error. Something went wrong...</div>}
                             {isLoading?
                                   <Loader
                                   type = "Grid"
@@ -124,7 +127,6 @@ const Hotels = (props) =>{
                                    </div>
                                 )
                             })}   
-                            {console.log(item.result_object.location_id)}
                             {scrollToSection(`${item.result_object.location_id}`) }
                             </div>
                             }

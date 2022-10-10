@@ -1,55 +1,24 @@
 import { cleanup } from '@testing-library/react';
 import { useState, useEffect } from 'react';
-//context
-import { useAppContext } from '../libs/contextLib';
+//hooks
+import useFetchCities from '../hooks/useFetchCities';
 //utils
-import { getCitiesURL } from '../utils/constants';
-import { countriesArray } from '../components/data/countries.json';
+import { filterArrayByValue } from '../utils/helper';
 
-const countries = countriesArray;
-
-const useSelect = (callback) =>{
-    const [country, setCountry] = useState(countries[0]);    
-    const [cities, setCities] = useState([]);
-    const [city, setCity] = useState({geonameid: 1141857, name: "Gardez"});
-    const [isCities, setIsCities] = useState(false)
+const useSelect = (callback, countries, setError, setIsLoading) =>{
+    const [country, setCountry] = useState(null);    
+    const [city, setCity] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const {isUserAuthenticated} = useAppContext()
     let chosenCity = {}
-          
- const handleSelectCountry = (e) =>{        
-      setCountry(countries[e.target.value]);
-      
+       
+ const handleSelectCountry = (e) =>{
+      setCountry(filterArrayByValue(countries, e));     
  }
- useEffect(() => {  
-     const fetchCities = async(id) =>{
-        setIsError(false)  
-        setIsLoading(true) 
-       try {
-        const data  = await fetch(getCitiesURL(id), {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST_COUNTRIES_CITIES,
-                "x-rapidapi-key": isUserAuthenticated.rkcc
-            }
-        })
-        const cities = await data.json();    
-        if(cities.cities.length === 0){
-            setIsCities(true)
-        }else{
-            setIsCities(false)
-        }
-        setCities(cities.cities)
-       } catch (error) {
-           setIsError(true)
-       }
-            
-        setIsLoading(false)   
-    }
-     fetchCities(country.id);
-        
+
+ const { cities, fetchCities } = useFetchCities(setError, setIsLoading)
+ 
+ useEffect(() => {       
+     country && fetchCities(country.id);        
      },[country])
 
  const handleSelectCity = (e) =>{   
@@ -72,7 +41,6 @@ const useSelect = (callback) =>{
          cleanup(setIsSubmitted(false))
      }
  },[isSubmitted])
- 
 
     return{
         countries,
@@ -81,12 +49,8 @@ const useSelect = (callback) =>{
          city,
          handleSelectCountry,
          handleSelectCity,
-         handleSubmit,
-         isLoading,
-         isError, 
-         isCities
+         handleSubmit
     }
-
 }
 
 export default useSelect;
