@@ -150,7 +150,8 @@ const City =({match}) =>{
                                     renderHotelsInformation, 
                                     renderAttractionsInformation, 
                                     () => fetchAirportsInformation(header.name))} 
-                            position = {position}/>
+                            position = {position}
+                            header = {header}/>
                         <div >                      
                             <CityInfo header = {header}/>
                         </div>                      

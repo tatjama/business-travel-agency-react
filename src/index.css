@@ -57,7 +57,7 @@ body, html {
 }
 
 #sign-in-form {              
-    width: 250px;
+    width: 280px;
     height: 260px;
     margin: 15% auto;    
 }           
@@ -295,7 +295,7 @@ button {
     background-color: rgb(66, 150, 150);
     color: aliceblue;
     font-weight: bold;
-    width: 130px;
+    min-width: 130px;
     cursor: pointer;
     border: transparent;
 }
@@ -364,6 +364,13 @@ h2 {
 figcaption{
     color: slategray;
 }
+.figcaption-total{
+    position: relative;
+    bottom: 50px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
 figcaption:hover{
    color: darkcyan;
@@ -387,6 +394,10 @@ figcaption:hover{
 
 .horizontalPosition figure:hover {
     transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 .horizontalPosition figure img {
@@ -394,15 +405,20 @@ figcaption:hover{
     height: 130px;
     border: solid 1px white;
     margin: 10px;
-    box-shadow: gray 0px 0px 10px;
+    box-shadow: rgb(188, 188, 188) 4px 4px 12px;
     transition: transform .2s;
+    cursor:pointer;
+    -webkit-transition: transform .2s;
+    -moz-transition: transform .2s;
+    -ms-transition: transform .2s;
+    -o-transition: transform .2s;
 }
 
 /*verticalPosition*/
 .verticalPosition {
-    background-color: ivory;
+    background-color: rgba(0, 0, 0, 0.1);
     position: fixed;
-    left: 0px;
+    right: 2px;
     top: 30px;
     text-align: center;        
     display: flex;
@@ -417,7 +433,12 @@ figcaption:hover{
     padding: 7px;
     margin: auto;
     font-weight: bold;  
-    font-size: xx-small;     
+    font-size: xx-small;    
+    cursor: pointer; 
+}
+
+.verticalPosition figure .figcaption-total {
+    display: none; 
 }
 
 .verticalPosition figure:hover {
@@ -433,7 +454,6 @@ figcaption:hover{
     height: 50px;
     border: solid 1px white;
     margin: 5px;
-    box-shadow: gray 0px 0px 5px;
     transition: transform .2s;
 } 
   
@@ -502,30 +522,39 @@ figcaption:hover{
 
 .data-info{
     display: flex;
-    justify-content: space-around;  
-}
-
-.data-info p, .provider-heading p{
-    font-weight: bold;
+    justify-content: space-around; 
+    align-items: center;
+    flex-wrap: wrap; 
 }
 
 .data-info div p{
     padding: 2px;
-    font-size: medium;
 }
 
 .data-info p span, .provider-heading p span{
     color: rgb(23, 88, 88);
-    font-weight: bold;
 }
 
 .data-left{
-    width: 350px;
+    width: 200px;
+    overflow: hidden;
+    padding: 10px;
 }
+.data-left p{
+    font-size: small;
+}
+.data-img{
+    width: 250px;
+    overflow: hidden;
+}
+.data-img img{
+    object-fit: cover;
+} 
 
 .data-right{
-    width: 550px;
+    width: 500px;
     text-align: left;
+    padding: 10px;
 }
 
 .data-restaurant{
@@ -619,6 +648,20 @@ textarea{
 
 .comment-button{
     width: 150px;
+}
+
+.comment-close {
+    cursor: pointer;
+    text-align: right;
+    
+}
+.comment-close h2 {    
+    color:rgb(66, 150, 150);
+    font-size: 24px;
+}
+
+.comment-close h2:hover {
+    color:rgb(23, 88, 88);
 }
 
 .user-comment{
@@ -785,7 +828,13 @@ input[type="checkbox"], input[type="radio"] {
         padding: 5px;
         margin: 5px;
     }
-
+    
+    .data-left{
+        order: 0;
+    }
+    .data-img{
+        order:1;
+    }
     .data-info div p{
         font-size: small;
     }
@@ -864,14 +913,7 @@ input[type="checkbox"], input[type="radio"] {
 
     /*PAGES*/
     /*DATA*/
-    .data-info{
-        flex-direction: column;
-    }
-
-    .data-info div{
-        max-width: 100%;
-        padding: 10px;
-    }
+    
 
     .data-restaurant{
         width: 100%;
@@ -962,6 +1004,18 @@ input[type="checkbox"], input[type="radio"] {
     .error-message{
         width: 80%;
         margin: 0 auto;
+    }
+
+    .data-info {
+        flex-direction: column;
+    }
+
+    .data-left, .data-right, .data-img{
+        width: 100%;
+    }
+
+    .data-img{
+        text-align: center;
     }
 
     #transportationFromTo div select{
