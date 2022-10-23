@@ -15,7 +15,7 @@ export default function Routes() {
         <Switch>  
             <Route path = "/signIn"  component = {SignIn}/>  
             <Route path = "/signup" component = {SignUp} />
-            <Route path = "/" exact  component = {Home}/>         
+            <Route path = "/" exact  component = {City}/>         
             <Route path = "/life" component = {City} />
             {/*<Route path = "/enjoy" component = {Enjoy}/>*/}
             <Route path = "/feedbacks" component = {Feedbacks} />

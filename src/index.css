@@ -57,7 +57,7 @@ body, html {
 }
 
 #sign-in-form {              
-    width: 250px;
+    width: 280px;
     height: 260px;
     margin: 15% auto;    
 }           
@@ -525,9 +525,6 @@ figcaption:hover{
     justify-content: space-around; 
     align-items: center;
     flex-wrap: wrap; 
-}
-
-.data-info p, .provider-heading p{
 }
 
 .data-info div p{
